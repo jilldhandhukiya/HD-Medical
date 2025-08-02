@@ -1,8 +1,10 @@
 import Image from "next/image";
-
+import Header from "@/app/components/Header";
 export default function Home() {
   return (
-    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center px-6 md:px-16 py-8 min-h-[calc(100vh-80px)] gap-8">
+    <>
+    <Header />
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center px-6 md:px-16 py-8 min-h-[calc(100vh-80px)] gap-8 bg-black">
       <div className="text-white space-y-6 max-w-2xl">
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
           Compassionate care,<br /> exceptional results.
@@ -52,5 +54,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }

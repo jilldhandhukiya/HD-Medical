@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <nav className="relative z-20 flex items-center justify-between px-6 md:px-16 py-4">
+    <nav className="relative z-20 flex items-center justify-between px-6 md:px-16 py-4 bg-black">
       <div className="flex items-center">
         <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-2">
           <i className="bi bi-heart-pulse text-white text-sm"></i>
