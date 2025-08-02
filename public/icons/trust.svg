@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="xMidYMid meet" data-bbox="4 4 58 58" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 66" height="66" width="66" data-type="ugc" role="presentation" aria-hidden="true" aria-label="">
+    <g>
+        <path stroke-width="2" stroke="#ffffff" d="M33 28V16" fill="none"></path>
+        <path stroke-width="2" stroke="#ffffff" d="M28 33H16" fill="none"></path>
+        <path stroke-width="2" stroke="#ffffff" d="M33 38v12" fill="none"></path>
+        <path stroke-width="2" stroke="#ffffff" d="M38 33h12" fill="none"></path>
+        <path stroke-dasharray="2 2" stroke-width="2" stroke="#ffffff" d="M62 14v38c0 5.523-4.477 10-10 10H14C8.477 62 4 57.523 4 52V14C4 8.477 8.477 4 14 4h38c5.523 0 10 4.477 10 10z" fill="none"></path>
+    </g>
+</svg>
