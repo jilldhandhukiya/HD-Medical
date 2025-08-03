@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Header from "./components/Header";
 import { useState } from 'react';
+import Footer from "./components/Footer";
 
 function Card({ title, image, number }) {
   return (
@@ -554,8 +555,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
+    
+      {/* Footer Section */}
+      <Footer />
     </>
   );
 }

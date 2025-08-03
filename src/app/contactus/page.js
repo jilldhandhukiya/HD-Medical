@@ -4,6 +4,7 @@ import { Globe } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const countryCodes = ["+91", "+1", "+44", "+86", "+81", "+61", "+49", "+33"];
 
@@ -278,6 +279,7 @@ export default function Contact() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

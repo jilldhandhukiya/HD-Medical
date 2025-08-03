@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const advantages = [
   {
@@ -638,6 +639,9 @@ export default function ProductHero() {
         </p>
       </div>
     </section>
+
+    {/* Footer Section */}
+    <Footer />
     </>
   );
 }
