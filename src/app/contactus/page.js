@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { Globe } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import Header from "../components/Header";
 
 const countryCodes = ["+91", "+1", "+44", "+86", "+81", "+61", "+49", "+33"];
 
@@ -105,35 +106,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center h-auto sm:h-16 py-4 sm:py-0">
-            <Link href="/" className="flex items-center h-10 mb-4 sm:mb-0">
-              <Image
-                src="/images/logo.png"
-                alt="HD Medical Logo"
-                width={120}
-                height={40}
-                className="object-contain w-24 sm:w-32"
-              />
-            </Link>
-            <div className="flex flex-col sm:flex-row sm:space-x-8 space-y-4 sm:space-y-0 items-center">
-              <Link href="/" className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
-                Home
-              </Link>
-              <Link href="/products" className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
-                Products
-              </Link>
-              <Link href="/aboutus" className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
-                About
-              </Link>
-              <Link href="/contactus" className="text-blue-600 hover:text-blue-700 px-3 py-2 text-sm font-medium">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       <main className="flex-1 relative">
         {/* SVG Background with Wave Animation */}

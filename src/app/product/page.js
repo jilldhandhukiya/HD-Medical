@@ -10,6 +10,7 @@ import {
   Leaf
 } from "lucide-react";
 import Image from "next/image";
+import Header from "../components/Header";
 
 const advantages = [
   {
@@ -66,6 +67,7 @@ function AdvantagesSection() {
   }, []);
 
   return (
+
     <section ref={sectionRef} className="py-20 relative overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -338,6 +340,7 @@ function TechnicalExcellenceSection() {
 export default function ProductHero() {
   return (
     <>
+    <Header/>
       {/* Hero Section */}
       <section className="w-full bg-white py-12 px-4">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">

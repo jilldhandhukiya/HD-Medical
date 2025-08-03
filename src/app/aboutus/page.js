@@ -1,6 +1,7 @@
 "use client"
 import Image from 'next/image';
 import { useState } from "react";
+import Header from "../components/Header";
 
 const leadershipData = [
   {
@@ -241,6 +242,7 @@ function HeroSection() {
 export default function AboutUs() {
   return (
     <>
+    <Header />  {/* Add this line */}
       {/* Hero Section */}
       <HeroSection />
 
