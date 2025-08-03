@@ -7,7 +7,8 @@ import {
   ChevronDown, ChevronUp, Monitor,
   Globe,
   Zap,
-  Leaf
+  Leaf,
+  Info
 } from "lucide-react";
 import Image from "next/image";
 import Header from "../components/Header";
@@ -567,6 +568,76 @@ export default function ProductHero() {
           </div>
         </div>
       </section>
+
+      <section className="bg-white py-16 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Heart Murmur Detection */}
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold text-blue-700">
+                Heart Murmur Detection
+              </h3>
+            </div>
+
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <p className="text-3xl font-bold text-gray-800">97.79%</p>
+                <p className="text-sm text-gray-500">Sensitivity</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-gray-800">95.38%</p>
+                <p className="text-sm text-gray-500">Specificity</p>
+              </div>
+            </div>
+
+            <p className="text-gray-600 text-sm mb-4">
+              Our AI algorithm identifies and classifies heart murmurs with
+              precision that rivals experienced cardiologists.
+            </p>
+
+            <div className="flex items-center text-blue-700 text-xs bg-blue-50 rounded-md px-3 py-2 w-fit">
+              <Info className="w-4 h-4 mr-2" />
+              Validated through clinical trials with over 10,000 patient recordings
+            </div>
+          </div>
+
+          {/* ECG Analysis */}
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold text-blue-700">
+                ECG Analysis
+              </h3>
+            </div>
+
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <p className="text-3xl font-bold text-gray-800">89.83%</p>
+                <p className="text-sm text-gray-500">Sensitivity</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-gray-800">98.10%</p>
+                <p className="text-sm text-gray-500">Specificity</p>
+              </div>
+            </div>
+
+            <p className="text-gray-600 text-sm mb-4">
+              Automatically detects arrhythmias and other ECG abnormalities with high accuracy and reliability.
+            </p>
+
+            <div className="flex items-center text-blue-700 text-xs bg-blue-50 rounded-md px-3 py-2 w-fit">
+              <Info className="w-4 h-4 mr-2" />
+              Algorithm trained on diverse patient populations for consistent performance
+            </div>
+          </div>
+        </div>
+
+        {/* Footnote */}
+        <p className="text-xs text-gray-400 mt-6 text-center">
+          * Data/results based on HD Medical internal testing and validation
+        </p>
+      </div>
+    </section>
     </>
   );
 }
