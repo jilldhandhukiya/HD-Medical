@@ -25,9 +25,9 @@ function Card({ title, image, number }) {
           {number}
         </div>
       </div>
-      <h3 className="text-lg sm:text-xl font-semibold text-blue-800 mb-2 text-center">{title}</h3>
+      <h3 className="text-lg sm:text-xl font-semibold text-[#17a6e0] mb-2 text-center">{title}</h3>
       <div className="flex justify-center">
-        <span className="inline-block bg-blue-100 text-blue-600 px-3 py-1.5 rounded-full text-xs font-semibold shadow">
+        <span className="inline-block bg-blue-100 text-black px-3 py-1.5 rounded-full text-xs font-semibold shadow">
           Feature #{number}
         </span>
       </div>
@@ -234,7 +234,7 @@ export default function Home() {
                 HD Medical is a global leader in the detection and management of cardiovascular disease (CVD). We are dedicated to enabling evidence-based patient diagnosis and treatment decisions to be made at the point-of-care instantaneously to improve outcomes and save lives. Medical professionals can leverage HD Steth&apos;s AI-enabled intelligence, phonocardiogram, and electrocardiogram in their single most important and prestigious device, the stethoscope.
               </p>
               <button
-                className="inline-block px-8 py-3 bg-blue-300 text-black rounded-lg hover:bg-blue-400 transition-colors"
+                className="inline-block px-8 py-3 bg-[#17a6e0] text-black rounded-lg hover:bg-blue-400 transition-colors"
                 onClick={() => window.location.href = '/product'}>
                 Know More
               </button>
@@ -300,9 +300,9 @@ export default function Home() {
       <section className="bg-white py-10 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-center text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-blue-600">REVOLUTIONIZING </span>
+            <span className="text-[#17a6e0]">REVOLUTIONIZING </span>
             <span className="text-orange-500">CARDIAC CARE </span>
-            <span className="text-blue-600">WITH AI</span>
+            <span className="text-[#17a6e0]">WITH AI</span>
           </h2>
 
           {/* Desktop layout */}
@@ -336,7 +336,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition">
+            <button className="bg-[#17a6e0] hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition">
               GET STARTED →
             </button>
           </div>
