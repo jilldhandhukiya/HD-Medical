@@ -100,103 +100,130 @@ export default function Home() {
     <>
       <Header />
 
-
       {/* Hero Section */}
-      <section className="bg-white pt-12 md:pt-20 pb-0">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
+      <section className="bg-gradient-to-b from-[#f0fcff] to-white pt-2 md:pt-4 pb-0 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left Column: Text */}
-          <div className="space-y-6">
-            <span className="text-white font-semibold uppercase tracking-wider bg-[#17a6e0] text-[24px]">WORLD&apos;s FIRST </span>
+          <div className="space-y-4 z-10">
+            <div className="bg-[#17a6e0]/10 text-[#17a6e0] font-bold uppercase tracking-wider px-8 py-2 rounded-full inline-block text-sm md:text-base lg:text-3xl">
+              WORLD&apos;s FIRST
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              AI POWERED STETHOSCOPE
+              AI POWERED <span className="text-[#17a6e0]">STETHOSCOPE</span>
             </h1>
             <p className="text-gray-600 text-lg">
               Lorem ipsum dolor sit amet consectetur. Egestas cursus a consequat velit.
               Sapien purus porta mattis odio eu augue vitae faucibus.
             </p>
+          </div>
 
-            <div className="flex items-center space-x-4 pt-4">
-              <div className="relative">
-                <div className="flex -space-x-2 overflow-hidden">
-                  {[...Array(5)].map((_, i) => (
-                    <img
-                      key={i}
-                      src={`https://i.pravatar.cc/40?img=${i + 1}`}
-                      alt="Customer"
-                      className="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
-                    />
-                  ))}
+          {/* Right Column: Image with Circles */}
+          <div className="relative h-[400px] md:h-[500px] w-full">
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px]">
+              {/* Outer Circle */}
+              <div 
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'radial-gradient(circle at center, #d2f1ff 0%, rgba(210, 241, 255, 0.3) 70%, transparent 100%)'
+                }}
+              />
+              {/* Middle Circle */}
+              <div 
+                className="absolute w-[80%] h-[80%] top-[10%] left-[10%] rounded-full"
+                style={{
+                  background: 'radial-gradient(circle at center, #86d0ff 0%, rgba(134, 208, 255, 0.3) 70%, transparent 100%)'
+                }}
+              />
+              {/* Inner Circle */}
+              <div 
+                className="absolute w-[60%] h-[60%] top-[20%] left-[20%] rounded-full"
+                style={{
+                  background: 'radial-gradient(circle at center, #30aaff 0%, rgba(48, 170, 255, 0.3) 70%, transparent 100%)'
+                }}
+              />
+
+              {/* Doctor Image */}
+              <div className="absolute w-[320px] h-[400px] bottom-0 left-[40%] -translate-x-1/2">
+                <Image
+                  src="/images/ladydoc.png"
+                  alt="Healthcare Professional"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+        {/* Stats Section - Positioned much closer to content */}
+        <div className="-mt-14 md:-mt-19 w-full px-6 md:px-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="relative">
+              {/* Glowing background effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#17a6e0]/20 via-[#40B7E4]/20 to-[#17a6e0]/20 rounded-3xl blur-xl"></div>
+              
+              {/* Main stats container */}
+              <div className="relative grid grid-cols-2 md:grid-cols-4 bg-white/95 backdrop-blur-2xl shadow-2xl border border-white/20 rounded-3xl text-center py-8 px-6 overflow-hidden">
+                {/* Animated gradient border */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#17a6e0] via-[#40B7E4] to-[#17a6e0] p-[2px]">
+                  <div className="h-full w-full rounded-3xl bg-white/95 backdrop-blur-2xl"></div>
                 </div>
-                <span className="text-sm text-gray-700 pl-2 font-medium">40k+ Customers</span>
+                
+                {/* Top decorative elements */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-transparent via-[#17a6e0] to-transparent rounded-b-full"></div>
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-[#40B7E4] to-transparent rounded-full"></div>
+                
+                {/* Corner accent dots */}
+                <div className="absolute top-4 left-4 w-2 h-2 bg-[#17a6e0] rounded-full opacity-60"></div>
+                <div className="absolute top-4 right-4 w-2 h-2 bg-[#40B7E4] rounded-full opacity-60"></div>
+                <div className="absolute bottom-4 left-4 w-2 h-2 bg-[#40B7E4] rounded-full opacity-60"></div>
+                <div className="absolute bottom-4 right-4 w-2 h-2 bg-[#17a6e0] rounded-full opacity-60"></div>
+                
+                {[
+                  ["20+", "Years of Experience"],
+                  ["95%", "Patient Satisfaction"],
+                  ["5,000+", "Patients Served"],
+                  ["10+", "Medical Specialties"]
+                ].map(([value, label], index) => (
+                  <div key={index} className="relative group z-10">
+                    {/* Vertical dividers with gradient effect */}
+                    {index < 3 && (
+                      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-16 bg-gradient-to-b from-transparent via-[#17a6e0]/30 to-transparent hidden md:block"></div>
+                    )}
+                    
+                    {/* Individual stat item */}
+                    <div className="relative hover:bg-gradient-to-b hover:from-[#17a6e0]/5 hover:to-[#40B7E4]/5 rounded-2xl p-4 transition-all duration-500 hover:scale-110 hover:shadow-lg group">
+                      {/* Hover glow effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#17a6e0]/10 to-[#40B7E4]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+                      
+                      {/* Number with enhanced styling */}
+                      <div className="relative text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:from-[#0d7fad] group-hover:to-[#17a6e0] transition-all duration-500 transform group-hover:scale-110">
+                        {value}
+                      </div>
+                      
+                      {/* Label with enhanced styling */}
+                      <div className="relative text-xs md:text-sm text-gray-600 mt-2 font-semibold group-hover:text-gray-800 transition-colors duration-500 leading-tight">
+                        {label}
+                      </div>
+                      
+                      {/* Bottom accent line */}
+                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:w-8 transition-all duration-500 rounded-full"></div>
+                    </div>
+                  </div>
+                ))}
+                
+                {/* Bottom decorative wave */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#17a6e0]/20 via-[#40B7E4]/40 to-[#17a6e0]/20 rounded-b-3xl"></div>
               </div>
             </div>
-          </div>
-
-          {/* Right Column: Image */}
-          <div className="flex justify-center">
-            <img
-              src="/images/doc1.png"
-              alt="Doctor"
-              className="max-w-full h-auto object-contain"
-            />
           </div>
         </div>
-
-        {/* Stats Section */}
-        <div className="max-w-7xl mx-auto px-6 md:px-16 mt-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden text-center py-8 px-4">
-            {[
-              ["20+", "Years of Experience"],
-              ["95%", "Patient Satisfaction"],
-              ["5,000+", "Patients Served"],
-              ["10+", "Medical Specialties"]
-            ].map(([value, label], index) => (
-              <div key={index}>
-                <div className="text-2xl font-bold text-[#17a6e0]">{value}</div>
-                <div className="text-sm text-gray-600 mt-1">{label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Doctor Selection Bar
-        <div className="max-w-7xl mx-auto px-6 md:px-16 mt-8 pb-12">
-          <div className="bg-white shadow-lg rounded-2xl px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
-
-            <div className="flex items-center gap-3">
-              <span className="text-[#17a6e0] text-2xl">👨‍⚕️</span>
-              <div>
-                <p className="text-sm text-gray-500">Select Doctor</p>
-                <p className="font-semibold text-gray-900">Dr. Albert Flores</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="text-[#17a6e0] text-2xl">💊</span>
-              <div>
-                <p className="text-sm text-gray-500">Specialist</p>
-                <p className="font-semibold text-gray-900">Dermatologist</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="text-[#17a6e0] text-2xl">🏥</span>
-              <div>
-                <p className="text-sm text-gray-500">Hospital</p>
-                <p className="font-semibold text-gray-900">RSCM Hospital</p>
-              </div>
-            </div>
-
-            <button className="bg-[#17a6e0] text-white px-5 py-3 rounded-lg hover:bg-[#1286b4] transition">
-              🔍
-            </button>
-          </div>
-        </div> */}
       </section>
 
-      {/* Product Section */}
-      <section className="bg-white py-20">
+      {/* Product Section - Reduced top padding */}
+      <section className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-6 md:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -211,7 +238,6 @@ export default function Home() {
                 onClick={() => window.location.href = '/product'}>
                 Know More
               </button>
-
             </div>
             <div>
               <Image
@@ -227,9 +253,9 @@ export default function Home() {
       </section>
 
       {/* HD Steth Section */}
-      <section className="relative bg-white py-20 overflow-hidden">
-        <div className="w-full max-w-[1920px] mx-auto px-4 text-center space-y-8 relative z-10">
-          <div className="flex justify-center mb-12">
+      <section className="relative bg-white py-12 overflow-hidden">
+        <div className="w-full max-w-[1920px] mx-auto px-4 text-center space-y-6 relative z-10">
+          <div className="flex justify-center mb-8">
             <Image
               src="/images/hd_stethlogo.png"
               alt="HD Steth Logo"
@@ -241,7 +267,7 @@ export default function Home() {
           <p className="text-gray-700 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-semibold">
             HD Steth an intelligent stethoscope with integrated EKG, offering real-time cardiac insights at the point-of-care. It utilizes patented noise cancellation and smart amplification for high-fidelity auscultation and enables real-time visualization of cardiac waveforms on a mobile app. This device also allows for data saving and sharing with specialists for remote diagnosis and second opinions.
           </p>
-          <hr className="my-10 border-gray-300 max-w-3xl mx-auto" />
+          <hr className="my-6 border-gray-300 max-w-3xl mx-auto" />
           <button className="inline-block px-10 py-4 bg-[#40B7E4] text-white text-2xl font-semibold rounded-full hover:opacity-90 transition-opacity mt-4">
             Learn More
           </button>
@@ -271,16 +297,16 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-white py-16 px-4">
+      <section className="bg-white py-10 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-center text-3xl sm:text-4xl font-bold mb-16">
+          <h2 className="text-center text-3xl sm:text-4xl font-bold mb-12">
             <span className="text-blue-600">REVOLUTIONIZING </span>
             <span className="text-orange-500">CARDIAC CARE </span>
             <span className="text-blue-600">WITH AI</span>
           </h2>
 
           {/* Desktop layout */}
-          <div className="hidden md:block space-y-24">
+          <div className="hidden md:block space-y-16">
             {/* Row 1: Left-aligned */}
             <div className="flex justify-start gap-10 ml-4 md:ml-10 lg:ml-20">
               <Card {...features[0]} number="1" />
@@ -301,7 +327,7 @@ export default function Home() {
           </div>
 
           {/* Mobile layout */}
-          <div className="md:hidden flex flex-col gap-8 mt-10 px-2">
+          <div className="md:hidden flex flex-col gap-6 mt-8 px-2">
             {features.map((feature, idx) => (
               <div key={idx} className="w-full max-w-[95vw] mx-auto px-2">
                 <Card {...feature} number={idx + 1} />
@@ -309,7 +335,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-12 text-center">
             <button className="bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition">
               GET STARTED →
             </button>
@@ -318,7 +344,7 @@ export default function Home() {
       </section>
 
       {/* FDA Section */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-6 md:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -356,14 +382,13 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Impact Section */}
       <section
-        className="bg-[#0046BE] bg-cover bg-center bg-no-repeat py-20 overflow-hidden"
+        className="bg-[#0046BE] bg-cover bg-center bg-no-repeat py-12 overflow-hidden"
         style={{ backgroundImage: "url('/images/grid3.png')" }}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-16">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Our Impact in Numbers
             </h2>
@@ -393,9 +418,9 @@ export default function Home() {
       </section>
 
       {/* Expert Testimonials Section */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-6 md:px-16">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               What Experts Say
             </h2>
@@ -495,9 +520,9 @@ export default function Home() {
       </section>
 
       {/* Certificates Section */}
-      <section className="bg-[#0060aa] py-20 w-full">
+      <section className="bg-[#0060aa] py-12 w-full">
         <div className="max-w-full px-4 sm:px-6 md:px-12 lg:px-24 mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             CERTIFICATES
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center max-w-none mx-auto">
