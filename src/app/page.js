@@ -1,8 +1,10 @@
 "use client"
 import Image from "next/image";
-import Header from "./components/Header";
-import { useState } from 'react';
+import { useRef, useEffect,useState } from "react";
 import Footer from "./components/Footer";
+import clsx from 'clsx'
+import Link from "next/link";
+import { Menu, X } from 'lucide-react';
 
 function Card({ title, image, number }) {
   return (
@@ -96,12 +98,128 @@ export default function Home() {
     setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  const [menuOpen, setMenuOpen] = useState(false)
+const topRightSvgRef = useRef(null);
+  const bottomLeftSvgRef = useRef(null);
+
+  useEffect(() => {
+    const svgs = [
+      { svg: topRightSvgRef.current, container: topRightSvgRef.current?.parentElement },
+      { svg: bottomLeftSvgRef.current, container: bottomLeftSvgRef.current?.parentElement },
+    ];
+
+    const handleMouseMove = (e, svg, container) => {
+      if (!svg || !container) return;
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      const maxMove = 15;
+      const translateX = Math.max(-maxMove, Math.min(maxMove, -x * 0.03));
+      const translateY = Math.max(-maxMove, Math.min(maxMove, -y * 0.03));
+
+      svg.style.transform = `translate(${translateX}px, ${translateY}px)`;
+    };
+
+    const handleMouseLeave = (svg) => {
+      if (svg) svg.style.transform = 'translate(0, 0)';
+    };
+
+    svgs.forEach(({ svg, container }) => {
+      if (!svg || !container) return;
+      const moveHandler = (e) => handleMouseMove(e, svg, container);
+      container.addEventListener('mousemove', moveHandler);
+      container.addEventListener('mouseleave', () => handleMouseLeave(svg));
+      return () => {
+        container.removeEventListener('mousemove', moveHandler);
+        container.removeEventListener('mouseleave', () => handleMouseLeave(svg));
+      };
+    });
+  }, []);
+
   return (
     <>
-      <Header />
+
+      {/* Header Section */}
+      <header
+        className={clsx(
+          'absolute top-0 left-0 w-full z-50 transition-all duration-300',
+          'backdrop-blur-md bg-white/5 border-b border-white/10'
+        )}
+      >
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 sm:h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo.png"
+                alt="HD Medical Logo"
+                width={120}
+                height={40}
+                className="object-contain transition-all hover:scale-105"
+              />
+            </Link>
+
+            {/* Desktop Nav */}
+            <div className="hidden sm:flex space-x-6 items-center">
+              {['Home', 'Product', 'About', 'Contact'].map((label) => (
+                <Link
+                  key={label}
+                  href={`/${label.toLowerCase()}${label === 'Home' ? '' : ''}`}
+                  className="text-black text-medium font-medium relative group transition-all"
+                >
+                  <span className="relative z-10">{label}</span>
+                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+                </Link>
+              ))}
+            </div>
+
+            {/* Mobile Menu Toggle Button */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="sm:hidden relative z-50 flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400/20 to-cyan-200/10 backdrop-blur hover:scale-110 transition-all duration-300"
+              aria-label="Toggle Menu"
+            >
+              <span className="sr-only">Toggle Menu</span>
+              {menuOpen ? (
+                <X className="w-6 h-6 text-cyan-500" />
+              ) : (
+                <Menu className="w-6 h-6 text-cyan-500" />
+              )}
+            </button>
+          </div>
+        </nav>
+
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`sm:hidden fixed inset-0 z-40 transition-all duration-500 ${menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+            }`}
+        >
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-gradient-to-br from-white/80 to-cyan-100/70 backdrop-blur-2xl"
+            onClick={() => setMenuOpen(false)}
+          />
+
+          {/* Animated Menu Content */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center space-y-6">
+            {['Home', 'Product', 'About', 'Contact'].map((label) => (
+              <Link
+                key={label}
+                href={`/${label.toLowerCase()}${label === 'Home' ? '' : 'us'}`}
+                className="text-black text-2xl font-semibold relative group hover:text-cyan-500 transition-all duration-300"
+                onClick={() => setMenuOpen(false)}
+              >
+                <span className="relative z-10">{label}</span>
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#f0fcff] to-white pt-2 md:pt-4 pb-0 overflow-hidden">
+      <section className="bg-gradient-to-b from-[#f0fcff] to-white pt-24 md:pt-10 pb-0">
         <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left Column: Text */}
           <div className="space-y-4 z-10">
@@ -121,21 +239,21 @@ export default function Home() {
           <div className="relative h-[400px] md:h-[500px] w-full">
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px]">
               {/* Outer Circle */}
-              <div 
+              <div
                 className="absolute inset-0 rounded-full"
                 style={{
                   background: 'radial-gradient(circle at center, #d2f1ff 0%, rgba(210, 241, 255, 0.3) 70%, transparent 100%)'
                 }}
               />
               {/* Middle Circle */}
-              <div 
+              <div
                 className="absolute w-[80%] h-[80%] top-[10%] left-[10%] rounded-full"
                 style={{
                   background: 'radial-gradient(circle at center, #86d0ff 0%, rgba(134, 208, 255, 0.3) 70%, transparent 100%)'
                 }}
               />
               {/* Inner Circle */}
-              <div 
+              <div
                 className="absolute w-[60%] h-[60%] top-[20%] left-[20%] rounded-full"
                 style={{
                   background: 'radial-gradient(circle at center, #30aaff 0%, rgba(48, 170, 255, 0.3) 70%, transparent 100%)'
@@ -155,7 +273,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      
+
 
         {/* Stats Section - Positioned much closer to content */}
         <div className="-mt-14 md:-mt-19 w-full px-6 md:px-16">
@@ -163,24 +281,24 @@ export default function Home() {
             <div className="relative">
               {/* Glowing background effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#17a6e0]/20 via-[#40B7E4]/20 to-[#17a6e0]/20 rounded-3xl blur-xl"></div>
-              
+
               {/* Main stats container */}
               <div className="relative grid grid-cols-2 md:grid-cols-4 bg-white/95 backdrop-blur-2xl shadow-2xl border border-white/20 rounded-3xl text-center py-8 px-6 overflow-hidden">
                 {/* Animated gradient border */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#17a6e0] via-[#40B7E4] to-[#17a6e0] p-[2px]">
                   <div className="h-full w-full rounded-3xl bg-white/95 backdrop-blur-2xl"></div>
                 </div>
-                
+
                 {/* Top decorative elements */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-transparent via-[#17a6e0] to-transparent rounded-b-full"></div>
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-[#40B7E4] to-transparent rounded-full"></div>
-                
+
                 {/* Corner accent dots */}
                 <div className="absolute top-4 left-4 w-2 h-2 bg-[#17a6e0] rounded-full opacity-60"></div>
                 <div className="absolute top-4 right-4 w-2 h-2 bg-[#40B7E4] rounded-full opacity-60"></div>
                 <div className="absolute bottom-4 left-4 w-2 h-2 bg-[#40B7E4] rounded-full opacity-60"></div>
                 <div className="absolute bottom-4 right-4 w-2 h-2 bg-[#17a6e0] rounded-full opacity-60"></div>
-                
+
                 {[
                   ["20+", "Years of Experience"],
                   ["95%", "Patient Satisfaction"],
@@ -192,28 +310,28 @@ export default function Home() {
                     {index < 3 && (
                       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-16 bg-gradient-to-b from-transparent via-[#17a6e0]/30 to-transparent hidden md:block"></div>
                     )}
-                    
+
                     {/* Individual stat item */}
                     <div className="relative hover:bg-gradient-to-b hover:from-[#17a6e0]/5 hover:to-[#40B7E4]/5 rounded-2xl p-4 transition-all duration-500 hover:scale-110 hover:shadow-lg group">
                       {/* Hover glow effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-[#17a6e0]/10 to-[#40B7E4]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-                      
+
                       {/* Number with enhanced styling */}
                       <div className="relative text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:from-[#0d7fad] group-hover:to-[#17a6e0] transition-all duration-500 transform group-hover:scale-110">
                         {value}
                       </div>
-                      
+
                       {/* Label with enhanced styling */}
                       <div className="relative text-xs md:text-sm text-gray-600 mt-2 font-semibold group-hover:text-gray-800 transition-colors duration-500 leading-tight">
                         {label}
                       </div>
-                      
+
                       {/* Bottom accent line */}
                       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:w-8 transition-all duration-500 rounded-full"></div>
                     </div>
                   </div>
                 ))}
-                
+
                 {/* Bottom decorative wave */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#17a6e0]/20 via-[#40B7E4]/40 to-[#17a6e0]/20 rounded-b-3xl"></div>
               </div>
@@ -297,51 +415,100 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-white py-10 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-center text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-[#17a6e0]">REVOLUTIONIZING </span>
-            <span className="text-orange-500">CARDIAC CARE </span>
-            <span className="text-[#17a6e0]">WITH AI</span>
-          </h2>
+      <section className="bg-white py-10 px-4 relative overflow-hidden">
+      {/* Top-right SVG */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 opacity-20 wave-animation z-0 md:w-1/4 md:h-1/4">
+        <Image
+          ref={topRightSvgRef}
+          src="/images/lines.svg"
+          alt="Top Right Wave Background"
+          className="filter-dark-gray"
+          width={1200}
+          height={1200}
+        />
+      </div>
+      {/* Bottom-left SVG */}
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 opacity-20 wave-animation z-0 md:w-1/4 md:h-1/4">
+        <Image
+          ref={bottomLeftSvgRef}
+          src="/images/lines.svg"
+          alt="Bottom Left Wave Background"
+          className="filter-dark-gray"
+          width={1200}
+          height={1200}
+        />
+      </div>
+      <style jsx>{`
+        .wave-animation {
+          animation: wave 5s ease-in-out infinite;
+          transform-origin: center;
+          transition: transform 0.2s ease-out;
+        }
+        @keyframes wave {
+          0%, 100% { transform: translateY(0) skewY(0deg); }
+          25% { transform: translateY(-8px) skewY(3deg); }
+          50% { transform: translateY(0) skewY(0deg); }
+          75% { transform: translateY(8px) skewY(-3deg); }
+        }
+        .filter-dark-gray {
+          filter: url(#darkGrayFilter);
+        }
+      `}</style>
+      {/* SVG Filter for Dark Gray Fill */}
+      <svg className="hidden">
+        <defs>
+          <filter id="darkGrayFilter">
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0.4196
+                      0 0 0 0 0.4471
+                      0 0 0 0 0.5020
+                      0 0 0 1 0"
+            />
+          </filter>
+        </defs>
+      </svg>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <h2 className="text-center text-3xl sm:text-4xl font-bold mb-12">
+          <span className="text-[#17a6e0]">REVOLUTIONIZING </span>
+          <span className="text-orange-500">CARDIAC CARE </span>
+          <span className="text-[#17a6e0]">WITH AI</span>
+        </h2>
 
-          {/* Desktop layout */}
-          <div className="hidden md:block space-y-16">
-            {/* Row 1: Left-aligned */}
-            <div className="flex justify-start gap-10 ml-4 md:ml-10 lg:ml-20">
-              <Card {...features[0]} number="1" />
-              <Card {...features[1]} number="2" />
-            </div>
-
-            {/* Row 2: Right-aligned */}
-            <div className="flex justify-end gap-10 mr-4 md:mr-10 lg:mr-20">
-              <Card {...features[2]} number="3" />
-              <Card {...features[3]} number="4" />
-            </div>
-
-            {/* Row 3: Left-aligned */}
-            <div className="flex justify-start gap-10 ml-4 md:ml-10 lg:ml-20">
-              <Card {...features[4]} number="5" />
-              <Card {...features[5]} number="6" />
-            </div>
+        {/* Desktop layout */}
+        <div className="hidden md:block space-y-16">
+          <div className="flex justify-start gap-10 ml-4 md:ml-10 lg:ml-20">
+            <Card {...features[0]} number="1" />
+            <Card {...features[1]} number="2" />
           </div>
 
-          {/* Mobile layout */}
-          <div className="md:hidden flex flex-col gap-6 mt-8 px-2">
-            {features.map((feature, idx) => (
-              <div key={idx} className="w-full max-w-[95vw] mx-auto px-2">
-                <Card {...feature} number={idx + 1} />
-              </div>
-            ))}
+          <div className="flex justify-end gap-10 mr-4 md:mr-10 lg:mr-20">
+            <Card {...features[2]} number="3" />
+            <Card {...features[3]} number="4" />
           </div>
 
-          <div className="mt-12 text-center">
-            <button className="bg-[#17a6e0] hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition">
-              GET STARTED →
-            </button>
+          <div className="flex justify-start gap-10 ml-4 md:ml-10 lg:ml-20">
+            <Card {...features[4]} number="5" />
+            <Card {...features[5]} number="6" />
           </div>
         </div>
-      </section>
+
+        {/* Mobile layout */}
+        <div className="md:hidden flex flex-col gap-6 mt-8 px-2">
+          {features.map((feature, idx) => (
+            <div key={idx} className="w-full max-w-[95vw] mx-auto px-2">
+              <Card {...feature} number={idx + 1} />
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <button className="bg-[#17a6e0] hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition">
+            GET STARTED →
+          </button>
+        </div>
+      </div>
+    </section>
 
       {/* FDA Section */}
       <section className="bg-white py-12">
@@ -417,107 +584,111 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Expert Testimonials Section */}
-      <section className="bg-white py-12">
-        <div className="max-w-7xl mx-auto px-6 md:px-16">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              What Experts Say
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover how our AI-powered digital stethoscopes are transforming cardiac diagnostics
-              and patient care across the medical community.
-            </p>
-          </div>
+    {/* Expert Testimonials Section */}
+<section className="bg-white py-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-16">
+    <div className="text-center mb-10 sm:mb-12">
+      <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">
+        What Experts Say
+      </h2>
+      <p className="text-sm sm:text-lg text-gray-600 max-w-3xl mx-auto">
+        Discover how our AI-powered digital stethoscopes are transforming cardiac diagnostics and patient care across the medical community.
+      </p>
+    </div>
 
-          {/* Testimonials Container */}
-          <div className="relative">
-            <button
-              onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50"
+    {/* Testimonials Carousel */}
+    <div className="relative">
+      {/* Navigation Buttons */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50"
+        aria-label="Previous testimonial"
+      >
+        <i className="bi bi-chevron-left text-xl sm:text-2xl text-gray-600"></i>
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50"
+        aria-label="Next testimonial"
+      >
+        <i className="bi bi-chevron-right text-xl sm:text-2xl text-gray-600"></i>
+      </button>
+
+      <div className="overflow-hidden">
+        <div
+          className="flex transition-transform duration-300 ease-in-out"
+          style={{
+            width: "100%",
+            transform: `translateX(-${currentSlide * 100}%)`,
+          }}
+        >
+          {testimonials.map((review, index) => (
+            <div
+              key={index}
+              className="min-w-full flex-shrink-0 flex justify-center items-center"
             >
-              <i className="bi bi-chevron-left text-2xl text-gray-600"></i>
-            </button>
-
-            <button
-              onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50"
-            >
-              <i className="bi bi-chevron-right text-2xl text-gray-600"></i>
-            </button>
-
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-300 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {testimonials.map((review, index) => (
-                  <div key={index} className="min-w-full flex-shrink-0">
-                    <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-lg relative">
-                      <div className="absolute -top-4 right-8 text-6xl text-[#40B7E4]/20">&quot;</div>
-
-                      <div className="flex flex-col md:flex-row gap-8 items-center">
-                        <div className="w-32 h-32 shrink-0">
-                          <Image
-                            src="/images/profile.jpg"
-                            alt="Medical Expert"
-                            width={128}
-                            height={128}
-                            className="rounded-full"
-                          />
-                        </div>
-
-                        <div className="space-y-4">
-                          <p className="text-lg text-gray-600">
-                            {review.quote}
-                          </p>
-                          <div>
-                            <h4 className="font-bold text-gray-900">{review.name}</h4>
-                            <p className="text-sm text-gray-500">{review.title}</p>
-                          </div>
-                        </div>
-                      </div>
+              <div className="w-full max-w-xs sm:max-w-4xl mx-auto bg-white rounded-2xl p-5 sm:p-8 shadow-md sm:shadow-lg relative h-full">
+                <div className="absolute -top-4 right-6 text-4xl sm:text-6xl text-[#40B7E4]/20">
+                  &quot;
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center">
+                  <div className="w-16 h-16 sm:w-28 sm:h-28 shrink-0">
+                    <Image
+                      src="/images/profile.jpg"
+                      alt="Medical Expert"
+                      width={112}
+                      height={112}
+                      className="rounded-full object-cover w-full h-full"
+                    />
+                  </div>
+                  <div className="space-y-2 text-center sm:text-left">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                      {review.quote}
+                    </p>
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-sm sm:text-base">
+                        {review.name}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-gray-500">
+                        {review.title}
+                      </p>
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
-
-            {/* Navigation Dots */}
-            <div className="flex justify-center space-x-2 mt-8">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${currentSlide === index ? 'bg-[#40B7E4]' : 'bg-gray-300'
-                    }`}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Trusted By Section */}
-          <div className="mt-5">
-            <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
-              TRUSTED BY LEADING MEDICAL INSTITUTIONS
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-              <div className="w-12 h-12 flex items-center justify-center">
-                <i className="bi bi-hospital text-4xl text-gray-400"></i>
-              </div>
-              <div className="w-12 h-12 flex items-center justify-center">
-                <i className="bi bi-heart-pulse text-4xl text-gray-400"></i>
-              </div>
-              <div className="w-12 h-12 flex items-center justify-center">
-                <i className="bi bi-shield-plus text-4xl text-gray-400"></i>
-              </div>
-              <div className="w-12 h-12 flex items-center justify-center">
-                <i className="bi bi-person-workspace text-4xl text-gray-400"></i>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center space-x-2 mt-6">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-colors border border-[#40B7E4]/30 ${currentSlide === index ? 'bg-[#40B7E4]' : 'bg-gray-300'}`}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+
+    {/* Medical Institution Logos */}
+    <div className="mt-10">
+      <p className="text-center text-gray-500 text-xs sm:text-sm uppercase tracking-wider mb-6">
+        TRUSTED BY LEADING MEDICAL INSTITUTIONS
+      </p>
+      <div className="grid grid-cols-4 sm:grid-cols-4 gap-4 sm:gap-8 items-center justify-items-center">
+        <i className="bi bi-hospital text-2xl sm:text-4xl text-gray-400"></i>
+        <i className="bi bi-heart-pulse text-2xl sm:text-4xl text-gray-400"></i>
+        <i className="bi bi-shield-plus text-2xl sm:text-4xl text-gray-400"></i>
+        <i className="bi bi-person-workspace text-2xl sm:text-4xl text-gray-400"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Certificates Section */}
       <section className="bg-[#0060aa] py-12 w-full">
@@ -580,7 +751,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    
+
       {/* Footer Section */}
       <Footer />
     </>
