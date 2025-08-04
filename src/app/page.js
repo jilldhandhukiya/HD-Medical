@@ -107,9 +107,9 @@ export default function Home() {
 
           {/* Left Column: Text */}
           <div className="space-y-6">
-            <span className="text-[#17a6e0] font-semibold uppercase tracking-wider">Experience</span>
+            <span className="text-white font-semibold uppercase tracking-wider bg-[#17a6e0] text-[24px]">WORLD&apos;s FIRST </span>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Excellence in Healthcare
+              AI POWERED STETHOSCOPE
             </h1>
             <p className="text-gray-600 text-lg">
               Lorem ipsum dolor sit amet consectetur. Egestas cursus a consequat velit.
@@ -160,7 +160,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Doctor Selection Bar */}
+        {/* Doctor Selection Bar
         <div className="max-w-7xl mx-auto px-6 md:px-16 mt-8 pb-12">
           <div className="bg-white shadow-lg rounded-2xl px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
 
@@ -192,7 +192,7 @@ export default function Home() {
               🔍
             </button>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Product Section */}
