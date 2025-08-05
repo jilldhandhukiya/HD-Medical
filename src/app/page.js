@@ -616,7 +616,7 @@ const topRightSvgRef = useRef(null);
 
 
       {/* Certificates Section */}
-      <section className="bg-[#0060aa] py-12 w-full">
+      <section className="bg-[#14a8df] py-12 w-full">
         <div className="max-w-full px-4 sm:px-6 md:px-12 lg:px-24 mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             CERTIFICATES
