@@ -24,17 +24,17 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden sm:flex space-x-24 items-center">
-            <Link href="/" className="text-gray-500 hover:text-gray-900 px-8 py-2 text-xl font-medium">
+          <div className="hidden sm:flex space-x-8 items-center">
+            <Link href="/" className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
               Home
             </Link>
-            <Link href="/product" className="text-gray-500 hover:text-gray-900 px-8 py-2 text-xl font-medium">
+            <Link href="/product" className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
               Products
             </Link>
-            <Link href="/aboutus" className="text-gray-500 hover:text-gray-900 px-8 py-2 text-xl font-medium">
+            <Link href="/aboutus" className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
               About
             </Link>
-            <Link href="/contactus" className="text-gray-500 hover:text-gray-900 px-8 py-2 text-xl font-medium">
+            <Link href="/contactus" className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
               Contact
             </Link>
           </div>
@@ -51,17 +51,17 @@ export default function Header() {
 
         {/* Mobile Nav Dropdown */}
         {menuOpen && (
-          <div className="sm:hidden mt-4 space-y-3 pb-4">
-            <Link href="/" className="block text-gray-700 hover:text-gray-900 px-4 py-3 text-base font-medium">
+          <div className="sm:hidden mt-4 space-y-2 pb-4">
+            <Link href="/" className="block text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
               Home
             </Link>
-            <Link href="/product" className="block text-gray-700 hover:text-gray-900 px-4 py-3 text-base font-medium">
+            <Link href="/product" className="block text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
               Products
             </Link>
-            <Link href="/aboutus" className="block text-gray-700 hover:text-gray-900 px-4 py-3 text-base font-medium">
+            <Link href="/aboutus" className="block text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
               About
             </Link>
-            <Link href="/contactus" className="block text-gray-700 hover:text-gray-900 px-4 py-3 text-base font-medium">
+            <Link href="/contactus" className="block text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
               Contact
             </Link>
           </div>

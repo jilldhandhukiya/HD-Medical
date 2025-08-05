@@ -161,7 +161,7 @@ const topRightSvgRef = useRef(null);
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden sm:flex space-x-6 items-center">
+            <div className="hidden sm:flex space-x-12 items-center" >
               {['Home', 'Product', 'About', 'Contact'].map((label) => (
                 <Link
                   key={label}
