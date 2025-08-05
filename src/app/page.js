@@ -277,7 +277,7 @@ const topRightSvgRef = useRef(null);
                 HD Medical is a global leader in the detection and management of cardiovascular disease (CVD). We are dedicated to enabling evidence-based patient diagnosis and treatment decisions to be made at the point-of-care instantaneously to improve outcomes and save lives. Medical professionals can leverage HD Steth&apos;s AI-enabled intelligence, phonocardiogram, and electrocardiogram in their single most important and prestigious device, the stethoscope.
               </p>
               <button
-                className="inline-block px-8 py-3 bg-[#17a6e0] text-black rounded-lg hover:bg-blue-400 transition-colors"
+                className="inline-block px-8 py-3 bg-[#17a6e0] text-black rounded-lg hover:bg-[#17a6e0] transition-colors"
                 onClick={() => window.location.href = '/product'}>
                 Know More
               </button>
