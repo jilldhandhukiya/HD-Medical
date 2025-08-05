@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import { Globe } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -65,8 +66,7 @@ export default function Contact() {
       const formDataToSend = new FormData();
       formDataToSend.append('fullName', formData.fullName);
       formDataToSend.append('email', formData.email);
-      // Format phone without + symbol to prevent formula issues
-      formDataToSend.append('phone', `${formData.countryCode.replace('+', '')} ${formData.phone}`);
+      formDataToSend.append('phone', `${formData.countryCode} ${formData.phone}`);
       formDataToSend.append('message', formData.message);
 
       const response = await fetch(
@@ -88,8 +88,6 @@ export default function Contact() {
         phone: "",
         message: ""
       });
-      
-      console.log("Form submitted successfully to Google Sheets");
 
     } catch (err) {
       console.error("Form submission error:", err);
@@ -131,91 +129,184 @@ export default function Contact() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
       <Header />
 
-      <main className="flex-1 relative px-4 py-10 max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6 text-center">Contact Us</h1>
+      {/* Background Wave Patterns */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 opacity-10">
+        <svg viewBox="0 0 200 200" className="w-full h-full">
+          <path d="M 0,50 Q 50,0 100,50 T 200,50 L 200,0 L 0,0 Z" fill="url(#gradient1)" />
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#60A5FA" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
 
-        <div className="space-y-4">
-          <input
-            type="text"
-            name="fullName"
-            placeholder="Full Name"
-            value={formData.fullName}
-            onChange={handleChange}
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            disabled={isLoading}
-          />
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 opacity-10 rotate-180">
+        <svg viewBox="0 0 200 200" className="w-full h-full">
+          <path d="M 0,50 Q 50,0 100,50 T 200,50 L 200,0 L 0,0 Z" fill="url(#gradient2)" />
+          <defs>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#60A5FA" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            disabled={isLoading}
-          />
+      <main className="relative z-10 pt-24 pb-12">
+        {/* Header Section */}
+        <div className="text-center mb-16 px-4">
+          <h1 className="text-4xl md:text-5xl font-normal text-gray-900 mb-6">Contact Us</h1>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Get in touch with us. We&apos;d love to hear from you.
+          </p>
+        </div>
 
-          <div className="flex gap-2">
-            <select
-              name="countryCode"
-              value={formData.countryCode}
-              onChange={handleChange}
-              className="border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              disabled={isLoading}
-            >
-              {countryCodes.map((code) => (
-                <option key={code} value={code}>
-                  {code}
-                </option>
-              ))}
-            </select>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              className="flex-1 border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              disabled={isLoading}
-            />
+        {/* Form Section */}
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-8 md:p-12">
+            <h2 className="text-2xl md:text-3xl font-medium mb-8 text-gray-900">Get In Touch</h2>
+            
+            {submitted && (
+              <div className="mb-8 p-4 bg-green-50 text-green-700 rounded-xl border border-green-200">
+                Thank you for your message! We&apos;ll get back to you soon.
+              </div>
+            )}
+            
+            {error && (
+              <div className="mb-8 p-4 bg-red-50 text-red-700 rounded-xl border border-red-200">
+                {error}
+              </div>
+            )}
+
+            <div className="space-y-8">
+              {/* Row 1: Full Name and Email */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="relative">
+                  <input
+                    type="text"
+                    name="fullName"
+                    id="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className="block w-full pb-2 pt-4 text-gray-900 border-0 border-b-2 border-gray-200 bg-transparent focus:border-blue-500 focus:outline-none peer transition-all duration-200 text-lg"
+                    required
+                    placeholder=" "
+                    disabled={isLoading}
+                  />
+                  <label
+                    htmlFor="fullName"
+                    className="absolute text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-lg"
+                  >
+                    Full Name
+                  </label>
+                </div>
+
+                <div className="relative">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="block w-full pb-2 pt-4 text-gray-900 border-0 border-b-2 border-gray-200 bg-transparent focus:border-blue-500 focus:outline-none peer transition-all duration-200 text-lg"
+                    required
+                    placeholder=" "
+                    disabled={isLoading}
+                  />
+                  <label
+                    htmlFor="email"
+                    className="absolute text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-lg"
+                  >
+                    Email
+                  </label>
+                </div>
+              </div>
+
+              {/* Row 2: Phone Number */}
+              <div className="relative">
+                <div className="flex items-end border-b-2 border-gray-200 focus-within:border-blue-500 transition-all duration-200">
+                  <div className="flex items-center pb-2 pt-4">
+                    <Globe className="text-gray-500 mr-3 w-5 h-5" />
+                    <select
+                      name="countryCode"
+                      value={formData.countryCode}
+                      onChange={handleChange}
+                      className="bg-transparent focus:outline-none py-1 pr-3 text-gray-700 text-lg border-0"
+                      disabled={isLoading}
+                    >
+                      {countryCodes.map((code) => (
+                        <option key={code} value={code}>
+                          {code}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="block w-full pb-2 pt-4 text-gray-900 bg-transparent focus:outline-none ml-2 text-lg border-0"
+                    required
+                    placeholder=" "
+                    disabled={isLoading}
+                  />
+                  <label
+                    htmlFor="phone"
+                    className={`absolute text-gray-500 duration-300 transform top-3 z-10 origin-[0] text-lg ${
+                      formData.phone ? 'scale-75 -translate-y-6' : 'scale-100 translate-y-0'
+                    }`}
+                    style={{ left: '120px' }}
+                  >
+                    Phone Number
+                  </label>
+                </div>
+              </div>
+
+              {/* Row 3: Message */}
+              <div className="relative">
+                <textarea
+                  name="message"
+                  id="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                  className="block w-full pb-2 pt-4 text-gray-900 border-0 border-b-2 border-gray-200 bg-transparent focus:border-blue-500 focus:outline-none peer transition-all duration-200 text-lg resize-none"
+                  required
+                  placeholder=" "
+                  disabled={isLoading}
+                />
+                <label
+                  htmlFor="message"
+                  className="absolute text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-lg"
+                >
+                  Message
+                </label>
+              </div>
+
+              {/* Submit Button */}
+              <div className="pt-4">
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  disabled={isLoading}
+                  className={`w-full py-4 rounded-full text-white text-lg font-medium transition-all duration-300 shadow-lg ${
+                    isLoading
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-blue-600 hover:bg-blue-700 hover:shadow-xl transform hover:-translate-y-1"
+                  }`}
+                >
+                  {isLoading ? "Submitting..." : "Submit"}
+                </button>
+              </div>
+            </div>
           </div>
-
-          <textarea
-            name="message"
-            placeholder="Message"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-            disabled={isLoading}
-          />
-
-          {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
-              {error}
-            </div>
-          )}
-
-          {submitted && (
-            <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg">
-              Thank you for your message! We'll get back to you soon.
-            </div>
-          )}
-
-          <button
-            onClick={handleSubmit}
-            disabled={isLoading}
-            className={`w-full px-6 py-3 rounded-lg font-medium transition-colors ${
-              isLoading
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700 text-white"
-            }`}
-          >
-            {isLoading ? "Submitting..." : "Submit"}
-          </button>
         </div>
       </main>
 
