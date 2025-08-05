@@ -2,116 +2,109 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import clsx from 'clsx'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname() // Get current path
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const links = [
+    ['Home', '/'],
+    ['Product', '/product'],
+    ['About', '/aboutus'],
+    ['Contact', '/contactus'],
+  ]
 
   return (
     <header
+      className={clsx(
+        'fixed top-0 left-0 w-full z-50 transition-all duration-300',
+        scrolled ? 'bg-white shadow-md' : 'bg-transparent',
+        menuOpen ? 'bg-white' : ''
+      )}
+    >
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="HD Medical Logo"
+              width={100}
+              height={32}
+              className="object-contain h-8 w-auto"
+            />
+          </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex space-x-8 items-center">
+            {links.map(([title, url]) => (
+              <Link
+                key={title}
+                href={url}
+                className={clsx(
+                  'text-sm font-medium relative group transition-all',
+                  pathname === url ? 'text-[#17a6e0]' : 'text-black'
+                )}
+              >
+                <span className="relative z-10">{title}</span>
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden relative z-50 p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            aria-label="Toggle Menu"
+          >
+            {menuOpen ? (
+              <X className="w-5 h-5 text-gray-600" />
+            ) : (
+              <Menu className="w-5 h-5 text-gray-600" />
+            )}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      <div
         className={clsx(
-          'absolute top-0 left-0 w-full z-50 transition-all duration-300',
-          'backdrop-blur-md bg-white/5 border-b border-white/10'
+          'fixed inset-0 z-40 md:hidden transition-transform duration-300 ease-in-out transform',
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 sm:h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/images/logo.png"
-                alt="HD Medical Logo"
-                width={120}
-                height={40}
-                className="object-contain transition-all hover:scale-105"
-              />
-            </Link>
-
-            {/* Desktop Nav */}
-            <div className="hidden sm:flex space-x-12 items-center" >
-              <Link href="/" className="text-black text-medium font-medium relative group transition-all">
-                <span className="relative z-10">Home</span>
-                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+        <div className="absolute inset-0 bg-white">
+          <div className="pt-20 pb-6 px-4 space-y-1">
+            {links.map(([title, url]) => (
+              <Link
+                key={title}
+                href={url}
+                className={clsx(
+                  'block px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-50',
+                  pathname === url ? 'text-[#17a6e0]' : 'text-black'
+                )}
+                onClick={() => setMenuOpen(false)}
+              >
+                {title}
               </Link>
-              <Link href="/product" className="text-black text-medium font-medium relative group transition-all">
-                <span className="relative z-10">Product</span>
-                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
-              </Link>
-              <Link href="/aboutus" className="text-black text-medium font-medium relative group transition-all">
-                <span className="relative z-10">About</span>
-                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
-              </Link>
-              <Link href="/contactus" className="text-black text-medium font-medium relative group transition-all">
-                <span className="relative z-10">Contact</span>
-                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
-              </Link>
-            </div>
-
-            {/* Mobile Menu Toggle Button */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="sm:hidden relative z-50 flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400/20 to-cyan-200/10 backdrop-blur hover:scale-110 transition-all duration-300"
-              aria-label="Toggle Menu"
-            >
-              <span className="sr-only">Toggle Menu</span>
-              {menuOpen ? (
-                <X className="w-6 h-6 text-cyan-500" />
-              ) : (
-                <Menu className="w-6 h-6 text-cyan-500" />
-              )}
-            </button>
-          </div>
-        </nav>
-
-        {/* Mobile Menu Overlay */}
-        <div
-          className={`sm:hidden fixed inset-0 z-40 transition-all duration-500 ${menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-            }`}
-        >
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-gradient-to-br from-white/80 to-cyan-100/70 backdrop-blur-2xl"
-            onClick={() => setMenuOpen(false)}
-          />
-
-          {/* Animated Menu Content */}
-          <div className="absolute inset-0 flex flex-col justify-center items-center space-y-6">
-            <Link
-              href="/"
-              className="text-black text-2xl font-semibold relative group hover:text-cyan-500 transition-all duration-300"
-              onClick={() => setMenuOpen(false)}
-            >
-              <span className="relative z-10">Home</span>
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
-            </Link>
-            <Link
-              href="/product"
-              className="text-black text-2xl font-semibold relative group hover:text-cyan-500 transition-all duration-300"
-              onClick={() => setMenuOpen(false)}
-            >
-              <span className="relative z-10">Product</span>
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
-            </Link>
-            <Link
-              href="/aboutus"
-              className="text-black text-2xl font-semibold relative group hover:text-cyan-500 transition-all duration-300"
-              onClick={() => setMenuOpen(false)}
-            >
-              <span className="relative z-10">About</span>
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
-            </Link>
-            <Link
-              href="/contactus"
-              className="text-black text-2xl font-semibold relative group hover:text-cyan-500 transition-all duration-300"
-              onClick={() => setMenuOpen(false)}
-            >
-              <span className="relative z-10">Contact</span>
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
-            </Link>
+            ))}
           </div>
         </div>
-      </header>
+      </div>
+    </header>
   )
 }
