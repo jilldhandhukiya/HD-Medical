@@ -31,16 +31,22 @@ export default function Header() {
 
             {/* Desktop Nav */}
             <div className="hidden sm:flex space-x-12 items-center" >
-              {['Home', 'Product', 'About', 'Contact'].map((label) => (
-                <Link
-                  key={label}
-                  href={`/${label.toLowerCase()}${label === 'Home' ? '' : ''}`}
-                  className="text-black text-medium font-medium relative group transition-all"
-                >
-                  <span className="relative z-10">{label}</span>
-                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
-                </Link>
-              ))}
+              <Link href="/" className="text-black text-medium font-medium relative group transition-all">
+                <span className="relative z-10">Home</span>
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+              </Link>
+              <Link href="/product" className="text-black text-medium font-medium relative group transition-all">
+                <span className="relative z-10">Product</span>
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+              </Link>
+              <Link href="/aboutus" className="text-black text-medium font-medium relative group transition-all">
+                <span className="relative z-10">About</span>
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+              </Link>
+              <Link href="/contactus" className="text-black text-medium font-medium relative group transition-all">
+                <span className="relative z-10">Contact</span>
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+              </Link>
             </div>
 
             {/* Mobile Menu Toggle Button */}
@@ -72,17 +78,38 @@ export default function Header() {
 
           {/* Animated Menu Content */}
           <div className="absolute inset-0 flex flex-col justify-center items-center space-y-6">
-            {['Home', 'Product', 'About', 'Contact'].map((label) => (
-              <Link
-                key={label}
-                href={`/${label.toLowerCase()}${label === 'Home' ? '' : 'us'}`}
-                className="text-black text-2xl font-semibold relative group hover:text-cyan-500 transition-all duration-300"
-                onClick={() => setMenuOpen(false)}
-              >
-                <span className="relative z-10">{label}</span>
-                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
-              </Link>
-            ))}
+            <Link
+              href="/"
+              className="text-black text-2xl font-semibold relative group hover:text-cyan-500 transition-all duration-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className="relative z-10">Home</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+            </Link>
+            <Link
+              href="/product"
+              className="text-black text-2xl font-semibold relative group hover:text-cyan-500 transition-all duration-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className="relative z-10">Product</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+            </Link>
+            <Link
+              href="/aboutus"
+              className="text-black text-2xl font-semibold relative group hover:text-cyan-500 transition-all duration-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className="relative z-10">About</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+            </Link>
+            <Link
+              href="/contactus"
+              className="text-black text-2xl font-semibold relative group hover:text-cyan-500 transition-all duration-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className="relative z-10">Contact</span>
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+            </Link>
           </div>
         </div>
       </header>

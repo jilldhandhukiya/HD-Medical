@@ -108,6 +108,8 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <br />
+      <br />
 
       <main className="flex-1 relative">
         {/* SVG Background with Wave Animation */}

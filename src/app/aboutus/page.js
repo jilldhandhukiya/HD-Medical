@@ -243,7 +243,9 @@ function HeroSection() {
 export default function AboutUs() {
   return (
     <>
-    <Header />  {/* Add this line */}
+    <Header />  
+    <br />
+    <br />
       {/* Hero Section */}
       <HeroSection />
 

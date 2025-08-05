@@ -343,6 +343,7 @@ export default function ProductHero() {
   return (
     <>
     <Header/>
+    <br />
       {/* Hero Section */}
       <section className="w-full bg-white py-12 px-4">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
