@@ -210,29 +210,29 @@ function HeroSection() {
           <span className="font-bold text-black">HD medical</span> for decades has been focusing with single minded endeavour to deliver the best we can and achieving this has been possible due to the trust instilled by our customers in our service. Trust invoked through constant innovation and improvement of our services.
         </p>
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-end gap-8 mt-10">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-10">
         <Image
           src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=400&h=500&facepad=2"
           alt="Doctor 1"
-          width={260}
-          height={320}
-          className="w-[260px] h-[320px] object-cover rounded-md shadow-md md:mb-8"
+          width={200}
+          height={260}
+          className="w-[260px] h-[320px] md:w-[260px] md:h-[320px] object-cover rounded-md shadow-md mb-4 md:mb-8"
           priority
         />
         <Image
           src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=400&h=500&facepad=2"
           alt="Doctor 2"
-          width={260}
-          height={320}
-          className="w-[260px] h-[320px] object-cover rounded-md shadow-md md:mb-0"
+          width={200}
+          height={260}
+          className="w-[260px] h-[320px] md:w-[260px] md:h-[320px] object-cover rounded-md shadow-md mb-4 md:mb-0"
           priority
         />
         <Image
           src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=500&facepad=2"
           alt="Doctor 3"
-          width={260}
-          height={320}
-          className="w-[260px] h-[320px] object-cover rounded-md shadow-md md:mb-8"
+          width={200}
+          height={260}
+          className="w-[260px] h-[320px] md:w-[260px] md:h-[320px] object-cover rounded-md shadow-md mb-4 md:mb-8"
           priority
         />
       </div>
@@ -251,21 +251,21 @@ export default function AboutUs() {
 
       {/* About Us Section */}
       <section
-        className="w-full bg-white px-4 py-12 md:px-10 lg:px-32"
+        className="w-full bg-white px-2 py-8 md:px-10 lg:px-32"
         aria-labelledby="about-us-heading"
       >
     
-        <div className="flex flex-col lg:flex-row gap-10 md:gap-8 lg:gap-0 lg:justify-between max-w-6xl mx-auto">
-          <div className="w-full lg:w-1/3 flex-shrink-0 mb-4 lg:mb-0 flex items-start lg:items-center">
-            <span className="text-sky-500 text-[2.8rem] md:text-5xl font-serif font-semibold leading-tight">
+        <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-0 lg:justify-between max-w-6xl mx-auto">
+          <div className="w-full lg:w-1/3 flex-shrink-0 mb-4 lg:mb-0 flex items-center justify-center lg:justify-start">
+            <span className="text-sky-500 text-3xl sm:text-4xl md:text-5xl font-serif font-semibold leading-tight text-center lg:text-left">
               Our Vision
             </span>
           </div>
-          <div className="w-full lg:w-1/3 flex flex-col items-start">
-            <h2 className="text-sky-500 text-lg font-semibold mb-1">
+          <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start">
+            <h2 className="text-sky-500 text-base sm:text-lg font-semibold mb-2 text-center lg:text-left">
               What Sets Us Apart
             </h2>
-            <p className="text-base text-gray-800">
+            <p className="text-[1rem] sm:text-base text-gray-800 text-center lg:text-left">
               This is a space to share more about the business: who&apos;s behind
               it, what it does and what this site has to offer. It&apos;s an
               opportunity to tell the story behind the business or describe a
@@ -273,8 +273,8 @@ export default function AboutUs() {
               share the company history or
             </p>
           </div>
-          <div className="w-full lg:w-1/3">
-            <p className="text-base text-gray-800">
+          <div className="w-full lg:w-1/3 flex items-center">
+            <p className="text-[1rem] sm:text-base text-gray-800 text-center lg:text-left">
               highlight a particular feature that sets it apart from competitors.
               Let the writing speak for itself. Keep a consistent tone and voice
               throughout the website to stay true to the brand image and give
