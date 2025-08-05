@@ -66,8 +66,15 @@ export default function Contact() {
       const formDataToSend = new FormData();
       formDataToSend.append('fullName', formData.fullName);
       formDataToSend.append('email', formData.email);
-      formDataToSend.append('phone', `${formData.countryCode} ${formData.phone}`);
+      
+      // Format phone number to prevent formula parsing issues
+      // Remove the + symbol and format as text to prevent Google Sheets formula errors
+      const phoneFormatted = `${formData.countryCode.replace('+', '')} ${formData.phone}`;
+      formDataToSend.append('phone', phoneFormatted);
       formDataToSend.append('message', formData.message);
+
+      // Add a flag to indicate this is phone data (helps backend handle formatting)
+      formDataToSend.append('phoneRaw', `${formData.countryCode} ${formData.phone}`);
 
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbxFbu097uUKxDjRcGEZN_0BaGPwZncGPLnJWr98V2sbKJdXgQwPEAmeQxIhi_SH0Go75g/exec",
