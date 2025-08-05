@@ -212,7 +212,7 @@ function HeroSection() {
       </div>
       <div className="flex flex-col md:flex-row justify-center items-end gap-8 mt-10">
         <Image
-          src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=400&h=500&facepad=2"
+          src="/images/doctor1-aboutus.jpg"
           alt="Doctor 1"
           width={260}
           height={320}
@@ -220,7 +220,7 @@ function HeroSection() {
           priority
         />
         <Image
-          src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=400&h=500&facepad=2"
+          src="/images/doctor3-aboutus.jpg"
           alt="Doctor 2"
           width={260}
           height={320}
@@ -228,7 +228,7 @@ function HeroSection() {
           priority
         />
         <Image
-          src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=500&facepad=2"
+          src="/images/doctor2-aboutus.jpg"
           alt="Doctor 3"
           width={260}
           height={320}
