@@ -62,8 +62,7 @@ export default function Footer() {
               ['Instagram', 'https://instagram.com'],
               ['Twitter (X)', 'https://twitter.com'],
               ['LinkedIn', 'https://linkedin.com'],
-              ['Medium', 'https://medium.com'],
-              ['Spotify', 'https://spotify.com'],
+              ['Whatsapp', 'https://Whatsapp.com']
             ].map(([label, href]) => (
               <Link
                 key={label}
