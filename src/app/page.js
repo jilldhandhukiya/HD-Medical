@@ -441,8 +441,8 @@ const topRightSvgRef = useRef(null);
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/images/girl_doc.png"
-                alt="Doctor and child"
+                src="/images/fda_section_image.jpg"
+                alt="Doctor and Patient Image"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-xl w-full object-cover"
