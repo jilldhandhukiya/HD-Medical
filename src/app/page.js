@@ -1,11 +1,136 @@
 "use client"
 import Image from "next/image";
-import { useRef, useEffect,useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import clsx from 'clsx'
 import Link from "next/link";
 import { Menu, X } from 'lucide-react';
 import Header from "./components/Header";
+
+// Add this custom hook for the counter animation (only for impact section)
+function useCountAnimation(targetValue, duration = 3000) {
+  const [currentValue, setCurrentValue] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    // Extract numeric value from string like "20+" or "5,000+"
+    const numericValue = parseInt(targetValue.replace(/[^0-9]/g, ''));
+    
+    let startTime;
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      
+      // Use easeOutCubic for smooth animation
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(easeOutCubic * numericValue);
+      
+      setCurrentValue(current);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    
+    requestAnimationFrame(animate);
+  }, [isVisible, targetValue, duration]);
+
+  // Format the current value back to match the original format
+  const formatValue = (value) => {
+    if (targetValue.includes(',')) {
+      return value.toLocaleString() + (targetValue.includes('+') ? '+' : '');
+    }
+    return value + (targetValue.includes('+') ? '+' : '') + (targetValue.includes('%') ? '%' : '');
+  };
+
+  return { currentValue: formatValue(currentValue), ref: elementRef };
+}
+
+// Static counter component for hero stats section
+function StaticCounter({ value, label }) {
+  return (
+    <div className="relative group z-10">
+      {/* Individual stat item */}
+      <div className="relative hover:bg-gradient-to-b hover:from-[#17a6e0]/5 hover:to-[#40B7E4]/5 rounded-2xl p-4 transition-all duration-500 hover:scale-110 hover:shadow-lg group">
+        {/* Hover glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#17a6e0]/10 to-[#40B7E4]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+
+        {/* Number with enhanced styling */}
+        <div className="relative text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:from-[#0d7fad] group-hover:to-[#17a6e0] transition-all duration-500 transform group-hover:scale-110">
+          {value}
+        </div>
+
+        {/* Label with enhanced styling */}
+        <div className="relative text-xs md:text-sm text-gray-600 mt-2 font-semibold group-hover:text-gray-800 transition-colors duration-500 leading-tight">
+          {label}
+        </div>
+
+        {/* Bottom accent line */}
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:w-8 transition-all duration-500 rounded-full"></div>
+      </div>
+    </div>
+  );
+}
+
+// Animated counter component (only for impact section)
+function AnimatedCounter({ value, label, isWhiteText = false }) {
+  const { currentValue, ref } = useCountAnimation(value, 3000);
+  
+  return (
+    <div ref={ref} className="relative group z-10">
+      {/* Individual stat item */}
+      <div className="relative hover:bg-gradient-to-b hover:from-[#17a6e0]/5 hover:to-[#40B7E4]/5 rounded-2xl p-4 transition-all duration-500 hover:scale-110 hover:shadow-lg group">
+        {/* Hover glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#17a6e0]/10 to-[#40B7E4]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+
+        {/* Number with enhanced styling */}
+        <div className={`relative text-2xl md:text-3xl font-black transition-all duration-500 transform group-hover:scale-110 ${
+          isWhiteText 
+            ? 'text-white' 
+            : 'text-transparent bg-clip-text bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:from-[#0d7fad] group-hover:to-[#17a6e0]'
+        }`}>
+          {currentValue}
+        </div>
+
+        {/* Label with enhanced styling */}
+        <div className={`relative text-xs md:text-sm mt-2 font-semibold transition-colors duration-500 leading-tight ${
+          isWhiteText 
+            ? 'text-white group-hover:text-white/90' 
+            : 'text-gray-600 group-hover:text-gray-800'
+        }`}>
+          {label}
+        </div>
+
+        {/* Bottom accent line */}
+        <div className={`absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r transition-all duration-500 rounded-full group-hover:w-8 ${
+          isWhiteText 
+            ? 'from-white to-white/80' 
+            : 'from-[#17a6e0] to-[#40B7E4]'
+        }`}></div>
+      </div>
+    </div>
+  );
+}
 
 function Card({ title, image, number }) {
   return (
@@ -37,6 +162,7 @@ function Card({ title, image, number }) {
     </div>
   );
 }
+
 const features = [
   {
     id: 1,
@@ -99,7 +225,7 @@ export default function Home() {
     setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-const topRightSvgRef = useRef(null);
+  const topRightSvgRef = useRef(null);
   const bottomLeftSvgRef = useRef(null);
 
   useEffect(() => {
@@ -200,7 +326,7 @@ const topRightSvgRef = useRef(null);
         </div>
 
 
-        {/* Stats Section - Positioned much closer to content */}
+        {/* Stats Section with Static Numbers */}
         <div className="-mt-14 md:-mt-19 w-full px-6 md:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="relative">
@@ -224,36 +350,19 @@ const topRightSvgRef = useRef(null);
                 <div className="absolute bottom-4 left-4 w-2 h-2 bg-[#40B7E4] rounded-full opacity-60"></div>
                 <div className="absolute bottom-4 right-4 w-2 h-2 bg-[#17a6e0] rounded-full opacity-60"></div>
 
+                {/* Static Stats */}
                 {[
                   ["20+", "Years of Experience"],
                   ["95%", "Patient Satisfaction"],
                   ["5,000+", "Patients Served"],
                   ["10+", "Medical Specialties"]
                 ].map(([value, label], index) => (
-                  <div key={index} className="relative group z-10">
+                  <div key={index} className="relative">
                     {/* Vertical dividers with gradient effect */}
                     {index < 3 && (
                       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-16 bg-gradient-to-b from-transparent via-[#17a6e0]/30 to-transparent hidden md:block"></div>
                     )}
-
-                    {/* Individual stat item */}
-                    <div className="relative hover:bg-gradient-to-b hover:from-[#17a6e0]/5 hover:to-[#40B7E4]/5 rounded-2xl p-4 transition-all duration-500 hover:scale-110 hover:shadow-lg group">
-                      {/* Hover glow effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#17a6e0]/10 to-[#40B7E4]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-
-                      {/* Number with enhanced styling */}
-                      <div className="relative text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:from-[#0d7fad] group-hover:to-[#17a6e0] transition-all duration-500 transform group-hover:scale-110">
-                        {value}
-                      </div>
-
-                      {/* Label with enhanced styling */}
-                      <div className="relative text-xs md:text-sm text-gray-600 mt-2 font-semibold group-hover:text-gray-800 transition-colors duration-500 leading-tight">
-                        {label}
-                      </div>
-
-                      {/* Bottom accent line */}
-                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:w-8 transition-all duration-500 rounded-full"></div>
-                    </div>
+                    <StaticCounter value={value} label={label} />
                   </div>
                 ))}
 
@@ -474,7 +583,7 @@ const topRightSvgRef = useRef(null);
         </div>
       </section>
 
-      {/* Impact Section */}
+      {/* Impact Section with Animated Counters */}
       <section
         className="bg-[#0046BE] bg-cover bg-center bg-no-repeat py-12 overflow-hidden"
         style={{ backgroundImage: "url('/images/grid3.png')" }}
@@ -490,9 +599,9 @@ const topRightSvgRef = useRef(null);
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-white/100">
             {[
-              ["bi-people-fill", "100000+", "Total Lives Screened"],
+              ["bi-people-fill", "100,000+", "Total Lives Screened"],
               ["bi-search-heart", "794", "Screened Abnormalities"],
               ["bi-heart-pulse-fill", "185", "Confirmed Abnormalities"],
               ["bi-hospital", "56", "For Treatment"]
@@ -501,8 +610,7 @@ const topRightSvgRef = useRef(null);
                 <div className="bg-[#FF4B26] rounded-full p-4 mb-4">
                   <i className={`bi ${icon} text-2xl text-white`}></i>
                 </div>
-                <div className="text-4xl font-bold text-white mb-2">{value}</div>
-                <div className="text-white/80 text-center">{label}</div>
+                <AnimatedCounter value={value} label={label} isWhiteText={true} />
               </div>
             ))}
           </div>
