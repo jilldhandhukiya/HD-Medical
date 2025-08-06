@@ -744,38 +744,104 @@ export default function Home() {
       </section>
 
       {/* Expert Testimonials Section */}
-      <section ref={testimonialsRef} className="bg-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-16">
-          <div className={`text-center mb-10 sm:mb-12 transition-all duration-1000 ${testimonialsVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
-            <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4 transition-colors duration-300 hover:text-[#17a6e0]">
+      <section ref={testimonialsRef} className="bg-gradient-to-b from-blue-50/30 via-white to-blue-50/20 py-16 relative overflow-hidden">
+        {/* Enhanced background patterns */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200 rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-48 h-48 bg-blue-300 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-blue-100 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-10 right-1/4 w-24 h-24 bg-blue-200 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute bottom-1/3 left-1/4 w-16 h-16 bg-blue-150 rounded-full blur-xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        {/* Enhanced floating medical icons - Made even darker */}
+        <div className="absolute inset-0 opacity-35 pointer-events-none">
+          <i className="bi bi-heart-pulse absolute top-16 left-16 text-3xl text-[#0a5a87] animate-bounce" style={{ animationDelay: '0.5s' }}></i>
+          <i className="bi bi-activity absolute top-1/4 right-20 text-2xl text-[#1e7a9e] animate-bounce" style={{ animationDelay: '1.5s' }}></i>
+          <i className="bi bi-clipboard2-pulse absolute bottom-1/4 left-12 text-xl text-[#0a5a87] animate-bounce" style={{ animationDelay: '2.5s' }}></i>
+          <i className="bi bi-heart-fill absolute bottom-16 right-1/4 text-2xl text-[#1e7a9e] animate-bounce" style={{ animationDelay: '3.5s' }}></i>
+          <i className="bi bi-plus-circle absolute top-1/3 left-1/5 text-lg text-[#0a5a87] animate-bounce" style={{ animationDelay: '4.5s' }}></i>
+          <i className="bi bi-shield-plus absolute top-1/2 right-1/5 text-xl text-[#1e7a9e] animate-bounce" style={{ animationDelay: '5.5s' }}></i>
+          
+          {/* Additional blue medical icons - Made even darker */}
+          <i className="bi bi-bandaid absolute top-20 right-1/3 text-lg text-[#0a5a87] animate-pulse" style={{ animationDelay: '1s' }}></i>
+          <i className="bi bi-capsule absolute bottom-32 left-1/3 text-xl text-[#1e7a9e] animate-pulse" style={{ animationDelay: '2s' }}></i>
+          <i className="bi bi-thermometer-half absolute top-1/3 right-12 text-lg text-[#0a5a87] animate-bounce" style={{ animationDelay: '3s' }}></i>
+          <i className="bi bi-prescription2 absolute bottom-1/5 right-1/3 text-xl text-[#1e7a9e] animate-pulse" style={{ animationDelay: '4s' }}></i>
+          <i className="bi bi-eyedropper absolute top-1/4 left-1/4 text-lg text-[#0a5a87] animate-bounce" style={{ animationDelay: '5s' }}></i>
+          <i className="bi bi-lungs absolute bottom-1/3 right-16 text-2xl text-[#1e7a9e] animate-pulse" style={{ animationDelay: '6s' }}></i>
+          <i className="bi bi-virus absolute top-40 left-1/3 text-lg text-[#0a5a87] animate-bounce" style={{ animationDelay: '7s' }}></i>
+          <i className="bi bi-droplet-half absolute bottom-40 left-20 text-xl text-[#1e7a9e] animate-pulse" style={{ animationDelay: '8s' }}></i>
+        </div>
+
+        {/* Enhanced blue glow effect around section edges */}
+        <div className="absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-transparent via-[#17a6e0]/30 to-transparent shadow-lg"></div>
+        <div className="absolute bottom-0 left-0 w-full h-4 bg-gradient-to-r from-transparent via-[#40B7E4]/30 to-transparent shadow-lg"></div>
+        
+        {/* Enhanced side glow effects */}
+        <div className="absolute left-0 top-0 w-4 h-full bg-gradient-to-r from-[#17a6e0]/20 to-transparent shadow-lg"></div>
+        <div className="absolute right-0 top-0 w-4 h-full bg-gradient-to-l from-[#40B7E4]/20 to-transparent shadow-lg"></div>
+        
+        {/* Corner glow effects */}
+        <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-[#17a6e0]/25 to-transparent rounded-br-full blur-xl"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#40B7E4]/25 to-transparent rounded-bl-full blur-xl"></div>
+        <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#17a6e0]/25 to-transparent rounded-tr-full blur-xl"></div>
+        <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-[#40B7E4]/25 to-transparent rounded-tl-full blur-xl"></div>
+
+        {/* Enhanced Side decorative elements with stronger glow */}
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-32 bg-gradient-to-b from-transparent via-[#17a6e0]/40 to-transparent rounded-r-full shadow-lg"></div>
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-32 bg-gradient-to-b from-transparent via-[#40B7E4]/40 to-transparent rounded-l-full shadow-lg"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-16 relative z-10">
+          {/* Enhanced header section */}
+          <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${testimonialsVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
+            {/* Medical badge */}
+            <div className="inline-flex items-center gap-2 bg-blue-100/80 backdrop-blur-sm text-[#17a6e0] px-6 py-2 rounded-full text-sm font-semibold mb-6 border border-blue-200/50">
+              <i className="bi bi-award text-lg"></i>
+              <span>Trusted by Medical Professionals</span>
+            </div>
+            
+            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-[#17a6e0]">
               What Experts Say
             </h2>
-            <p className="text-sm sm:text-lg text-gray-600 max-w-3xl mx-auto transition-colors duration-300 hover:text-gray-700">
-              Discover how our AI-powered digital stethoscopes are transforming cardiac diagnostics and patient care across the medical community.
-            </p>
+            {/* Stats badges */}
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-100/50 shadow-sm">
+                <span className="text-[#17a6e0] font-bold">500+</span>
+                <span className="text-gray-600 text-sm ml-1">Healthcare Partners</span>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-100/50 shadow-sm">
+                <span className="text-[#17a6e0] font-bold">98%</span>
+                <span className="text-gray-600 text-sm ml-1">Satisfaction Rate</span>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-100/50 shadow-sm">
+                <span className="text-[#17a6e0] font-bold">50+</span>
+                <span className="text-gray-600 text-sm ml-1">Countries</span>
+              </div>
+            </div>
           </div>
 
-          {/* Testimonials Carousel */}
+          {/* Testimonials Carousel with enhanced styling */}
           <div className={`relative transition-all duration-1000 delay-300 ${testimonialsVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
-            {/* Navigation Buttons */}
+            {/* Enhanced Navigation Buttons - Changed to blue background with white text */}
             <button
               onClick={prevSlide}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-110"
+              className="absolute left-0 top-1/3 -translate-y-1/2 z-10 w-12 h-12 sm:w-16 sm:h-16 bg-[#17a6e0] backdrop-blur-sm rounded-full shadow-xl flex items-center justify-center hover:bg-[#0d7fad] transition-all duration-300 hover:scale-110 border-2 border-blue-100/50 group"
               aria-label="Previous testimonial"
             >
-              <i className="bi bi-chevron-left text-xl sm:text-2xl text-gray-600"></i>
+              <i className="bi bi-chevron-left text-xl sm:text-2xl text-white group-hover:text-white transition-colors duration-300"></i>
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-110"
+              className="absolute right-0 top-1/3 -translate-y-1/2 z-10 w-12 h-12 sm:w-16 sm:h-16 bg-[#17a6e0] backdrop-blur-sm rounded-full shadow-xl flex items-center justify-center hover:bg-[#0d7fad] transition-all duration-300 hover:scale-110 border-2 border-blue-100/50 group"
               aria-label="Next testimonial"
             >
-              <i className="bi bi-chevron-right text-xl sm:text-2xl text-gray-600"></i>
+              <i className="bi bi-chevron-right text-xl sm:text-2xl text-white group-hover:text-white transition-colors duration-300"></i>
             </button>
 
-            <div className="overflow-hidden">
+            <div className="overflow-hidden rounded-2xl mx-12 sm:mx-20">
               <div
-                className="flex transition-transform duration-300 ease-in-out"
+                className="flex transition-transform duration-500 ease-in-out"
                 style={{
                   width: "100%",
                   transform: `translateX(-${currentSlide * 100}%)`,
@@ -784,31 +850,44 @@ export default function Home() {
                 {testimonials.map((review, index) => (
                   <div
                     key={index}
-                    className="min-w-full flex-shrink-0 flex justify-center items-center"
+                    className="min-w-full flex-shrink-0 flex justify-center items-center px-4"
                   >
-                    <div className="w-full max-w-xs sm:max-w-4xl mx-auto bg-white rounded-2xl p-5 sm:p-8 shadow-md sm:shadow-lg relative h-full transition-all duration-500 hover:shadow-xl hover:scale-105 group">
-                      <div className="absolute -top-4 right-6 text-4xl sm:text-6xl text-[#40B7E4]/20 transition-all duration-300 group-hover:text-[#40B7E4]/40">
+                    <div className="w-full max-w-xs sm:max-w-5xl mx-auto bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 shadow-xl relative h-full transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group border border-blue-100/50">
+                      {/* Quote mark */}
+                      <div className="absolute -top-6 right-8 text-6xl sm:text-8xl text-[#40B7E4]/20 transition-all duration-300 group-hover:text-[#40B7E4]/40 font-serif">
                         &quot;
                       </div>
-                      <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center">
-                        <div className="w-16 h-16 sm:w-28 sm:h-28 shrink-0">
+                      
+                      {/* Rating stars */}
+                      <div className="flex justify-center mb-4">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <i key={star} className="bi bi-star-fill text-yellow-400 text-lg mx-0.5"></i>
+                        ))}
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 items-center">
+                        <div className="w-20 h-20 sm:w-32 sm:h-32 shrink-0 relative">
                           <Image
                             src="/images/profile.jpg"
                             alt="Medical Expert"
-                            width={112}
-                            height={112}
-                            className="rounded-full object-cover w-full h-full transition-all duration-300 group-hover:scale-110"
+                            width={128}
+                            height={128}
+                            className="rounded-full object-cover w-full h-full transition-all duration-300 group-hover:scale-110 shadow-lg border-4 border-white"
                           />
+                          {/* Verification badge */}
+                          <div className="absolute -bottom-2 -right-2 bg-[#17a6e0] rounded-full p-1 border-2 border-white">
+                            <i className="bi bi-patch-check-fill text-white text-sm"></i>
+                          </div>
                         </div>
-                        <div className="space-y-2 text-center sm:text-left">
-                          <p className="text-sm sm:text-base text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                        <div className="space-y-4 text-center sm:text-left flex-1">
+                          <p className="text-base sm:text-lg text-gray-700 leading-relaxed transition-colors duration-300 group-hover:text-gray-800 italic">
                             {review.quote}
                           </p>
-                          <div>
-                            <h4 className="font-bold text-gray-900 text-sm sm:text-base transition-colors duration-300 group-hover:text-[#17a6e0]">
+                          <div className="border-l-4 border-[#17a6e0] pl-4">
+                            <h4 className="font-bold text-gray-900 text-lg sm:text-xl transition-colors duration-300 group-hover:text-[#17a6e0]">
                               {review.name}
                             </h4>
-                            <p className="text-xs sm:text-sm text-gray-500 transition-colors duration-300 group-hover:text-gray-600">
+                            <p className="text-sm sm:text-base text-gray-500 transition-colors duration-300 group-hover:text-gray-600 font-medium">
                               {review.title}
                             </p>
                           </div>
@@ -816,33 +895,47 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
+                  
                 ))}
               </div>
             </div>
 
-            {/* Dots */}
-            <div className="flex justify-center space-x-2 mt-6">
+            {/* Enhanced Dots - Changed to blue background */}
+            <div className="flex justify-center space-x-3 mt-8">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 border border-[#40B7E4]/30 hover:scale-125 ${currentSlide === index ? 'bg-[#40B7E4]' : 'bg-gray-300'}`}
+                  className={`w-4 h-4 rounded-full transition-all duration-300 border-2 border-[#40B7E4]/30 hover:scale-125 ${
+                    currentSlide === index 
+                      ? 'bg-[#40B7E4] border-[#40B7E4] shadow-lg' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
             </div>
           </div>
 
-          {/* Medical Institution Logos */}
-          <div className={`mt-10 transition-all duration-1000 delay-500 ${testimonialsVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
-            <p className="text-center text-gray-500 text-xs sm:text-sm uppercase tracking-wider mb-6">
-              TRUSTED BY LEADING MEDICAL INSTITUTIONS
-            </p>
-            <div className="grid grid-cols-4 sm:grid-cols-4 gap-4 sm:gap-8 items-center justify-items-center">
-              <i className="bi bi-hospital text-2xl sm:text-4xl text-gray-400 transition-all duration-300 hover:text-[#17a6e0] hover:scale-110"></i>
-              <i className="bi bi-heart-pulse text-2xl sm:text-4xl text-gray-400 transition-all duration-300 hover:text-[#17a6e0] hover:scale-110"></i>
-              <i className="bi bi-shield-plus text-2xl sm:text-4xl text-gray-400 transition-all duration-300 hover:text-[#17a6e0] hover:scale-110"></i>
-              <i className="bi bi-person-workspace text-2xl sm:text-4xl text-gray-400 transition-all duration-300 hover:text-[#17a6e0] hover:scale-110"></i>
+          {/* Enhanced Medical Institution Logos */}
+          <div className={`mt-16 transition-all duration-1000 delay-500 ${testimonialsVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-blue-100/50">
+              <p className="text-center text-gray-500 text-sm sm:text-base uppercase tracking-wider mb-8 font-semibold">
+                Trusted by Leading Medical Institutions Worldwide
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 items-center justify-items-center">
+                {[
+                  { icon: "bi-hospital", label: "Hospitals" },
+                  { icon: "bi-heart-pulse", label: "Cardiology Centers" },
+                  { icon: "bi-shield-plus", label: "Medical Schools" },
+                  { icon: "bi-person-workspace", label: "Research Institutes" }
+                ].map((item, index) => (
+                  <div key={index} className="text-center group">
+                    <i className={`${item.icon} text-3xl sm:text-5xl text-gray-400 transition-all duration-300 group-hover:text-[#17a6e0] group-hover:scale-110 mb-2`}></i>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium">{item.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
