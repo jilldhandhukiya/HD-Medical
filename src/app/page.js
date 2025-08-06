@@ -535,52 +535,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HD Steth Section */}
-      <section ref={stethRef} className="relative bg-white py-12 overflow-hidden">
-        <div className={`w-full max-w-[1920px] mx-auto px-4 text-center space-y-6 relative z-10 transition-all duration-1000 ${stethVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
-          <div className="flex justify-center mb-8">
-            <div className="transition-all duration-500 hover:scale-110">
-              <Image
-                src="/images/hd_stethlogo.png"
-                alt="HD Steth Logo"
-                width={300}
-                height={90}
-                className="mx-auto"
-              />
-            </div>
-          </div>
-          <p className="text-gray-700 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-semibold transition-all duration-300 hover:text-gray-800">
-            HD Steth an intelligent stethoscope with integrated EKG, offering real-time cardiac insights at the point-of-care. It utilizes patented noise cancellation and smart amplification for high-fidelity auscultation and enables real-time visualization of cardiac waveforms on a mobile app. This device also allows for data saving and sharing with specialists for remote diagnosis and second opinions.
-          </p>
-          <hr className="my-6 border-gray-300 max-w-3xl mx-auto transition-all duration-300 hover:border-[#17a6e0]" />
-          <button className="inline-block px-10 py-4 bg-[#40B7E4] text-white text-2xl font-semibold rounded-full hover:opacity-90 transition-all duration-300 mt-4 hover:scale-105 hover:shadow-xl">
-            Learn More
-          </button>
-        </div>
+{/* HD Steth Section */}
+<section ref={stethRef} className="relative bg-white py-12 overflow-hidden">
+  {/* Main Content */}
+  <div
+    className={`w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10 transition-all duration-1000 ${
+      stethVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'
+    }`}
+  >
+    {/* Logo */}
+    <div className="flex justify-center mb-6 sm:mb-8">
+      <div className="transition-all duration-500 hover:scale-110">
+        <Image
+          src="/images/hd_stethlogo.png"
+          alt="HD Steth Logo"
+          width={300}
+          height={90}
+          className="mx-auto w-[180px] sm:w-[220px] md:w-[280px] lg:w-[300px]"
+        />
+      </div>
+    </div>
 
-        {/* Side Images with "from outside" effect */}
-        <div className={`hidden lg:block absolute left-0 top-0 h-full -translate-x-[18%] z-0 flex items-center transition-all duration-1000 delay-500 ${stethVisible ? 'translate-x-[-18%]' : 'translate-x-[-100%]'}`}>
-          <Image
-            src="/images/stethleft.png"
-            alt="Left Device"
-            width={420}
-            height={700}
-            className="object-contain animate-float"
-            priority
-          />
-        </div>
-        <div className={`hidden lg:block absolute right-0 top-0 h-full translate-x-[18%] z-0 flex items-center transition-all duration-1000 delay-700 ${stethVisible ? 'translate-x-[18%]' : 'translate-x-[100%]'}`}>
-          <Image
-            src="/images/stethright.png"
-            alt="Right Device"
-            width={420}
-            height={700}
-            className="object-contain animate-float"
-            style={{ animationDelay: '1s' }}
-            priority
-          />
-        </div>
-      </section>
+    {/* Description */}
+    <p className="text-gray-700 text-base sm:text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed font-medium sm:font-semibold transition-all duration-300 hover:text-gray-800 px-2 sm:px-4">
+      HD Steth is an intelligent stethoscope with integrated EKG, offering real-time cardiac insights at the point-of-care. It utilizes patented noise cancellation and smart amplification for high-fidelity auscultation and enables real-time visualization of cardiac waveforms on a mobile app. This device also allows for data saving and sharing with specialists for remote diagnosis and second opinions.
+    </p>
+
+    {/* Divider */}
+    <hr className="my-4 sm:my-6 border-gray-300 max-w-[90%] sm:max-w-3xl mx-auto transition-all duration-300 hover:border-[#17a6e0]" />
+
+    {/* Button */}
+    <button className="inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#40B7E4] text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 mt-3 sm:mt-4 hover:scale-105 hover:shadow-xl">
+      Learn More
+    </button>
+  </div>
+
+  {/* Side Images (Desktop only) */}
+  <div
+    className={`hidden lg:flex absolute left-0 top-0 h-full items-center z-0 transition-all duration-1000 delay-500 ${
+      stethVisible ? 'translate-x-[-18%]' : 'translate-x-[-100%]'
+    }`}
+  >
+    <Image
+      src="/images/stethleft.png"
+      alt="Left Device"
+      width={300}
+      height={500}
+      className="object-contain animate-float"
+      priority
+    />
+  </div>
+
+  <div
+    className={`hidden lg:flex absolute right-0 top-0 h-full items-center z-0 transition-all duration-1000 delay-700 ${
+      stethVisible ? 'translate-x-[18%]' : 'translate-x-[100%]'
+    }`}
+  >
+    <Image
+      src="/images/stethright.png"
+      alt="Right Device"
+      width={300}
+      height={500}
+      className="object-contain animate-float"
+      style={{ animationDelay: '1s' }}
+      priority
+    />
+  </div>
+</section>
+
 
       {/* Features Section */}
       <section ref={featuresRef} className="bg-white py-10 px-4 relative overflow-hidden">
@@ -686,7 +708,7 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row md:items-center md:space-x-8 space-y-4 md:space-y-0">
                   {[
                     ["DQD", "Electronic Stethoscope"],
-                    ["DQC", "Phonocardiograph"],
+                    ["DQC", "Phonocardiograph System"],
                     ["DPS", "Electrocardiograph & Cardiac monitor"]
                   ].map(([code, label], index) => (
                     <div key={code} className="text-center md:text-left flex-1 group">
@@ -839,7 +861,7 @@ export default function Home() {
               <i className="bi bi-chevron-right text-xl sm:text-2xl text-white group-hover:text-white transition-colors duration-300"></i>
             </button>
 
-            <div className="overflow-hidden rounded-2xl mx-12 sm:mx-20">
+            <div className="overflow-hidden rounded-2xl w-full">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{
@@ -852,7 +874,8 @@ export default function Home() {
                     key={index}
                     className="min-w-full flex-shrink-0 flex justify-center items-center px-4"
                   >
-                    <div className="w-full max-w-xs sm:max-w-5xl mx-auto bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 shadow-xl relative h-full transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group border border-blue-100/50">
+                   <div className="w-full max-w-xs sm:max-w-5xl mx-auto bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 shadow-xl relative min-h-[460px] sm:min-h-[400px] transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group border border-blue-100/50 flex flex-col justify-center">
+
                       {/* Quote mark */}
                       <div className="absolute -top-6 right-8 text-6xl sm:text-8xl text-[#40B7E4]/20 transition-all duration-300 group-hover:text-[#40B7E4]/40 font-serif">
                         &quot;
@@ -917,8 +940,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Enhanced Medical Institution Logos */}
-          <div className={`mt-16 transition-all duration-1000 delay-500 ${testimonialsVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
+          {/* Medical Institution Logos - Static and Blue */}
+          <div className="mt-16">
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-blue-100/50">
               <p className="text-center text-gray-500 text-sm sm:text-base uppercase tracking-wider mb-8 font-semibold">
                 Trusted by Leading Medical Institutions Worldwide
@@ -930,21 +953,20 @@ export default function Home() {
                   { icon: "bi-shield-plus", label: "Medical Schools" },
                   { icon: "bi-person-workspace", label: "Research Institutes" }
                 ].map((item, index) => (
-                  <div key={index} className="text-center group">
-                    <i className={`${item.icon} text-3xl sm:text-5xl text-gray-400 transition-all duration-300 group-hover:text-[#17a6e0] group-hover:scale-110 mb-2`}></i>
+                  <div key={index} className="text-center">
+                    <i className={`${item.icon} text-3xl sm:text-5xl text-[#17a6e0] mb-2`}></i>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium">{item.label}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </section>
-
       {/* Certificates Section */}
-      <section ref={certificatesRef} className="bg-[#14a8df] py-12 w-full">
+      <section className="bg-[#14a8df] py-12 w-full">
         <div className="max-w-full px-4 sm:px-6 md:px-12 lg:px-24 mx-auto">
-          <h2 className={`text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 ${certificatesVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             CERTIFICATES
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center max-w-none mx-auto">
@@ -954,17 +976,17 @@ export default function Home() {
               { src: "/images/tn.png", alt: "TN Certification", text: "TN/M/MD/004806" },
               { src: "/images/iec.png", alt: "IEC Certification", text: "IEC\n60601-2-27" }
             ].map((cert, index) => (
-              <div key={index} className={`flex flex-col items-center text-center group transition-all duration-1000 ${certificatesVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`} style={{ transitionDelay: `${index * 200}ms` }}>
-                <div className="transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
+              <div key={index} className="flex flex-col items-center text-center">
+                <div>
                   <Image
                     src={cert.src}
                     alt={cert.alt}
                     width={120}
                     height={100}
-                    className="mb-4"
+                    className="mb-4 !transition-none !duration-0"
                   />
                 </div>
-                <p className="text-white font-semibold text-sm transition-all duration-300 group-hover:text-blue-100">
+                <p className="text-white font-semibold text-sm">
                   {cert.text.split('\n').map((line, i) => (
                     <span key={i}>
                       {line}
@@ -977,6 +999,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Footer Section */}
       <Footer />
