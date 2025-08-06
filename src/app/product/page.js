@@ -138,7 +138,7 @@ function HowItWorksSection() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8">
           {/* Chest Piece */}
           <div className="flex flex-col items-center flex-1">
-            <div className="bg-[#0B60E0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
+            <div className="bg-[#17a6e0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
               <Stethoscope className="text-white w-16 h-16" />
             </div>
             <div className="text-2xl font-bold mb-1">Chest Piece</div>
@@ -150,7 +150,7 @@ function HowItWorksSection() {
           </div>
           {/* Mobile App */}
           <div className="flex flex-col items-center flex-1">
-            <div className="bg-[#0B60E0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
+            <div className="bg-[#17a6e0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
               <Smartphone className="text-white w-16 h-16" />
             </div>
             <div className="text-2xl font-bold mb-1">Mobile App</div>
@@ -162,7 +162,7 @@ function HowItWorksSection() {
           </div>
           {/* Cloud */}
           <div className="flex flex-col items-center flex-1">
-            <div className="bg-[#0B60E0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
+            <div className="bg-[#17a6e0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
               <Cloud className="text-white w-16 h-16" />
             </div>
             <div className="text-2xl font-bold mb-1">Cloud</div>
@@ -174,7 +174,7 @@ function HowItWorksSection() {
           </div>
           {/* Doctor */}
           <div className="flex flex-col items-center flex-1">
-            <div className="bg-[#0B60E0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
+            <div className="bg-[#17a6e0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
               <User className="text-white w-16 h-16" />
             </div>
             <div className="text-2xl font-bold mb-1">Doctor</div>
@@ -385,7 +385,7 @@ export default function ProductHero() {
       <section className="w-full bg-white px-4 py-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
           {/* Left big card */}
-          <div className="bg-[#0B60E0] rounded-[32px] flex items-center justify-center min-h-[200px] h-full p-6">
+          <div className="bg-[#17a6e0] rounded-[32px] flex items-center justify-center min-h-[200px] h-full p-6">
             <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold text-center leading-snug break-words">
               Our Commitment to Care
             </h2>
@@ -394,7 +394,7 @@ export default function ProductHero() {
           {/* Right side grid */}
           <div className="flex flex-col justify-between h-full">
             {/* Top card - Innovation */}
-            <div className="bg-[#0B60E0] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px] mb-4">
+            <div className="bg-[#17a6e0] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px] mb-4">
               <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">Innovation</span>
               <Image src="/icons/innovation.svg" alt="Innovation Icon" width={64} height={64} className="w-12 sm:w-14 md:w-16 h-auto" />
             </div>
@@ -402,13 +402,13 @@ export default function ProductHero() {
             {/* Bottom row - Quality & Trust */}
             <div className="flex flex-col sm:flex-row gap-1">
               {/* Quality */}
-              <div className="bg-[#0B60E0] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px]">
+              <div className="bg-[#17a6e0] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px]">
                 <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">Quality</span>
                 <Image src="/icons/quality.svg" alt="Quality Icon" width={64} height={64} className="w-12 sm:w-14 md:w-16 h-auto" />
               </div>
 
               {/* Trust */}
-              <div className="bg-[#0B60E0] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px]">
+              <div className="bg-[#17a6e0] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px]">
                 <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">Trust</span>
                 <Image src="/icons/trust.svg" alt="Trust Icon" width={64} height={64} className="w-12 sm:w-14 md:w-16 h-auto" />
               </div>
@@ -464,9 +464,9 @@ export default function ProductHero() {
 
         {/* Floating Medical Icons */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <Activity className="absolute top-20 right-20 w-8 h-8 text-blue-500 animate-pulse" />
-          <Activity className="absolute bottom-32 left-16 w-6 h-6 text-blue-400 animate-pulse" style={{ animationDelay: '1s' }} />
-          <Activity className="absolute top-1/3 left-1/3 w-4 h-4 text-blue-600 animate-pulse" style={{ animationDelay: '2s' }} />
+          <Activity className="absolute top-20 right-20 w-8 h-8 text-[#17a6e0] animate-pulse" />
+          <Activity className="absolute bottom-32 left-16 w-6 h-6 text-[#17a6e0] animate-pulse" style={{ animationDelay: '1s' }} />
+          <Activity className="absolute top-1/3 left-1/3 w-4 h-4 text-[#17a6e0] animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
 
         <div className="relative max-w-7xl mx-auto">

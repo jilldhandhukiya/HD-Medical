@@ -35,28 +35,28 @@ export default function Header() {
         menuOpen ? 'bg-white' : ''
       )}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <nav className="max-w-full mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center ml-2 sm:ml-4">
             <Image
               src="/images/logo.png"
               alt="HD Medical Logo"
               width={100}
-              height={32}
-              className="object-contain h-8 w-auto"
+              height={10}
+              className="object-contain h-6 w-auto"
             />
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-8 items-center">
+          {/* Desktop Nav - Moved to right */}
+          <div className="hidden md:flex space-x-12 items-center justify-end flex-1 mr-8">
             {links.map(([title, url]) => (
               <Link
                 key={title}
                 href={url}
                 className={clsx(
-                  'text-sm font-medium relative group transition-all',
-                  pathname === url ? 'text-[#17a6e0]' : 'text-black'
+                  'text-xl font-bold relative group transition-all hover:scale-105',
+                  pathname === url ? 'text-[#17a6e0]' : 'text-black hover:text-[#17a6e0]'
                 )}
               >
                 <span className="relative z-10">{title}</span>
@@ -65,16 +65,23 @@ export default function Header() {
             ))}
           </div>
 
+          {/* Download App Button - Desktop */}
+          <div className="hidden md:flex items-center mr-4 lg:mr-8">
+            <button className="bg-[#17a6e0] hover:bg-[#1493c7] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap">
+              HDSteth Mobile App
+            </button>
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative z-50 p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            className="md:hidden relative z-50 p-3 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 mr-2"
             aria-label="Toggle Menu"
           >
             {menuOpen ? (
-              <X className="w-5 h-5 text-gray-600" />
+              <X className="w-6 h-6 text-gray-600" />
             ) : (
-              <Menu className="w-5 h-5 text-gray-600" />
+              <Menu className="w-6 h-6 text-gray-600" />
             )}
           </button>
         </div>
@@ -88,20 +95,28 @@ export default function Header() {
         )}
       >
         <div className="absolute inset-0 bg-white">
-          <div className="pt-20 pb-6 px-4 space-y-1">
+          <div className="pt-24 pb-6 px-4 space-y-2">
             {links.map(([title, url]) => (
               <Link
                 key={title}
                 href={url}
                 className={clsx(
-                  'block px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-50',
-                  pathname === url ? 'text-[#17a6e0]' : 'text-black'
+                  'block px-6 py-4 text-xl font-bold rounded-lg hover:bg-gray-50 transition-all hover:scale-105',
+                  pathname === url ? 'text-[#17a6e0] bg-blue-50' : 'text-black hover:text-[#17a6e0]'
                 )}
                 onClick={() => setMenuOpen(false)}
               >
                 {title}
               </Link>
             ))}
+            
+            {/* Download App Button - Mobile */}
+            <button 
+              className="w-full bg-[#17a6e0] hover:bg-[#1493c7] text-white font-bold px-6 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg mt-4"
+              onClick={() => setMenuOpen(false)}
+            >
+              Download Mobile App
+            </button>
           </div>
         </div>
       </div>

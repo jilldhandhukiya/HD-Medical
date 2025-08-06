@@ -184,7 +184,7 @@ function Card({ title, image, number, index = 0 }) {
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute top-3 left-3 bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center text-base font-bold shadow border-2 border-white transition-all duration-300 hover:scale-110 hover:rotate-12">
+        <div className="absolute top-3 left-3 bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center text-base font-bold shadow-2xl border-2 border-white transition-all duration-300 hover:scale-110 hover:rotate-12">
           {number}
         </div>
       </div>
@@ -441,8 +441,8 @@ export default function Home() {
                 }}
               />
 
-              {/* Doctor Image */}
-              <div className="absolute w-[320px] h-[400px] bottom-0 left-[40%] -translate-x-1/2 animate-float">
+              {/* Doctor Image - Static (removed animate-float) */}
+              <div className="absolute w-[320px] h-[400px] bottom-0 left-[40%] -translate-x-1/2">
                 <Image
                   src="/images/ladydoc.png"
                   alt="Healthcare Professional"
