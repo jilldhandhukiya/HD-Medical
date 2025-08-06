@@ -2,9 +2,6 @@
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 import Footer from "./components/Footer";
-import clsx from 'clsx'
-import Link from "next/link";
-import { Menu, X } from 'lucide-react';
 import Header from "./components/Header";
 
 // Add this custom hook for intersection observer animations
@@ -60,23 +57,23 @@ function useCountAnimation(targetValue, duration = 3000) {
 
     // Extract numeric value from string like "20+" or "5,000+"
     const numericValue = parseInt(targetValue.replace(/[^0-9]/g, ''));
-    
+
     let startTime;
     const animate = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      
+
       // Use easeOutCubic for smooth animation
       const easeOutCubic = 1 - Math.pow(1 - progress, 3);
       const current = Math.floor(easeOutCubic * numericValue);
-      
+
       setCurrentValue(current);
-      
+
       if (progress < 1) {
         requestAnimationFrame(animate);
       }
     };
-    
+
     requestAnimationFrame(animate);
   }, [isVisible, targetValue, duration]);
 
@@ -120,7 +117,7 @@ function StaticCounter({ value, label }) {
 // Animated counter component (only for impact section)
 function AnimatedCounter({ value, label, isWhiteText = false }) {
   const { currentValue, ref } = useCountAnimation(value, 3000);
-  
+
   return (
     <div ref={ref} className="relative group z-10">
       {/* Individual stat item */}
@@ -129,29 +126,26 @@ function AnimatedCounter({ value, label, isWhiteText = false }) {
         <div className="absolute inset-0 bg-gradient-to-r from-[#17a6e0]/10 to-[#40B7E4]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
 
         {/* Number with enhanced styling */}
-        <div className={`relative text-2xl md:text-3xl font-black transition-all duration-500 transform group-hover:scale-110 ${
-          isWhiteText 
-            ? 'text-white' 
-            : 'text-transparent bg-clip-text bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:from-[#0d7fad] group-hover:to-[#17a6e0]'
-        }`}>
+        <div className={`relative text-2xl md:text-3xl font-black transition-all duration-500 transform group-hover:scale-110 ${isWhiteText
+          ? 'text-white'
+          : 'text-transparent bg-clip-text bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:from-[#0d7fad] group-hover:to-[#17a6e0]'
+          }`}>
           {currentValue}
         </div>
 
         {/* Label with enhanced styling */}
-        <div className={`relative text-xs md:text-sm mt-2 font-semibold transition-colors duration-500 leading-tight ${
-          isWhiteText 
-            ? 'text-white group-hover:text-white/90' 
-            : 'text-gray-600 group-hover:text-gray-800'
-        }`}>
+        <div className={`relative text-xs md:text-sm mt-2 font-semibold transition-colors duration-500 leading-tight ${isWhiteText
+          ? 'text-white group-hover:text-white/90'
+          : 'text-gray-600 group-hover:text-gray-800'
+          }`}>
           {label}
         </div>
 
         {/* Bottom accent line */}
-        <div className={`absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r transition-all duration-500 rounded-full group-hover:w-8 ${
-          isWhiteText 
-            ? 'from-white to-white/80' 
-            : 'from-[#17a6e0] to-[#40B7E4]'
-        }`}></div>
+        <div className={`absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r transition-all duration-500 rounded-full group-hover:w-8 ${isWhiteText
+          ? 'from-white to-white/80'
+          : 'from-[#17a6e0] to-[#40B7E4]'
+          }`}></div>
       </div>
     </div>
   );
@@ -159,9 +153,9 @@ function AnimatedCounter({ value, label, isWhiteText = false }) {
 
 function Card({ title, image, number, index = 0 }) {
   const [ref, isVisible] = useInView(0.1);
-  
+
   return (
-    <div 
+    <div
       ref={ref}
       className={`
         bg-gradient-to-br from-white via-blue-50 to-blue-100
@@ -396,7 +390,7 @@ export default function Home() {
 
       {/* Header Section */}
       <Header />
-      
+
       {/* Hero Section */}
       <section ref={heroRef} className="bg-gradient-to-b from-[#f0fcff] to-white pt-24 md:pt-10 pb-0">
         <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -535,100 +529,163 @@ export default function Home() {
         </div>
       </section>
 
-{/* HD Steth Section */}
-<section ref={stethRef} className="relative bg-white py-12 overflow-hidden">
-  {/* Main Content */}
-  <div
-    className={`w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10 transition-all duration-1000 ${
-      stethVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'
-    }`}
-  >
-    {/* Logo */}
-    <div className="flex justify-center mb-6 sm:mb-8">
-      <div className="transition-all duration-500 hover:scale-110">
-        <Image
-          src="/images/hd_stethlogo.png"
-          alt="HD Steth Logo"
-          width={300}
-          height={90}
-          className="mx-auto w-[180px] sm:w-[220px] md:w-[280px] lg:w-[300px]"
-        />
-      </div>
-    </div>
+      {/* HD Steth Section */}
+      <section ref={stethRef} className="relative bg-white py-12 overflow-hidden">
+        {/* Main Content */}
+        <div
+          className={`w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10 transition-all duration-1000 ${stethVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'
+            }`}
+        >
+          {/* Logo */}
+          <div className="flex justify-center mb-6 sm:mb-8">
+            <div className="transition-all duration-500 hover:scale-110">
+              <Image
+                src="/images/hd_stethlogo.png"
+                alt="HD Steth Logo"
+                width={300}
+                height={90}
+                className="mx-auto w-[180px] sm:w-[220px] md:w-[280px] lg:w-[300px]"
+              />
+            </div>
+          </div>
 
-    {/* Description */}
-    <p className="text-gray-700 text-base sm:text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed font-medium sm:font-semibold transition-all duration-300 hover:text-gray-800 px-2 sm:px-4">
-      HD Steth is an intelligent stethoscope with integrated EKG, offering real-time cardiac insights at the point-of-care. It utilizes patented noise cancellation and smart amplification for high-fidelity auscultation and enables real-time visualization of cardiac waveforms on a mobile app. This device also allows for data saving and sharing with specialists for remote diagnosis and second opinions.
-    </p>
+          {/* Description */}
+          <p className="text-gray-700 text-base sm:text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed font-medium sm:font-semibold transition-all duration-300 hover:text-gray-800 px-2 sm:px-4">
+            HD Steth is an intelligent stethoscope with integrated EKG, offering real-time cardiac insights at the point-of-care. It utilizes patented noise cancellation and smart amplification for high-fidelity auscultation and enables real-time visualization of cardiac waveforms on a mobile app. This device also allows for data saving and sharing with specialists for remote diagnosis and second opinions.
+          </p>
 
-    {/* Divider */}
-    <hr className="my-4 sm:my-6 border-gray-300 max-w-[90%] sm:max-w-3xl mx-auto transition-all duration-300 hover:border-[#17a6e0]" />
+          {/* Divider */}
+          <hr className="my-4 sm:my-6 border-gray-300 max-w-[90%] sm:max-w-3xl mx-auto transition-all duration-300 hover:border-[#17a6e0]" />
 
-    {/* Button */}
-    <button className="inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#40B7E4] text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 mt-3 sm:mt-4 hover:scale-105 hover:shadow-xl">
-      Learn More
-    </button>
-  </div>
+          {/* Button */}
+          <button className="inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#40B7E4] text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 mt-3 sm:mt-4 hover:scale-105 hover:shadow-xl">
+            Learn More
+          </button>
+        </div>
 
-  {/* Side Images (Desktop only) */}
-  <div
-    className={`hidden lg:flex absolute left-0 top-0 h-full items-center z-0 transition-all duration-1000 delay-500 ${
-      stethVisible ? 'translate-x-[-18%]' : 'translate-x-[-100%]'
-    }`}
-  >
-    <Image
-      src="/images/stethleft.png"
-      alt="Left Device"
-      width={300}
-      height={500}
-      className="object-contain animate-float"
-      priority
-    />
-  </div>
+        {/* Side Images (Desktop only) */}
+        <div
+          className={`hidden lg:flex absolute left-0 top-0 h-full items-center z-0 transition-all duration-1000 delay-500 ${stethVisible ? 'translate-x-[-18%]' : 'translate-x-[-100%]'
+            }`}
+        >
+          <Image
+            src="/images/stethleft.png"
+            alt="Left Device"
+            width={300}
+            height={500}
+            className="object-contain animate-float"
+            priority
+          />
+        </div>
 
-  <div
-    className={`hidden lg:flex absolute right-0 top-0 h-full items-center z-0 transition-all duration-1000 delay-700 ${
-      stethVisible ? 'translate-x-[18%]' : 'translate-x-[100%]'
-    }`}
-  >
-    <Image
-      src="/images/stethright.png"
-      alt="Right Device"
-      width={300}
-      height={500}
-      className="object-contain animate-float"
-      style={{ animationDelay: '1s' }}
-      priority
-    />
-  </div>
-</section>
+        <div
+          className={`hidden lg:flex absolute right-0 top-0 h-full items-center z-0 transition-all duration-1000 delay-700 ${stethVisible ? 'translate-x-[18%]' : 'translate-x-[100%]'
+            }`}
+        >
+          <Image
+            src="/images/stethright.png"
+            alt="Right Device"
+            width={300}
+            height={500}
+            className="object-contain animate-float"
+            style={{ animationDelay: '1s' }}
+            priority
+          />
+        </div>
+      </section>
 
 
       {/* Features Section */}
       <section ref={featuresRef} className="bg-white py-10 px-4 relative overflow-hidden">
-        {/* Top-right SVG */}
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 opacity-20 wave-animation z-0 md:w-1/4 md:h-1/4">
-          <Image
-            ref={topRightSvgRef}
-            src="/images/lines.svg"
-            alt="Top Right Wave Background"
-            className="filter-dark-gray"
-            width={1200}
-            height={1200}
-          />
+        {/* Desktop SVGs */}
+        <div className="hidden md:block">
+          <div className="absolute top-0 right-0 w-1/2 h-1/2 opacity-20 wave-animation z-0 md:w-1/3 md:h-1/3">
+            <Image
+              ref={topRightSvgRef}
+              src="/images/lines.svg"
+              alt="Top Right Wave Background"
+              className="filter-dark-gray"
+              width={1600}
+              height={1600}
+            />
+          </div>
+          <div className="absolute bottom-0 left-0 w-1/3 h-1/3 opacity-20 wave-animation z-0 md:w-1/4 md:h-1/4">
+            <Image
+              ref={bottomLeftSvgRef}
+              src="/images/lines.svg"
+              alt="Bottom Left Wave Background"
+              className="filter-dark-gray"
+              width={1200}
+              height={1200}
+            />
+          </div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 opacity-10 wave-animation z-0 rotate-45">
+            <Image
+              src="/images/lines.svg"
+              alt="Center Wave"
+              className="filter-dark-gray"
+              width={1600}
+              height={1600}
+            />
+          </div>
+          <div className="absolute top-0 left-0 w-1/2 h-1/2 opacity-10 wave-animation z-0 rotate-3">
+            <Image
+              src="/images/lines.svg"
+              alt="Top Left Large Wave"
+              className="filter-dark-gray"
+              width={1400}
+              height={1400}
+            />
+          </div>
+          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 opacity-10 wave-animation z-0 -rotate-6">
+            <Image
+              src="/images/lines.svg"
+              alt="Bottom Right Large Wave"
+              className="filter-dark-gray"
+              width={1400}
+              height={1400}
+            />
+          </div>
+          <div className="absolute top-1/3 left-10 w-1/4 h-2/3 opacity-12 wave-animation z-0 rotate-90">
+            <Image
+              src="/images/lines.svg"
+              alt="Vertical Left Wave"
+              className="filter-dark-gray"
+              width={900}
+              height={1400}
+            />
+          </div>
+          <div className="absolute bottom-1/3 right-10 w-1/4 h-2/3 opacity-12 wave-animation z-0 -rotate-90">
+            <Image
+              src="/images/lines.svg"
+              alt="Vertical Right Wave"
+              className="filter-dark-gray"
+              width={900}
+              height={1400}
+            />
+          </div>
         </div>
-        {/* Bottom-left SVG */}
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 opacity-20 wave-animation z-0 md:w-1/4 md:h-1/4">
-          <Image
-            ref={bottomLeftSvgRef}
-            src="/images/lines.svg"
-            alt="Bottom Left Wave Background"
-            className="filter-dark-gray"
-            width={1200}
-            height={1200}
-          />
+        {/* Mobile SVGs */}
+        <div className="block md:hidden">
+          <div className="absolute top-0 right-0 w-2/3 h-2/3 opacity-20 wave-animation z-0">
+            <Image
+              src="/images/lines.svg"
+              alt="Mobile Top Right Wave"
+              className="filter-dark-gray"
+              width={900}
+              height={900}
+            />
+          </div>
+          <div className="absolute bottom-0 left-0 w-2/3 h-2/3 opacity-10 wave-animation z-0">
+            <Image
+              src="/images/lines.svg"
+              alt="Mobile Bottom Left Wave"
+              className="filter-dark-gray"
+              width={900}
+              height={900}
+            />
+          </div>
         </div>
-        
         {/* SVG Filter for Dark Gray Fill */}
         <svg className="hidden">
           <defs>
@@ -668,10 +725,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Mobile layout */}
-          <div className="md:hidden flex flex-col gap-6 mt-8 px-2">
+          {/* Mobile layout: Cards one after another, centered, full width */}
+          <div className="md:hidden flex flex-col items-center gap-8 mt-8 px-0">
             {features.map((feature, idx) => (
-              <div key={idx} className="w-full max-w-[95vw] mx-auto px-2">
+              <div
+                key={idx}
+                className="w-full max-w-xs sm:max-w-sm mx-auto flex justify-center"
+              >
                 <Card {...feature} number={idx + 1} index={idx} />
               </div>
             ))}
@@ -750,15 +810,41 @@ export default function Home() {
               ["bi-heart-pulse-fill", "185", "Confirmed Abnormalities"],
               ["bi-hospital", "56", "For Treatment"]
             ].map(([icon, value, label], index) => (
-              <div 
-                key={label} 
-                className={`bg-[#0051D8]/90 rounded-lg p-8 flex flex-col items-center transition-all duration-1000 hover:bg-[#0051D8] hover:scale-105 hover:shadow-xl ${impactVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}
+              <div
+                key={label}
+                className={`
+                  bg-[#0051D8]/90 rounded-lg p-8 flex flex-col items-center
+                  transition-all duration-1000 hover:bg-[#0051D8] hover:scale-105 hover:shadow-xl
+                  ${impactVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}
+                  md:p-8
+                  p-6
+                `}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="bg-[#FF4B26] rounded-full p-4 mb-4 transition-all duration-300 hover:scale-110 hover:rotate-12">
-                  <i className={`bi ${icon} text-2xl text-white`}></i>
+                <div className="bg-[#FF4B26] rounded-full p-4 mb-4 transition-all duration-300 hover:scale-110 hover:rotate-12 md:p-4 p-3 flex items-center justify-center">
+                  <i className={`bi ${icon} text-2xl text-white md:text-2xl text-xl`}></i>
                 </div>
-                <AnimatedCounter value={value} label={label} isWhiteText={true} />
+
+
+                <div className="flex flex-col items-center justify-center w-full text-white text-2xl md:text-3xl font-black relative transition-all duration-500 group-hover:scale-110 text-center"
+
+                  style={{
+                    fontSize: 'clamp(2rem, 6vw, 2.25rem)'
+                  }}
+                >
+                  <AnimatedCounter value={value} label={label} isWhiteText={true} />
+                </div>
+                <div
+                  className={`
+                    relative mt-2 font-semibold transition-colors duration-500 leading-tight
+                    md:text-sm text-base text-white text-center flex items-center justify-center w-full
+                  `}
+                  style={{
+                    fontSize: 'clamp(1rem, 4vw, 1.125rem)'
+                  }}
+                >
+                  {label}
+                </div>
               </div>
             ))}
           </div>
@@ -784,7 +870,7 @@ export default function Home() {
           <i className="bi bi-heart-fill absolute bottom-16 right-1/4 text-2xl text-[#1e7a9e] animate-bounce" style={{ animationDelay: '3.5s' }}></i>
           <i className="bi bi-plus-circle absolute top-1/3 left-1/5 text-lg text-[#0a5a87] animate-bounce" style={{ animationDelay: '4.5s' }}></i>
           <i className="bi bi-shield-plus absolute top-1/2 right-1/5 text-xl text-[#1e7a9e] animate-bounce" style={{ animationDelay: '5.5s' }}></i>
-          
+
           {/* Additional blue medical icons - Made even darker */}
           <i className="bi bi-bandaid absolute top-20 right-1/3 text-lg text-[#0a5a87] animate-pulse" style={{ animationDelay: '1s' }}></i>
           <i className="bi bi-capsule absolute bottom-32 left-1/3 text-xl text-[#1e7a9e] animate-pulse" style={{ animationDelay: '2s' }}></i>
@@ -799,11 +885,11 @@ export default function Home() {
         {/* Enhanced blue glow effect around section edges */}
         <div className="absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-transparent via-[#17a6e0]/30 to-transparent shadow-lg"></div>
         <div className="absolute bottom-0 left-0 w-full h-4 bg-gradient-to-r from-transparent via-[#40B7E4]/30 to-transparent shadow-lg"></div>
-        
+
         {/* Enhanced side glow effects */}
         <div className="absolute left-0 top-0 w-4 h-full bg-gradient-to-r from-[#17a6e0]/20 to-transparent shadow-lg"></div>
         <div className="absolute right-0 top-0 w-4 h-full bg-gradient-to-l from-[#40B7E4]/20 to-transparent shadow-lg"></div>
-        
+
         {/* Corner glow effects */}
         <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-[#17a6e0]/25 to-transparent rounded-br-full blur-xl"></div>
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#40B7E4]/25 to-transparent rounded-bl-full blur-xl"></div>
@@ -822,7 +908,7 @@ export default function Home() {
               <i className="bi bi-award text-lg"></i>
               <span>Trusted by Medical Professionals</span>
             </div>
-            
+
             <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-[#17a6e0]">
               What Experts Say
             </h2>
@@ -874,13 +960,12 @@ export default function Home() {
                     key={index}
                     className="min-w-full flex-shrink-0 flex justify-center items-center px-4"
                   >
-                   <div className="w-full max-w-xs sm:max-w-5xl mx-auto bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 shadow-xl relative min-h-[460px] sm:min-h-[400px] transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group border border-blue-100/50 flex flex-col justify-center">
-
+                    <div className="w-full max-w-xs sm:max-w-5xl mx-auto bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 shadow-xl relative min-h-[460px] sm:min-h-[400px] transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] group border border-blue-100/50 flex flex-col justify-center md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
                       {/* Quote mark */}
                       <div className="absolute -top-6 right-8 text-6xl sm:text-8xl text-[#40B7E4]/20 transition-all duration-300 group-hover:text-[#40B7E4]/40 font-serif">
                         &quot;
                       </div>
-                      
+
                       {/* Rating stars */}
                       <div className="flex justify-center mb-4">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -918,7 +1003,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  
+
                 ))}
               </div>
             </div>
@@ -929,11 +1014,10 @@ export default function Home() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 border-2 border-[#40B7E4]/30 hover:scale-125 ${
-                    currentSlide === index 
-                      ? 'bg-[#40B7E4] border-[#40B7E4] shadow-lg' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
+                  className={`w-4 h-4 rounded-full transition-all duration-300 border-2 border-[#40B7E4]/30 hover:scale-125 ${currentSlide === index
+                    ? 'bg-[#40B7E4] border-[#40B7E4] shadow-lg'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
@@ -961,7 +1045,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          </div>
+        </div>
       </section>
       {/* Certificates Section */}
       <section className="bg-[#14a8df] py-12 w-full">
