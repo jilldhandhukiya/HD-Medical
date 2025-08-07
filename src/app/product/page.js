@@ -322,12 +322,32 @@ function TechnicalExcellenceSection() {
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-6">{category.category}</h3>
                 <div className="space-y-4">
-                  {category.specs.map((spec, specIndex) => (
-                    <div key={specIndex} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
-                      <span className="text-gray-700">{spec.label}</span>
-                      <span className="text-gray-900 font-semibold">{spec.value}</span>
-                    </div>
-                  ))}
+                  {category.specs.map((spec, specIndex) => {
+                    // Icon mapping for classic, clean look
+                    let icon = null;
+                    if (spec.label.toLowerCase().includes("weight")) icon = <Weight className="w-5 h-5 text-blue-500 mr-2" />;
+                    if (spec.label.toLowerCase().includes("battery")) icon = <BatteryFull className="w-5 h-5 text-green-500 mr-2" />;
+                    if (spec.label.toLowerCase().includes("connectivity")) icon = <Cloud className="w-5 h-5 text-cyan-500 mr-2" />;
+                    if (spec.label.toLowerCase().includes("display") || spec.label.toLowerCase().includes("waveform")) icon = <Monitor className="w-5 h-5 text-purple-500 mr-2" />;
+                    if (spec.label.toLowerCase().includes("noise")) icon = <Volume2 className="w-5 h-5 text-orange-500 mr-2" />;
+                    if (spec.label.toLowerCase().includes("amplification") || spec.label.toLowerCase().includes("sound")) icon = <Zap className="w-5 h-5 text-yellow-500 mr-2" />;
+                    if (spec.label.toLowerCase().includes("lead") || spec.label.toLowerCase().includes("ecg")) icon = <Activity className="w-5 h-5 text-red-500 mr-2" />;
+                    if (spec.label.toLowerCase().includes("mobile")) icon = <Smartphone className="w-5 h-5 text-sky-500 mr-2" />;
+                    if (spec.label.toLowerCase().includes("cloud")) icon = <Cloud className="w-5 h-5 text-cyan-500 mr-2" />;
+                    if (spec.label.toLowerCase().includes("integration") || spec.label.toLowerCase().includes("emr") || spec.label.toLowerCase().includes("ehr")) icon = <ShieldCheck className="w-5 h-5 text-emerald-500 mr-2" />;
+                    if (spec.label.toLowerCase().includes("export")) icon = <Globe className="w-5 h-5 text-blue-400 mr-2" />;
+                    if (spec.label.toLowerCase().includes("frequency")) icon = <Leaf className="w-5 h-5 text-green-400 mr-2" />;
+                    if (spec.label.toLowerCase().includes("sampling")) icon = <Monitor className="w-5 h-5 text-purple-400 mr-2" />;
+                    return (
+                      <div key={specIndex} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
+                        <span className="flex items-center text-gray-700">
+                          {icon}
+                          {spec.label}
+                        </span>
+                        <span className="text-gray-900 font-semibold">{spec.value}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
@@ -575,7 +595,11 @@ export default function ProductHero() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Heart Murmur Detection */}
             <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
-              <div className="mb-4">
+              <div className="mb-4 flex items-center gap-3">
+                {/* Lucide HeartPulse Icon */}
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100">
+                  <Activity className="w-5 h-5 text-blue-700" />
+                </span>
                 <h3 className="text-lg font-semibold text-blue-700">
                   Heart Murmur Detection
                 </h3>
@@ -605,7 +629,11 @@ export default function ProductHero() {
 
             {/* ECG Analysis */}
             <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
-              <div className="mb-4">
+              <div className="mb-4 flex items-center gap-3">
+                {/* Lucide MonitorHeart Icon */}
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100">
+                  <Monitor className="w-5 h-5 text-blue-700" />
+                </span>
                 <h3 className="text-lg font-semibold text-blue-700">
                   ECG Analysis
                 </h3>

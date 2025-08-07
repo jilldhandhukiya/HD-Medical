@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { Globe } from "lucide-react";
 
 // Add this custom hook for intersection observer animations
 function useInView(threshold = 0.1) {
@@ -225,6 +226,205 @@ const features = [
   },
 ];
 
+function PopCTAForm({ open, onClose }) {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    countryCode: "+91",
+    phone: "",
+    message: ""
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const countryCodes = ["+91", "+1", "+44", "+86", "+81", "+61", "+49", "+33"];
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async () => {
+    setError("");
+    setSubmitted(false);
+    setIsLoading(true);
+
+    const { fullName, email, phone, message } = formData;
+
+    if (fullName.trim().length < 2) {
+      setError("Full name must be at least 2 characters.");
+      setIsLoading(false);
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      setIsLoading(false);
+      return;
+    }
+
+    const phoneRegex = /^[0-9]{7,15}$/;
+    if (!phoneRegex.test(phone)) {
+      setError("Phone number must be 7–15 digits.");
+      setIsLoading(false);
+      return;
+    }
+
+    if (message.trim().length < 4) {
+      setError("Message must be at least 4 characters.");
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('fullName', formData.fullName);
+      formDataToSend.append('email', formData.email);
+      const phoneFormatted = `${formData.countryCode.replace('+', '')} ${formData.phone}`;
+      formDataToSend.append('phone', phoneFormatted);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('phoneRaw', `${formData.countryCode} ${formData.phone}`);
+
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxFbu097uUKxDjRcGEZN_0BaGPwZncGPLnJWr98V2sbKJdXgQwPEAmeQxIhi_SH0Go75g/exec",
+        {
+          method: "POST",
+          body: formDataToSend
+        }
+      );
+
+      await response.text();
+      setSubmitted(true);
+      setFormData({
+        fullName: "",
+        email: "",
+        countryCode: "+91",
+        phone: "",
+        message: ""
+      });
+    } catch (err) {
+      setError("Failed to submit form. Please try again or contact us directly.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  if (!open) return null;
+
+  return (
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 backdrop-blur-sm transition-all duration-300">
+      <div className="bg-white rounded-2xl shadow-2xl border border-blue-100/50 max-w-md w-full mx-4 p-6 sm:p-8 relative animate-fadeInUp">
+        <button
+          className="absolute top-4 right-4 text-gray-400 hover:text-blue-600 text-2xl font-bold"
+          onClick={onClose}
+          aria-label="Close"
+        >
+          &times;
+        </button>
+        <h2 className="text-2xl font-bold text-[#17a6e0] mb-2 text-center">Get in Touch</h2>
+        <p className="text-sm text-gray-500 mb-6 text-center">We'd love to hear from you. Fill the form below!</p>
+        {submitted ? (
+          <div className="mb-4 p-4 bg-green-50 text-green-700 rounded-xl border border-green-200 text-center">
+            Thank you for your message! We'll get back to you soon.
+          </div>
+        ) : (
+          <>
+            {error && (
+              <div className="mb-4 p-3 bg-red-50 text-red-700 rounded-xl border border-red-200 text-center">
+                {error}
+              </div>
+            )}
+            <div className="space-y-4">
+              <input
+                type="text"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:outline-none text-base"
+                placeholder="Full Name"
+                disabled={isLoading}
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:outline-none text-base"
+                placeholder="Email"
+                disabled={isLoading}
+              />
+              <div className="flex gap-2">
+                <div className="flex items-center bg-blue-50 rounded-lg px-2 border border-gray-200">
+                  <Globe className="text-blue-400 w-5 h-5 mr-1" />
+                  <select
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={handleChange}
+                    className="bg-transparent focus:outline-none py-1 pr-2 text-gray-700 text-base border-0"
+                    disabled={isLoading}
+                  >
+                    {countryCodes.map((code) => (
+                      <option key={code} value={code}>
+                        {code}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:outline-none text-base"
+                  placeholder="Phone Number"
+                  disabled={isLoading}
+                />
+              </div>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={3}
+                className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:outline-none text-base resize-none"
+                placeholder="Message"
+                disabled={isLoading}
+              />
+              <button
+                type="button"
+                onClick={handleSubmit}
+                disabled={isLoading}
+                className={`w-full py-3 rounded-full text-white text-base font-semibold transition-all duration-300 shadow-lg ${
+                  isLoading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] hover:from-[#0d7fad] hover:to-[#17a6e0] hover:shadow-xl"
+                }`}
+              >
+                {isLoading ? "Submitting..." : "Submit"}
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -300,6 +500,13 @@ export default function Home() {
         container.removeEventListener('mouseleave', () => handleMouseLeave(svg));
       };
     });
+  }, []);
+
+  // Pop CTA state and timer
+  const [showPopCTA, setShowPopCTA] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowPopCTA(true), 9000); // 9 seconds
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -1087,6 +1294,7 @@ export default function Home() {
 
       {/* Footer Section */}
       <Footer />
+      <PopCTAForm open={showPopCTA} onClose={() => setShowPopCTA(false)} />
     </>
   );
 }
