@@ -155,12 +155,6 @@ function FAQSection() {
         <h1 className="text-center text-4xl md:text-5xl font-light text-gray-900 mb-12 tracking-wide">
           Frequently asked questions
         </h1>
-        {/* Single Tab */}
-        <div className="flex gap-8 mb-8 px-4 md:px-0">
-          <button className="text-sky-600 font-semibold border-b-2 border-sky-600 pb-2 cursor-default" disabled>
-            General
-          </button>
-        </div>
         <div className="w-full mx-auto">
           {faqData.map((faq, idx) => (
             <div key={idx} className="border-b border-blue-100">
