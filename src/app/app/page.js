@@ -88,7 +88,7 @@ export default function DownloadApp() {
   // Handle download button click
   const handleDownload = () => {
     // Replace this URL with your actual Google Drive download link
-    const driveLink = "https://drive.google.com/file/d/your-file-id/view?usp=sharing";
+    const driveLink = "https://drive.google.com/file/d/1_ZbkbOPocr6rWMGmO7HSheEbwPIsSWm2/view?usp=sharing ";
     window.open(driveLink, '_blank');
   };
 
@@ -259,6 +259,82 @@ export default function DownloadApp() {
         </div>
       </section>
 
+
+      {/* Download Section */}
+      <section ref={downloadRef} className="bg-gradient-to-b from-[#17a6e0] to-[#0d7fad] py-20 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm-20-18c9.941 0 18 8.059 18 18s-8.059 18-18 18-18-8.059-18-18 8.059-18 18-18z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 md:px-16 text-center relative z-10">
+          <div className={`transition-all duration-1000 ${downloadVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
+            {/* Download Content */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                Ready to Get Started?
+              </h2>
+              <p className="text-xl text-white/90 mb-8 leading-relaxed">
+                Download the HD Steth app for Android and revolutionize your cardiac diagnostic workflow
+              </p>
+
+              {/* Android Badge */}
+              <div className="flex justify-center mb-8">
+                <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                  <div className="flex items-center gap-4">
+                    <i className="bi bi-android2 text-4xl text-white"></i>
+                    <div className="text-left">
+                      <p className="text-white/80 text-sm">Available for</p>
+                      <p className="text-white text-xl font-bold">Android</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Download Button */}
+              <button
+                onClick={handleDownload}
+                className="inline-flex items-center gap-3 bg-white text-[#17a6e0] px-8 py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
+              >
+                <i className="bi bi-download text-xl"></i>
+                <span>Download Now</span>
+              </button>
+
+              {/* App Info */}
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-white/90">
+                <div>
+                  <i className="bi bi-shield-check text-2xl mb-2"></i>
+                  <p className="text-sm">Secure & Trusted</p>
+                </div>
+                <div>
+                  <i className="bi bi-download text-2xl mb-2"></i>
+                  <p className="text-sm">Free Download</p>
+                </div>
+                <div>
+                  <i className="bi bi-star-fill text-2xl mb-2"></i>
+                  <p className="text-sm">Medical Grade</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Requirements */}
+            {/* <div className="mt-12 text-white/80">
+              <h3 className="text-lg font-semibold mb-4">System Requirements</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                  <p><strong>Android Version:</strong> 7.0 or higher</p>
+                </div>
+                <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                  <p><strong>Storage:</strong> 50 MB available space</p>
+                </div>
+              </div>
+            </div> */}
+          </div>
+        </div>
+      </section>
       {/* Features Section */}
       <section ref={featuresRef} className="bg-white py-16 relative overflow-hidden">
         {/* Wave Background */}
@@ -357,82 +433,6 @@ export default function DownloadApp() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Download Section */}
-      <section ref={downloadRef} className="bg-gradient-to-b from-[#17a6e0] to-[#0d7fad] py-20 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm-20-18c9.941 0 18 8.059 18 18s-8.059 18-18 18-18-8.059-18-18 8.059-18 18-18z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
-          }}></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-6 md:px-16 text-center relative z-10">
-          <div className={`transition-all duration-1000 ${downloadVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
-            {/* Download Content */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                Ready to Get Started?
-              </h2>
-              <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                Download the HD Steth app for Android and revolutionize your cardiac diagnostic workflow
-              </p>
-
-              {/* Android Badge */}
-              <div className="flex justify-center mb-8">
-                <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
-                  <div className="flex items-center gap-4">
-                    <i className="bi bi-android2 text-4xl text-white"></i>
-                    <div className="text-left">
-                      <p className="text-white/80 text-sm">Available for</p>
-                      <p className="text-white text-xl font-bold">Android</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Download Button */}
-              <button
-                onClick={handleDownload}
-                className="inline-flex items-center gap-3 bg-white text-[#17a6e0] px-8 py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
-              >
-                <i className="bi bi-download text-xl"></i>
-                <span>Download Now</span>
-              </button>
-
-              {/* App Info */}
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-white/90">
-                <div>
-                  <i className="bi bi-shield-check text-2xl mb-2"></i>
-                  <p className="text-sm">Secure & Trusted</p>
-                </div>
-                <div>
-                  <i className="bi bi-download text-2xl mb-2"></i>
-                  <p className="text-sm">Free Download</p>
-                </div>
-                <div>
-                  <i className="bi bi-star-fill text-2xl mb-2"></i>
-                  <p className="text-sm">Medical Grade</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Requirements */}
-            {/* <div className="mt-12 text-white/80">
-              <h3 className="text-lg font-semibold mb-4">System Requirements</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                  <p><strong>Android Version:</strong> 7.0 or higher</p>
-                </div>
-                <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                  <p><strong>Storage:</strong> 50 MB available space</p>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
