@@ -67,10 +67,13 @@ export default function Header() {
 
           {/* Download App Button - Desktop */}
           <div className="hidden md:flex items-center mr-4 lg:mr-8">
+           <a href="https://drive.google.com/file/d/1_ZbkbOPocr6rWMGmO7HSheEbwPIsSWm2/view?usp=sharing" target="_blank">
             <button className="bg-[#17a6e0] hover:bg-[#1493c7] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap">
               HDSteth Mobile App
             </button>
+            </a>
           </div>
+          
 
           {/* Mobile Menu Button */}
           <button
