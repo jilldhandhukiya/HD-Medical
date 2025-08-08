@@ -430,19 +430,22 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "In rural healthcare settings, this digital stethoscope bridges a critical gap. The diagnostic AI helps our primary care providers identify cardiac issues that would otherwise require specialist referrals.",
-      name: "Dr. James Wilson, MD, MPH",
-      title: "Global Health Initiative, Johns Hopkins University"
+      quote: "HD Steth has applied digital science to produce superior auscultatory experience with suppression of extraneous noise for true fidelity of heart transient and coupled this technology with an ECG. As an academic cardiologist,I am assured that new observations of fundamental importance will emerge from this exciting technology.",
+      name: "Dr. Nelson B.Schiller, MD, FACC, FRCP",
+      title: "Professor of Medicine & Anesthesia, University of California, San Francisco",
+      image: "/images/testi-icon1.png"
     },
     {
-      quote: "The accuracy and real-time analysis capabilities of this device have significantly improved our diagnostic workflow. It's a game-changer for preventive cardiology.",
-      name: "Dr. Sarah Chen, MD",
-      title: "Director of Cardiology, Mayo Clinic"
+      quote: "HD Steth is transforming the way medicine is practiced at the point of care setting by enhancing the patient experience, saving time and costs while improving outcomes.",
+      name: "Dr. Douglas Johnston, MD",
+      title: "Thoracic and Cardiovascular Surgery, Northwestern Medicine",
+      image: "/images/testi-icon2.png"
     },
     {
-      quote: "The integration of AI with traditional auscultation brings a new level of precision to primary care. It's an essential tool for modern healthcare practices.",
-      name: "Dr. Michael Roberts, PhD",
-      title: "Head of Medical Innovation, Stanford Medicine"
+      quote: "HD Steth makes it simple to tag my high risk pediatric patients and screen for murmurs quickly and accurately at the point-of-care enhancing treatment. It moves the point of care from my office to anywhere",
+      name: "Dr. Thomas Krummel, MD, FACS, FAAP",
+      title: "Professor of Surgery and Co-Director Standford Byers center for Biodesign",
+      image: "/images/testi-icon3.png"
     }
   ];
 
@@ -615,9 +618,9 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Right Column: Image with Circles */}
-          <div className={`relative h-[400px] md:h-[500px] w-full transition-all duration-1000 delay-300 ${heroVisible ? 'animate-fadeInRight' : 'opacity-0 translate-x-[30px]'}`}>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px]">
+         {/* Right Column: Image with Circles */}
+          <div className={`relative h-[300px] sm:h-[400px] md:h-[500px] w-full transition-all duration-1000 delay-300 ${heroVisible ? 'animate-fadeInRight' : 'opacity-0 translate-x-[30px]'}`}>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[280px] sm:w-[350px] md:w-[400px] h-[280px] sm:h-[350px] md:h-[400px] mx-auto left-0 md:left-auto">
               {/* Outer Circle */}
               <div
                 className="absolute inset-0 rounded-full animate-pulse-custom"
@@ -642,19 +645,29 @@ export default function Home() {
                 }}
               />
 
-              {/* Doctor Image - Static (removed animate-float) */}
-              <div className="absolute w-[320px] h-[400px] bottom-0 left-[40%] -translate-x-1/2">
+              {/* Stethoscope Image */}
+              <div className="absolute w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <Image
-                  src="/images/ladydoc.png"
-                  alt="Healthcare Professional"
+                  src="/images/stethoscope.png"
+                  alt="HD Steth Device"
                   fill
                   priority
-                  className="object-contain"
+                  className="object-contain animate-float"
+                  sizes="(max-width: 640px) 240px, (max-width: 768px) 300px, 350px"
                 />
+              </div>
+
+              {/* Floating particles/elements - Responsive sizes */}
+              <div className="absolute inset-0">
+                <div className="absolute top-10 right-10 w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-[#17a6e0]/30 rounded-full animate-pulse"></div>
+                <div className="absolute bottom-10 left-10 w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-[#40B7E4]/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-1/2 right-5 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 bg-[#17a6e0]/20 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+                <div className="absolute bottom-1/3 left-5 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 bg-[#40B7E4]/20 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
               </div>
             </div>
           </div>
-        </div>
+            </div>
+
 
         {/* Stats Section with Static Numbers */}
         <div className={`-mt-14 md:-mt-19 w-full px-6 md:px-16 transition-all duration-1000 delay-500 ${heroVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
@@ -776,10 +789,10 @@ export default function Home() {
             }`}
         >
           <Image
-            src="/images/stethleft.png"
+            src="/images/leftsteth.png"
             alt="Left Device"
-            width={300}
-            height={500}
+            width={450}
+            height={650}
             className="object-contain animate-float"
             priority
           />
@@ -790,10 +803,10 @@ export default function Home() {
             }`}
         >
           <Image
-            src="/images/stethright.png"
+            src="/images/rightsteth.png"
             alt="Right Device"
-            width={300}
-            height={500}
+            width={550}
+            height={750}
             className="object-contain animate-float"
             style={{ animationDelay: '1s' }}
             priority
@@ -1183,7 +1196,7 @@ export default function Home() {
                       <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 items-center">
                         <div className="w-20 h-20 sm:w-32 sm:h-32 shrink-0 relative">
                           <Image
-                            src="/images/profile.jpg"
+                            src={review.image}
                             alt="Medical Expert"
                             width={128}
                             height={128}
