@@ -338,10 +338,10 @@ function PopCTAForm({ open, onClose }) {
           &times;
         </button>
         <h2 className="text-2xl font-bold text-[#17a6e0] mb-2 text-center">Get in Touch</h2>
-        <p className="text-sm text-gray-500 mb-6 text-center">We'd love to hear from you. Fill the form below!</p>
+        <p className="text-sm text-gray-500 mb-6 text-center">We&apos;d love to hear from you. Fill the form below!</p>
         {submitted ? (
           <div className="mb-4 p-4 bg-green-50 text-green-700 rounded-xl border border-green-200 text-center">
-            Thank you for your message! We'll get back to you soon.
+            Thank you for your message! We&apos;ll get back to you soon.
           </div>
         ) : (
           <>
