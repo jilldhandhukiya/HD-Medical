@@ -87,45 +87,233 @@ const leadership = [
   }
 ];
 
-const boardMembers = Array.from({ length: 6 }).map((_, i) => ({
-  name: `Board Member ${i + 1}`,
-  position: "Board Member",
-  image: `https://randomuser.me/api/portraits/men/${10 + i}.jpg`,
-  description: "Experienced professional guiding company strategy and governance.",
-  flags: i % 2 === 0 ? ["us"] : ["india"]
-}));
+// Replace the existing boardMembers array with this:
 
-const medicalAdvisors = Array.from({ length: 6 }).map((_, i) => ({
-  name: `Medical Advisor ${i + 1}`,
-  position: "Medical Advisor",
-  image: `https://randomuser.me/api/portraits/women/${20 + i}.jpg`,
-  description: "Expert in medical research and clinical practice. Provides valuable insights.",
-  flags: i % 3 === 0 ? ["us", "india"] : ["uk"]
-}));
+const boardMembers = [
+  {
+    name: "Arvind Thiagarajan",
+    position: "Founder & CEO",
+    image: "/images/board/member1.jpg",
+    description: "Serial Entrepreneur & Successful ASX IPO",
+    flags: ["india","us"]
+  },
+  {
+    name: "Arjun Malhotra",
+    position:" Board Member",
+    image: "/images/board/member2.jpg",
+    description: "Co-Founder of HCL & Headstrong",
+    flags: ["us", "india"]
+  },
+  {
+    name: "Vic Mahadevan",
+    position: "Board Member",
+    image: "/images/board/member3.jpg",
+    description: "Successful Corporate Executive & Leader",
+    flags: ["us"]
+  },
+  {
+    name: "Murali Malayappan",
+    position: "Board Member",
+    image: "/images/board/member4.jpg",
+    description: "Chairman & MD, Shriram Properties",
+    flags: ["india"]
+  },
+  {
+    name: "Investor & Board Observer",
+    position: "ADI (NASDAQ)",
+    image: "/images/board/member5.jpg",
+    description: "Market Cap: US$ 80 Billion",
+    flags: ["us"]
+  },
+  {
+    name: "Riaz A. Karamali",
+    position: "Legal Counsel",
+    image: "/images/board/member6.jpg",
+    description: "Pillsbury Silicon Valley & San Francisco",
+    flags: ["us"]
+  }
+];
 
-const majorInvestors = Array.from({ length: 5 }).map((_, i) => ({
-  name: `Investor ${i + 1}`,
-  position: "Major Investor",
-  image: `https://randomuser.me/api/portraits/men/${30 + i}.jpg`,
-  description: "Supporting innovation and growth through strategic investments.",
-  flags: ["us"]
-}));
+const medicalAdvisors = [
+  {
+    name: "Dr. Nelson Schiller",
+    position: "MD, FACC, FRCP Professor of Medicine & Anesthesia",
+    image: "/images/advisors/advisor1.jpg",
+    flags: ["us"]
+  },
+  {
+    name: "Dr. Douglas Johnston",
+    position: "MD Thoracic and Cardiovascular Surgery",
+    image: "/images/advisors/advisor2.jpg",
+    flags: ["us"]
+  },
+  {
+    name: "Dr. Thomas Krummel",
+    position: "MD, FACS/FAPP Professor of Co-Director Stanford Byers Center for Bio-design",
+    image: "/images/advisors/advisor3.jpg",
+    flags: ["us"]
+  },
+  {
+    name: "Dr. Wael Al Mahmeed",
+    position: "MD Leading Cardiologist Owner of City Pharma, UAE",
+    image: "/images/advisors/advisor4.jpg",
+    flags: ["us", "india", "uk", "japan", "korea", "australia"]// idk konsa flag h iska
+  },
+  {
+    name: "Dr. Raj E G",
+    position: "RLeading Private Cardiologist Flint, Michigan Hurley Medical Center",
+    image: "/images/advisors/advisor5.jpg",
+    flags: ["us", "india"]
+  },
+  {
+    name: "Dr. Thomas Krummel",
+    position: "Chief Medical Advisor Memorial Care, Long Beach  Miller Children’s Hospital",
+    image: "/images/advisors/advisor6.jpg",
+    flags: ["us"]
+  }
+];
 
-const businessAdvisors = Array.from({ length: 9 }).map((_, i) => ({
-  name: `Advisor ${i + 1}`,
-  position: "Business Advisor & Strategist",
-  image: `https://randomuser.me/api/portraits/women/${40 + i}.jpg`,
-  description: "Guiding business strategy and market expansion.",
-  flags: i % 2 === 0 ? ["india"] : ["us"]
-}));
+// Replace the existing majorInvestors array with this:
 
-const indiaTeam = Array.from({ length: 6 }).map((_, i) => ({
-  name: `India Team Member ${i + 1}`,
-  position: "India Team",
-  image: `https://randomuser.me/api/portraits/men/${50 + i}.jpg`,
-  description: "Dedicated team member driving success in India.",
-  flags: ["india"]
-}));
+const majorInvestors = [
+  {
+    name: "Steve Killelea",
+    position: "Chairman of Integrated Research",
+    image: "/images/majorinvestor1.png",
+    description: "Founder of Ascent Capital, specializing in healthcare technology investments with 20+ years experience.",
+    flags: ["australia"]
+  },
+  {
+    name: "Young Jin Kim",
+    position: "Chairman & CEO of Handok Pharma",
+    image: "/images/investors/investor2.jpg",
+    description: "Former CEO of MedTech Ventures, leading investments in breakthrough medical technologies.",
+    flags: ["korea"]
+  },
+  {
+    name: "Suk Jin Kim",
+    position: "Investor & Handok Pharma",
+    image: "/images/investors/investor3.jpg",
+    description: "Principal at HealthTech Innovation Fund, focused on AI-driven healthcare solutions.",
+    flags: ["korea"]
+  },
+  {
+    name: "A Balasubramanian",
+    position: "MD, Aditya Birla Sun Life Asset Management",
+    image: "/images/investors/investor4.jpg",
+    description: "Board-certified cardiologist and active investor in medical device companies.",
+    flags: ["india"]
+  },
+  {
+    name: "Dr. Praveen Kollipara",
+    position: "Leading Oncologist & AAPI Member Fort Wayne, Indiana",
+    image: "/images/investors/investor5.jpg",
+    description: "Managing Partner at Global Health Ventures, specializing in cross-border healthcare investments.",
+    flags: ["us"]
+  }
+];
+
+const businessAdvisors = [
+  {
+    name: "Dr. Prem Pillay",
+    position: "Leading Neuro Surgeon Venture Capitalist",
+    image: "/images/advisors/business1.jpg",
+    flags: ["us"]
+  },
+  {
+    name: "Dr. Jon Freudmam ",
+    position: "Reimbursement Expert Ex-Kaiser & BlueShield",
+    image: "/images/advisors/business2.jpg",
+    flags: ["india", "us"]
+  },
+  {
+    name: "Umesh Singh",
+    position: "Finance Ex - IBM",
+    image: "/images/advisors/business3.jpg",
+    flags: ["us"]
+  },
+  {
+    name: "Vivek Pendharkar",
+    position: "Execution & Operations Ex - Intel",
+    image: "/images/advisors/business4.jpg",
+    flags: ["us", "korea"]
+  },
+  {
+    name: "Rangarajan Raghavan",
+    position: "India / Asia Sales Ex - HCL",
+    image: "/images/advisors/business5.jpg",
+    flags: ["us", "india"]
+  },
+  {
+    name: "Jessica Richter",
+    position: "Regulatory & Quality GM of Veranex",
+    image: "/images/advisors/business6.jpg",
+    flags: ["us"]
+  },
+  {
+    name: "Ashley Moore",
+    position: "PR & Media AM PR, Florida",
+    image: "/images/advisors/business7.jpg",
+    flags: ["uk"]
+  },
+  {
+    name: "Kang Lim",
+    position: "Patent Counsel",
+    image: "/images/advisors/business8.jpg",
+    flags: ["us"]
+  },
+  {
+    name: "Kristi Furrer",
+    position: "Marketing & Tradeshows Golden Impressions, Colorado",
+    image: "/images/advisors/business9.jpg",
+    flags: ["us"]
+  }
+];
+
+const indiaTeam = [
+  {
+    name: "Ganesh Kumar B R",
+    position: "General Manager R&D",
+    image: "/images/team/india1.jpg",
+    description: "Experience: 20+ years",
+    flags: ["india"]
+  },
+  {
+    name: "V Dinesh Kumar",
+    position: "General Manager Admin / Finance",
+    image: "/images/team/india2.jpg",
+    description: "Experience: 25+ years ",
+    flags: ["india"]
+  },
+  {
+    name: "Senthil Kumar S",
+    position: "Principal Architect Embedded Design",
+    image: "/images/team/india3.jpg",
+    description: "Experience 25+ Years",
+    flags: ["india"]
+  },
+  {
+    name: "Babu N",
+    position: "Head of Design",
+    image: "/images/team/india4.jpg",
+    description: "Experience: 25+ years ",
+    flags: ["india"]
+  },
+  {
+    name: "Geetha V",
+    position: "Senior Manager Materials & Manufacturing",
+    image: "/images/team/india5.jpg",
+    description: "Experience: 30+ years ",
+    flags: ["india"]
+  },
+  {
+    name: "Ravikumar K",
+    position: "Senior Engineer Hardware & Service ",
+    image: "/images/team/india6.jpg",
+    description: "Experience: 25+ years",
+    flags: ["india"]
+  }
+];
 
 // Section Component
 function Section({ title, people }) {
