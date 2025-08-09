@@ -17,6 +17,21 @@ const nextConfig = {
         hostname: 'cdn.pixabay.com',
         pathname: '/photo/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'randomuser.me',
+        pathname: '/api/**/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'hdmedical.in',
+        pathname: '/images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+        pathname: '/wikipedia/**',
+      },
     ],
   },
 }

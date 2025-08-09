@@ -114,12 +114,13 @@ export default function Header() {
             ))}
             
             {/* Download App Button - Mobile */}
-            <button 
-              className="w-full bg-[#17a6e0] hover:bg-[#1493c7] text-white font-bold px-6 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg mt-4"
+            <Link
+              href="/app"
+              className="w-full bg-[#17a6e0] hover:bg-[#1493c7] text-white font-bold px-6 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg mt-4 text-center block"
               onClick={() => setMenuOpen(false)}
             >
-              Download Mobile App
-            </button>
+              HD Steth App
+            </Link>
           </div>
         </div>
       </div>
