@@ -60,28 +60,28 @@ const leadership = [
   {
     name: "Sarah Chen",
     position: "Chief Executive Officer (CEO)",
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
+    image: "/images/leadership/member.jpg",
     description: "Visionary leader driving innovation and growth. Passionate about healthcare transformation.",
     flags: ["us"]
   },
   {
     name: "Robert Kim",
     position: "Chief Operations Officer (COO)",
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
+    image: "/images/leadership/member.jpg",
     description: "Expert in operational excellence and global strategy. Ensures seamless execution.",
     flags: ["us", "india"]
   },
   {
     name: "Thomas Bergstrom",
     position: "VP, Global Sales",
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
+    image: "/images/leadership/member.jpg",
     description: "Sales strategist with a global perspective. Expanding markets worldwide.",
     flags: ["germany"]
   },
   {
     name: "Elena Rodriguez",
     position: "Director of Sustainability",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    image: "/images/leadership/member.jpg",
     description: "Champion for sustainable healthcare solutions. Advocates for green innovation.",
     flags: ["france"]
   }
@@ -317,35 +317,10 @@ const indiaTeam = [
 
 // Section Component
 function Section({ title, people }) {
-  // Responsive row splitting: max 4 per row, but avoid single card rows
+  // Split people array into rows of 3
   const rows = [];
-  let i = 0;
-  while (i < people.length) {
-    const remaining = people.length - i;
-    if (remaining === 1) {
-      // If only one card left, move one from previous row if possible
-      if (rows.length > 0 && rows[rows.length - 1].length > 2) {
-        // Move one from previous row to make two in last row
-        const moved = rows[rows.length - 1].pop();
-        rows.push([moved, people[i]]);
-      } else if (rows.length > 0) {
-        // If previous row has only 2, just add to it
-        rows[rows.length - 1].push(people[i]);
-      } else {
-        // If first row, just push single
-        rows.push([people[i]]);
-      }
-      i += 1;
-    } else if (remaining === 2) {
-      rows.push([people[i], people[i + 1]]);
-      i += 2;
-    } else if (remaining === 3) {
-      rows.push([people[i], people[i + 1], people[i + 2]]);
-      i += 3;
-    } else {
-      rows.push([people[i], people[i + 1], people[i + 2], people[i + 3]]);
-      i += 4;
-    }
+  for (let i = 0; i < people.length; i += 3) {
+    rows.push(people.slice(i, i + 3));
   }
 
   return (
@@ -359,19 +334,30 @@ function Section({ title, people }) {
         {rows.map((row, rowIdx) => (
           <div
             key={rowIdx}
-            className={`w-full flex flex-wrap justify-center gap-8`}
+            className="w-full flex flex-wrap justify-center gap-8"
           >
             {row.map((person, idx) => (
               <div
                 key={idx}
                 className="flex-1 min-w-[260px] max-w-[340px] flex justify-center"
                 style={{
-                  flexBasis: `calc(${100 / Math.min(row.length, 4)}% - 2rem)`
+                  flexBasis: "calc(33.333% - 2rem)"
                 }}
               >
                 <PersonCard person={person} />
               </div>
             ))}
+            {/* Fill empty spots for alignment if last row has < 3 cards */}
+            {row.length < 3 &&
+              Array.from({ length: 3 - row.length }).map((_, i) => (
+                <div
+                  key={`empty-${i}`}
+                  className="flex-1 min-w-[260px] max-w-[340px] flex justify-center invisible"
+                  style={{
+                    flexBasis: "calc(33.333% - 2rem)"
+                  }}
+                />
+              ))}
           </div>
         ))}
       </div>
@@ -420,6 +406,51 @@ export default function AboutUs() {
             className="w-[260px] h-[320px] md:w-[260px] md:h-[320px] object-cover rounded-md shadow-md mb-4 md:mb-8"
             priority
           />
+        </div>
+      </section>
+
+      {/* Vision & Mission Section */}
+      <section className="w-full bg-white px-4 py-12 md:px-10 lg:px-32">
+        <div className="max-w-6xl mx-auto flex flex-col gap-10 md:gap-16">
+          {/* Vision */}
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+            <div className="w-full md:w-1/3 flex-shrink-0 flex items-center justify-center md:justify-start mb-4 md:mb-0">
+              <span className="text-sky-500 text-3xl md:text-5xl font-serif font-semibold leading-tight text-center md:text-left">
+                Our Vision
+              </span>
+            </div>
+            <div className="w-full md:w-2/3 flex items-center justify-center md:justify-start">
+              <p className="text-base md:text-lg text-gray-800 font-medium text-center md:text-left">
+                To be a global leader in innovative, high-precision Medical devices that empower healthcare professionals and improve patient outcomes through advanced technology, uncompromising quality and continuous innovation.
+              </p>
+            </div>
+          </div>
+          {/* Mission */}
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+            <div className="w-full md:w-1/3 flex justify-center md:justify-start mb-4 md:mb-0">
+              <div className="rounded-[32px] overflow-hidden shadow-lg w-full max-w-xs md:max-w-md">
+                <Image
+                  src="/images/doctor1-aboutus.jpg"
+                  alt="Doctor checking patient health"
+                  width={400}
+                  height={320}
+                  className="object-cover w-full h-48 md:h-64"
+                  priority
+                />
+              </div>
+            </div>
+            <div className="w-full md:w-2/3 flex flex-col justify-center">
+              <h2 className="text-sky-500 text-2xl md:text-4xl font-bold mb-3 font-serif leading-tight text-center md:text-left">
+                Our Mission
+              </h2>
+              <p className="text-base md:text-lg text-gray-800 font-medium mb-2 text-center md:text-left">
+                At HD Medical, we are dedicated to designing, developing, manufacturing and delivering innovative healthcare technology. We strive to exceed customer expectations by maintaining the highest quality standards, adhering to global regulatory requirements and fostering a culture of innovation, integrity and service.
+              </p>
+              <p className="text-base md:text-lg text-gray-800 font-medium text-center md:text-left">
+                Through our commitment to excellence, we aim to make healthcare more accurate, accessible and efficient worldwide.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
