@@ -10,6 +10,7 @@ const flags = {
   japan: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/250px-Flag_of_Japan.svg.png",
   korea: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/250px-Flag_of_South_Korea.svg.png",
   australia: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/250px-Flag_of_Australia_%28converted%29.svg.png",
+  uae:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/1920px-Flag_of_the_United_Arab_Emirates.svg.png"
 };
 
 // Card Component
@@ -17,20 +18,21 @@ function PersonCard({ person }) {
   return (
     <div className="w-full max-w-[340px] mx-auto bg-white border-[2px] border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-lg relative transition-all duration-300 hover:scale-105 hover:shadow-2xl"
       style={{ boxSizing: 'border-box' }}>
-      <div className="w-full aspect-[4/5] relative border-b-[2px] border-gray-200">
+      <div className="w-full aspect-[4/5] relative border-b-[2px] border-gray-200 bg-gray-100">
         <Image
           src={person.image}
           alt={`${person.name} - ${person.position}`}
           fill
-          className="object-cover"
+          className="object-contain md:object-cover"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           placeholder="blur"
           blurDataURL={person.blurDataURL || "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="}
+          style={{ objectPosition: 'center' }}
         />
         {/* Flags */}
         <div className="absolute top-2 right-2 flex gap-1 z-10">
           {person.flags
-            .filter(flag => flags[flag]) // Only render if flag src exists
+            .filter(flag => flags[flag])
             .map((flag, idx) => (
               <Image
                 key={idx}
@@ -58,32 +60,32 @@ function PersonCard({ person }) {
 // Dummy Data
 const leadership = [
   {
-    name: "Sarah Chen",
-    position: "Chief Executive Officer (CEO)",
+    name: "Arvind Thiagarajan",
+    position: "Founder, CEO & Chief Inventor",
     image: "/images/leadership/member.jpg",
     description: "Visionary leader driving innovation and growth. Passionate about healthcare transformation.",
+    flags: ["us",'india']
+  },
+  {
+    name: "Eric Fronk",
+    position: "CFO / COO",
+    image: "/images/company/Eric Fronk.jpg",
+    description: "Driving financial strategy and operational excellence to ensure sustainable growth and quality healthcare delivery.",
     flags: ["us"]
   },
   {
-    name: "Robert Kim",
-    position: "Chief Operations Officer (COO)",
-    image: "/images/leadership/member.jpg",
-    description: "Expert in operational excellence and global strategy. Ensures seamless execution.",
-    flags: ["us", "india"]
+    name: "Venkat Raman",
+    position: "Chief of Engineering & SVP, Manufacturing Ops",
+    image: "/images/company/venkat1.jpg",
+    description: "Leading engineering innovation and manufacturing excellence to deliver high-quality, scalable, and efficient solutions.",
+    flags: ["us"]
   },
   {
-    name: "Thomas Bergstrom",
-    position: "VP, Global Sales",
-    image: "/images/leadership/member.jpg",
-    description: "Sales strategist with a global perspective. Expanding markets worldwide.",
-    flags: ["germany"]
-  },
-  {
-    name: "Elena Rodriguez",
-    position: "Director of Sustainability",
-    image: "/images/leadership/member.jpg",
-    description: "Champion for sustainable healthcare solutions. Advocates for green innovation.",
-    flags: ["france"]
+    name: "Prasad Bal",
+    position: "SVP, Partnerships & Product Management",
+    image: "/images/company/Prasad Bal.jpg",
+    description: "Building strategic partnerships and driving product innovation to accelerate growth and deliver exceptional customer value.",
+    flags: ["us"]
   }
 ];
 
@@ -100,35 +102,35 @@ const boardMembers = [
   {
     name: "Arjun Malhotra",
     position:" Board Member",
-    image: "/images/board/member2.jpg",
+    image: "/images/company/Arjun_Malhotra.avif",
     description: "Co-Founder of HCL & Headstrong",
     flags: ["us", "india"]
   },
   {
     name: "Vic Mahadevan",
     position: "Board Member",
-    image: "/images/board/member3.jpg",
+    image: "/images/company/Vic Mahadevan.jpg",
     description: "Successful Corporate Executive & Leader",
     flags: ["us"]
   },
   {
     name: "Murali Malayappan",
     position: "Board Member",
-    image: "/images/board/member4.jpg",
+    image: "/images/company/Murali Malayappan2.jpeg",
     description: "Chairman & MD, Shriram Properties",
     flags: ["india"]
   },
   {
     name: "Investor & Board Observer",
     position: "ADI (NASDAQ)",
-    image: "/images/board/member5.jpg",
+    image: "/images/company/Analog_Device.png",
     description: "Market Cap: US$ 80 Billion",
     flags: ["us"]
   },
   {
     name: "Riaz A. Karamali",
     position: "Legal Counsel",
-    image: "/images/board/member6.jpg",
+    image: "/images/company/Riaz A. Karamali.jpg",
     description: "Pillsbury Silicon Valley & San Francisco",
     flags: ["us"]
   }
@@ -138,37 +140,37 @@ const medicalAdvisors = [
   {
     name: "Dr. Nelson Schiller",
     position: "MD, FACC, FRCP Professor of Medicine & Anesthesia",
-    image: "/images/advisors/advisor1.jpg",
+    image: "/images/company/Dr. Nelson Schiller.jpg",
     flags: ["us"]
   },
   {
     name: "Dr. Douglas Johnston",
     position: "MD Thoracic and Cardiovascular Surgery",
-    image: "/images/advisors/advisor2.jpg",
+    image: "/images/company/Dr. Douglas Johnston.jpg",
     flags: ["us"]
   },
   {
     name: "Dr. Thomas Krummel",
     position: "MD, FACS/FAPP Professor of Co-Director Stanford Byers Center for Bio-design",
-    image: "/images/advisors/advisor3.jpg",
+    image: "/images/company/Dr. Thomas Krummel.jpg",
     flags: ["us"]
   },
   {
     name: "Dr. Wael Al Mahmeed",
     position: "MD Leading Cardiologist Owner of City Pharma, UAE",
-    image: "/images/advisors/advisor4.jpg",
-    flags: ["us", "india", "uk", "japan", "korea", "australia"]// idk konsa flag h iska
+    image: "/images/company/DR Wael Al Mahmeed.png",
+    flags: ["uae"]
   },
   {
     name: "Dr. Raj E G",
-    position: "RLeading Private Cardiologist Flint, Michigan Hurley Medical Center",
-    image: "/images/advisors/advisor5.jpg",
+    position: "Leading Private Cardiologist Flint, Michigan Hurley Medical Center",
+    image: "/images/company/Dr. Raj E G.jpeg",
     flags: ["us", "india"]
   },
   {
-    name: "Dr. Thomas Krummel",
-    position: "Chief Medical Advisor Memorial Care, Long Beach  Miller Children’s Hospital",
-    image: "/images/advisors/advisor6.jpg",
+    name: "Dr. Shaun Setty",
+    position: "Chief Medical Advisor Memorial Care, Long Beach Miller Children’s Hospital",
+    image: "/images/company/Dr. Shaun Setty.webp",
     flags: ["us"]
   }
 ];
@@ -179,28 +181,28 @@ const majorInvestors = [
   {
     name: "Steve Killelea",
     position: "Chairman of Integrated Research",
-    image: "/images/majorinvestor1.png",
+    image: "/images/company/Steve Killelea.jpeg",
     description: "Founder of Ascent Capital, specializing in healthcare technology investments with 20+ years experience.",
     flags: ["australia"]
   },
   {
     name: "Young Jin Kim",
     position: "Chairman & CEO of Handok Pharma",
-    image: "/images/investors/investor2.jpg",
+    image: "/images/company/Young Jin Kim.jpg",
     description: "Former CEO of MedTech Ventures, leading investments in breakthrough medical technologies.",
     flags: ["korea"]
   },
   {
     name: "Suk Jin Kim",
     position: "Investor & Handok Pharma",
-    image: "/images/investors/investor3.jpg",
+    image: "/images/company/Suk Jin Kim.jpg",
     description: "Principal at HealthTech Innovation Fund, focused on AI-driven healthcare solutions.",
     flags: ["korea"]
   },
   {
     name: "A Balasubramanian",
     position: "MD, Aditya Birla Sun Life Asset Management",
-    image: "/images/investors/investor4.jpg",
+    image: "/images/company/A_Balasubramanian.jpeg",
     description: "Board-certified cardiologist and active investor in medical device companies.",
     flags: ["india"]
   },
@@ -217,25 +219,25 @@ const businessAdvisors = [
   {
     name: "Dr. Prem Pillay",
     position: "Leading Neuro Surgeon Venture Capitalist",
-    image: "/images/advisors/business1.jpg",
+    image: "/images/company/Dr. Prem Pillay.jpg",
     flags: ["us"]
   },
   {
     name: "Dr. Jon Freudmam ",
     position: "Reimbursement Expert Ex-Kaiser & BlueShield",
-    image: "/images/advisors/business2.jpg",
+    image: "/images/company/Dr. Jon Freudmam.jpeg",
     flags: ["india", "us"]
   },
   {
     name: "Umesh Singh",
     position: "Finance Ex - IBM",
-    image: "/images/advisors/business3.jpg",
+    image: "/images/company/Umesh Singh.jpg",
     flags: ["us"]
   },
   {
     name: "Vivek Pendharkar",
     position: "Execution & Operations Ex - Intel",
-    image: "/images/advisors/business4.jpg",
+    image: "/images/company/Vivek Pendharkar.webp",
     flags: ["us", "korea"]
   },
   {
@@ -247,19 +249,19 @@ const businessAdvisors = [
   {
     name: "Jessica Richter",
     position: "Regulatory & Quality GM of Veranex",
-    image: "/images/advisors/business6.jpg",
+    image: "/images/company/Jessica Richter.jpeg",
     flags: ["us"]
   },
   {
     name: "Ashley Moore",
     position: "PR & Media AM PR, Florida",
-    image: "/images/advisors/business7.jpg",
+    image: "/images/company/Ashley_Moore.avif",
     flags: ["uk"]
   },
   {
     name: "Kang Lim",
     position: "Patent Counsel",
-    image: "/images/advisors/business8.jpg",
+    image: "/images/company/Kang Lim.webp",
     flags: ["us"]
   },
   {
@@ -274,7 +276,7 @@ const indiaTeam = [
   {
     name: "Ganesh Kumar B R",
     position: "General Manager R&D",
-    image: "/images/team/india1.jpg",
+    image: "/images/company/Ganesh.png",
     description: "Experience: 20+ years",
     flags: ["india"]
   },
@@ -288,7 +290,7 @@ const indiaTeam = [
   {
     name: "Senthil Kumar S",
     position: "Principal Architect Embedded Design",
-    image: "/images/team/india3.jpg",
+    image: "/images/company/Senthil.jpg",
     description: "Experience 25+ Years",
     flags: ["india"]
   },
@@ -302,7 +304,7 @@ const indiaTeam = [
   {
     name: "Geetha V",
     position: "Senior Manager Materials & Manufacturing",
-    image: "/images/team/india5.jpg",
+    image: "/images/company/Geetha.jpeg",
     description: "Experience: 30+ years ",
     flags: ["india"]
   },
