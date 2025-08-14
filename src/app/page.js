@@ -409,11 +409,10 @@ function PopCTAForm({ open, onClose }) {
                 type="button"
                 onClick={handleSubmit}
                 disabled={isLoading}
-                className={`w-full py-3 rounded-full text-white text-base font-semibold transition-all duration-300 shadow-lg ${
-                  isLoading
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] hover:from-[#0d7fad] hover:to-[#17a6e0] hover:shadow-xl"
-                }`}
+                className={`w-full py-3 rounded-full text-white text-base font-semibold transition-all duration-300 shadow-lg ${isLoading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] hover:from-[#0d7fad] hover:to-[#17a6e0] hover:shadow-xl"
+                  }`}
               >
                 {isLoading ? "Submitting..." : "Submit"}
               </button>
@@ -618,7 +617,7 @@ export default function Home() {
             </p>
           </div>
 
-         {/* Right Column: Image with Circles */}
+          {/* Right Column: Image with Circles */}
           <div className={`relative h-[300px] sm:h-[400px] md:h-[500px] w-full transition-all duration-1000 delay-300 ${heroVisible ? 'animate-fadeInRight' : 'opacity-0 translate-x-[30px]'}`}>
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[280px] sm:w-[350px] md:w-[400px] h-[280px] sm:h-[350px] md:h-[400px] mx-auto left-0 md:left-auto">
               {/* Outer Circle */}
@@ -646,14 +645,14 @@ export default function Home() {
               />
 
               {/* Stethoscope Image */}
-              <div className="absolute w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="absolute w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <Image
                   src="/images/stethoscope.png"
                   alt="HD Steth Device"
                   fill
                   priority
                   className="object-contain animate-float"
-                  sizes="(max-width: 640px) 240px, (max-width: 768px) 300px, 350px"
+                  sizes="(max-width: 640px) 240px, (max-width: 768px) 300px, (max-width: 1024px) 400px, 480px"
                 />
               </div>
 
@@ -666,7 +665,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-            </div>
+        </div>
 
 
         {/* Stats Section with Static Numbers */}

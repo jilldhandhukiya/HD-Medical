@@ -632,7 +632,7 @@ export default function ProductHero() {
               <div className="mb-4 flex items-center gap-3">
                 {/* Lucide MonitorHeart Icon */}
                 <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100">
-                  <Monitor className="w-5 h-5 text-blue-700" />
+                  <Activity className="w-5 h-5 text-blue-700" />
                 </span>
                 <h3 className="text-lg font-semibold text-blue-700">
                   ECG Analysis
