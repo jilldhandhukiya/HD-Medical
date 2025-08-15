@@ -62,7 +62,7 @@ const leadership = [
   {
     name: "Arvind Thiagarajan",
     position: "Founder, CEO & Chief Inventor",
-    image: "/images/leadership/member.jpg",
+    image: "/images/Arvind.png",
     description: "Visionary leader driving innovation and growth. Passionate about healthcare transformation.",
     flags: ["us",'india']
   },
@@ -86,7 +86,15 @@ const leadership = [
     image: "/images/company/Prasad Bal.jpg",
     description: "Building strategic partnerships and driving product innovation to accelerate growth and deliver exceptional customer value.",
     flags: ["us"]
+  },
+  {
+    name: "Ganesh Kumar B R",
+    position: "VP of R&D",
+    image: "/images/company/Ganesh.png",
+    description: "Driving research and development initiatives to deliver innovative healthcare solutions.",
+    flags: ["india"]
   }
+
 ];
 
 // Replace the existing boardMembers array with this:
@@ -95,7 +103,7 @@ const boardMembers = [
   {
     name: "Arvind Thiagarajan",
     position: "Founder & CEO",
-    image: "/images/board/member1.jpg",
+    image: "/images/Arvind.png",
     description: "Serial Entrepreneur & Successful ASX IPO",
     flags: ["india","us"]
   },
@@ -107,24 +115,10 @@ const boardMembers = [
     flags: ["us", "india"]
   },
   {
-    name: "Vic Mahadevan",
+    name: "Guru Gurushankar",
     position: "Board Member",
-    image: "/images/company/Vic Mahadevan.jpg",
+    image: "/images/GuruShankar.jpg",
     description: "Successful Corporate Executive & Leader",
-    flags: ["us"]
-  },
-  {
-    name: "Murali Malayappan",
-    position: "Board Member",
-    image: "/images/company/Murali Malayappan2.jpeg",
-    description: "Chairman & MD, Shriram Properties",
-    flags: ["india"]
-  },
-  {
-    name: "Investor & Board Observer",
-    position: "ADI (NASDAQ)",
-    image: "/images/company/Analog_Device.png",
-    description: "Market Cap: US$ 80 Billion",
     flags: ["us"]
   },
   {
@@ -133,7 +127,15 @@ const boardMembers = [
     image: "/images/company/Riaz A. Karamali.jpg",
     description: "Pillsbury Silicon Valley & San Francisco",
     flags: ["us"]
+  },
+  {
+    name: "Investor & Board Observer",
+    position: "ADI (NASDAQ)",
+    image: "/images/company/Analog_Device.png",
+    description: "Market Cap: US$ 80 Billion",
+    flags: ["us"]
   }
+  
 ];
 
 const medicalAdvisors = [
@@ -166,156 +168,150 @@ const medicalAdvisors = [
     position: "Leading Private Cardiologist Flint, Michigan Hurley Medical Center",
     image: "/images/company/Dr. Raj E G.jpeg",
     flags: ["us", "india"]
-  },
-  {
-    name: "Dr. Shaun Setty",
-    position: "Chief Medical Advisor Memorial Care, Long Beach Miller Children’s Hospital",
-    image: "/images/company/Dr. Shaun Setty.webp",
-    flags: ["us"]
   }
 ];
 
-// Replace the existing majorInvestors array with this:
+// // Replace the existing majorInvestors array with this:
 
-const majorInvestors = [
-  {
-    name: "Steve Killelea",
-    position: "Chairman of Integrated Research",
-    image: "/images/company/Steve Killelea.jpeg",
-    description: "Founder of Ascent Capital, specializing in healthcare technology investments with 20+ years experience.",
-    flags: ["australia"]
-  },
-  {
-    name: "Young Jin Kim",
-    position: "Chairman & CEO of Handok Pharma",
-    image: "/images/company/Young Jin Kim.jpg",
-    description: "Former CEO of MedTech Ventures, leading investments in breakthrough medical technologies.",
-    flags: ["korea"]
-  },
-  {
-    name: "Suk Jin Kim",
-    position: "Investor & Handok Pharma",
-    image: "/images/company/Suk Jin Kim.jpg",
-    description: "Principal at HealthTech Innovation Fund, focused on AI-driven healthcare solutions.",
-    flags: ["korea"]
-  },
-  {
-    name: "A Balasubramanian",
-    position: "MD, Aditya Birla Sun Life Asset Management",
-    image: "/images/company/A_Balasubramanian.jpeg",
-    description: "Board-certified cardiologist and active investor in medical device companies.",
-    flags: ["india"]
-  },
-  {
-    name: "Dr. Praveen Kollipara",
-    position: "Leading Oncologist & AAPI Member Fort Wayne, Indiana",
-    image: "/images/investors/investor5.jpg",
-    description: "Managing Partner at Global Health Ventures, specializing in cross-border healthcare investments.",
-    flags: ["us"]
-  }
-];
+// const majorInvestors = [
+//   {
+//     name: "Steve Killelea",
+//     position: "Chairman of Integrated Research",
+//     image: "/images/company/Steve Killelea.jpeg",
+//     description: "Founder of Ascent Capital, specializing in healthcare technology investments with 20+ years experience.",
+//     flags: ["australia"]
+//   },
+//   {
+//     name: "Young Jin Kim",
+//     position: "Chairman & CEO of Handok Pharma",
+//     image: "/images/company/Young Jin Kim.jpg",
+//     description: "Former CEO of MedTech Ventures, leading investments in breakthrough medical technologies.",
+//     flags: ["korea"]
+//   },
+//   {
+//     name: "Suk Jin Kim",
+//     position: "Investor & Handok Pharma",
+//     image: "/images/company/Suk Jin Kim.jpg",
+//     description: "Principal at HealthTech Innovation Fund, focused on AI-driven healthcare solutions.",
+//     flags: ["korea"]
+//   },
+//   {
+//     name: "A Balasubramanian",
+//     position: "MD, Aditya Birla Sun Life Asset Management",
+//     image: "/images/company/A_Balasubramanian.jpeg",
+//     description: "Board-certified cardiologist and active investor in medical device companies.",
+//     flags: ["india"]
+//   },
+//   {
+//     name: "Dr. Praveen Kollipara",
+//     position: "Leading Oncologist & AAPI Member Fort Wayne, Indiana",
+//     image: "/images/investors/investor5.jpg",
+//     description: "Managing Partner at Global Health Ventures, specializing in cross-border healthcare investments.",
+//     flags: ["us"]
+//   }
+// ];
 
-const businessAdvisors = [
-  {
-    name: "Dr. Prem Pillay",
-    position: "Leading Neuro Surgeon Venture Capitalist",
-    image: "/images/company/Dr. Prem Pillay.jpg",
-    flags: ["us"]
-  },
-  {
-    name: "Dr. Jon Freudmam ",
-    position: "Reimbursement Expert Ex-Kaiser & BlueShield",
-    image: "/images/company/Dr. Jon Freudmam.jpeg",
-    flags: ["india", "us"]
-  },
-  {
-    name: "Umesh Singh",
-    position: "Finance Ex - IBM",
-    image: "/images/company/Umesh Singh.jpg",
-    flags: ["us"]
-  },
-  {
-    name: "Vivek Pendharkar",
-    position: "Execution & Operations Ex - Intel",
-    image: "/images/company/Vivek Pendharkar.webp",
-    flags: ["us", "korea"]
-  },
-  {
-    name: "Rangarajan Raghavan",
-    position: "India / Asia Sales Ex - HCL",
-    image: "/images/advisors/business5.jpg",
-    flags: ["us", "india"]
-  },
-  {
-    name: "Jessica Richter",
-    position: "Regulatory & Quality GM of Veranex",
-    image: "/images/company/Jessica Richter.jpeg",
-    flags: ["us"]
-  },
-  {
-    name: "Ashley Moore",
-    position: "PR & Media AM PR, Florida",
-    image: "/images/company/Ashley_Moore.avif",
-    flags: ["uk"]
-  },
-  {
-    name: "Kang Lim",
-    position: "Patent Counsel",
-    image: "/images/company/Kang Lim.webp",
-    flags: ["us"]
-  },
-  {
-    name: "Kristi Furrer",
-    position: "Marketing & Tradeshows Golden Impressions, Colorado",
-    image: "/images/advisors/business9.jpg",
-    flags: ["us"]
-  }
-];
+// const businessAdvisors = [
+//   {
+//     name: "Dr. Prem Pillay",
+//     position: "Leading Neuro Surgeon Venture Capitalist",
+//     image: "/images/company/Dr. Prem Pillay.jpg",
+//     flags: ["us"]
+//   },
+//   {
+//     name: "Dr. Jon Freudmam ",
+//     position: "Reimbursement Expert Ex-Kaiser & BlueShield",
+//     image: "/images/company/Dr. Jon Freudmam.jpeg",
+//     flags: ["india", "us"]
+//   },
+//   {
+//     name: "Umesh Singh",
+//     position: "Finance Ex - IBM",
+//     image: "/images/company/Umesh Singh.jpg",
+//     flags: ["us"]
+//   },
+//   {
+//     name: "Vivek Pendharkar",
+//     position: "Execution & Operations Ex - Intel",
+//     image: "/images/company/Vivek Pendharkar.webp",
+//     flags: ["us", "korea"]
+//   },
+//   {
+//     name: "Rangarajan Raghavan",
+//     position: "India / Asia Sales Ex - HCL",
+//     image: "/images/advisors/business5.jpg",
+//     flags: ["us", "india"]
+//   },
+//   {
+//     name: "Jessica Richter",
+//     position: "Regulatory & Quality GM of Veranex",
+//     image: "/images/company/Jessica Richter.jpeg",
+//     flags: ["us"]
+//   },
+//   {
+//     name: "Ashley Moore",
+//     position: "PR & Media AM PR, Florida",
+//     image: "/images/company/Ashley_Moore.avif",
+//     flags: ["uk"]
+//   },
+//   {
+//     name: "Kang Lim",
+//     position: "Patent Counsel",
+//     image: "/images/company/Kang Lim.webp",
+//     flags: ["us"]
+//   },
+//   {
+//     name: "Kristi Furrer",
+//     position: "Marketing & Tradeshows Golden Impressions, Colorado",
+//     image: "/images/advisors/business9.jpg",
+//     flags: ["us"]
+//   }
+// ];
 
-const indiaTeam = [
-  {
-    name: "Ganesh Kumar B R",
-    position: "General Manager R&D",
-    image: "/images/company/Ganesh.png",
-    description: "Experience: 20+ years",
-    flags: ["india"]
-  },
-  {
-    name: "V Dinesh Kumar",
-    position: "General Manager Admin / Finance",
-    image: "/images/team/india2.jpg",
-    description: "Experience: 25+ years ",
-    flags: ["india"]
-  },
-  {
-    name: "Senthil Kumar S",
-    position: "Principal Architect Embedded Design",
-    image: "/images/company/Senthil.jpg",
-    description: "Experience 25+ Years",
-    flags: ["india"]
-  },
-  {
-    name: "Babu N",
-    position: "Head of Design",
-    image: "/images/team/india4.jpg",
-    description: "Experience: 25+ years ",
-    flags: ["india"]
-  },
-  {
-    name: "Geetha V",
-    position: "Senior Manager Materials & Manufacturing",
-    image: "/images/company/Geetha.jpeg",
-    description: "Experience: 30+ years ",
-    flags: ["india"]
-  },
-  {
-    name: "Ravikumar K",
-    position: "Senior Engineer Hardware & Service ",
-    image: "/images/team/india6.jpg",
-    description: "Experience: 25+ years",
-    flags: ["india"]
-  }
-];
+// const indiaTeam = [
+//   {
+//     name: "Ganesh Kumar B R",
+//     position: "General Manager R&D",
+//     image: "/images/company/Ganesh.png",
+//     description: "Experience: 20+ years",
+//     flags: ["india"]
+//   },
+//   {
+//     name: "V Dinesh Kumar",
+//     position: "General Manager Admin / Finance",
+//     image: "/images/team/india2.jpg",
+//     description: "Experience: 25+ years ",
+//     flags: ["india"]
+//   },
+//   {
+//     name: "Senthil Kumar S",
+//     position: "Principal Architect Embedded Design",
+//     image: "/images/company/Senthil.jpg",
+//     description: "Experience 25+ Years",
+//     flags: ["india"]
+//   },
+//   {
+//     name: "Babu N",
+//     position: "Head of Design",
+//     image: "/images/team/india4.jpg",
+//     description: "Experience: 25+ years ",
+//     flags: ["india"]
+//   },
+//   {
+//     name: "Geetha V",
+//     position: "Senior Manager Materials & Manufacturing",
+//     image: "/images/company/Geetha.jpeg",
+//     description: "Experience: 30+ years ",
+//     flags: ["india"]
+//   },
+//   {
+//     name: "Ravikumar K",
+//     position: "Senior Engineer Hardware & Service ",
+//     image: "/images/team/india6.jpg",
+//     description: "Experience: 25+ years",
+//     flags: ["india"]
+//   }
+// ];
 
 // Section Component
 function Section({ title, people }) {
@@ -466,13 +462,13 @@ export default function AboutUs() {
       <Section title="Medical Advisors" people={medicalAdvisors} />
 
       {/* Our Current Major Investors Section */}
-      <Section title="Our Current Major Investors" people={majorInvestors} />
+      {/* <Section title="Our Current Major Investors" people={majorInvestors} /> */}
 
       {/* Business Advisors & Strategists Section */}
-      <Section title="Business Advisors & Strategists" people={businessAdvisors} />
+      {/* <Section title="Business Advisors & Strategists" people={businessAdvisors} /> */}
 
       {/* India Team Members Section */}
-      <Section title="India Team Members" people={indiaTeam} />
+      {/* <Section title="India Team Members" people={indiaTeam} /> */}
 
       {/* Footer Section */}
       <Footer />
