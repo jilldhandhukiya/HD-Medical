@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     
     
-    <footer className="bg-[#ffffff] text-black px-6 lg:px-16 py-16">
+    <footer className="bg-[#ffffff] text-black px-6 lg:px-16 py-4">
       <div className="max-w-7xl mx-auto">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-8">
@@ -89,6 +89,20 @@ export default function Footer() {
           />
         </div>
        </div>
+       {/* Legalese */}
+        <div className="mt-8 border-t pt-2 text-center text-xs text-gray-500 leading-relaxed">
+          <div className="max-w-3xl mx-auto">
+            <p className="mb-2">
+              &copy; {new Date().getFullYear()} HD Medical. All rights reserved. HD Medical&reg; All Rights Reserved.
+            </p>
+            <div className="flex justify-center gap-4">
+              <Link href="#" className="underline hover:text-gray-600">Privacy Policy</Link>
+              <Link href="#" className="underline hover:text-gray-600">Terms of Use</Link>
+              <Link href="#" className="underline hover:text-gray-600">Disclaimer</Link>
+            </div>
+          </div>
+        </div>
+
     </footer>
   )
 }
