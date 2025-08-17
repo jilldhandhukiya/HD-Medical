@@ -455,12 +455,12 @@ export default function ProductHero() {
             </div>
 
             {/* Central Stethoscope + Tablet Image */}
-            <div className="relative w-full max-w-4xl">
+            <div className="relative w-full max-w-6xl">
               <Image
                 src="/images/hd-steth-controls-main.png" // Replace with your actual path
                 alt="HD Steth Device with Labels"
-                width={1400}
-                height={900}
+                width={1700}
+                height={1500}
                 className="w-full h-auto object-contain"
               />
             </div>
