@@ -1479,13 +1479,12 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             CERTIFICATES
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center max-w-none mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-8 items-center justify-items-center max-w-none mx-auto">
             {[
               { src: "/images/fda.png", alt: "FDA Cleared", text: "FDA CLEARED\n# K201299" },
               { src: "/images/iso.png", alt: "ISO Certification", text: "ISO\n13485: 2016" },
-              { src: "/images/tn.png", alt: "TN Certification", text: "TN/M/MD/004806" },
-              { src: "/images/iec.png", alt: "IEC Certification", text: "IEC\n60601-2-27" }
-            ].map((cert, index) => (
+              { src: "/images/tn.png", alt: "TN Certification", text: "TN/M/MD/004806" }
+              ].map((cert, index) => (
               <div key={index} className="flex flex-col items-center text-center">
                 <div>
                   <Image
