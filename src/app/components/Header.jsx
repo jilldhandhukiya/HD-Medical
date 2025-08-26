@@ -21,10 +21,10 @@ export default function Header() {
   }, [])
 
   const links = [
-    ['Home', '/'],
-    ['Product', '/product'],
-    ['About', '/aboutus'],
-    ['Contact', '/contactus']
+    ['HOME', '/'],
+    ['PRODUCT', '/product'],
+    ['ABOUT', '/aboutus'],
+    ['CONTACT', '/contactus']
   ]
 
   return (
@@ -71,7 +71,7 @@ export default function Header() {
               href="/app"
               className="bg-[#17a6e0] hover:bg-[#1493c7] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
             >
-              HD Steth App
+              HD STETH APP
             </Link>
           </div>
 
