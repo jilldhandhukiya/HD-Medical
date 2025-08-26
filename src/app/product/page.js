@@ -929,8 +929,8 @@ export default function ProductHero() {
               onClick={() => {
                 // Direct download of pre-made zip file
                 const link = document.createElement('a');
-                link.href = "/docs/HDSteth-Documents.zip";
-                link.download = "HDSteth-Documents.zip";
+                link.href = "/docs/HDSteth-All-Docs.zip";
+                link.download = "HDSteth-All-Docs.zip";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
