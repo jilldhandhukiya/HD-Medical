@@ -88,7 +88,8 @@ export default function DownloadApp() {
   // Handle download button click
   const handleDownload = () => {
     // Replace this URL with your actual Google Drive download link
-    const driveLink = "https://drive.google.com/file/d/1_ZbkbOPocr6rWMGmO7HSheEbwPIsSWm2/view?usp=sharing ";
+    const driveLink = "https://drive.google.com/file/d/10C7PK_3UN5E_P-7PxM9s3p3U094TE_0q/view?usp=sharing"
+
     window.open(driveLink, '_blank');
   };
 

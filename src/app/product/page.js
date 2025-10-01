@@ -668,6 +668,28 @@ export default function ProductHero() {
         </div>
       </section>
 
+      {/* Download HD Steth App Section */}
+      <section className="bg-[#17a6e0] py-12 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Download HD Steth App
+          </h2>
+          <p className="text-lg text-blue-50 mb-8">
+            Get the companion app for your HD Steth device
+          </p>
+          
+          <a
+            href="https://drive.google.com/file/d/10C7PK_3UN5E_P-7PxM9s3p3U094TE_0q/view?usp=sharing"
+            className="inline-flex items-center justify-center gap-3 bg-white text-[#17a6e0] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+          >
+            <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+            </svg>
+            Download for Android
+          </a>
+        </div>
+      </section>
+
       {/* Resources & Documentation Section */}
       <section className="bg-gray-50 py-16 px-4">
         <div className="max-w-7xl mx-auto">
@@ -923,6 +945,7 @@ export default function ProductHero() {
             </div>
           </div>
 
+
           {/* Download All Button */}
           <div className="flex justify-center mt-12">
             <button
@@ -952,6 +975,8 @@ export default function ProductHero() {
           </p>
         </div>
       </section>
+
+      
 
       {/* Footer Section */}
       <Footer />

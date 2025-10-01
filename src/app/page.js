@@ -815,7 +815,7 @@ export default function Home() {
               WORLD&apos;s FIRST
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              AI POWERED <span className="text-[#17a6e0] underline decoration-wavy decoration-2 underline-offset-4 transition-all duration-300 hover:decoration-4">STETHOSCOPE</span>
+              AI POWERED <span className="text-[#17a6e0] underline-offset-4 transition-all duration-300 hover:decoration-4">STETHOSCOPE</span>
             </h1>
             <p className="text-gray-600 text-lg transition-all duration-300 hover:text-gray-700">
               World’s Most Powerful 3-in-1 Stethoscope — AI-driven PCG & ECG with unrivaled clarity.
