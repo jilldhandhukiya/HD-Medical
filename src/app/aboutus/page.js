@@ -3,27 +3,27 @@ import Image from 'next/image';
 import Header from "../components/Header";
 import Footer from '../components/Footer';
 
-const flags = {
-  india: "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/500px-Flag_of_India.svg.png",
-  us: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Flag_of_the_United_States_%28Web_Colors%29.svg/250px-Flag_of_the_United_States_%28Web_Colors%29.svg.png",
-  uk: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/250px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
-  japan: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/250px-Flag_of_Japan.svg.png",
-  korea: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/250px-Flag_of_South_Korea.svg.png",
-  australia: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/250px-Flag_of_Australia_%28converted%29.svg.png",
-  uae:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/1920px-Flag_of_the_United_Arab_Emirates.svg.png"
-};
+// const flags = {
+//   india: "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/500px-Flag_of_India.svg.png",
+//   us: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Flag_of_the_United_States_%28Web_Colors%29.svg/250px-Flag_of_the_United_States_%28Web_Colors%29.svg.png",
+//   uk: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/250px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
+//   japan: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/250px-Flag_of_Japan.svg.png",
+//   korea: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/250px-Flag_of_South_Korea.svg.png",
+//   australia: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/250px-Flag_of_Australia_%28converted%29.svg.png",
+//   uae:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/1920px-Flag_of_the_United_Arab_Emirates.svg.png"
+// };
 
 // Card Component
 function PersonCard({ person }) {
   return (
-    <div className="w-full max-w-[340px] mx-auto bg-white border-[2px] border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-lg relative transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+    <div className="w-full max-w-[360px] mx-auto bg-white border-[2px] border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-lg relative transition-all duration-300 hover:scale-105 hover:shadow-2xl"
       style={{ boxSizing: 'border-box' }}>
       <div className="w-full aspect-[4/5] relative border-b-[2px] border-gray-200 bg-gray-100">
         <Image
           src={person.image}
           alt={`${person.name} - ${person.position}`}
           fill
-          className="object-contain md:object-cover"
+          className=" w-full h-full"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           placeholder="blur"
           blurDataURL={person.blurDataURL || "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="}
@@ -31,20 +31,7 @@ function PersonCard({ person }) {
         />
         {/* Flags */}
         <div className="absolute top-2 right-2 flex gap-1 z-10">
-          {person.flags
-            .filter(flag => flags[flag])
-            .map((flag, idx) => (
-              <Image
-                key={idx}
-                src={flags[flag]}
-                alt={flag}
-                width={18}
-                height={13}
-                className="rounded shadow border border-white"
-                style={{ boxShadow: '0 0 2px #aaa' }}
-              />
-            ))}
-        </div>
+        </div>  
       </div>
       <div className="bg-sky-700 px-4 py-3 text-center">
         <h3 className="text-white text-xl font-bold leading-tight">{person.name}</h3>
@@ -62,35 +49,35 @@ const leadership = [
   {
     name: "Arvind Thiagarajan",
     position: "Founder, CEO & Chief Inventor",
-    image: "/images/Arvind.png",
+    image: "/images/company/Arvind.png",
     description: "Visionary leader driving innovation and growth. Passionate about healthcare transformation.",
     flags: ["us",'india']
   },
   {
     name: "Eric Fronk",
     position: "CFO / COO",
-    image: "/images/company/Eric Fronk.jpg",
+    image: "/images/company/EricFronk.png",
     description: "Driving financial strategy and operational excellence to ensure sustainable growth and quality healthcare delivery.",
     flags: ["us"]
   },
   {
     name: "Venkat Raman",
     position: "Chief of Engineering & SVP, Manufacturing Ops",
-    image: "/images/company/venkat1.jpg",
+    image: "/images/company/Venkat.png",
     description: "Leading engineering innovation and manufacturing excellence to deliver high-quality, scalable, and efficient solutions.",
     flags: ["us"]
   },
   {
     name: "Prasad Bal",
     position: "SVP, Partnerships & Product Management",
-    image: "/images/company/Prasad Bal.jpg",
+    image: "/images/company/Prasad.png",
     description: "Building strategic partnerships and driving product innovation to accelerate growth and deliver exceptional customer value.",
     flags: ["us"]
   },
   {
     name: "Ganesh Kumar B R",
     position: "VP of R&D",
-    image: "/images/company/Ganesh.png",
+    image: "/images/company/GaneshKumar.png",
     description: "Driving research and development initiatives to deliver innovative healthcare solutions.",
     flags: ["india"]
   }
@@ -103,35 +90,35 @@ const boardMembers = [
   {
     name: "Arvind Thiagarajan",
     position: "Founder & CEO",
-    image: "/images/Arvind.png",
+    image: "/images/company/Arvind.png",
     description: "Serial Entrepreneur & Successful ASX IPO",
     flags: ["india","us"]
   },
   {
     name: "Arjun Malhotra",
     position:" Board Member",
-    image: "/images/company/Arjun_Malhotra.avif",
+    image: "/images/company/Arjun-Malhotra.png",
     description: "Co-Founder of HCL & Headstrong",
     flags: ["us", "india"]
   },
   {
     name: "Guru Gurushankar",
     position: "Board Member",
-    image: "/images/GuruShankar.jpg",
+    image: "/images/company/GuruShankar.png",
     description: "Successful Corporate Executive & Leader",
     flags: ["us"]
   },
   {
     name: "Riaz A. Karamali",
     position: "Legal Counsel",
-    image: "/images/company/Riaz A. Karamali.jpg",
+    image: "/images/company/Riaz A Karamali.png",
     description: "Pillsbury Silicon Valley & San Francisco",
     flags: ["us"]
   },
   {
     name: "Investor & Board Observer",
     position: "ADI (NASDAQ)",
-    image: "/images/company/Analog_Device.png",
+    image: "/images/company/AnalogDevices.png",
     description: "Market Cap: US$ 80 Billion",
     flags: ["us"]
   }
@@ -142,31 +129,31 @@ const medicalAdvisors = [
   {
     name: "Dr. Nelson Schiller",
     position: "MD, FACC, FRCP Professor of Medicine & Anesthesia",
-    image: "/images/company/Dr. Nelson Schiller.jpg",
+    image: "/images/company/Dr Nelson.png",
     flags: ["us"]
   },
   {
     name: "Dr. Douglas Johnston",
     position: "MD Thoracic and Cardiovascular Surgery",
-    image: "/images/company/Dr. Douglas Johnston.jpg",
+    image: "/images/company/Dr Douglesx.png",
     flags: ["us"]
   },
   {
     name: "Dr. Thomas Krummel",
     position: "MD, FACS/FAPP Professor of Co-Director Stanford Byers Center for Bio-design",
-    image: "/images/company/Dr. Thomas Krummel.jpg",
+    image: "/images/company/Dr Thomas.png",
     flags: ["us"]
   },
   {
     name: "Dr. Wael Al Mahmeed",
     position: "MD Leading Cardiologist Owner of City Pharma, UAE",
-    image: "/images/company/DR Wael Al Mahmeed.png",
+    image: "/images/company/Dr Wael.png",
     flags: ["uae"]
   },
   {
     name: "Dr. Raj E G",
     position: "Leading Private Cardiologist Flint, Michigan Hurley Medical Center",
-    image: "/images/company/Dr. Raj E G.jpeg",
+    image: "/images/company/Dr Raj.png",
     flags: ["us", "india"]
   }
 ];
@@ -337,7 +324,7 @@ function Section({ title, people }) {
             {row.map((person, idx) => (
               <div
                 key={idx}
-                className="flex-1 min-w-[260px] max-w-[340px] flex justify-center"
+                className="flex-1 min-w-[260px] max-w-[350px] flex justify-center"
                 style={{
                   flexBasis: "calc(33.333% - 2rem)"
                 }}

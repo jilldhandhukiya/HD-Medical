@@ -138,43 +138,31 @@ function HowItWorksSection() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8">
           {/* Chest Piece */}
           <div className="flex flex-col items-center flex-1">
-            <div className="bg-[#17a6e0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
+            <div className="bg-[#155dfc] rounded-full w-32 h-32 flex items-center justify-center mb-4">
               <Stethoscope className="text-white w-16 h-16" />
             </div>
             <div className="text-2xl font-bold mb-1">Chest Piece</div>
             <div className="text-gray-500 text-lg">Place on patient</div>
           </div>
-          {/* Arrow */}
-          <div className="hidden md:flex items-center">
-            <span className="text-orange-500 text-4xl mx-2">&#8594;</span>
-          </div>
           {/* Mobile App */}
           <div className="flex flex-col items-center flex-1">
-            <div className="bg-[#17a6e0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
+            <div className="bg-[#155dfc] rounded-full w-32 h-32 flex items-center justify-center mb-4">
               <Smartphone className="text-white w-16 h-16" />
             </div>
             <div className="text-2xl font-bold mb-1">Mobile App</div>
             <div className="text-gray-500 text-lg">Visualize data</div>
           </div>
-          {/* Arrow */}
-          <div className="hidden md:flex items-center">
-            <span className="text-orange-500 text-4xl mx-2">&#8594;</span>
-          </div>
           {/* Cloud */}
           <div className="flex flex-col items-center flex-1">
-            <div className="bg-[#17a6e0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
+            <div className="bg-[#155dfc] rounded-full w-32 h-32 flex items-center justify-center mb-4">
               <Cloud className="text-white w-16 h-16" />
             </div>
             <div className="text-2xl font-bold mb-1">Cloud</div>
             <div className="text-gray-500 text-lg">Process & analyze</div>
           </div>
-          {/* Arrow */}
-          <div className="hidden md:flex items-center">
-            <span className="text-orange-500 text-4xl mx-2">&#8594;</span>
-          </div>
           {/* Doctor */}
           <div className="flex flex-col items-center flex-1">
-            <div className="bg-[#17a6e0] rounded-full w-32 h-32 flex items-center justify-center mb-4">
+            <div className="bg-[#155dfc] rounded-full w-32 h-32 flex items-center justify-center mb-4">
               <User className="text-white w-16 h-16" />
             </div>
             <div className="text-2xl font-bold mb-1">Doctor</div>
@@ -405,7 +393,7 @@ export default function ProductHero() {
       <section className="w-full bg-white px-4 py-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
           {/* Left big card */}
-          <div className="bg-[#17a6e0] rounded-[32px] flex items-center justify-center min-h-[200px] h-full p-6">
+          <div className="bg-[#155dfc] rounded-[32px] flex items-center justify-center min-h-[200px] h-full p-6">
             <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold text-center leading-snug break-words">
               Our Commitment to Care
             </h2>
@@ -414,7 +402,7 @@ export default function ProductHero() {
           {/* Right side grid */}
           <div className="flex flex-col justify-between h-full">
             {/* Top card - Innovation */}
-            <div className="bg-[#17a6e0] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px] mb-4">
+            <div className="bg-[#155dfc] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px] mb-4">
               <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">Innovation</span>
               <Image src="/icons/innovation.svg" alt="Innovation Icon" width={64} height={64} className="w-12 sm:w-14 md:w-16 h-auto" />
             </div>
@@ -422,13 +410,13 @@ export default function ProductHero() {
             {/* Bottom row - Quality & Trust */}
             <div className="flex flex-col sm:flex-row gap-1">
               {/* Quality */}
-              <div className="bg-[#17a6e0] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px]">
+              <div className="bg-[#155dfc] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px]">
                 <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">Quality</span>
                 <Image src="/icons/quality.svg" alt="Quality Icon" width={64} height={64} className="w-12 sm:w-14 md:w-16 h-auto" />
               </div>
 
               {/* Trust */}
-              <div className="bg-[#17a6e0] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px]">
+              <div className="bg-[#155dfc] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px]">
                 <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">Trust</span>
                 <Image src="/icons/trust.svg" alt="Trust Icon" width={64} height={64} className="w-12 sm:w-14 md:w-16 h-auto" />
               </div>
@@ -669,7 +657,7 @@ export default function ProductHero() {
       </section>
 
       {/* Download HD Steth App Section */}
-      <section className="bg-[#17a6e0] py-12 px-4">
+      <section className="bg-[#155dfc] py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Download HD Steth App
@@ -680,7 +668,7 @@ export default function ProductHero() {
           
           <a
             href="https://drive.google.com/file/d/10C7PK_3UN5E_P-7PxM9s3p3U094TE_0q/view?usp=sharing"
-            className="inline-flex items-center justify-center gap-3 bg-white text-[#17a6e0] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+            className="inline-flex items-center justify-center gap-3 bg-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg"
           >
             <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
               <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
@@ -707,7 +695,7 @@ export default function ProductHero() {
             {/* HD Steth User Manual */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="bg-[#17a6e0]/10 p-6">
-                <div className="w-14 h-14 bg-[#17a6e0] rounded-2xl flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-[#155dfc] rounded-2xl flex items-center justify-center mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 text-white">
                     <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                   </svg>
@@ -754,7 +742,7 @@ export default function ProductHero() {
             {/* HD Steth App User Manual */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="bg-[#17a6e0]/10 p-6">
-                <div className="w-14 h-14 bg-[#17a6e0] rounded-2xl flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-[#155dfc] rounded-2xl flex items-center justify-center mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 text-white">
                     <path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path>
                     <path d="M12 18h.01"></path>
@@ -802,7 +790,7 @@ export default function ProductHero() {
             {/* Product Brochure */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="bg-[#17a6e0]/10 p-6">
-                <div className="w-14 h-14 bg-[#17a6e0] rounded-2xl flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-[#155dfc] rounded-2xl flex items-center justify-center mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 text-white">
                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                     <path d="M3 9h18"></path>
@@ -851,7 +839,7 @@ export default function ProductHero() {
             {/* Product Data India Sheet */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="bg-[#17a6e0]/10 p-6">
-                <div className="w-14 h-14 bg-[#17a6e0] rounded-2xl flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-[#155dfc] rounded-2xl flex items-center justify-center mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 text-white">
                     <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
                     <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
@@ -899,7 +887,7 @@ export default function ProductHero() {
             {/* Raipur Report */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="bg-[#17a6e0]/10 p-6">
-                <div className="w-14 h-14 bg-[#17a6e0] rounded-2xl flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-[#155dfc] rounded-2xl flex items-center justify-center mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 text-white">
                     <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
                     <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path>

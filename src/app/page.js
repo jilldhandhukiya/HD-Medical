@@ -713,7 +713,7 @@ export default function Home() {
   // Pop CTA state and timer
   const [showPopCTA, setShowPopCTA] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => setShowPopCTA(true), 9000); // 9 seconds
+    const timer = setTimeout(() => setShowPopCTA(true), 15000); // 15 seconds
     return () => clearTimeout(timer);
   }, []);
 
@@ -935,7 +935,7 @@ export default function Home() {
                 HD Medical is a global leader in the detection and management of cardiovascular disease (CVD). We are dedicated to enabling evidence-based patient diagnosis and treatment decisions to be made at the point-of-care instantaneously to improve outcomes and save lives. Medical professionals can leverage HD Steth&apos;s AI-enabled intelligence, phonocardiogram, and electrocardiogram in their single most important and prestigious device, the stethoscope.
               </p>
               <button
-                className="inline-block px-8 py-3 bg-[#17a6e0] text-black rounded-lg hover:bg-[#17a6e0] transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="inline-block px-8 py-3 bg-[#155dfc] text-white rounded-lg hover:bg-[#17a6e0] transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 onClick={() => window.location.href = '/product'}>
                 Know More
               </button>
@@ -984,7 +984,7 @@ export default function Home() {
           <hr className="my-4 sm:my-6 border-gray-300 max-w-[90%] sm:max-w-3xl mx-auto transition-all duration-300 hover:border-[#17a6e0]" />
 
           {/* Button */}
-          <button className="inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#40B7E4] text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 mt-3 sm:mt-4 hover:scale-105 hover:shadow-xl">
+          <button className="inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#155dfc] text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 mt-3 sm:mt-4 hover:scale-105 hover:shadow-xl">
             Learn More
           </button>
         </div>
@@ -1164,7 +1164,7 @@ export default function Home() {
           </div>
 
           <div className={`mt-12 text-center transition-all duration-1000 delay-300 ${featuresVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
-            <button className="bg-[#17a6e0] hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <button className="bg-[#155dfc] hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl">
               GET STARTED →
             </button>
           </div>
@@ -1360,14 +1360,14 @@ export default function Home() {
             {/* Enhanced Navigation Buttons - Changed to blue background with white text */}
             <button
               onClick={prevSlide}
-              className="absolute left-0 top-1/3 -translate-y-1/2 z-10 w-12 h-12 sm:w-16 sm:h-16 bg-[#17a6e0] backdrop-blur-sm rounded-full shadow-xl flex items-center justify-center hover:bg-[#0d7fad] transition-all duration-300 hover:scale-110 border-2 border-blue-100/50 group"
+              className="absolute left-0 top-1/3 -translate-y-1/2 z-10 w-12 h-12 sm:w-16 sm:h-16 bg-[#155dfc] backdrop-blur-sm rounded-full shadow-xl flex items-center justify-center hover:bg-[#0d7fad] transition-all duration-300 hover:scale-110 border-2 border-blue-100/50 group"
               aria-label="Previous testimonial"
             >
               <i className="bi bi-chevron-left text-xl sm:text-2xl text-white group-hover:text-white transition-colors duration-300"></i>
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-1/3 -translate-y-1/2 z-10 w-12 h-12 sm:w-16 sm:h-16 bg-[#17a6e0] backdrop-blur-sm rounded-full shadow-xl flex items-center justify-center hover:bg-[#0d7fad] transition-all duration-300 hover:scale-110 border-2 border-blue-100/50 group"
+              className="absolute right-0 top-1/3 -translate-y-1/2 z-10 w-12 h-12 sm:w-16 sm:h-16 bg-[#155dfc] backdrop-blur-sm rounded-full shadow-xl flex items-center justify-center hover:bg-[#0d7fad] transition-all duration-300 hover:scale-110 border-2 border-blue-100/50 group"
               aria-label="Next testimonial"
             >
               <i className="bi bi-chevron-right text-xl sm:text-2xl text-white group-hover:text-white transition-colors duration-300"></i>

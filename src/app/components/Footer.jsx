@@ -6,8 +6,8 @@ import { ArrowUpRight, ArrowRight } from 'lucide-react'
 
 export default function Footer() {
   return (
-    
-    
+
+
     <footer className="bg-[#ffffff] text-black px-6 lg:px-16 py-4">
       <div className="max-w-7xl mx-auto">
         {/* Top Section */}
@@ -19,44 +19,44 @@ export default function Footer() {
             </h2>
           </div>
           {/* Right Boxed Section */}
-            <div className="flex-1 max-w-lg bg-gray-100 rounded-2xl p-6 shadow-md">
-              {/* Navigation Grid */}
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Explore</h4>
-                <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-sm font-medium">
-                  <Link href="/" className="hover:text-gray-700 transition">
-                    Home
-                  </Link>
-                  <Link href="/product" className="hover:text-gray-700 transition">
-                    Products
-                  </Link>
-                  <Link href="/aboutus" className="hover:text-gray-700 transition">
-                    About Us
-                  </Link>
-                  <Link href="/contactus" className="hover:text-gray-700 transition">
-                    Contact
-                  </Link>
-                </div>
+          <div className="flex-1 max-w-lg bg-gray-100 rounded-2xl p-6 shadow-md">
+            {/* Navigation Grid */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Explore</h4>
+              <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-sm font-medium">
+                <Link href="/" className="hover:text-gray-700 transition">
+                  Home
+                </Link>
+                <Link href="/product" className="hover:text-gray-700 transition">
+                  Products
+                </Link>
+                <Link href="/aboutus" className="hover:text-gray-700 transition">
+                  About Us
+                </Link>
+                <Link href="/contactus" className="hover:text-gray-700 transition">
+                  Contact
+                </Link>
               </div>
-
-              {/* Description */}
-              <p className="text-sm mt-6 mb-4 text-gray-700 leading-relaxed">
-                We champion transformation through design. Whether you’re starting from scratch or scaling up, we’re here to make it real.
-              </p>
-
-              {/* CTA Button */}
-              <Link
-                href="/contactus"
-                className="inline-flex items-center gap-2 bg-black text-white px-5 py-3 text-sm font-semibold rounded-full shadow hover:bg-gray-900 transition"
-              >
-                START A CONVERSATION
-                <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
+
+            {/* Description */}
+            <p className="text-sm mt-6 mb-4 text-gray-700 leading-relaxed">
+              We Work To Save Lives Through Innovative Medical Solutions.
+            </p>
+
+            {/* CTA Button */}
+            <Link
+              href="/contactus"
+              className="inline-flex items-center gap-2 bg-black text-white px-5 py-3 text-sm font-semibold rounded-full shadow hover:bg-gray-900 transition"
+            >
+              START A CONVERSATION
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
+        </div>
 
         {/* Centered Social Links */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <div className="flex justify-center flex-wrap gap-6 text-[24px] font-normal tracking-wide">
             {[
               ['Instagram', 'https://instagram.com'],
@@ -75,11 +75,11 @@ export default function Footer() {
               </Link>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* HD Medical Logo */}
         <div className="flex justify-center">
-          <Image 
+          <Image
             src="/images/logo.png"
             alt="HD Medical Logo"
             width={1000}
@@ -88,20 +88,20 @@ export default function Footer() {
             priority
           />
         </div>
-       </div>
-       {/* Legalese */}
-        <div className="mt-8 border-t pt-2 text-center text-xs text-gray-500 leading-relaxed">
-          <div className="max-w-3xl mx-auto">
-            <p className="mb-2">
-              &copy; {new Date().getFullYear()} HD Medical. All rights reserved. HD Medical&reg; All Rights Reserved.
-            </p>
-            <div className="flex justify-center gap-4">
-              <Link href="#" className="underline hover:text-gray-600">Privacy Policy</Link>
-              <Link href="#" className="underline hover:text-gray-600">Terms of Use</Link>
-              <Link href="#" className="underline hover:text-gray-600">Disclaimer</Link>
-            </div>
+      </div>
+      {/* Legalese */}
+      <div className="mt-8 border-t pt-2 text-center text-xs text-gray-500 leading-relaxed">
+        <div className="max-w-3xl mx-auto">
+          <p className="mb-2">
+            &copy; {new Date().getFullYear()} HD Medical. All rights reserved. HD Medical&reg; All Rights Reserved.
+          </p>
+          <div className="flex justify-center gap-4">
+            <Link href="#" className="underline hover:text-gray-600">Privacy Policy</Link>
+            <Link href="#" className="underline hover:text-gray-600">Terms of Use</Link>
+            <Link href="#" className="underline hover:text-gray-600">Disclaimer</Link>
           </div>
         </div>
+      </div>
 
     </footer>
   )
