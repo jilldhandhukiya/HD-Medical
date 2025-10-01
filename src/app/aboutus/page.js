@@ -18,20 +18,17 @@ function PersonCard({ person }) {
   return (
     <div className="w-full max-w-[360px] mx-auto bg-white border-[2px] border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-lg relative transition-all duration-300 hover:scale-105 hover:shadow-2xl"
       style={{ boxSizing: 'border-box' }}>
-      <div className="w-full aspect-[4/5] relative border-b-[2px] border-gray-200 bg-gray-100">
+      <div className="w-full aspect-[4/4] relative border-b-[2px] border-gray-200 bg-gray-100">
         <Image
           src={person.image}
           alt={`${person.name} - ${person.position}`}
           fill
-          className=" w-full h-full"
+          className="w-full h-full"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           placeholder="blur"
           blurDataURL={person.blurDataURL || "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="}
           style={{ objectPosition: 'center' }}
         />
-        {/* Flags */}
-        <div className="absolute top-2 right-2 flex gap-1 z-10">
-        </div>  
       </div>
       <div className="bg-sky-700 px-4 py-3 text-center">
         <h3 className="text-white text-xl font-bold leading-tight">{person.name}</h3>

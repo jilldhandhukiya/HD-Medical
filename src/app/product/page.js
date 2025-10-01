@@ -371,7 +371,7 @@ export default function ProductHero() {
             <p className="text-lg md:text-xl text-gray-700 font-medium mb-8">
               <span className="font-semibold text-black">AI-Powered Stethoscope with Integrated ECG.</span> Unveiling the Unseen, Redefining Diagnosis.
             </p>
-            <button className="bg-[#17a6e0] text-white rounded-full px-8 py-4 text-lg font-medium shadow hover:bg-gray-900 transition">
+            <button className="bg-[#155dfc] text-white rounded-full px-8 py-4 text-lg font-medium shadow hover:bg-gray-900 transition">
               Know More
             </button>
           </div>
