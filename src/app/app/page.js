@@ -232,7 +232,7 @@ export default function DownloadApp() {
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-              Download <span className="text-[#17a6e0] underline decoration-wavy decoration-2 underline-offset-4">HD Steth App</span>
+              Download <span className="text-[#17a6e0] underline-offset-4">HD Steth App</span>
             </h1>
 
             {/* Subtitle */}
