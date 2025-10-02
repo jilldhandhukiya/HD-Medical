@@ -543,7 +543,7 @@ function PopCTAForm({ open, onClose }) {
         >
           &times;
         </button>
-        <h2 className="text-2xl font-bold text-[#17a6e0] mb-2 text-center">Get in Touch</h2>
+        <h2 className="text-2xl font-bold text-[#155dfc] mb-2 text-center">Get in Touch</h2>
         <p className="text-sm text-gray-500 mb-6 text-center">We&apos;d love to hear from you. Fill the form below!</p>
         {submitted ? (
           <div className="mb-4 p-4 bg-green-50 text-green-700 rounded-xl border border-green-200 text-center">
@@ -577,7 +577,7 @@ function PopCTAForm({ open, onClose }) {
               />
               <div className="flex gap-2">
                 <div className="flex items-center bg-blue-50 rounded-lg px-2 border border-gray-200">
-                  <Globe className="text-blue-400 w-5 h-5 mr-1" />
+                  <Globe className="text-[#155dfc] w-5 h-5 mr-1" />
                   <select
                     name="countryCode"
                     value={formData.countryCode}
@@ -617,7 +617,7 @@ function PopCTAForm({ open, onClose }) {
                 disabled={isLoading}
                 className={`w-full py-3 rounded-full text-white text-base font-semibold transition-all duration-300 shadow-lg ${isLoading
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] hover:from-[#0d7fad] hover:to-[#17a6e0] hover:shadow-xl"
+                  : "bg-gradient-to-r from-[#155dfc] to-[#155dfc] hover:from-[#155dfc] hover:to-[#155dfc] hover:shadow-xl"
                   }`}
               >
                 {isLoading ? "Submitting..." : "Submit"}
