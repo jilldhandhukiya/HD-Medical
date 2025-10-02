@@ -94,12 +94,12 @@ function StaticCounter({ value, label }) {
   return (
     <div className="relative group z-10">
       {/* Individual stat item */}
-      <div className="relative hover:bg-gradient-to-b hover:from-[#17a6e0]/5 hover:to-[#40B7E4]/5 rounded-2xl p-4 transition-all duration-500 hover:scale-110 hover:shadow-lg group">
+      <div className="relative hover:bg-gradient-to-b hover:from-[#155dfc]/5 hover:to-[#155dfc]/5 rounded-2xl p-4 transition-all duration-500 hover:scale-110 hover:shadow-lg group">
         {/* Hover glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#17a6e0]/10 to-[#40B7E4]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#155dfc]/10 to-[#155dfc]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
 
         {/* Number with enhanced styling */}
-        <div className="relative text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:from-[#0d7fad] group-hover:to-[#17a6e0] transition-all duration-500 transform group-hover:scale-110">
+        <div className="relative text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#155dfc] to-[#155dfc] group-hover:from-[#1247c7] group-hover:to-[#155dfc] transition-all duration-500 transform group-hover:scale-110">
           {value}
         </div>
 
@@ -109,7 +109,7 @@ function StaticCounter({ value, label }) {
         </div>
 
         {/* Bottom accent line */}
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#17a6e0] to-[#40B7E4] group-hover:w-8 transition-all duration-500 rounded-full"></div>
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#155dfc] to-[#155dfc] group-hover:w-8 transition-all duration-500 rounded-full"></div>
       </div>
     </div>
   );
@@ -183,7 +183,7 @@ function Card({ title, image, number, index = 0 }) {
           {number}
         </div>
       </div>
-      <h3 className="text-lg sm:text-xl font-semibold text-[#17a6e0] mb-2 text-center transition-colors duration-300 hover:text-[#0d7fad]">{title}</h3>
+      <h3 className="text-lg sm:text-xl font-semibold text-[#155dfc] mb-2 text-center transition-colors duration-300 hover:text-[#0d7fad]">{title}</h3>
       <div className="flex justify-center">
         <span className="inline-block bg-blue-100 text-black px-3 py-1.5 rounded-full text-xs font-semibold shadow transition-all duration-300 hover:bg-blue-200 hover:scale-105">
           Feature #{number}
@@ -562,7 +562,7 @@ function PopCTAForm({ open, onClose }) {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:outline-none text-base"
+                className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-[#155dfc] focus:outline-none text-base"
                 placeholder="Full Name"
                 disabled={isLoading}
               />
@@ -571,7 +571,7 @@ function PopCTAForm({ open, onClose }) {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:outline-none text-base"
+                className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-[#155dfc] focus:outline-none text-base"
                 placeholder="Email"
                 disabled={isLoading}
               />
@@ -597,7 +597,7 @@ function PopCTAForm({ open, onClose }) {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:outline-none text-base"
+                  className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-[#155dfc] focus:outline-none text-base"
                   placeholder="Phone Number"
                   disabled={isLoading}
                 />
@@ -607,7 +607,7 @@ function PopCTAForm({ open, onClose }) {
                 value={formData.message}
                 onChange={handleChange}
                 rows={3}
-                className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:outline-none text-base resize-none"
+                className="block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-[#155dfc] focus:outline-none text-base resize-none"
                 placeholder="Message"
                 disabled={isLoading}
               />
@@ -811,11 +811,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left Column: Text */}
           <div className={`space-y-4 z-10 transition-all duration-1000 ${heroVisible ? 'animate-fadeInLeft' : 'opacity-0 translate-x-[-30px]'}`}>
-            <div className="bg-[#17a6e0]/10 text-[#17a6e0] font-bold uppercase tracking-wider px-8 py-2 rounded-full inline-block text-sm md:text-base lg:text-3xl transition-all duration-300 hover:bg-[#17a6e0]/20 hover:scale-105">
+            <div className="bg-[#155dfc]/10 text-[#155dfc] font-bold uppercase tracking-wider px-8 py-2 rounded-full inline-block text-sm md:text-base lg:text-3xl transition-all duration-300 hover:bg-[#155dfc]/20 hover:scale-105">
               WORLD&apos;s FIRST
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              AI POWERED <span className="text-[#17a6e0] underline-offset-4 transition-all duration-300 hover:decoration-4">STETHOSCOPE</span>
+              AI POWERED <span className="text-[#155dfc] underline-offset-4 transition-all duration-300 hover:decoration-4">STETHOSCOPE</span>
             </h1>
             <p className="text-gray-600 text-lg transition-all duration-300 hover:text-gray-700">
               World’s Most Powerful 3-in-1 Stethoscope — AI-driven PCG & ECG with unrivaled clarity.
@@ -894,10 +894,10 @@ export default function Home() {
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-[#40B7E4] to-transparent rounded-full"></div>
 
                 {/* Corner accent dots */}
-                <div className="absolute top-4 left-4 w-2 h-2 bg-[#17a6e0] rounded-full opacity-60 animate-pulse"></div>
-                <div className="absolute top-4 right-4 w-2 h-2 bg-[#40B7E4] rounded-full opacity-60 animate-pulse"></div>
-                <div className="absolute bottom-4 left-4 w-2 h-2 bg-[#40B7E4] rounded-full opacity-60 animate-pulse"></div>
-                <div className="absolute bottom-4 right-4 w-2 h-2 bg-[#17a6e0] rounded-full opacity-60 animate-pulse"></div>
+                <div className="absolute top-4 left-4 w-2 h-2 bg-[#155dfc] rounded-full opacity-60 animate-pulse"></div>
+                <div className="absolute top-4 right-4 w-2 h-2 bg-[#155dfc] rounded-full opacity-60 animate-pulse"></div>
+                <div className="absolute bottom-4 left-4 w-2 h-2 bg-[#155dfc] rounded-full opacity-60 animate-pulse"></div>
+                <div className="absolute bottom-4 right-4 w-2 h-2 bg-[#155dfc] rounded-full opacity-60 animate-pulse"></div>
 
                 {/* Static Stats */}
                 {[
@@ -909,14 +909,14 @@ export default function Home() {
                   <div key={index} className="relative">
                     {/* Vertical dividers with gradient effect */}
                     {index < 3 && (
-                      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-16 bg-gradient-to-b from-transparent via-[#17a6e0]/30 to-transparent hidden md:block"></div>
+                      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-16 bg-gradient-to-b from-transparent via-[#155dfc]/30 to-transparent hidden md:block"></div>
                     )}
                     <StaticCounter value={value} label={label} />
                   </div>
                 ))}
 
                 {/* Bottom decorative wave */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#17a6e0]/20 via-[#40B7E4]/40 to-[#17a6e0]/20 rounded-b-3xl"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#155dfc]/20 via-[#40B7E4]/40 to-[#17a6e0]/20 rounded-b-3xl"></div>
               </div>
             </div>
           </div>
@@ -1128,9 +1128,9 @@ export default function Home() {
         </svg>
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className={`text-center text-3xl sm:text-4xl font-bold mb-12 transition-all duration-1000 ${featuresVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
-            <span className="text-[#17a6e0] transition-all duration-300 hover:text-[#0d7fad]">REVOLUTIONIZING </span>
+            <span className="text-[#155dfc] transition-all duration-300 hover:text-[#155dfc]">REVOLUTIONIZING </span>
             <span className="text-orange-500 transition-all duration-300 hover:text-orange-600">CARDIAC CARE </span>
-            <span className="text-[#17a6e0] transition-all duration-300 hover:text-[#0d7fad]">WITH AI</span>
+            <span className="text-[#155dfc] transition-all duration-300 hover:text-[#155dfc]">WITH AI</span>
           </h2>
 
           {/* Desktop layout */}
@@ -1165,7 +1165,7 @@ export default function Home() {
 
           <div className={`mt-12 text-center transition-all duration-1000 delay-300 ${featuresVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
             <button className="bg-[#155dfc] hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              GET STARTED →
+              GET STARTED
             </button>
           </div>
         </div>
@@ -1330,26 +1330,26 @@ export default function Home() {
           {/* Enhanced header section */}
           <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${testimonialsVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
             {/* Medical badge */}
-            <div className="inline-flex items-center gap-2 bg-blue-100/80 backdrop-blur-sm text-[#17a6e0] px-6 py-2 rounded-full text-sm font-semibold mb-6 border border-blue-200/50">
+            <div className="inline-flex items-center gap-2 bg-blue-100/80 backdrop-blur-sm text-[#155dfc] px-6 py-2 rounded-full text-sm font-semibold mb-6 border border-blue-200/50">
               <i className="bi bi-award text-lg"></i>
               <span>Trusted by Medical Professionals</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-[#17a6e0]">
+            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-[#155dfc]">
               What Experts Say
             </h2>
             {/* Stats badges */}
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-100/50 shadow-sm">
-                <span className="text-[#17a6e0] font-bold">500+</span>
+                <span className="text-[#155dfc] font-bold">500+</span>
                 <span className="text-gray-600 text-sm ml-1">Healthcare Partners</span>
               </div>
               <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-100/50 shadow-sm">
-                <span className="text-[#17a6e0] font-bold">98%</span>
+                <span className="text-[#155dfc] font-bold">98%</span>
                 <span className="text-gray-600 text-sm ml-1">Satisfaction Rate</span>
               </div>
               <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-100/50 shadow-sm">
-                <span className="text-[#17a6e0] font-bold">50+</span>
+                <span className="text-[#155dfc] font-bold">50+</span>
                 <span className="text-gray-600 text-sm ml-1">Countries</span>
               </div>
             </div>
@@ -1409,7 +1409,7 @@ export default function Home() {
                             className="rounded-full object-cover w-full h-full transition-all duration-300 group-hover:scale-110 shadow-lg border-4 border-white"
                           />
                           {/* Verification badge */}
-                          <div className="absolute -bottom-2 -right-2 bg-[#17a6e0] rounded-full p-1 border-2 border-white">
+                          <div className="absolute -bottom-2 -right-2 bg-[#155dfc] rounded-full p-1 border-2 border-white">
                             <i className="bi bi-patch-check-fill text-white text-sm"></i>
                           </div>
                         </div>
@@ -1417,8 +1417,8 @@ export default function Home() {
                           <p className="text-base sm:text-lg text-gray-700 leading-relaxed transition-colors duration-300 group-hover:text-gray-800 italic">
                             {review.quote}
                           </p>
-                          <div className="border-l-4 border-[#17a6e0] pl-4">
-                            <h4 className="font-bold text-gray-900 text-lg sm:text-xl transition-colors duration-300 group-hover:text-[#17a6e0]">
+                          <div className="border-l-4 border-[#155dfc] pl-4">
+                            <h4 className="font-bold text-gray-900 text-lg sm:text-xl transition-colors duration-300 group-hover:text-[#155dfc]">
                               {review.name}
                             </h4>
                             <p className="text-sm sm:text-base text-gray-500 transition-colors duration-300 group-hover:text-gray-600 font-medium">
@@ -1441,7 +1441,7 @@ export default function Home() {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`w-4 h-4 rounded-full transition-all duration-300 border-2 border-[#40B7E4]/30 hover:scale-125 ${currentSlide === index
-                    ? 'bg-[#40B7E4] border-[#40B7E4] shadow-lg'
+                    ? 'bg-[#155dfc] border-[#40B7E4] shadow-lg'
                     : 'bg-gray-300 hover:bg-gray-400'
                     }`}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -1464,7 +1464,7 @@ export default function Home() {
                   { icon: "bi-person-workspace", label: "Research Institutes" }
                 ].map((item, index) => (
                   <div key={index} className="text-center">
-                    <i className={`${item.icon} text-3xl sm:text-5xl text-[#17a6e0] mb-2`}></i>
+                    <i className={`${item.icon} text-3xl sm:text-5xl text-[#155dfc] mb-2`}></i>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium">{item.label}</p>
                   </div>
                 ))}
@@ -1474,7 +1474,7 @@ export default function Home() {
         </div>
       </section>
       {/* Certificates Section */}
-      <section className="bg-[#14a8df] py-12 w-full">
+      <section className="bg-[#155dfc] py-12 w-full">
         <div className="max-w-full px-4 sm:px-6 md:px-12 lg:px-24 mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             CERTIFICATES

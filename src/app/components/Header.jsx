@@ -56,7 +56,7 @@ export default function Header() {
                 href={url}
                 className={clsx(
                   'text-xl font-bold relative group transition-all hover:scale-105',
-                  pathname === url ? 'text-[#17a6e0]' : 'text-black hover:text-[#17a6e0]'
+                  pathname === url ? 'text-[#1493c7]' : 'text-black hover:text-[#1493c7]'
                 )}
               >
                 <span className="relative z-10">{title}</span>
@@ -69,7 +69,7 @@ export default function Header() {
           <div className="hidden md:flex items-center mr-4 lg:mr-8">
             <Link 
               href="/app"
-              className="bg-[#155dfc] hover:bg-[#1493c7] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
+              className="bg-[#1493c7] hover:bg-[#1493c7] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
             >
               HD STETH APP
             </Link>
@@ -105,7 +105,7 @@ export default function Header() {
                 href={url}
                 className={clsx(
                   'block px-6 py-4 text-xl font-bold rounded-lg hover:bg-gray-50 transition-all hover:scale-105',
-                  pathname === url ? 'text-[#17a6e0] bg-blue-50' : 'text-black hover:text-[#17a6e0]'
+                  pathname === url ? 'text-[#1493c7] bg-blue-50' : 'text-black hover:text-[#1493c7]'
                 )}
                 onClick={() => setMenuOpen(false)}
               >
@@ -116,7 +116,7 @@ export default function Header() {
             {/* Download App Button - Mobile */}
             <Link
               href="/app"
-              className="w-full bg-[#17a6e0] hover:bg-[#1493c7] text-white font-bold px-6 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg mt-4 text-center block"
+              className="w-full bg-[#1493c7] hover:bg-[#1493c7] text-white font-bold px-6 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg mt-4 text-center block"
               onClick={() => setMenuOpen(false)}
             >
               HD Steth App
