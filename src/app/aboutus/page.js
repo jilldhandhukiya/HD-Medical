@@ -30,11 +30,11 @@ function PersonCard({ person }) {
           style={{ objectPosition: 'center' }}
         />
       </div>
-      <div className="bg-sky-700 px-4 py-3 text-center">
+      <div className="bg-[#155dfc] px-4 py-3 text-center">
         <h3 className="text-white text-xl font-bold leading-tight">{person.name}</h3>
       </div>
       <div className="px-4 py-2 border-t border-gray-200 text-center">
-        <p className="text-sky-700 text-base font-semibold">{person.position}</p>
+        <p className="text-[#155dfc] text-base font-semibold">{person.position}</p>
         <p className="text-gray-600 text-sm mt-2">{person.description}</p>
       </div>
     </div>
@@ -357,7 +357,7 @@ export default function AboutUs() {
       <section className="w-full bg-white pt-12 pb-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-wide">
-            ABOUT <span className="text-sky-500">US</span>
+            ABOUT <span className="text-[#155dfc]">US</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-800 font-medium mb-2">
             <span className="font-bold text-black">HD medical</span> for decades has been focusing with single minded endeavour to deliver the best we can and achieving this has been possible due to the trust instilled by our customers in our service. Trust invoked through constant innovation and improvement of our services.
@@ -397,7 +397,7 @@ export default function AboutUs() {
           {/* Vision */}
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
             <div className="w-full md:w-1/3 flex-shrink-0 flex items-center justify-center md:justify-start mb-4 md:mb-0">
-              <span className="text-sky-500 text-3xl md:text-5xl font-serif font-semibold leading-tight text-center md:text-left">
+              <span className="text-[#155dfc] text-3xl md:text-5xl  font-bold leading-tight text-center md:text-left">
                 Our Vision
               </span>
             </div>
@@ -422,7 +422,7 @@ export default function AboutUs() {
               </div>
             </div>
             <div className="w-full md:w-2/3 flex flex-col justify-center">
-              <h2 className="text-sky-500 text-2xl md:text-4xl font-bold mb-3 font-serif leading-tight text-center md:text-left">
+              <h2 className="text-[#155dfc] text-2xl md:text-5xl font-bold mb-3 leading-tight text-center md:text-left">
                 Our Mission
               </h2>
               <p className="text-base md:text-lg text-gray-800 font-medium mb-2 text-center md:text-left">

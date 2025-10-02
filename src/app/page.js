@@ -928,14 +928,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className={`space-y-6 transition-all duration-1000 ${productVisible ? 'animate-fadeInLeft' : 'opacity-0 translate-x-[-30px]'}`}>
-              <h2 className="text-4xl font-bold text-gray-900 transition-colors duration-300 hover:text-[#17a6e0]">
+              <h2 className="text-4xl font-bold text-gray-900 transition-colors duration-300 hover:text-[#155dfc]">
                 Visualize heart sounds and<br />ECG waveforms
               </h2>
               <p className="text-lg text-gray-600 transition-all duration-300 hover:text-gray-700">
                 HD Medical is a global leader in the detection and management of cardiovascular disease (CVD). We are dedicated to enabling evidence-based patient diagnosis and treatment decisions to be made at the point-of-care instantaneously to improve outcomes and save lives. Medical professionals can leverage HD Steth&apos;s AI-enabled intelligence, phonocardiogram, and electrocardiogram in their single most important and prestigious device, the stethoscope.
               </p>
               <button
-                className="inline-block px-8 py-3 bg-[#155dfc] text-white rounded-lg hover:bg-[#17a6e0] transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="inline-block px-8 py-3 bg-[#155dfc] text-white rounded-lg hover:bg-[#155dfc] transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 onClick={() => window.location.href = '/product'}>
                 Know More
               </button>
@@ -981,7 +981,7 @@ export default function Home() {
           </p>
 
           {/* Divider */}
-          <hr className="my-4 sm:my-6 border-gray-300 max-w-[90%] sm:max-w-3xl mx-auto transition-all duration-300 hover:border-[#17a6e0]" />
+          <hr className="my-4 sm:my-6 border-gray-300 hover:border-[#155dfc] max-w-[90%] sm:max-w-3xl mx-auto transition-all duration-300" />
 
           {/* Button */}
           <button className="inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#155dfc] text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 mt-3 sm:mt-4 hover:scale-105 hover:shadow-xl">
@@ -1187,7 +1187,7 @@ export default function Home() {
               </div>
             </div>
             <div className={`space-y-8 transition-all duration-1000 delay-300 ${fdaVisible ? 'animate-fadeInRight' : 'opacity-0 translate-x-[30px]'}`}>
-              <h2 className="text-3xl font-bold text-gray-900 transition-colors duration-300 hover:text-[#17a6e0]">
+              <h2 className="text-3xl font-bold text-gray-900 transition-colors duration-300 hover:text-[#155dfc]">
                 FDA cleared for three products classification codes in one device.
               </h2>
               <div className="space-y-6">
