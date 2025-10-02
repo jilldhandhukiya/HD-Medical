@@ -56,11 +56,11 @@ export default function Header() {
                 href={url}
                 className={clsx(
                   'text-xl font-bold relative group transition-all hover:scale-105',
-                  pathname === url ? 'text-[#1493c7]' : 'text-black hover:text-[#1493c7]'
+                  pathname === url ? 'text-[#155dfc]' : 'text-black hover:text-[#155dfc]'
                 )}
               >
                 <span className="relative z-10">{title}</span>
-                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full group-hover:left-0" />
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#155dfc] transition-all duration-300 group-hover:w-full group-hover:left-0" />
               </Link>
             ))}
           </div>
@@ -69,7 +69,7 @@ export default function Header() {
           <div className="hidden md:flex items-center mr-4 lg:mr-8">
             <Link 
               href="/app"
-              className="bg-[#1493c7] hover:bg-[#1493c7] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
+              className="bg-[#155dfc] hover:bg-[#155dfc]/90 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
             >
               HD STETH APP
             </Link>
@@ -105,7 +105,7 @@ export default function Header() {
                 href={url}
                 className={clsx(
                   'block px-6 py-4 text-xl font-bold rounded-lg hover:bg-gray-50 transition-all hover:scale-105',
-                  pathname === url ? 'text-[#1493c7] bg-blue-50' : 'text-black hover:text-[#1493c7]'
+                  pathname === url ? 'text-[#155dfc] bg-blue-50' : 'text-black hover:text-[#155dfc]'
                 )}
                 onClick={() => setMenuOpen(false)}
               >
@@ -116,7 +116,7 @@ export default function Header() {
             {/* Download App Button - Mobile */}
             <Link
               href="/app"
-              className="w-full bg-[#1493c7] hover:bg-[#1493c7] text-white font-bold px-6 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg mt-4 text-center block"
+              className="w-full bg-[#155dfc] hover:bg-[#155dfc]/90 text-white font-bold px-6 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg mt-4 text-center block"
               onClick={() => setMenuOpen(false)}
             >
               HD Steth App
