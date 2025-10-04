@@ -373,7 +373,7 @@ export default function AboutUs() {
             priority
           />
           <Image
-            src="/images/doctor3-aboutus.jpg"
+            src="/images/doctor2-aboutus.jpg"
             alt="Doctor 2"
             width={200}
             height={260}
@@ -381,7 +381,7 @@ export default function AboutUs() {
             priority
           />
           <Image
-            src="/images/doctor2-aboutus.jpg"
+            src="/images/doctor3-aboutus.jpg"
             alt="Doctor 3"
             width={200}
             height={260}
@@ -412,11 +412,11 @@ export default function AboutUs() {
             <div className="w-full md:w-1/3 flex justify-center md:justify-start mb-4 md:mb-0">
               <div className="rounded-[32px] overflow-hidden shadow-lg w-full max-w-xs md:max-w-md">
                 <Image
-                  src="/images/doctor1-aboutus.jpg"
+                  src="/images/vision_section.png"
                   alt="Doctor checking patient health"
                   width={400}
-                  height={320}
-                  className="object-cover w-full h-48 md:h-64"
+                  height={400}
+                  className="object-fit w-full h-48 md:h-64"
                   priority
                 />
               </div>

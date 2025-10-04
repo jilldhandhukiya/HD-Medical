@@ -409,8 +409,8 @@ export default function ProductHero() {
             <Image
               src="/images/stethoscope.png"
               alt="HD Stethoscope"
-              width={340}
-              height={340}
+              width={450}
+              height={450}
               className="object-contain"
               priority
             />
@@ -463,7 +463,7 @@ export default function ProductHero() {
             {/* Heading Image */}
             <div className="mb-8">
               <Image
-                src="/images/hd-steth-controls-heading.png" // Replace with your actual path
+                src="/images/hd-steth-controls-heading.png"
                 alt="HD Steth Controls"
                 width={600}
                 height={250}
@@ -472,12 +472,12 @@ export default function ProductHero() {
             </div>
 
             {/* Central Stethoscope + Tablet Image */}
-            <div className="relative w-full max-w-6xl">
+            <div className="relative">
               <Image
-                src="/images/hd-steth-controls-main.png" // Replace with your actual path
+                src="/images/hd-steth-controls-main.png"
                 alt="HD Steth Device with Labels"
-                width={1700}
-                height={1500}
+                width={900}
+                height={900}
                 className="w-full h-auto object-contain"
               />
             </div>

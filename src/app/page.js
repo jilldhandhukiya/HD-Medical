@@ -197,27 +197,27 @@ const features = [
   {
     id: 1,
     title: "Real-Time Cardiac Insights",
-    image: "/images/feature1.jpg",
+    image: "/images/feature1.png",
   },
   {
     id: 2,
     title: "Integrated ECG + PCG",
-    image: "/images/feature2.jpg",
+    image: "/images/feature2.png",
   },
   {
     id: 3,
     title: "AI-Powered Heart Murmur Detection",
-    image: "/images/feature3.jpeg",
+    image: "/images/feature3.png",
   },
   {
     id: 4,
     title: "FDA Cleared, Clinician Trusted",
-    image: "/images/feature4.jpg",
+    image: "/images/feature4.png",
   },
   {
     id: 5,
     title: "Noise Cancellation & Smart Amplification",
-    image: "/images/feature5.jpg",
+    image: "/images/feature5.png",
   },
   {
     id: 6,
@@ -943,7 +943,7 @@ export default function Home() {
             <div className={`transition-all duration-1000 delay-300 ${productVisible ? 'animate-fadeInRight' : 'opacity-0 translate-x-[30px]'}`}>
               <div className="group">
                 <Image
-                  src="/images/landing-about.png"
+                  src="/images/landing-about.png" 
                   alt="Doctor examining patient"
                   width={600}
                   height={400}
@@ -1014,8 +1014,8 @@ export default function Home() {
           <Image
             src="/images/rightsteth.png"
             alt="Right Device"
-            width={550}
-            height={750}
+            width={500}
+            height={600}
             className="object-contain animate-float"
             style={{ animationDelay: '1s' }}
             priority
