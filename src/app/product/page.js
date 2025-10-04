@@ -933,7 +933,7 @@ export default function ProductHero() {
                 </div>
                 <div className="flex gap-2">
                   <a
-                    href="/docs/Raipur-Report.pdf"
+                    href="/docs/Clinical-Report.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 inline-flex items-center justify-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium px-4 py-2 rounded-lg transition-colors"

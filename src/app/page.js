@@ -1487,8 +1487,8 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-8 items-center justify-items-center max-w-none mx-auto">
             {[
-              { src: "/images/fda.png", alt: "FDA Cleared", text: "FDA CLEARED\n# K201299" },
-              { src: "/images/iso.png", alt: "ISO Certification", text: "ISO\n13485: 2016" },
+              { src: "/images/fda.png", alt: "FDA Cleared", text: "FDA CLEARED\n# K201299", pdf:"/docs/FDA-K201299.pdf" },
+              { src: "/images/iso.png", alt: "ISO Certification", text: "ISO\n13485: 2016", pdf:"/docs/ISO13485-Certificate.pdf" },
               { src: "/images/tn.png", alt: "TN Certification", text: "TN/M/MD/004806" }
               ].map((cert, index) => (
               <div key={index} className="flex flex-col items-center text-center">
@@ -1499,6 +1499,7 @@ export default function Home() {
                     width={120}
                     height={100}
                     className="mb-4 !transition-none !duration-0"
+                    onClick={() => window.open(cert.pdf, '_blank')}
                   />
                 </div>
                 <p className="text-white font-semibold text-sm">
