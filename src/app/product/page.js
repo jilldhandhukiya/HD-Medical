@@ -184,12 +184,6 @@ function HowItWorksSection() {
             <div className="text-gray-500 text-lg">Review & diagnose</div>
           </div>
         </div>
-        {/* Mobile arrows */}
-        <div className="flex md:hidden justify-center items-center gap-2 mt-8">
-          <span className="text-orange-500 text-3xl">&#8594;</span>
-          <span className="text-orange-500 text-3xl">&#8594;</span>
-          <span className="text-orange-500 text-3xl">&#8594;</span>
-        </div>
       </div>
     </section>
   );
