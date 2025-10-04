@@ -130,8 +130,8 @@ const medicalAdvisors = [
     flags: ["us"]
   },
   {
-    name: "Dr. Douglas Johnston",
-    position: "MD, Chief of Cardiac Surgery,Fellow: Cleveland Clinic",
+    name: "Dr Douglas R Johnston,",
+    position: "MD, Chief of Cardiac Surgery, Fellow: Cleveland Clinic",
     image: "/images/company/Dr Douglesx.png",
     flags: ["us"]
   },
