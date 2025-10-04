@@ -642,8 +642,8 @@ export default function Home() {
     },
     {
       quote: "HD Steth is transforming the way medicine is practiced at the point of care setting by enhancing the patient experience, saving time and costs while improving outcomes.",
-      name: "Dr. Douglas Johnston, MD",
-      title: "MD, Chief of Cardiac Surgery, Fellow: Cleveland Clinic",
+      name: "Dr. Douglas R Johnston, MD",
+      title: "MD, Chief of Cardiac Surgery, \n Fellow: Cleveland Clinic",
       image: "/images/testi-icon2.png"
     },
     {

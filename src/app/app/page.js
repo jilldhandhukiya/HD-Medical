@@ -570,7 +570,7 @@ export default function DownloadApp() {
               onClick={() => window.location.href = 'mailto:service@hdmedicalgroup.com'}
             >
               <i className="bi bi-envelope text-3xl text-[#155dfc] mb-4"></i>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Support</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Service and Support</h3>
               <p className="text-gray-600 text-sm mb-3">Contact our technical support team</p>
               <span className="inline-flex items-center gap-2 text-[#155dfc] font-medium hover:underline text-sm">
                 service@hdmedicalgroup.com
