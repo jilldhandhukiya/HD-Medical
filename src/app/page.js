@@ -852,7 +852,7 @@ export default function Home() {
               />
 
               {/* Stethoscope Image */}
-              <div className="absolute w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="absolute w-[300px] h-[300px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[400px] lg:h-[400px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <Image
                   src="/images/stethoscope.png"
                   alt="HD Steth Device"

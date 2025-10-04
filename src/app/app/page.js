@@ -370,7 +370,7 @@ export default function DownloadApp() {
               {/* Platform Cards WITH buttons inside */}
               <div className="flex flex-col md:flex-row justify-center items-stretch gap-4 mb-8">
                 {/* Android Card */}
-                <div className="flex-1 bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                <div className="flex-1 bg-white/2 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
                   <div className="flex items-center gap-4 justify-center">
                     <i className="bi bi-android2 text-4xl text-white"></i>
                     <div className="text-left">
@@ -390,7 +390,7 @@ export default function DownloadApp() {
                 </div>
 
                 {/* iOS Card */}
-                <div className="flex-1 bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                <div className="flex-1 bg-white/2 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
                   <div className="flex items-center gap-4 justify-center">
                     <i className="bi bi-apple text-4xl text-white"></i>
                     <div className="text-left">
