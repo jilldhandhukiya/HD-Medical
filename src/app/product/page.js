@@ -45,7 +45,7 @@ const advantages = [
   },
 ];
 
-function AdvantagesSection() {
+const AdvantagesSection = React.forwardRef((props, ref) => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [visibleModules, setVisibleModules] = useState([]);
@@ -69,8 +69,19 @@ function AdvantagesSection() {
   }, []);
 
   return (
-
-    <section ref={sectionRef} className="py-20 relative overflow-hidden bg-white">
+    <section
+      ref={(node) => {
+        sectionRef.current = node;
+        if (ref) {
+          if (typeof ref === 'function') {
+            ref(node);
+          } else {
+            ref.current = node;
+          }
+        }
+      }}
+      className="py-20 relative overflow-hidden bg-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -111,21 +122,25 @@ function AdvantagesSection() {
       </div>
     </section>
   );
-}
+});
 
-const SpecCard = ({ icon, title, children, className = "" }) => (
-  <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-blue-200 ${className}`}>
-    <div className="flex items-center mb-4">
-      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white mr-3">
-        {icon}
+AdvantagesSection.displayName = 'AdvantagesSection';
+
+function SpecCard({ icon, title, children, className = "" }) {
+  return (
+    <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-blue-200 ${className}`}>
+      <div className="flex items-center mb-4">
+        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white mr-3">
+          {icon}
+        </div>
+        <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
       </div>
-      <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
+      <div className="text-gray-600 space-y-2">
+        {children}
+      </div>
     </div>
-    <div className="text-gray-600 space-y-2">
-      {children}
-    </div>
-  </div>
-);
+  );
+}
 
 function HowItWorksSection() {
   return (
@@ -347,6 +362,17 @@ function TechnicalExcellenceSection() {
 }
 
 export default function ProductHero() {
+  // Add ref for the advantages section
+  const advantagesRef = useRef(null);
+
+  // Add scroll function
+  const scrollToAdvantages = () => {
+    advantagesRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
   return (
     <>
       <Header />
@@ -371,7 +397,10 @@ export default function ProductHero() {
             <p className="text-lg md:text-xl text-gray-700 font-medium mb-8">
               <span className="font-semibold text-black">AI-Powered Stethoscope with Integrated ECG.</span> Unveiling the Unseen, Redefining Diagnosis.
             </p>
-            <button className="bg-[#155dfc] text-white rounded-full px-8 py-4 text-lg font-medium shadow hover:155dfc hover:shadow-lg transition-all duration-300">
+            <button
+              onClick={scrollToAdvantages}
+              className="bg-[#155dfc] text-white rounded-full px-8 py-4 text-lg font-medium shadow hover:bg-[#1347d4] hover:shadow-lg transition-all duration-300"
+            >
               Know More
             </button>
           </div>
@@ -425,8 +454,8 @@ export default function ProductHero() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <AdvantagesSection />
+      {/* Features Section - Add ref here */}
+      <AdvantagesSection ref={advantagesRef} />
 
       <section>
         <section className="w-full bg-white px-4 py-12">
@@ -893,7 +922,7 @@ export default function ProductHero() {
                     <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Raipur Report</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Clinical Report</h3>
                 <p className="text-gray-600 text-sm mb-4">
                   Clinical evaluation study conducted at AIIMS Raipur with patient outcomes data
                 </p>

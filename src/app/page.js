@@ -643,7 +643,7 @@ export default function Home() {
     {
       quote: "HD Steth is transforming the way medicine is practiced at the point of care setting by enhancing the patient experience, saving time and costs while improving outcomes.",
       name: "Dr. Douglas Johnston, MD",
-      title: "Thoracic and Cardiovascular Surgery, Northwestern Medicine",
+      title: "MD, Chief of Cardiac Surgery, Fellow: Cleveland Clinic",
       image: "/images/testi-icon2.png"
     },
     {
@@ -983,8 +983,11 @@ export default function Home() {
           {/* Divider */}
           <hr className="my-4 sm:my-6 border-gray-300 hover:border-[#155dfc] max-w-[90%] sm:max-w-3xl mx-auto transition-all duration-300" />
 
-          {/* Button */}
-          <button className="inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#155dfc] text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 mt-3 sm:mt-4 hover:scale-105 hover:shadow-xl">
+          {/* Button - Updated to navigate to product page */}
+          <button 
+            className="inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#155dfc] text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 mt-3 sm:mt-4 hover:scale-105 hover:shadow-xl"
+            onClick={() => window.location.href = '/product'}
+          >
             Learn More
           </button>
         </div>
@@ -1164,7 +1167,10 @@ export default function Home() {
           </div>
 
           <div className={`mt-12 text-center transition-all duration-1000 delay-300 ${featuresVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
-            <button className="bg-[#155dfc] hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <button 
+              className="bg-[#155dfc] hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              onClick={() => window.location.href = '/product'}
+            >
               GET STARTED
             </button>
           </div>

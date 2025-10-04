@@ -131,7 +131,7 @@ const medicalAdvisors = [
   },
   {
     name: "Dr. Douglas Johnston",
-    position: "MD Thoracic and Cardiovascular Surgery",
+    position: "MD, Chief of Cardiac Surgery,Fellow: Cleveland Clinic",
     image: "/images/company/Dr Douglesx.png",
     flags: ["us"]
   },
@@ -149,7 +149,7 @@ const medicalAdvisors = [
   },
   {
     name: "Dr. Raj E G",
-    position: "Leading Private Cardiologist Flint, Michigan Hurley Medical Center",
+    position: "MD, FACC, FSCAI, FASNC, Cardiologist, Hurley Medical Center, Michigan",
     image: "/images/company/Dr Raj.png",
     flags: ["us", "india"]
   }
@@ -360,7 +360,7 @@ export default function AboutUs() {
             ABOUT <span className="text-[#155dfc]">US</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-800 font-medium mb-2">
-            <span className="font-bold text-black">HD medical</span> for decades has been focusing with single minded endeavour to deliver the best we can and achieving this has been possible due to the trust instilled by our customers in our service. Trust invoked through constant innovation and improvement of our services.
+            <span className="font-bold text-black">HD Medical</span> for decades has been focusing with single minded endeavour to deliver the best we can and achieving this has been possible due to the trust instilled by our customers in our service. Trust invoked through constant innovation and improvement of our services.
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-10">

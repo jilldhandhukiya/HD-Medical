@@ -449,17 +449,34 @@ export default function DownloadApp() {
             <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
               <i className="bi bi-question-circle text-3xl text-[#17a6e0] mb-4"></i>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">FAQ</h3>
-              <p className="text-gray-600 text-sm">Find answers to common questions</p>
+              <p className="text-gray-600 text-sm mb-3">Find answers to common questions</p>
+              <span className="inline-flex items-center gap-2 text-[#17a6e0] font-medium hover:underline text-sm">
+                <i className="bi bi-arrow-right"></i>
+                View FAQs
+              </span>
             </div>
-            <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-              <i className="bi bi-headset text-3xl text-[#17a6e0] mb-4"></i>
+            <div 
+              className="bg-blue-50 rounded-xl p-6 border border-blue-100 cursor-pointer hover:bg-blue-100 transition-colors duration-300"
+              onClick={() => window.location.href = 'mailto:service@hdmedicalgroup.com'}
+            >
+              <i className="bi bi-envelope text-3xl text-[#17a6e0] mb-4"></i>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Support</h3>
-              <p className="text-gray-600 text-sm">Contact our technical support team</p>
+              <p className="text-gray-600 text-sm mb-3">Contact our technical support team</p>
+              <span className="inline-flex items-center gap-2 text-[#17a6e0] font-medium hover:underline text-sm">
+              service@hdmedicalgroup.com
+              </span>
             </div>
-            <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+            <div 
+              className="bg-blue-50 rounded-xl p-6 border border-blue-100 cursor-pointer hover:bg-blue-100 transition-colors duration-300"
+              onClick={() => window.open('/docs/HDSteth-App-User-Manual.pdf', '_blank')}
+            >
               <i className="bi bi-book text-3xl text-[#17a6e0] mb-4"></i>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">User Guide</h3>
-              <p className="text-gray-600 text-sm">Learn how to use the app effectively</p>
+              <p className="text-gray-600 text-sm mb-3">Learn how to use the app effectively</p>
+              <span className="inline-flex items-center gap-2 text-[#17a6e0] font-medium hover:underline text-sm">
+                <i className="bi bi-download"></i>
+                Download User Manual
+              </span>
             </div>
           </div>
         </div>
