@@ -318,7 +318,7 @@ export default function DownloadApp() {
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-              Download <span className="text-[#17a6e0] underline-offset-4">HD Steth App</span>
+              Download <span className="text-[#155dfc] underline-offset-4">HD Steth App</span>
             </h1>
 
             {/* Subtitle */}
@@ -348,7 +348,7 @@ export default function DownloadApp() {
 
 
       {/* Download Section */}
-      <section ref={downloadRef} className="bg-gradient-to-b from-[#17a6e0] to-[#0d7fad] py-20 relative overflow-hidden">
+      <section ref={downloadRef} className="bg-gradient-to-b from-[#155dfc] to-[#386de0] py-20 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full" style={{
@@ -381,7 +381,7 @@ export default function DownloadApp() {
                   <div className="mt-6 flex justify-center">
                     <button
                       onClick={handleDownload}
-                      className="inline-flex items-center gap-3 bg-white text-[#17a6e0] px-6 py-3 rounded-full text-base font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
+                      className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full text-base font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
                     >
                       <i className="bi bi-android2 text-lg"></i>
                       <span>Download Now</span>
@@ -401,7 +401,7 @@ export default function DownloadApp() {
                   <div className="mt-6 flex justify-center">
                     <button
                       onClick={handleDownloadIOS}
-                      className="inline-flex items-center gap-3 bg-white text-[#17a6e0] px-6 py-3 rounded-full text-base font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
+                      className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full text-base font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
                     >
                       <i className="bi bi-apple text-lg"></i>
                       <span>Download Now</span>
@@ -481,7 +481,7 @@ export default function DownloadApp() {
         <div className="max-w-7xl mx-auto px-6 md:px-16 relative z-10">
           <div className={`text-center mb-16 transition-all duration-1000 ${featuresVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              <span className="text-[#17a6e0]">POWERFUL FEATURES</span> IN YOUR POCKET
+              <span className="text-[#155dfc]">POWERFUL FEATURES</span> IN YOUR POCKET
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Access advanced cardiac diagnostic tools anywhere, anytime with our mobile application
@@ -532,7 +532,7 @@ export default function DownloadApp() {
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#17a6e0] to-[#40B7E4] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#155dfc] to-[#155dfc] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <i className={`${feature.icon} text-2xl text-white`}></i>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
@@ -557,10 +557,10 @@ export default function DownloadApp() {
               className="bg-blue-50 rounded-xl p-6 border border-blue-100 cursor-pointer hover:bg-blue-100 transition-colors duration-300"
               onClick={scrollToFaq}
             >
-              <i className="bi bi-question-circle text-3xl text-[#17a6e0] mb-4"></i>
+              <i className="bi bi-question-circle text-3xl text-[#155dfc] mb-4"></i>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">FAQ</h3>
               <p className="text-gray-600 text-sm mb-3">Find answers to common questions</p>
-              <span className="inline-flex items-center gap-2 text-[#17a6e0] font-medium hover:underline text-sm">
+              <span className="inline-flex items-center gap-2 text-[#155dfc] font-medium hover:underline text-sm">
                 <i className="bi bi-arrow-right"></i>
                 View FAQs
               </span>
@@ -569,10 +569,10 @@ export default function DownloadApp() {
               className="bg-blue-50 rounded-xl p-6 border border-blue-100 cursor-pointer hover:bg-blue-100 transition-colors duration-300"
               onClick={() => window.location.href = 'mailto:service@hdmedicalgroup.com'}
             >
-              <i className="bi bi-envelope text-3xl text-[#17a6e0] mb-4"></i>
+              <i className="bi bi-envelope text-3xl text-[#155dfc] mb-4"></i>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Support</h3>
               <p className="text-gray-600 text-sm mb-3">Contact our technical support team</p>
-              <span className="inline-flex items-center gap-2 text-[#17a6e0] font-medium hover:underline text-sm">
+              <span className="inline-flex items-center gap-2 text-[#155dfc] font-medium hover:underline text-sm">
                 service@hdmedicalgroup.com
               </span>
             </div>
@@ -580,10 +580,10 @@ export default function DownloadApp() {
               className="bg-blue-50 rounded-xl p-6 border border-blue-100 cursor-pointer hover:bg-blue-100 transition-colors duration-300"
               onClick={() => window.open('/docs/HDSteth-App-User-Manual.pdf', '_blank')}
             >
-              <i className="bi bi-book text-3xl text-[#17a6e0] mb-4"></i>
+              <i className="bi bi-book text-3xl text-[#155dfc] mb-4"></i>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">User Guide</h3>
               <p className="text-gray-600 text-sm mb-3">Learn how to use the app effectively</p>
-              <span className="inline-flex items-center gap-2 text-[#17a6e0] font-medium hover:underline text-sm">
+              <span className="inline-flex items-center gap-2 text-[#155dfc] font-medium hover:underline text-sm">
                 <i className="bi bi-download"></i>
                 Download User Manual
               </span>
