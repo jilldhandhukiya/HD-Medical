@@ -36,6 +36,7 @@ export default function DownloadApp() {
   const centerSvgRef = useRef(null);
   const heroTopLeftRef = useRef(null);
   const heroBottomRightRef = useRef(null);
+  const faqRef = useRef(null);
 
   // Intersection Observer hooks
   const [heroRef, heroVisible] = useInView(0.1);
@@ -87,11 +88,96 @@ export default function DownloadApp() {
 
   // Handle download button click
   const handleDownload = () => {
-    // Replace this URL with your actual Google Drive download link
     const driveLink = "https://drive.google.com/file/d/10C7PK_3UN5E_P-7PxM9s3p3U094TE_0q/view?usp=sharing"
-
     window.open(driveLink, '_blank');
   };
+
+  // iOS App Store download
+  const handleDownloadIOS = () => {
+    const iosLink = "https://apps.apple.com/in/app/hd-steth/id1565203803";
+    window.open(iosLink, '_blank');
+  };
+
+  // Scroll to FAQs section
+  const scrollToFaq = () => faqRef.current?.scrollIntoView({ behavior: 'smooth' });
+
+  // Accordion state
+  const [openFaq, setOpenFaq] = useState(null);
+  const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
+
+  // FAQs data
+  const faqs = [
+    {
+      q: "Why use an electronic stethoscope?",
+      a: (
+        <ul className="list-disc pl-6 text-gray-700">
+          <li>Exceptional sound quality</li>
+          <li>Enhanced frequency range</li>
+          <li>Smart ambient noise reduction</li>
+          <li>Record and replay capabilities</li>
+          <li>Visual display in app</li>
+          <li>Sharing records for specialist consultation</li>
+          <li>Ability to save in EHR</li>
+        </ul>
+      )
+    },
+    {
+      q: "Can HD Steth be used as a manual stethoscope without the battery?",
+      a: <p className="text-gray-700">No, even the audio is digitized, so a battery is needed for operations.</p>
+    },
+    {
+      q: "What type of battery does the HD Steth use?",
+      a: <p className="text-gray-700">Panasonic Lithium-ion 18650 battery.</p>
+    },
+    {
+      q: "How long does the battery last?",
+      a: (
+        <p className="text-gray-700">
+          About 8 hours of continuous usage. Normally, HD Steth is used only intermittently, so it may last 3–5 days on a full charge.
+        </p>
+      )
+    },
+    {
+      q: "How long does it take to charge the battery?",
+      a: <p className="text-gray-700">4–5 hours.</p>
+    },
+    {
+      q: "Can HD Steth be used while it is being charged?",
+      a: <p className="text-gray-700">No.</p>
+    },
+    {
+      q: "What kind of cable is used for charging?",
+      a: <p className="text-gray-700">A standard USB Micro‑B cable.</p>
+    },
+    {
+      q: "What is the BT range?",
+      a: (
+        <p className="text-gray-700">
+          10 meters if there are no obstructions. For ideal results, keep the smart device within 1.5 meters of the HD Steth.
+        </p>
+      )
+    },
+    {
+      q: "What is the turnaround time for HD Medical Group support to get back to us?",
+      a: <p className="text-gray-700">1 business day.</p>
+    },
+    {
+      q: "Where can you access the training video links?",
+      a: (
+        <p className="text-gray-700">
+          From the HD Medical Group YouTube channel:{' '}
+          <a
+            href="https://www.youtube.com/channel/UCiCF-U82vogdogFuClswdBg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#17a6e0] hover:underline"
+          >
+            https://www.youtube.com/channel/UCiCF-U82vogdogFuClswdBg
+          </a>
+        </p>
+      )
+    }
+  ];
 
   return (
     <>
@@ -273,36 +359,56 @@ export default function DownloadApp() {
 
         <div className="max-w-4xl mx-auto px-6 md:px-16 text-center relative z-10">
           <div className={`transition-all duration-1000 ${downloadVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
-            {/* Download Content */}
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                 Ready to Get Started?
               </h2>
               <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                Download the HD Steth app for Android and revolutionize your cardiac diagnostic workflow
+                Download the HD Steth app and revolutionize your cardiac diagnostic workflow
               </p>
 
-              {/* Android Badge */}
-              <div className="flex justify-center mb-8">
-                <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
-                  <div className="flex items-center gap-4">
+              {/* Platform Cards WITH buttons inside */}
+              <div className="flex flex-col md:flex-row justify-center items-stretch gap-4 mb-8">
+                {/* Android Card */}
+                <div className="flex-1 bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                  <div className="flex items-center gap-4 justify-center">
                     <i className="bi bi-android2 text-4xl text-white"></i>
                     <div className="text-left">
                       <p className="text-white/80 text-sm">Available for</p>
                       <p className="text-white text-xl font-bold">Android</p>
                     </div>
                   </div>
+                  <div className="mt-6 flex justify-center">
+                    <button
+                      onClick={handleDownload}
+                      className="inline-flex items-center gap-3 bg-white text-[#17a6e0] px-6 py-3 rounded-full text-base font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
+                    >
+                      <i className="bi bi-android2 text-lg"></i>
+                      <span>Download Now</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* iOS Card */}
+                <div className="flex-1 bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                  <div className="flex items-center gap-4 justify-center">
+                    <i className="bi bi-apple text-4xl text-white"></i>
+                    <div className="text-left">
+                      <p className="text-white/80 text-sm">Available for</p>
+                      <p className="text-white text-xl font-bold">iOS</p>
+                    </div>
+                  </div>
+                  <div className="mt-6 flex justify-center">
+                    <button
+                      onClick={handleDownloadIOS}
+                      className="inline-flex items-center gap-3 bg-white text-[#17a6e0] px-6 py-3 rounded-full text-base font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
+                    >
+                      <i className="bi bi-apple text-lg"></i>
+                      <span>Download Now</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-
-              {/* Download Button */}
-              <button
-                onClick={handleDownload}
-                className="inline-flex items-center gap-3 bg-white text-[#17a6e0] px-8 py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
-              >
-                <i className="bi bi-download text-xl"></i>
-                <span>Download Now</span>
-              </button>
 
               {/* App Info */}
               <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-white/90">
@@ -446,7 +552,11 @@ export default function DownloadApp() {
             Our support team is here to help you get the most out of your HD Steth app
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+            {/* Make FAQ card clickable to scroll to FAQs section */}
+            <div
+              className="bg-blue-50 rounded-xl p-6 border border-blue-100 cursor-pointer hover:bg-blue-100 transition-colors duration-300"
+              onClick={scrollToFaq}
+            >
               <i className="bi bi-question-circle text-3xl text-[#17a6e0] mb-4"></i>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">FAQ</h3>
               <p className="text-gray-600 text-sm mb-3">Find answers to common questions</p>
@@ -463,7 +573,7 @@ export default function DownloadApp() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Support</h3>
               <p className="text-gray-600 text-sm mb-3">Contact our technical support team</p>
               <span className="inline-flex items-center gap-2 text-[#17a6e0] font-medium hover:underline text-sm">
-              service@hdmedicalgroup.com
+                service@hdmedicalgroup.com
               </span>
             </div>
             <div 
@@ -478,6 +588,53 @@ export default function DownloadApp() {
                 Download User Manual
               </span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs Section (new) */}
+      <section ref={faqRef} className="bg-white py-16 border-t border-gray-100" id="faqs">
+        <div className="max-w-4xl mx-auto px-6 md:px-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">FAQs</h2>
+
+          {/* Accordion */}
+          <div className="space-y-4">
+            {faqs.map((item, idx) => {
+              const open = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className={`rounded-xl border transition-colors ${
+                    open ? 'border-[#17a6e0]/60 bg-blue-50/40' : 'border-gray-200 bg-white'
+                  }`}
+                >
+                  <button
+                    type="button"
+                    aria-expanded={open}
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex items-center justify-between text-left p-4 md:p-5"
+                  >
+                    <span className="font-semibold text-gray-900">{item.q}</span>
+                    <i
+                      className={`bi bi-chevron-down text-[#17a6e0] transition-transform duration-300 ${
+                        open ? 'rotate-180' : ''
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </button>
+
+                  <div
+                    className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
+                      open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    }`}
+                  >
+                    <div className="px-4 md:px-5 pb-4 md:pb-5 overflow-hidden">
+                      {item.a}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
