@@ -35,110 +35,92 @@ const leadership = [
     name: "Arvind Thiagarajan",
     position: "Founder, CEO & Chief Inventor",
     image: "/images/company/Arvind.png",
-    description: "Visionary leader driving innovation and growth. Passionate about healthcare transformation.",
-    flags: ["us",'india']
+    description: "Visionary leaderrr driving innovation and growth. Passionate about healthcare transformation."
   },
   {
     name: "Eric Fronk",
     position: "CFO / COO",
     image: "/images/company/EricFronk.png",
-    description: "Driving financial strategy and operational excellence to ensure sustainable growth and quality healthcare delivery.",
-    flags: ["us"]
+    description: "Driving financial strategy and operational excellence to ensure sustainable growth and quality healthcare delivery."
   },
   {
     name: "Venkat Raman",
     position: "Chief of Engineering & SVP, Manufacturing Ops",
     image: "/images/company/Venkat.png",
-    description: "Leading engineering innovation and manufacturing excellence to deliver high-quality, scalable, and efficient solutions.",
-    flags: ["us"]
+    description: "Leading engineering innovation and manufacturing excellence to deliver high-quality, scalable, and efficient solutions."
   },
   {
     name: "Prasad Bal",
     position: "SVP, Partnerships & Product Management",
     image: "/images/company/Prasad.png",
-    description: "Building strategic partnerships and driving product innovation to accelerate growth and deliver exceptional customer value.",
-    flags: ["us"]
+    description: "Building strategic partnerships and driving product innovation to accelerate growth and deliver exceptional customer value."
   },
   {
     name: "Ganesh Kumar B R",
     position: "VP of R&D",
     image: "/images/company/GaneshKumar.png",
-    description: "Driving research and development initiatives to deliver innovative healthcare solutions.",
-    flags: ["india"]
+    description: "Driving research and development initiatives to deliver innovative healthcare solutions."
   }
-
 ];
-
 
 const boardMembers = [
   {
     name: "Arvind Thiagarajan",
     position: "Founder & CEO",
     image: "/images/company/Arvind.png",
-    description: "Serial Entrepreneur & Successful ASX IPO",
-    flags: ["india","us"]
+    description: "Serial Entrepreneur & Successful ASX IPO"
   },
   {
     name: "Arjun Malhotra",
     position:" Board Member",
     image: "/images/company/Arjun-Malhotra.png",
-    description: "Co-Founder of HCL & Headstrong",
-    flags: ["us", "india"]
+    description: "Co-Founder of HCL & Headstrong"
   },
   {
     name: "Guru Gurushankar",
     position: "Board Member",
     image: "/images/company/GuruShankar.png",
-    description: "Successful Corporate Executive & Leader",
-    flags: ["us"]
+    description: "Successful Corporate Executive & Leader"
   },
   {
     name: "Riaz A. Karamali",
     position: "Legal Counsel",
     image: "/images/company/Riaz A Karamali.png",
-    description: "Pillsbury Silicon Valley & San Francisco",
-    flags: ["us"]
+    description: "Pillsbury Silicon Valley & San Francisco"
   },
   {
     name: "Investor & Board Observer",
     position: "ADI (NASDAQ)",
     image: "/images/company/AnalogDevices.png",
-    description: "Market Cap: US$ 80 Billion",
-    flags: ["us"]
+    description: "Market Cap: US$ 80 Billion"
   }
-  
 ];
 
 const medicalAdvisors = [
   {
     name: "Dr. Nelson Schiller",
     position: "MD, FACC, FRCP Professor of Medicine & Anesthesia",
-    image: "/images/company/Dr Nelson.png",
-    flags: ["us"]
+    image: "/images/company/Dr Nelson.png"
   },
   {
     name: "Dr Douglas R Johnston,",
     position: "MD, Chief of Cardiac Surgery, \n Fellow: Cleveland Clinic",
-    image: "/images/company/Dr Douglesx.png",
-    flags: ["us"]
+    image: "/images/company/Dr Dougles.png"
   },
   {
     name: "Dr. Thomas Krummel",
     position: "MD, FACS/FAPP Professor of Co-Director Stanford Byers Center for Bio-design",
-    image: "/images/company/Dr Thomas.png",
-    flags: ["us"]
+    image: "/images/company/Dr Thomas.png"
   },
   {
     name: "Dr. Wael Al Mahmeed",
     position: "MD Leading Cardiologist Owner of City Pharma, UAE",
-    image: "/images/company/Dr Wael.png",
-    flags: ["uae"]
+    image: "/images/company/Dr Wael.png"
   },
   {
     name: "Dr. Raj E G",
     position: "MD, FACC, FSCAI, FASNC, Cardiologist, Hurley Medical Center, Michigan",
-    image: "/images/company/Dr Raj.png",
-    flags: ["us", "india"]
+    image: "/images/company/Dr Raj.png"
   }
 ];
 
@@ -343,7 +325,7 @@ export default function AboutUs() {
 <section className="w-full relative h-screen md:h-[87vh] overflow-hidden flex items-center justify-center">        {/* Background Image */}
         {/* Background Image */}
         <Image
-          src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+          src="/images/Heart-with-ECG.png" 
           alt="We Work to Save Lives Banner"
           fill
           className="object-cover absolute inset-0"
@@ -399,50 +381,45 @@ export default function AboutUs() {
         </div>
       </section> */}
 
-      {/* Vision & Mission Section */}
-      <section className="w-full bg-white px-4 py-12 md:px-10 lg:px-32">
-        <div className="max-w-6xl mx-auto flex flex-col gap-10 md:gap-16">
-          {/* Vision */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
-            <div className="w-full md:w-1/3 flex-shrink-0 flex items-center justify-center md:justify-start mb-4 md:mb-0">
-              <span className="text-[#155dfc] text-3xl md:text-5xl  font-bold leading-tight text-center md:text-left">
-                Our Vision
-              </span>
+        <section id="about-details" className="py-20 bg-gradient-to-b from-white to-blue-50/30">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <div className="inline-flex items-center justify-center p-3 mb-6 bg-blue-50 rounded-full">
+              <svg className="w-6 h-6 text-[#155dfc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
             </div>
-            <div className="w-full md:w-2/3 flex items-center justify-center md:justify-start">
-              <p className="text-base md:text-lg text-gray-800 font-medium text-center md:text-left">
-                To be a global leader in innovative, high-precision Medical devices that empower healthcare professionals and improve patient outcomes through advanced technology, uncompromising quality and continuous innovation.
-              </p>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About HD Medical</h2>
+            <div className="w-24 h-1 bg-[#155dfc] mx-auto mb-8 rounded-full"></div>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light">
+              <span className="font-semibold text-[#155dfc]">HD Medical</span> is a global leader in the detection and management of cardiovascular disease.
+              We create clinically validated devices and software that put powerful diagnostic tools into the
+              hands of clinicians — delivering fast, reliable, evidence-based information at the point of care.
+              Our solutions are designed to improve outcomes, streamline workflows and help save lives.
+            </p>
           </div>
-          {/* Mission */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
-            <div className="w-full md:w-1/3 flex justify-center md:justify-start mb-4 md:mb-0">
-              <div className="rounded-[32px] overflow-hidden shadow-lg w-full max-w-xs md:max-w-md">
-                <Image
-                  src="/images/vision_section.png"
-                  alt="Doctor checking patient health"
-                  width={400}
-                  height={400}
-                  className="object-fit w-full h-48 md:h-64"
-                  priority
-                />
-              </div>
-            </div>
-            <div className="w-full md:w-2/3 flex flex-col justify-center">
-              <h2 className="text-[#155dfc] text-2xl md:text-5xl font-bold mb-3 leading-tight text-center md:text-left">
-                Our Mission
-              </h2>
-              <p className="text-base md:text-lg text-gray-800 font-medium mb-2 text-center md:text-left">
-                At HD Medical, we are dedicated to designing, developing, manufacturing and delivering innovative healthcare technology. We strive to exceed customer expectations by maintaining the highest quality standards, adhering to global regulatory requirements and fostering a culture of innovation, integrity and service.
-              </p>
-              <p className="text-base md:text-lg text-gray-800 font-medium text-center md:text-left">
-                Through our commitment to excellence, we aim to make healthcare more accurate, accessible and efficient worldwide.
-              </p>
-            </div>
+        </section>
+
+        {/* Vision & Mission Section */}
+        <section className="mt-16 w-full">
+          <div className="max-w-6xl mx-auto px-4">
+            <Image
+              src="/images/Vision-Mission.png"
+              alt="Vision and Mission"
+              width={1400}
+              height={800}
+              className="w-full h-auto object-contain"
+              priority
+            />
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Leadership Team */}
+        <section className="mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Our Team</h2>
+            <div className="w-20 h-1 bg-[#17a6e0] mx-auto mt-4 rounded-full"></div>
+          </div>
+        </section>
 
       {/* Leadership Section */}
       <Section title="Our Leadership" people={leadership} />
