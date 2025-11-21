@@ -290,14 +290,14 @@ const HeroSection = () => {
 
 const TrustedBySection = () => {
   const stats = [
-    { icon: <CheckCircle2 size={20} />, value: "200,000+", label: "Lives Screened" },
-    { icon: <TrendingUp size={20} />, value: "90%", label: "Sensitivity" },
-    { icon: <Award size={20} />, value: "99%", label: "Specificity" },
+    { icon: <CheckCircle2 size={32} />, value: "200k+", label: "Lives Screened" },
+    { icon: <TrendingUp size={32} />, value: "90%", label: "Sensitivity" },
+    { icon: <Award size={32} />, value: "99%", label: "Specificity" },
   ];
 
   return (
-    <section className="w-full py-20 px-6 md:px-12 bg-white relative overflow-hidden">
-      {/* Background: Subtle Medical Cross Pattern */}
+    <section className="w-full py-24 px-6 md:px-12 bg-white relative overflow-hidden">
+      {/* Background: Very subtle static grid */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(#101585 1px, transparent 1px), linear-gradient(90deg, #101585 1px, transparent 1px)`,
@@ -307,59 +307,51 @@ const TrustedBySection = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h4 className="text-[#FA6404] font-bold tracking-widest text-xs uppercase mb-3">Proven Excellence</h4>
           <h2 className="text-3xl md:text-5xl font-bold text-[#101585] mb-4 max-w-3xl mx-auto">
             Trusted by Healthcare <br /> Professionals <span className="text-[#FA6404]">Worldwide</span>
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            Our technology is validated through extensive clinical trials and real-world deployments
+          <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed text-lg">
+            Our technology is validated through extensive clinical trials and real-world deployments.
           </p>
         </div>
 
-        {/* Small Circular Stats */}
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16">
+        {/* Static Solid Circle Stats */}
+        <div className="flex flex-wrap justify-center gap-10 md:gap-20 mb-16">
           {stats.map((stat, index) => (
-            <div key={index} className="relative group cursor-default">
-
-              {/* 1. Container Size (Smaller: w-44 h-44) */}
-              <div className="w-44 h-44 rounded-full border border-slate-100 bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] flex items-center justify-center relative z-10">
-
-                {/* 2. The Rotating Orbital Ring (Same Border Animation) */}
-                <div className="absolute inset-0 rounded-full animate-[spin_8s_linear_infinite]">
-                  {/* Active Dot */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-[#FA6404] rounded-full shadow-[0_0_10px_#FA6404]"></div>
-                  {/* Trail */}
-                  <div className="absolute inset-0 rounded-full border-t-2 border-r-2 border-transparent border-t-[#FA6404]/30 border-r-[#FA6404]/10 rotate-45"></div>
+            <div key={index} className="flex flex-col items-center">
+              
+              {/* The Static Circle Container */}
+              <div className="w-56 h-56 rounded-full bg-white border-[6px] border-[#eff6ff] outline outline-2 outline-[#101585] shadow-xl flex flex-col items-center justify-center p-4 z-10 hover:transform hover:-translate-y-1 transition-transform duration-300">
+                
+                {/* Icon */}
+                <div className="text-[#FA6404] mb-3 bg-orange-50 p-3 rounded-full">
+                  {stat.icon}
                 </div>
 
-                {/* 3. Inner Static Ring */}
-                <div className="absolute inset-3 rounded-full border border-slate-50 shadow-inner"></div>
+                {/* Big Value Text */}
+                <h3 className="text-5xl font-extrabold text-[#101585] tracking-tight mb-1">
+                  {stat.value}
+                </h3>
 
-                {/* 4. Compact Content */}
-                <div className="flex flex-col items-center justify-center relative z-20 transform group-hover:scale-105 transition-transform duration-500">
-                  <div className="mb-2 text-slate-300 group-hover:text-[#FA6404] transition-colors duration-300">
-                    {stat.icon}
-                  </div>
-                  <h3 className="text-3xl font-bold text-[#101585] tracking-tight mb-0.5">
-                    {stat.value}
-                  </h3>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                    {stat.label}
-                  </p>
-                </div>
+                {/* Label Text */}
+                <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">
+                  {stat.label}
+                </p>
+
               </div>
-
-              {/* 5. Floor Shadow */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-3 bg-black/5 rounded-[100%] blur-md group-hover:w-32 transition-all duration-500"></div>
+              
+              {/* Static Floor Shadow */}
+              <div className="w-40 h-4 bg-black/5 rounded-[100%] blur-md mt-4"></div>
             </div>
           ))}
         </div>
 
         {/* Validation Text */}
         <div className="text-center">
-          <div className="inline-block px-6 py-2 rounded-full bg-slate-50 border border-slate-100 shadow-sm">
-            <p className="text-slate-600 text-sm font-medium">
+          <div className="inline-block px-8 py-3 rounded-full bg-slate-50 border border-slate-200">
+            <p className="text-slate-700 text-base font-semibold">
               Validated across <span className="text-[#101585] font-bold">50+ healthcare facilities</span> in <span className="text-[#FA6404] font-bold">20+ countries</span>
             </p>
           </div>
@@ -642,11 +634,12 @@ const CertificationsBar = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
             CERTIFICATES
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-8 items-center justify-items-center max-w-none mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 gap-8 items-center justify-items-center max-w-none mx-auto">
             {[
               { src: "/images/fda.png", alt: "FDA Cleared", text: "FDA CLEARED\n# K201299", pdf:"/docs/FDA-K201299.pdf" },
               { src: "/images/iso.png", alt: "ISO Certification", text: "ISO\n13485: 2016", pdf:"/docs/ISO13485-Certificate.pdf" },
-              { src: "/images/tn.png", alt: "TN Certification", text: "TN/M/MD/004806" }
+              { src: "/images/tn.png", alt: "TN Certification", text: "TN/M/MD/004806", pdf:"/docs/TN-Certificate.pdf" },
+              { src: "/images/iec.png", alt: "CE Certification", text: "60601-2-27", pdf:"/docs/CE-Certificate.pdf" }
               ].map((cert, index) => (
               <div key={index} className="flex flex-col items-center text-center">
                 <div>
@@ -655,7 +648,7 @@ const CertificationsBar = () => {
                     alt={cert.alt}
                     width={120}
                     height={100}
-                    className="mb-4 !transition-none !duration-0"
+                    className="mb-3 !transition-none !duration-0"
                     onClick={() => window.open(cert.pdf, '_blank')}
                   />
                 </div>

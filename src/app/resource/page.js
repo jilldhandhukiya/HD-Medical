@@ -236,7 +236,7 @@ const AccessoriesSection = () => {
         <section className="w-full py-20 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Premium Accessories</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Accessories</h2>
                     <p className="text-slate-500">Enhance your HD Steth experience with genuine parts</p>
                 </div>
 
