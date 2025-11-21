@@ -441,7 +441,7 @@ export default function ProductHero() {
             <span className="text-[#FA6404] font-bold tracking-wider uppercase text-sm md:text-base mb-4">INSTANT CARDIAC INSIGHTS. ANYTIME.</span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold" style={{ color: PRIMARY_BLUE, lineHeight: 1.1 }}>HD Steth – The Intelligent Stethoscope</h1>
             <p className="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
-              Experience the next generation of cardiac auscultation with HD Steth's intelligent technology.
+              Experience the next generation of cardiac auscultation with HD Steth&apos;s intelligent technology.
             </p>
             <button onClick={scrollToAdvantages} className="bg-[#FA6404] hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-all transform hover:-translate-y-0.5">
               Learn More
@@ -636,16 +636,16 @@ const PRIMARY_ORANGE = '#FA6404 */}
             Seamless EHR Integration
           </h2>
 
-          <p className="text-xl md:text-2xl leading-relaxed text-center max-w-5xl mb-12 font-medium" style={{ color: '#ffffff' }}>
-            HD Steth App has an open APK that can be integrated into providers' EHR systems. It enables critical cardiac data to be seamlessly transferred into EHRs.
-          </p>
+            <p className="text-xl md:text-2xl leading-relaxed text-center max-w-5xl mb-12 font-medium" style={{ color: '#ffffff' }}>
+              HD Steth App has an open APK that can be integrated into providers&apos; EHR systems. It enables critical cardiac data to be seamlessly transferred into EHRs.
+            </p>
 
-          <button
-            className="px-10 py-4 rounded-lg text-lg font-bold tracking-wide transition-transform hover:scale-105 shadow-lg border-2"
-            style={{ backgroundColor: '#FA6404', color: '#ffffff', borderColor: `${PRIMARY_ORANGE}` }}
-          >
-            KNOW MORE
-          </button>
+            <button
+              className="px-10 py-4 rounded-lg text-lg font-bold tracking-wide transition-transform hover:scale-105 shadow-lg border-2"
+              style={{ backgroundColor: '#FA6404', color: '#ffffff', borderColor: `${PRIMARY_ORANGE}` }}
+            >
+              KNOW MORE
+            </button>
         </div>
       </section>
 
