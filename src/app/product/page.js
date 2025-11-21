@@ -8,11 +8,23 @@ import {
   Globe,
   Zap,
   Leaf,
-  Info
+    Menu, 
+  X, 
+  Facebook, 
+  Twitter, 
+  Linkedin, 
+  Instagram, 
+  Mail, 
+  Phone, 
+  MapPin,
+  Heart,
+  Users,
+  Target,
+  ArrowRight,
+  Check
 } from "lucide-react";
 import Image from "next/image";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 
 const advantages = [
   {
@@ -355,9 +367,110 @@ function TechnicalExcellenceSection() {
   );
 }
 
+const AboutHero = () => {
+  return (
+    <section className="relative w-full h-[600px] md:h-[700px] bg-slate-900 overflow-hidden flex items-center justify-center">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+          alt="Medical Team Working" 
+          className="w-full h-full object-cover"
+          fill
+        />
+        {/* Gradient Overlay for text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#101585]/90 via-[#101585]/70 to-transparent opacity-90"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center md:text-left">
+        <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-[#FA6404]/20 border border-[#FA6404]/30 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+                <Heart size={16} className="text-[#FA6404] fill-[#FA6404]" />
+                <span className="text-orange-100 text-xs font-bold uppercase tracking-wider">Our Commitment</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
+                We Work to <br/>
+                <span className="text-[#FA6404]">Save Lives</span>
+            </h1>
+            
+            <p className="text-xl text-blue-100 leading-relaxed max-w-2xl drop-shadow-md">
+                Driven by a passion for innovation and a dedication to patient care, we are redefining the boundaries of cardiac diagnostics.
+            </p>
+            
+            <div className="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
+                 <button className="bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg shadow-[#FA6404]/30 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                    Read Our Story <ArrowRight size={18} />
+                </button>
+            </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const MissionSection = () => {
+    return (
+        <section className="w-full py-24 px-6 md:px-12 bg-white">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-16 items-center">
+                    
+                    <div className="relative">
+                        <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#FA6404]/10 rounded-full blur-2xl"></div>
+                        <h2 className="text-4xl font-bold text-[#101585] mb-6 relative z-10">
+                            Empowering Clinicians with Precision
+                        </h2>
+                        <p className="text-slate-500 text-lg leading-relaxed mb-6">
+                            At HD Medical, we believe that every heartbeat tells a story. Our mission is to provide healthcare professionals with the clearest, most accurate cardiac data possible, enabling early detection and better patient outcomes.
+                        </p>
+                        <p className="text-slate-500 text-lg leading-relaxed">
+                            Founded by a team of scientists and cardiologists, we have spent over a decade perfecting the art of digital auscultation and ECG integration.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="bg-blue-50 p-6 rounded-2xl text-center">
+                            <Users size={32} className="text-[#101585] mx-auto mb-4" />
+                            <h3 className="text-3xl font-bold text-[#FA6404] mb-1">100+</h3>
+                            <p className="text-slate-600 font-medium text-sm">Team Members</p>
+                        </div>
+                        <div className="bg-orange-50 p-6 rounded-2xl text-center">
+                            <Globe size={32} className="text-[#FA6404] mx-auto mb-4" />
+                            <h3 className="text-3xl font-bold text-[#101585] mb-1">20+</h3>
+                            <p className="text-slate-600 font-medium text-sm">Countries</p>
+                        </div>
+                        <div className="bg-white border border-slate-100 shadow-lg p-6 rounded-2xl text-center col-span-2">
+                            <Target size={32} className="text-[#101585] mx-auto mb-4" />
+                            <h3 className="text-3xl font-bold text-[#101585] mb-1">200K+</h3>
+                            <p className="text-slate-600 font-medium text-sm">Screenings Performed</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    );
+};
+
 export default function ProductHero() {
   // Add ref for the advantages section
   const advantagesRef = useRef(null);
+  const primaryBlue = '#101585';
+  const primaryOrange = '#FA6404';
+
+  const features = [
+    "Enables effective screening",
+    "Save time, cost and saves lives",
+    "Improve patient outcomes",
+    "For Pediatricians and neo-natal",
+    "Detect CHD, hear fetal HS",
+    "Support prior to patient reaching hospital",
+    "Critical for urgent care situations",
+    "Easy to use on seniors",
+    "Ideal for post-op patients",
+    "Enables clear lung sound detection"
+  ];
 
   // Add scroll function
   const scrollToAdvantages = () => {
@@ -369,89 +482,43 @@ export default function ProductHero() {
 
   return (
     <>
-      <Header />
-      <br />
       {/* Hero Section */}
-      <section className="w-full bg-white py-12 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
-          {/* Left Side */}
-          <div className="flex-1 flex flex-col items-start justify-center">
-            {/* Product Logo */}
-            <Image
-              src="/images/hd-steth-logo.png"
-              alt="HD Steth Logo"
-              width={220}
-              height={60}
-              className="mb-4"
-              priority
-            />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
-              The Future of Cardiac Care is Here
+      <section className="w-full bg-gradient-to-br from-white via-blue-50/50 to-white py-20 px-6 md:px-12 lg:px-20">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="flex flex-col items-start">
+            <span className="text-[#FA6404] font-bold tracking-wider uppercase text-sm md:text-base mb-4">
+              INSTANT CARDIAC INSIGHTS. ANYTIME.
+            </span>
+            <h1 className="text-[#101585] text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              HD Steth – The Intelligent Stethoscope
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 font-medium mb-8">
-              <span className="font-semibold text-black">AI-Powered Stethoscope with Integrated ECG.</span> Unveiling the Unseen, Redefining Diagnosis.
+            <p className="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
+              Experience the next generation of cardiac auscultation with HD Steth&apos;s intelligent technology.
             </p>
             <button
               onClick={scrollToAdvantages}
-              className="bg-[#155dfc] text-white rounded-full px-8 py-4 text-lg font-medium shadow hover:bg-[#1347d4] hover:shadow-lg transition-all duration-300"
+              className="bg-[#FA6404] hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-all transform hover:-translate-y-0.5"
             >
-              Know More
+              Learn More
             </button>
           </div>
-          {/* Right Side */}
-          <div className="flex-1 flex justify-center items-center">
+
+          {/* Right Image */}
+          <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/stethoscope.png"
-              alt="HD Stethoscope"
-              width={450}
-              height={450}
-              className="object-contain"
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Doctor using HD Steth"
+              fill
+              className="object-cover"
               priority
             />
           </div>
         </div>
       </section>
 
-      {/* Commitment Section */}
-      <section className="w-full bg-white px-4 py-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
-          {/* Left big card */}
-          <div className="bg-[#155dfc] rounded-[32px] flex items-center justify-center min-h-[200px] h-full p-6">
-            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold text-center leading-snug break-words">
-              Our Commitment to Care
-            </h2>
-          </div>
-
-          {/* Right side grid */}
-          <div className="flex flex-col justify-between h-full">
-            {/* Top card - Innovation */}
-            <div className="bg-[#155dfc] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px] mb-4">
-              <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">Innovation</span>
-              <Image src="/icons/innovation.svg" alt="Innovation Icon" width={64} height={64} className="w-12 sm:w-14 md:w-16 h-auto" />
-            </div>
-
-            {/* Bottom row - Quality & Trust */}
-            <div className="flex flex-col sm:flex-row gap-1">
-              {/* Quality */}
-              <div className="bg-[#155dfc] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px]">
-                <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">Quality</span>
-                <Image src="/icons/quality.svg" alt="Quality Icon" width={64} height={64} className="w-12 sm:w-14 md:w-16 h-auto" />
-              </div>
-
-              {/* Trust */}
-              <div className="bg-[#155dfc] rounded-[32px] flex items-center justify-between px-6 sm:px-8 py-6 w-full min-h-[100px]">
-                <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">Trust</span>
-                <Image src="/icons/trust.svg" alt="Trust Icon" width={64} height={64} className="w-12 sm:w-14 md:w-16 h-auto" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section - Add ref here */}
-      <AdvantagesSection ref={advantagesRef} />
-
-      <section>
+      {/* Controls Section */}
+       <section>
         <section className="w-full bg-white px-4 py-12">
           <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center">
             {/* Heading Image */}
@@ -480,20 +547,113 @@ export default function ProductHero() {
       </section>
 
 
+      <div className="font-sans antialiased w-full overflow-x-hidden">
+      
+      {/* SECTION 1: EHR Integration */}
+      <section className="bg-white py-20 px-6 md:px-12 lg:px-20 w-full">
+        <div className="max-w-7xl mx-auto text-center flex flex-col items-center">
+          <h2 
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8"
+            style={{ color: primaryBlue }}
+          >
+            Seamless EHR Integration
+          </h2>
+          
+          <p 
+            className="text-xl md:text-2xl leading-relaxed text-center max-w-5xl mb-12 font-medium"
+            style={{ color: primaryBlue }}
+          >
+            HD Steth App has an open APK that can be integrated into providers&apos; EHR systems. 
+            It enables critical cardiac data to be seamlessly transferred into EHRs. 
+            This allows multiple clinicians to access the latest patient data in real time 
+            thereby improving both clinical efficiency and patient outcomes.
+          </p>
+
+          <button 
+            className="px-10 py-4 rounded-lg text-lg font-bold tracking-wide transition-transform hover:scale-105 shadow-lg"
+            style={{ backgroundColor: primaryBlue, color: 'white' }}
+          >
+            KNOW MORE
+          </button>
+        </div>
+      </section>
+
+      {/* SECTION 2: Ideal Solution */}
+      <section 
+        className="py-20 px-6 md:px-12 lg:px-20 w-full"
+        style={{ backgroundColor: primaryBlue }}
+      >
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
+          
+          {/* Headings */}
+          <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">
+            HD Steth – The Ideal Solution for All Clinicians
+          </h2>
+          <h3 className="text-white text-2xl md:text-3xl font-semibold text-center mb-16 opacity-90">
+            Screen. Monitor. Help Diagnose.
+          </h3>
+
+          {/* Feature Grid 
+              Using flex-wrap justify-center to ensure the last row items 
+              (if uneven) are centered, matching the visual style.
+          */}
+          <div className="flex flex-wrap justify-center gap-6 w-full">
+            {features.map((feature, index) => (
+              <div 
+                key={index}
+                className="flex items-center p-6 rounded-xl shadow-xl border-2 w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] transition-transform hover:-translate-y-1"
+                style={{ 
+                  backgroundColor: 'white', // Inner box white as requested
+                  borderColor: primaryOrange 
+                }}
+              >
+                {/* Icon Circle */}
+                <div 
+                  className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-5"
+                  style={{ backgroundColor: primaryOrange }}
+                >
+                  <Check className="text-white w-7 h-7" strokeWidth={3} />
+                </div>
+
+                {/* Text */}
+                <p 
+                  className="text-lg md:text-xl font-semibold leading-tight"
+                  style={{ color: primaryBlue }} // Text blue as requested
+                >
+                  {feature}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Button */}
+          <button 
+            className="mt-16 px-12 py-4 rounded-lg text-xl font-bold shadow-xl transition-all hover:bg-gray-100 hover:shadow-2xl"
+            style={{ backgroundColor: 'white', color: primaryBlue }}
+          >
+            Get HD Steth Now
+          </button>
+
+        </div>
+      </section>
+
+    </div>
+      
+      {/* Features Section - Add ref here */}
+      {/* <AdvantagesSection ref={advantagesRef} /> */}
+
       {/* How It Works Section */}
-      <HowItWorksSection />
+      {/* <HowItWorksSection /> */}
 
-      <TechnicalExcellenceSection />
+      {/* <TechnicalExcellenceSection /> */}
 
-      <section className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Graphics */}
+      {/* <section className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-300 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-blue-400 rounded-full blur-2xl"></div>
         </div>
 
-        {/* Floating Medical Icons */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <Activity className="absolute top-20 right-20 w-8 h-8 text-[#17a6e0] animate-pulse" />
           <Activity className="absolute bottom-32 left-16 w-6 h-6 text-[#17a6e0] animate-pulse" style={{ animationDelay: '1s' }} />
@@ -501,7 +661,6 @@ export default function ProductHero() {
         </div>
 
         <div className="relative max-w-7xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Technical Specifications
@@ -512,7 +671,6 @@ export default function ProductHero() {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mt-6 rounded-full"></div>
           </div>
 
-          {/* Specification Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             <SpecCard icon={<Monitor className="w-5 h-5" />} title="Display">
               <div className="space-y-3">
@@ -574,7 +732,6 @@ export default function ProductHero() {
             </SpecCard>
           </div>
 
-          {/* Compliance Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <SpecCard icon={<Shield className="w-5 h-5" />} title="Compliance & Protection">
               <div className="space-y-2">
@@ -599,15 +756,13 @@ export default function ProductHero() {
             </SpecCard>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="bg-white py-16 px-4">
+      {/* <section className="bg-white py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Heart Murmur Detection */}
             <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
               <div className="mb-4 flex items-center gap-3">
-                {/* Lucide HeartPulse Icon */}
                 <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100">
                   <Activity className="w-5 h-5 text-blue-700" />
                 </span>
@@ -638,10 +793,8 @@ export default function ProductHero() {
               </div>
             </div>
 
-            {/* ECG Analysis */}
             <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
               <div className="mb-4 flex items-center gap-3">
-                {/* Lucide MonitorHeart Icon */}
                 <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100">
                   <Activity className="w-5 h-5 text-blue-700" />
                 </span>
@@ -672,15 +825,14 @@ export default function ProductHero() {
             </div>
           </div>
 
-          {/* Footnote */}
           <p className="text-xs text-gray-400 mt-6 text-center">
             * Data/results based on HD Medical internal testing and validation
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Download HD Steth App Section */}
-      <section className="bg-[#155dfc] py-12 px-4">
+      {/* <section className="bg-[#155dfc] py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Download HD Steth App
@@ -699,10 +851,10 @@ export default function ProductHero() {
             Download for Android
           </a>
         </div>
-      </section>
+      </section> */}
 
       {/* Resources & Documentation Section */}
-      <section className="bg-gray-50 py-16 px-4">
+      {/* <section className="bg-gray-50 py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -715,7 +867,6 @@ export default function ProductHero() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* HD Steth User Manual */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="bg-[#155dfc]/10 p-6">
                 <div className="w-14 h-14 bg-[#155dfc] rounded-2xl flex items-center justify-center mb-4">
@@ -762,7 +913,6 @@ export default function ProductHero() {
               </div>
             </div>
 
-            {/* HD Steth App User Manual */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="bg-[#155dfc]/10 p-6">
                 <div className="w-14 h-14 bg-[#155dfc] rounded-2xl flex items-center justify-center mb-4">
@@ -810,7 +960,6 @@ export default function ProductHero() {
               </div>
             </div>
 
-            {/* Product Brochure */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="bg-[#155dfc]/10 p-6">
                 <div className="w-14 h-14 bg-[#155dfc] rounded-2xl flex items-center justify-center mb-4">
@@ -859,7 +1008,6 @@ export default function ProductHero() {
               </div>
             </div>
 
-            {/* Product Data India Sheet */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="bg-[#155dfc]/10 p-6">
                 <div className="w-14 h-14 bg-[#155dfc] rounded-2xl flex items-center justify-center mb-4">
@@ -907,7 +1055,6 @@ export default function ProductHero() {
               </div>
             </div>
 
-            {/* Raipur Report */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="bg-[#155dfc]/10 p-6">
                 <div className="w-14 h-14 bg-[#155dfc] rounded-2xl flex items-center justify-center mb-4">
@@ -957,7 +1104,6 @@ export default function ProductHero() {
           </div>
 
 
-          {/* Download All Button */}
           <div className="flex justify-center mt-12">
             <button
               onClick={() => {
@@ -980,17 +1126,12 @@ export default function ProductHero() {
             </button>
           </div>
 
-          {/* Optional Note */}
           <p className="text-center text-gray-500 text-sm mt-8">
             All documents are available in PDF format. For additional resources, please contact our support team.
           </p>
         </div>
-      </section>
+      </section> */}
 
-      
-
-      {/* Footer Section */}
-      <Footer />
     </>
   );
 }

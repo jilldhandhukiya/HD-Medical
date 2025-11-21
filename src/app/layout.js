@@ -1,6 +1,8 @@
 import { Geist } from "next/font/google";
 import "./globals.css"; 
 import { Analytics } from '@vercel/analytics/next';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -40,7 +42,10 @@ export default function RootLayout({ children }) {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
       </head>
       <body className={`${geist.className} font-sans bg-white overflow-x-hidden`}>
+            <Header />
+            <br /><br />
             {children}
+            <Footer />
             <Analytics />
       </body>
     </html>

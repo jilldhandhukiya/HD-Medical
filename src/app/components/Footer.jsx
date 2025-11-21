@@ -1,108 +1,110 @@
 'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight, ArrowRight } from 'lucide-react'
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
+    <footer className="w-full bg-[#101585] text-white pt-16 pb-8 px-6 md:px-12 relative overflow-hidden">
+      
+      {/* Background Pattern (subtle circles) */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+         <div className="absolute top-0 left-0 w-full h-full" style={{
+             backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
+             backgroundSize: '30px 30px'
+         }}></div>
+      </div>
 
-
-    <footer className="bg-[#ffffff] text-black px-6 lg:px-16 py-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-8">
-          <div>
-            <h2 className="text-5xl sm:text-6xl font-black leading-tight tracking-tight">
-              LET&apos;S MAKE IT <br className="hidden sm:block" />
-              HAPPEN TOGETHER.
-            </h2>
-          </div>
-          {/* Right Boxed Section */}
-          <div className="flex-1 max-w-lg bg-gray-100 rounded-2xl p-6 shadow-md">
-            {/* Navigation Grid */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Explore</h4>
-              <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-sm font-medium">
-                <Link href="/" className="hover:text-gray-700 transition">
-                  Home
-                </Link>
-                <Link href="/product" className="hover:text-gray-700 transition">
-                  Products
-                </Link>
-                <Link href="/aboutus" className="hover:text-gray-700 transition">
-                  About Us
-                </Link>
-                <Link href="/contactus" className="hover:text-gray-700 transition">
-                  Contact
-                </Link>
-              </div>
-            </div>
-
-            {/* Description */}
-            <p className="text-sm mt-6 mb-4 text-gray-700 leading-relaxed">
-              We Work To Save Lives Through Innovative Medical Solutions.
-            </p>
-
-            {/* CTA Button */}
-            <Link
-              href="/contactus"
-              className="inline-flex items-center gap-2 bg-black text-white px-5 py-3 text-sm font-semibold rounded-full shadow hover:bg-gray-900 transition"
-            >
-              START A CONVERSATION
-              <ArrowRight className="w-4 h-4" />
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          
+          {/* Col 1: Brand */}
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo.png"
+                alt="HD Medical Logo"
+                width={120}
+                height={40}
+                className="object-contain h-8 w-auto"
+              />
             </Link>
+            <p className="text-blue-200 text-sm leading-relaxed">
+              Revolutionizing cardiac diagnostics with intelligent stethoscope technology for better patient care.
+            </p>
+            <div className="flex gap-4">
+              {[<Facebook size={18} />, <Twitter size={18} />, <Linkedin size={18} />, <Instagram size={18} />].map((icon, i) => (
+                <a key={i} href="#" className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center hover:bg-[#FA6404] transition-colors text-white">
+                  {icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Col 2: Quick Links */}
+          <div>
+            <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
+            <ul className="space-y-3 text-blue-200 text-sm">
+              {[
+                { label: 'Home', href: '/' },
+                { label: 'Products', href: '/product' },
+                { label: 'About Us', href: '/aboutus' },
+                { label: 'Contact', href: '/contactus' },
+                { label: 'Privacy Policy', href: '#' }
+              ].map((link) => (
+                <li key={link.label}><Link href={link.href} className="hover:text-[#FA6404] transition-colors">{link.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 3: Contact Us */}
+          <div>
+             <h4 className="text-lg font-bold mb-6 text-white">Contact Us</h4>
+             <div className="space-y-4 text-blue-200 text-sm">
+               <div className="flex items-start gap-3">
+                 <Mail size={18} className="mt-0.5 text-[#FA6404]" />
+                 <span>info@hdsteth.com</span>
+               </div>
+               <div className="flex items-start gap-3">
+                 <Phone size={18} className="mt-0.5 text-[#FA6404]" />
+                 <span>+1 (234) 567-890</span>
+               </div>
+               <div className="flex items-start gap-3">
+                 <MapPin size={18} className="mt-0.5 text-[#FA6404]" />
+                 <span>123 Medical Plaza<br/>Healthcare City, HC 12345</span>
+               </div>
+             </div>
+          </div>
+
+          {/* Col 4: Stay Updated */}
+          <div>
+            <h4 className="text-lg font-bold mb-6 text-white">Stay Updated</h4>
+            <p className="text-blue-200 text-sm mb-4">
+              Subscribe to our newsletter for the latest updates and cardiac care insights.
+            </p>
+            <div className="space-y-3">
+              <input 
+                type="email" 
+                placeholder="Your email address" 
+                className="w-full px-4 py-3 rounded bg-blue-900/40 border border-blue-800 text-white placeholder-blue-400 focus:outline-none focus:border-[#FA6404] transition-colors text-sm"
+              />
+              <button className="w-full bg-[#FA6404] hover:bg-orange-600 text-white py-3 rounded font-bold text-sm transition-colors">
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Centered Social Links */}
-        {/* <div className="mb-16">
-          <div className="flex justify-center flex-wrap gap-6 text-[24px] font-normal tracking-wide">
-            {[
-              ['Instagram', 'https://instagram.com'],
-              ['Twitter (X)', 'https://twitter.com'],
-              ['LinkedIn', 'https://linkedin.com'],
-              ['Whatsapp', 'https://Whatsapp.com']
-            ].map(([label, href]) => (
-              <Link
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center hover:underline"
-              >
-                {label} <ArrowUpRight className="ml-1 w-3 h-3" />
-              </Link>
-            ))}
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-blue-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300">
+          <p>© {new Date().getFullYear()} HD Medical. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-white transition-colors">Cookie Policy</Link>
           </div>
-        </div> */}
-
-        {/* HD Medical Logo */}
-        <div className="flex justify-center">
-          <Image
-            src="/images/logo.png"
-            alt="HD Medical Logo"
-            width={1000}
-            height={120}
-            className="object-contain"
-            priority
-          />
         </div>
       </div>
-      {/* Legalese */}
-      <div className="mt-8 border-t pt-2 text-center text-xs text-gray-500 leading-relaxed">
-        <div className="max-w-3xl mx-auto">
-          <p className="mb-2">
-            &copy; {new Date().getFullYear()} HD Medical. All rights reserved. HD Medical&reg; All Rights Reserved.
-          </p>
-          <div className="flex justify-center gap-4">
-            <Link href="#" className="underline hover:text-gray-600">Privacy Policy</Link>
-            <Link href="#" className="underline hover:text-gray-600">Terms of Use</Link>
-            <Link href="#" className="underline hover:text-gray-600">Disclaimer</Link>
-          </div>
-        </div>
-      </div>
-
     </footer>
   )
 }

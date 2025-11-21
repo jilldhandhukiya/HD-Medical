@@ -1,17 +1,5 @@
 "use client"
 import Image from 'next/image';
-import Header from "../components/Header";
-import Footer from '../components/Footer';
-
-// const flags = {
-//   india: "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/500px-Flag_of_India.svg.png",
-//   us: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Flag_of_the_United_States_%28Web_Colors%29.svg/250px-Flag_of_the_United_States_%28Web_Colors%29.svg.png",
-//   uk: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/250px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
-//   japan: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/250px-Flag_of_Japan.svg.png",
-//   korea: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/250px-Flag_of_South_Korea.svg.png",
-//   australia: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/250px-Flag_of_Australia_%28converted%29.svg.png",
-//   uae:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/1920px-Flag_of_the_United_Arab_Emirates.svg.png"
-// };
 
 // Card Component
 function PersonCard({ person }) {
@@ -81,7 +69,6 @@ const leadership = [
 
 ];
 
-// Replace the existing boardMembers array with this:
 
 const boardMembers = [
   {
@@ -350,11 +337,32 @@ function Section({ title, people }) {
 export default function AboutUs() {
   return (
     <>
-      <Header />
       <br />
       <br />
-      {/* Hero Section */}
-      <section className="w-full bg-white pt-12 pb-8 px-4">
+      {/* Hero Section with Banner */}
+<section className="w-full relative h-screen md:h-[87vh] overflow-hidden flex items-center justify-center">        {/* Background Image */}
+        {/* Background Image */}
+        <Image
+          src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+          alt="We Work to Save Lives Banner"
+          fill
+          className="object-cover absolute inset-0"
+          priority
+        />
+        
+        {/* Overlay for better text visibility */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        {/* Text Content */}
+        <div className="relative z-10 flex items-center justify-center w-full h-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center px-4 leading-tight">
+            We Work to Save Lives
+          </h1>
+        </div>
+      </section>
+
+      {/* About Section */}
+      {/* <section className="w-full bg-white pt-12 pb-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-wide">
             ABOUT <span className="text-[#155dfc]">US</span>
@@ -389,7 +397,7 @@ export default function AboutUs() {
             priority
           />
         </div>
-      </section>
+      </section> */}
 
       {/* Vision & Mission Section */}
       <section className="w-full bg-white px-4 py-12 md:px-10 lg:px-32">
@@ -444,18 +452,6 @@ export default function AboutUs() {
 
       {/* Medical Advisors Section */}
       <Section title="Medical Advisors" people={medicalAdvisors} />
-
-      {/* Our Current Major Investors Section */}
-      {/* <Section title="Our Current Major Investors" people={majorInvestors} /> */}
-
-      {/* Business Advisors & Strategists Section */}
-      {/* <Section title="Business Advisors & Strategists" people={businessAdvisors} /> */}
-
-      {/* India Team Members Section */}
-      {/* <Section title="India Team Members" people={indiaTeam} /> */}
-
-      {/* Footer Section */}
-      <Footer />
     </>
   );
 }

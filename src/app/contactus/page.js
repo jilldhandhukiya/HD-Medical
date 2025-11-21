@@ -620,9 +620,7 @@ export default function Contact() {
                       />
                       <label
                         htmlFor="phone"
-                        className={`absolute text-gray-500 duration-300 transform top-3 z-10 origin-[0] text-lg ${
-                          formData.phone ? 'scale-75 -translate-y-6' : 'scale-100 translate-y-0'
-                        }`}
+                        className={`absolute text-gray-500 duration-300 transform top-3 z-10 origin-[0] text-lg ${formData.phone ? 'scale-75 -translate-y-6' : 'scale-100 translate-y-0'}`}
                         style={{ left: '120px' }}
                       >
                         Phone Number
@@ -657,11 +655,8 @@ export default function Contact() {
                       type="button"
                       onClick={handleSubmit}
                       disabled={isLoading}
-                      className={`w-full py-4 rounded-full text-white text-lg font-medium transition-all duration-300 shadow-lg ${
-                        isLoading
-                          ? "bg-gray-400 cursor-not-allowed"
-                          : "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 hover:shadow-xl transform hover:-translate-y-1"
-                      }`}
+                      className={`w-full py-4 rounded-full text-white text-lg font-medium transition-all duration-300 shadow-lg ${isLoading ? "bg-gray-400 cursor-not-allowed" : "hover:bg-[#0d0f6b] hover:shadow-xl transform hover:-translate-y-1"}`}
+                      style={{ backgroundColor: isLoading ? undefined : "#101585" }}
                     >
                       {isLoading ? "Submitting..." : "Submit"}
                     </button>
@@ -672,9 +667,6 @@ export default function Contact() {
           </div>
         </main>
       </div>
-
-      {/* Footer - Clean area without waves */}
-      <Footer />
     </div>
   );
 }

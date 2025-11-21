@@ -4,126 +4,140 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname() // Get current path
+  const [headerVisible, setHeaderVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const currentScrollY = window.scrollY
+      setScrolled(currentScrollY > 20)
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past 100px
+        setHeaderVisible(false)
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        setHeaderVisible(true)
+      }
+
+      setLastScrollY(currentScrollY)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [lastScrollY])
 
   const links = [
-    ['HOME', '/'],
-    ['PRODUCT', '/product'],
-    ['ABOUT', '/aboutus'],
-    ['CONTACT', '/contactus']
+    { title: 'Home', url: '/' },
+    { title: 'Products', url: '/product' },
+    { title: 'About Us', url: '/aboutus' },
+    { title: 'Contact', url: '/contactus' }
   ]
 
   return (
-    <header
-      className={clsx(
-        'fixed top-0 left-0 w-full z-50 transition-all duration-300',
-        scrolled ? 'bg-white shadow-md' : 'bg-transparent',
-        menuOpen ? 'bg-white' : ''
-      )}
-    >
-      <nav className="max-w-full mx-auto px-2 sm:px-4 lg:px-6">
-        <div className="flex justify-between items-center h-20">
+    <>
+      <nav className={`w-full py-6 px-6 md:px-12 flex justify-between items-center fixed top-0 left-0 z-50 transition-all duration-300 max-w-full ${
+        scrolled ? 'bg-white shadow-md' : 'bg-transparent'
+      } ${isOpen ? 'bg-white' : ''} ${headerVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center ml-2 sm:ml-4">
+          <Link href="/" className="flex items-center">
             <Image
               src="/images/logo.png"
               alt="HD Medical Logo"
-              width={100}
-              height={10}
-              className="object-contain h-6 w-auto"
+              width={120}
+              height={40}
+              className="object-contain h-8 w-auto"
             />
           </Link>
 
-          {/* Desktop Nav - Moved to right */}
-          <div className="hidden md:flex space-x-12 items-center justify-end flex-1 mr-8">
-            {links.map(([title, url]) => (
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8">
+            {links.map((item) => (
               <Link
-                key={title}
-                href={url}
-                className={clsx(
-                  'text-xl font-bold relative group transition-all hover:scale-105',
-                  pathname === url ? 'text-[#155dfc]' : 'text-black hover:text-[#155dfc]'
-                )}
+                key={item.title}
+                href={item.url}
+                className={`font-bold text-lg transition-colors text-base ${
+                  pathname === item.url
+                    ? 'text-[#101585]'
+                    : 'text-slate-600 hover:text-[#101585]'
+                }`}
               >
-                <span className="relative z-10">{title}</span>
-                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#155dfc] transition-all duration-300 group-hover:w-full group-hover:left-0" />
+                {item.title}
               </Link>
             ))}
-          </div>
-
-          {/* Download App Button - Desktop */}
-          <div className="hidden md:flex items-center mr-4 lg:mr-8">
-            <Link 
-              href="/app"
-              className="bg-[#155dfc] hover:bg-[#155dfc]/90 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
+            <Link
+              href="/resource"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-full font-semibold text-base shadow-lg shadow-orange-500/20 transition-all transform hover:-translate-y-0.5"
             >
-              HD STETH APP
+              Get Started
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Toggle */}
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative z-50 p-3 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 mr-2"
-            aria-label="Toggle Menu"
+            className="md:hidden text-slate-700"
+            onClick={() => setIsOpen(!isOpen)}
           >
-            {menuOpen ? (
-              <X className="w-6 h-6 text-gray-600" />
-            ) : (
-              <Menu className="w-6 h-6 text-gray-600" />
-            )}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      <div
-        className={clsx(
-          'fixed inset-0 z-40 md:hidden transition-transform duration-300 ease-in-out transform',
-          menuOpen ? 'translate-x-0' : 'translate-x-full'
-        )}
-      >
-        <div className="absolute inset-0 bg-white">
-          <div className="pt-24 pb-6 px-4 space-y-2">
-            {links.map(([title, url]) => (
+      {/* Mobile Side Panel */}
+      <div className={`fixed top-0 right-0 h-full w-64 bg-white shadow-xl transform transition-transform duration-300 z-50 ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      } md:hidden`}>
+        <div className="flex flex-col h-full">
+          {/* Close Button */}
+          <div className="flex justify-end p-4">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-slate-700"
+            >
+              <X size={28} />
+            </button>
+          </div>
+
+          {/* Mobile Menu Links */}
+          <div className="flex flex-col gap-4 px-6">
+            {links.map((item) => (
               <Link
-                key={title}
-                href={url}
-                className={clsx(
-                  'block px-6 py-4 text-xl font-bold rounded-lg hover:bg-gray-50 transition-all hover:scale-105',
-                  pathname === url ? 'text-[#155dfc] bg-blue-50' : 'text-black hover:text-[#155dfc]'
-                )}
-                onClick={() => setMenuOpen(false)}
+                key={item.title}
+                href={item.url}
+                className={`font-medium p-2 rounded text-base ${
+                  pathname === item.url
+                    ? 'text-[#101585] bg-blue-50'
+                    : 'text-slate-700 hover:bg-slate-50'
+                }`}
+                onClick={() => setIsOpen(false)}
               >
-                {title}
+                {item.title}
               </Link>
             ))}
-            
-            {/* Download App Button - Mobile */}
             <Link
               href="/app"
-              className="w-full bg-[#155dfc] hover:bg-[#155dfc]/90 text-white font-bold px-6 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg mt-4 text-center block"
-              onClick={() => setMenuOpen(false)}
+              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold text-center mt-4"
+              onClick={() => setIsOpen(false)}
             >
-              HD Steth App
+              HD STETH APP
             </Link>
           </div>
         </div>
       </div>
-    </header>
+
+      {/* Overlay for Mobile */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
+    </>
   )
 }
