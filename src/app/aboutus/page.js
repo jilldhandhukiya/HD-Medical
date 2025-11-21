@@ -18,11 +18,11 @@ function PersonCard({ person }) {
           style={{ objectPosition: 'center' }}
         />
       </div>
-      <div className="bg-[#155dfc] px-4 py-3 text-center">
+      <div className="bg-[#101585] px-4 py-3 text-center">
         <h3 className="text-white text-xl font-bold leading-tight">{person.name}</h3>
       </div>
       <div className="px-4 py-2 border-t border-gray-200 text-center">
-        <p className="text-[#155dfc] text-base font-semibold">{person.position}</p>
+        <p className="text-[#101585] text-base font-semibold">{person.position}</p>
         <p className="text-gray-600 text-sm mt-2">{person.description}</p>
       </div>
     </div>
@@ -343,55 +343,19 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* About Section */}
-      {/* <section className="w-full bg-white pt-12 pb-8 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-wide">
-            ABOUT <span className="text-[#155dfc]">US</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-800 font-medium mb-2">
-            <span className="font-bold text-black">HD Medical</span> for decades has been focusing with single minded endeavour to deliver the best we can and achieving this has been possible due to the trust instilled by our customers in our service. Trust invoked through constant innovation and improvement of our services.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-10">
-          <Image
-            src="/images/doctor1-aboutus.jpg"
-            alt="Doctor 1"
-            width={200}
-            height={260}
-            className="w-[260px] h-[320px] md:w-[260px] md:h-[320px] object-cover rounded-md shadow-md mb-4 md:mb-8"
-            priority
-          />
-          <Image
-            src="/images/doctor2-aboutus.jpg"
-            alt="Doctor 2"
-            width={200}
-            height={260}
-            className="w-[260px] h-[320px] md:w-[260px] md:h-[320px] object-cover rounded-md shadow-md mb-4 md:mb-0"
-            priority
-          />
-          <Image
-            src="/images/doctor3-aboutus.jpg"
-            alt="Doctor 3"
-            width={200}
-            height={260}
-            className="w-[260px] h-[320px] md:w-[260px] md:h-[320px] object-cover rounded-md shadow-md mb-4 md:mb-8"
-            priority
-          />
-        </div>
-      </section> */}
+      
 
         <section id="about-details" className="py-20 bg-gradient-to-b from-white to-blue-50/30">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="inline-flex items-center justify-center p-3 mb-6 bg-blue-50 rounded-full">
-              <svg className="w-6 h-6 text-[#155dfc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-[#101585]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About HD Medical</h2>
-            <div className="w-24 h-1 bg-[#155dfc] mx-auto mb-8 rounded-full"></div>
+            <div className="w-24 h-1 bg-[#101585] mx-auto mb-8 rounded-full"></div>
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light">
-              <span className="font-semibold text-[#155dfc]">HD Medical</span> is a global leader in the detection and management of cardiovascular disease.
+              <span className="font-semibold text-[#101585]">HD Medical</span> is a global leader in the detection and management of cardiovascular disease.
               We create clinically validated devices and software that put powerful diagnostic tools into the
               hands of clinicians — delivering fast, reliable, evidence-based information at the point of care.
               Our solutions are designed to improve outcomes, streamline workflows and help save lives.
@@ -417,7 +381,7 @@ export default function AboutUs() {
         <section className="mt-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">Our Team</h2>
-            <div className="w-20 h-1 bg-[#17a6e0] mx-auto mt-4 rounded-full"></div>
+            <div className="w-20 h-1 bg-[#101585] mx-auto mt-4 rounded-full"></div>
           </div>
         </section>
 
