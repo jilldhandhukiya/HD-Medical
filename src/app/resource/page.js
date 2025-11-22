@@ -1,42 +1,42 @@
 'use client';
 import React, { useState } from 'react';
 
-import { 
-  Play, 
-  Menu, 
-  X, 
-  HeartPulse, 
-  FileText, 
-  Smartphone,
-  BookOpen,
-  LayoutTemplate,
-  Award,
-  ShieldCheck,
-  AlertTriangle,
-  CheckCircle2,
-  AlertCircle,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Mail,
-  Phone,
-  MapPin,
-  Download,
-  ExternalLink,
-  Disc,
-  Cable,
-  Battery,
-  Headphones,
-  PlugZap,
-  Speaker,
-  ChevronDown,
-  ChevronUp,
-  Package,
-  Box,
-  Activity,
-  Quote,
-  Headset
+import {
+    Play,
+    Menu,
+    X,
+    HeartPulse,
+    FileText,
+    Smartphone,
+    BookOpen,
+    LayoutTemplate,
+    Award,
+    ShieldCheck,
+    AlertTriangle,
+    CheckCircle2,
+    AlertCircle,
+    Facebook,
+    Twitter,
+    Linkedin,
+    Instagram,
+    Mail,
+    Phone,
+    MapPin,
+    Download,
+    ExternalLink,
+    Disc,
+    Cable,
+    Battery,
+    Headphones,
+    PlugZap,
+    Speaker,
+    ChevronDown,
+    ChevronUp,
+    Package,
+    Box,
+    Activity,
+    Quote,
+    Headset
 } from 'lucide-react';
 
 const ResourcesHero = () => {
@@ -86,8 +86,7 @@ const EssentialResourcesSection = () => {
             icon: <Smartphone size={28} />,
             title: "Mobile App",
             desc: "iOS & Android companion app",
-            action: "Download Now",
-            type: "download"
+            type: "mobile-app"
         },
         {
             icon: <FileText size={28} />,
@@ -125,7 +124,7 @@ const EssentialResourcesSection = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {resources.map((item, idx) => (
                         <div key={idx} className="bg-white rounded-2xl p-8 shadow-lg shadow-slate-100 border border-slate-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center">
-                            
+
                             <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-200 group-hover:scale-110 transition-transform">
                                 {item.icon}
                             </div>
@@ -133,10 +132,30 @@ const EssentialResourcesSection = () => {
                             <h3 className="text-xl font-bold text-[#101585] mb-2">{item.title}</h3>
                             <p className="text-slate-400 text-sm mb-8">{item.desc}</p>
 
-                            <button className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2">
-                                {item.action}
-                                {item.type === 'download' ? <Download size={14} /> : <ExternalLink size={14} />}
-                            </button>
+                            {item.type === 'mobile-app' ? (
+                                <div className="mt-auto flex flex-col gap-3 w-full items-center">
+                                    <a 
+                                        href="/app/hdsteth.apk" 
+                                        download="hdsteth.apk"
+                                        className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
+                                    >
+                                        Download Android <Download size={14} />
+                                    </a>
+                                    <a 
+                                        href="https://apps.apple.com/in/app/hd-steth/id1565203803" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
+                                    >
+                                        Download iOS <ExternalLink size={14} />
+                                    </a>
+                                </div>
+                            ) : (
+                                <button className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2">
+                                    {item.action}
+                                    {item.type === 'download' ? <Download size={14} /> : <ExternalLink size={14} />}
+                                </button>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -149,14 +168,14 @@ const CareMaintenanceSection = () => {
     return (
         <section className="w-full pb-24 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto bg-slate-50 rounded-[2.5rem] p-8 md:p-16 lg:p-20">
-                
+
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Care & Maintenance</h2>
                     <p className="text-slate-500">Keep your HD Steth performing at its best with proper care</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    
+
                     {/* Daily Cleaning Card */}
                     <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-100">
                         <div className="flex items-center gap-3 mb-6">
@@ -165,7 +184,7 @@ const CareMaintenanceSection = () => {
                             </div>
                             <h3 className="text-xl font-bold text-[#101585]">Daily Cleaning</h3>
                         </div>
-                        
+
                         <ul className="space-y-4">
                             {[
                                 "Clean chest piece after each patient use",
@@ -191,7 +210,7 @@ const CareMaintenanceSection = () => {
                         </div>
 
                         <ul className="space-y-4">
-                             {[
+                            {[
                                 "Never immerse in water or liquids",
                                 "Avoid extreme temperatures",
                                 "Use only approved accessories",
@@ -255,33 +274,33 @@ const AccessoriesSection = () => {
 };
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
-  return (
-    <div className="border-b border-slate-100 last:border-0">
-      <button 
-        className="w-full flex justify-between items-center py-6 text-left hover:text-[#FA6404] transition-colors group"
-        onClick={onClick}
-      >
-        <span className={`font-bold text-lg pr-8 ${isOpen ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
-            {question}
-        </span>
-        {isOpen ? <ChevronUp className="text-[#FA6404] shrink-0" /> : <ChevronDown className="text-slate-400 group-hover:text-[#FA6404] shrink-0" />}
-      </button>
-      <div 
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}
-      >
-        <div className="text-slate-500 leading-relaxed">
-            {answer}
+    return (
+        <div className="border-b border-slate-100 last:border-0">
+            <button
+                className="w-full flex justify-between items-center py-6 text-left hover:text-[#FA6404] transition-colors group"
+                onClick={onClick}
+            >
+                <span className={`font-bold text-lg pr-8 ${isOpen ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+                    {question}
+                </span>
+                {isOpen ? <ChevronUp className="text-[#FA6404] shrink-0" /> : <ChevronDown className="text-slate-400 group-hover:text-[#FA6404] shrink-0" />}
+            </button>
+            <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}
+            >
+                <div className="text-slate-500 leading-relaxed">
+                    {answer}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 const FAQSection = () => {
     const [openIndex, setOpenIndex] = useState(0);
     const faqs = [
-        { 
-            q: "Why use an electronic stethoscope?", 
+        {
+            q: "Why use an electronic stethoscope?",
             a: (
                 <ul className="list-disc pl-5 space-y-2">
                     <li>Exceptional sound quality</li>
@@ -294,43 +313,43 @@ const FAQSection = () => {
                 </ul>
             )
         },
-        { 
-            q: "Can HD Steth be used as a manual Stethoscope without the Battery?", 
-            a: "No, even the Audio is digitized, so a battery is needed for operations." 
+        {
+            q: "Can HD Steth be used as a manual Stethoscope without the Battery?",
+            a: "No, even the Audio is digitized, so a battery is needed for operations."
         },
-        { 
-            q: "What type of battery does the HD Steth use?", 
-            a: "HD Steth uses Panasonic Lithium ion 18650 battery." 
+        {
+            q: "What type of battery does the HD Steth use?",
+            a: "HD Steth uses Panasonic Lithium ion 18650 battery."
         },
-        { 
-            q: "How long does the battery last?", 
-            a: "It lasts for about 8 hours of continuous usage. Normally, HD Steth is used only intermittently, so may last 3-5 days on a full charge." 
+        {
+            q: "How long does the battery last?",
+            a: "It lasts for about 8 hours of continuous usage. Normally, HD Steth is used only intermittently, so may last 3-5 days on a full charge."
         },
-        { 
-            q: "How long does it take to charge the battery?", 
-            a: "4-5 hours." 
+        {
+            q: "How long does it take to charge the battery?",
+            a: "4-5 hours."
         },
-        { 
-            q: "Can HD Steth be used while it is being charged?", 
-            a: "No." 
+        {
+            q: "Can HD Steth be used while it is being charged?",
+            a: "No."
         },
-        { 
-            q: "What kind of cable is used for charging?", 
-            a: "A standard USB Micro B cable." 
+        {
+            q: "What kind of cable is used for charging?",
+            a: "A standard USB Micro B cable."
         },
-        { 
-            q: "What is BT range?", 
-            a: "BT range is 10 meters if there are no obstructions. For ideal results, it is recommended that the smart device be within 1.5 meters of the HD Steth." 
+        {
+            q: "What is BT range?",
+            a: "BT range is 10 meters if there are no obstructions. For ideal results, it is recommended that the smart device be within 1.5 meters of the HD Steth."
         },
-        { 
-            q: "What is the turnaround time for HD Medical Group support to get back to us?", 
-            a: "1 business day." 
+        {
+            q: "What is the turnaround time for HD Medical Group support to get back to us?",
+            a: "1 business day."
         },
-        { 
-            q: "Where can you access the training video links?", 
+        {
+            q: "Where can you access the training video links?",
             a: (
                 <span>
-                    From the HD Medical Group YouTube channel,<br/>
+                    From the HD Medical Group YouTube channel,<br />
                     <a href="https://www.youtube.com/channel/UCiCF-U82vogdogFuClswdBg" target="_blank" rel="noopener noreferrer" className="text-[#FA6404] hover:underline break-all">
                         https://www.youtube.com/channel/UCiCF-U82vogdogFuClswdBg
                     </a>
@@ -349,7 +368,7 @@ const FAQSection = () => {
 
                 <div className="bg-white rounded-2xl shadow-xl shadow-slate-100 border border-slate-50 px-8">
                     {faqs.map((faq, idx) => (
-                        <FAQItem 
+                        <FAQItem
                             key={idx}
                             question={faq.q}
                             answer={faq.a}
@@ -367,7 +386,7 @@ const WhatsInTheBoxAndWhySection = () => {
     return (
         <section className="w-full py-20 px-6 md:px-12 bg-slate-50/50">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
-                
+
                 {/* Left: What's in the Box */}
                 <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-[#101585] mb-8">What&apos;s in the Box</h3>
@@ -395,20 +414,20 @@ const WhatsInTheBoxAndWhySection = () => {
                     <h3 className="text-2xl md:text-3xl font-bold text-[#101585] mb-8">Why HD Steth?</h3>
                     <div className="space-y-6">
                         {[
-                            { 
-                                icon: <Headphones size={24} />, 
-                                title: "Crystal Clear Audio", 
-                                desc: "Advanced noise cancellation delivers pristine heart and lung sounds." 
+                            {
+                                icon: <Headphones size={24} />,
+                                title: "Crystal Clear Audio",
+                                desc: "Advanced noise cancellation delivers pristine heart and lung sounds."
                             },
-                            { 
-                                icon: <Activity size={24} />, 
-                                title: "Smart Integration", 
-                                desc: "Seamlessly record, visualize, and share via mobile app." 
+                            {
+                                icon: <Activity size={24} />,
+                                title: "Smart Integration",
+                                desc: "Seamlessly record, visualize, and share via mobile app."
                             },
-                            { 
-                                icon: <ShieldCheck size={24} />, 
-                                title: "Medical Grade", 
-                                desc: "FDA approved, durable design with global certifications." 
+                            {
+                                icon: <ShieldCheck size={24} />,
+                                title: "Medical Grade",
+                                desc: "FDA approved, durable design with global certifications."
                             }
                         ].map((item, idx) => (
                             <div key={idx} className="flex gap-4 items-start group">
@@ -430,7 +449,7 @@ const WhatsInTheBoxAndWhySection = () => {
 };
 
 // Helper icon for Stethoscope since it wasn't imported in earlier snippet if distinct from Headset
-const Stethoscope = ({size, className}) => (
+const Stethoscope = ({ size, className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
         <path d="M11 2v2" />
         <path d="M5 2v2" />
@@ -444,7 +463,7 @@ const Stethoscope = ({size, className}) => (
 const TestimonialsSection = () => {
     return (
         <section className="w-full py-20 px-6 md:px-12 bg-white">
-             <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Trusted by Professionals</h2>
                     <p className="text-slate-500">Hear from doctors who rely on HD Steth</p>
@@ -484,7 +503,7 @@ const TestimonialsSection = () => {
                         </div>
                     ))}
                 </div>
-             </div>
+            </div>
         </section>
     );
 };
@@ -493,19 +512,19 @@ const NeedAssistanceSection = () => {
     return (
         <section className="w-full px-6 md:px-12 pb-12 bg-white">
             <div className="max-w-7xl mx-auto bg-[#101585] rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
-                 {/* Background Glow */}
+                {/* Background Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-800/30 rounded-full blur-3xl pointer-events-none"></div>
-                
+
                 <div className="relative z-10 flex flex-col items-center">
                     <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-lg shadow-[#FA6404]/30">
                         <Headset size={32} />
                     </div>
-                    
+
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Need Assistance?</h2>
                     <p className="text-blue-200 max-w-2xl mx-auto mb-10 text-lg">
                         Our expert support team is here to help. Get responses within 1 business day.
                     </p>
-                    
+
                     <div className="flex flex-wrap justify-center gap-4">
                         <button className="bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-3.5 rounded-lg font-bold transition-colors shadow-lg flex items-center gap-2">
                             <Mail size={18} /> Email Support
@@ -519,24 +538,24 @@ const NeedAssistanceSection = () => {
 
 
 const ResourcesPage = () => {
-  return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-orange-100 selection:text-orange-900">
+    return (
+        <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-orange-100 selection:text-orange-900">
 
-      <div className="relative z-10">
-        <br />
-        <br />
-        <ResourcesHero />
-        <EssentialResourcesSection />
-        <CareMaintenanceSection />
-         <AccessoriesSection />
-        <FAQSection />
-        <WhatsInTheBoxAndWhySection />
-        <TestimonialsSection />
-        <NeedAssistanceSection />
-      </div>
+            <div className="relative z-10">
+                <br />
+                <br />
+                <ResourcesHero />
+                <EssentialResourcesSection />
+                <CareMaintenanceSection />
+                <AccessoriesSection />
+                <FAQSection />
+                <WhatsInTheBoxAndWhySection />
+                <TestimonialsSection />
+                <NeedAssistanceSection />
+            </div>
 
-    </div>
-  );
+        </div>
+    );
 };
 
 export default ResourcesPage;
