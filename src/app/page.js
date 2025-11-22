@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -21,60 +21,65 @@ import {
   Headphones,
 } from 'lucide-react';
 
+// Move static data outside components for better performance
+const INTELLIGENT_FEATURES = [
+  {
+    id: 1,
+    iconName: "ekgleadsseth",
+    title: "Integrated EKG",
+    desc: "Intelligent stethoscope with integrated EKG electrodes.",
+    position: "left"
+  },
+  {
+    id: 2,
+    iconName: "2-realtime-cardc-p2c-b",
+    title: "Cardiac Insights",
+    desc: "Real-time cardiac insights at the point-of-care.",
+    position: "left"
+  },
+  {
+    id: 3,
+    iconName: "4-smart-amplification-exp-auscltatn-b",
+    title: "Auscultation Excellence",
+    desc: "Smart amplification for exceptional auscultation.",
+    position: "left"
+  },
+  {
+    id: 7,
+    iconName: "b2-noise-cancel-b",
+    title: "Noise Cancellation",
+    desc: "Patented noise cancellation technology.",
+    position: "left"
+  },
+  {
+    id: 4,
+    iconName: "5-presin-enginrd-b",
+    title: "Precision Engineering",
+    desc: "Engineered with Precision.",
+    position: "right"
+  },
+  {
+    id: 5,
+    iconName: "6-Femilr-steth-frm-fctr-b",
+    title: "Familiar Form Factor",
+    desc: "Familiar Stethoscope form factor.",
+    position: "right"
+  },
+  {
+    id: 6,
+    iconName: "7-bestin-audio-qlipty-b",
+    title: "Superior Audio Quality",
+    desc: "Best in class audio for crystal clear Heart sounds.",
+    position: "right"
+  }
+];
+
 const IntelligentSolutionsSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const features = [
-    {
-      id: 1,
-      iconName: "ekgleadsseth",
-      title: "Integrated EKG",
-      desc: "Intelligent stethoscope with integrated EKG electrodes.",
-      position: "left"
-    },
-    {
-      id: 2,
-      iconName: "2-realtime-cardc-p2c-b",
-      title: "Cardiac Insights",
-      desc: "Real-time cardiac insights at the point-of-care.",
-      position: "left"
-    },
-    {
-      id: 3,
-      iconName: "4-smart-amplification-exp-auscltatn-b",
-      title: "Auscultation Excellence",
-      desc: "Smart amplification for exceptional auscultation.",
-      position: "left"
-    },
-    {
-      id: 7, // Moved 4th item to bottom of left column
-      iconName: "b2-noise-cancel-b",
-      title: "Noise Cancellation",
-      desc: "Patented noise cancellation technology.",
-      position: "left"
-    },
-    {
-      id: 4,
-      iconName: "5-presin-enginrd-b",
-      title: "Precision Engineering",
-      desc: "Engineered with Precision.",
-      position: "right"
-    },
-    {
-      id: 5,
-      iconName: "6-Femilr-steth-frm-fctr-b",
-      title: "Familiar Form Factor",
-      desc: "Familiar Stethoscope form factor.",
-      position: "right"
-    },
-    {
-      id: 6,
-      iconName: "7-bestin-audio-qlipty-b",
-      title: "Superior Audio Quality",
-      desc: "Best in class audio for crystal clear Heart sounds.",
-      position: "right"
-    }
-  ];
+  // Memoize filtered features to avoid recalculating on every render
+  const leftFeatures = useMemo(() => INTELLIGENT_FEATURES.filter(f => f.position === 'left'), []);
+  const rightFeatures = useMemo(() => INTELLIGENT_FEATURES.filter(f => f.position === 'right'), []);
 
   return (
     <section className="relative w-full lg:h-[85vh] lg:min-h-[800px] bg-white overflow-hidden flex flex-col items-center py-12 lg:py-8">
@@ -104,7 +109,7 @@ const IntelligentSolutionsSection = () => {
 
         {/* LEFT COLUMN (4 Items) */}
         <div className="flex flex-col gap-8 lg:gap-0 lg:justify-between h-full py-4 w-full lg:w-[30%] items-center lg:items-end order-2 lg:order-1">
-          {features.filter(f => f.position === 'left').map((feature) => (
+          {leftFeatures.map((feature) => (
             <div
               key={feature.id}
               onMouseEnter={() => setHoveredIndex(feature.id)}
@@ -163,7 +168,7 @@ const IntelligentSolutionsSection = () => {
 
         {/* RIGHT COLUMN (3 Items) */}
         <div className="flex flex-col gap-8 lg:gap-0 lg:justify-evenly h-full py-8 w-full lg:w-[30%] items-center lg:items-start order-3">
-          {features.filter(f => f.position === 'right').map((feature) => (
+          {rightFeatures.map((feature) => (
             <div
               key={feature.id}
               onMouseEnter={() => setHoveredIndex(feature.id)}
@@ -213,19 +218,20 @@ const IntelligentSolutionsSection = () => {
   );
 };
 
+// Static hero features data
+const HERO_FEATURES = [
+  { id: 0, text: "Unleash exceptional Auscultation" },
+  { id: 1, text: "Visualize the Heart Sounds" },
+  { id: 2, text: "Precise ECG" },
+];
+
 const HeroSection = () => {
   const [activeFeature, setActiveFeature] = useState(1);
 
-  const features = [
-    { id: 0, text: "Unleash exceptional Auscultation" },
-    { id: 1, text: "Visualize the Heart Sounds" },
-    { id: 2, text: "Precise ECG" },
-  ];
-
-  const scrollToVideo = () => {
+  const scrollToVideo = useCallback(() => {
     const el = document.getElementById('videoSection');
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+  }, []);
 
   return (
     <section className="relative w-full pt-8 pb-20 px-6 md:px-12 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -248,7 +254,7 @@ const HeroSection = () => {
 
         <div className="flex flex-col gap-6 pl-2 relative">
           <div className="absolute left-0 top-2 bottom-2 w-1 bg-slate-100 rounded-full"></div>
-          {features.map((feature, index) => (
+          {HERO_FEATURES.map((feature, index) => (
             <div
               key={index}
               className="relative pl-8 cursor-pointer group"
@@ -288,12 +294,14 @@ const HeroSection = () => {
   );
 };
 
-const TrustedBySection = () => {
-  const stats = [
-    { icon: <CheckCircle2 size={32} />, value: "300k+", label: "Total Screened" },
-    { icon: <TrendingUp size={32} />, value: "1500+", label: "Detected Abnormalities" },
-    { icon: <Award size={32} />, value: "600+", label: "Surgeries Completed" },
-  ];
+// Static stats data
+const TRUSTED_STATS = [
+  { icon: <CheckCircle2 size={32} />, value: "300k+", label: "Total Screened" },
+  { icon: <TrendingUp size={32} />, value: "1500+", label: "Detected Abnormalities" },
+  { icon: <Award size={32} />, value: "600+", label: "Surgeries Completed" },
+];
+
+const TrustedBySection = React.memo(() => {
 
   return (
     <section className="w-full py-24 px-6 md:px-12 bg-white relative overflow-hidden">
@@ -319,7 +327,7 @@ const TrustedBySection = () => {
 
         {/* Static Solid Circle Stats */}
         <div className="flex flex-wrap justify-center gap-10 md:gap-20 mb-16">
-          {stats.map((stat, index) => (
+          {TRUSTED_STATS.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
               
               {/* The Static Circle Container */}
@@ -359,8 +367,9 @@ const TrustedBySection = () => {
     </section>
   );
 };
+TrustedBySection.displayName = 'TrustedBySection';
 
-const ProductDetailSection = () => {
+const ProductDetailSection = React.memo(() => {
   return (
     <section className="w-full py-24 px-6 md:px-12 bg-[#101585] relative overflow-hidden">
       
@@ -425,8 +434,9 @@ const ProductDetailSection = () => {
     </section>
   );
 };
+ProductDetailSection.displayName = 'ProductDetailSection';
 
-const VideoSection = () => {
+const VideoSection = React.memo(() => {
   return (
     <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-slate-50">
       <div className="text-center max-w-3xl mx-auto mb-16">
@@ -462,34 +472,37 @@ const VideoSection = () => {
     </section>
   );
 }
+VideoSection.displayName = 'VideoSection';
 
-const ClinicalExcellenceSection = () => {
-  const features = [
-    {
-      icon: <Stethoscope size={28} className="text-white" />,
-      title: "Dual-Mode Auscultation",
-      desc: "Digital + Analog with real-time amplification",
-      isOpen: true // Just for the icon background visual hint
-    },
-    {
-      icon: <Monitor size={28} className="text-white" />,
-      title: "Integrated 12-Lead EKG",
-      desc: "Full cardiac mapping in 30 seconds",
-      isOpen: false
-    },
-    {
-      icon: <Waves size={28} className="text-white" />,
-      title: "AI Sound Analysis",
-      desc: "Detects murmurs, S3/S4, and arrhythmias",
-      isOpen: false
-    },
-    {
-      icon: <ShieldCheck size={28} className="text-white" />,
-      title: "Clinical Decision Support",
-      desc: "Evidence-based recommendations at point-of-care",
-      isOpen: false
-    }
-  ];
+// Static clinical excellence features
+const CLINICAL_FEATURES = [
+  {
+    icon: <Stethoscope size={28} className="text-white" />,
+    title: "Dual-Mode Auscultation",
+    desc: "Digital + Analog with real-time amplification",
+    isOpen: true
+  },
+  {
+    icon: <Monitor size={28} className="text-white" />,
+    title: "Integrated 12-Lead EKG",
+    desc: "Full cardiac mapping in 30 seconds",
+    isOpen: false
+  },
+  {
+    icon: <Waves size={28} className="text-white" />,
+    title: "AI Sound Analysis",
+    desc: "Detects murmurs, S3/S4, and arrhythmias",
+    isOpen: false
+  },
+  {
+    icon: <ShieldCheck size={28} className="text-white" />,
+    title: "Clinical Decision Support",
+    desc: "Evidence-based recommendations at point-of-care",
+    isOpen: false
+  }
+];
+
+const ClinicalExcellenceSection = React.memo(() => {
 
   return (
     <section className="w-full py-20 px-6 md:px-12 bg-white">
@@ -504,7 +517,7 @@ const ClinicalExcellenceSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((item, idx) => (
+          {CLINICAL_FEATURES.map((item, idx) => (
             <div key={idx} className="bg-white border border-slate-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow group relative overflow-hidden">
               {/* Top fade for hover effect */}
               <div className="absolute top-0 left-0 w-full h-1 bg-transparent group-hover:bg-[#FA6404] transition-colors"></div>
@@ -535,14 +548,17 @@ const ClinicalExcellenceSection = () => {
     </section>
   );
 }
+ClinicalExcellenceSection.displayName = 'ClinicalExcellenceSection';
 
-const CTASection = () => {
-  const stats = [
-    { icon: <Target size={20} className="text-blue-600" />, val: "98.7%", label: "AI Diagnostic Accuracy", sub: "bg-blue-50" },
-    { icon: <Zap size={20} className="text-[#FA6404]" />, val: "47s", label: "Avg. Exam Duration", sub: "bg-orange-50" },
-    { icon: <Heart size={20} className="text-red-500" />, val: "2,000+", label: "Active Clinicians", sub: "bg-red-50" },
-    { icon: <Headphones size={20} className="text-indigo-500" />, val: "24/7", label: "Dedicated Support", sub: "bg-indigo-50" },
-  ];
+// Static CTA stats data
+const CTA_STATS = [
+  { icon: <Target size={20} className="text-blue-600" />, val: "98.7%", label: "AI Diagnostic Accuracy", sub: "bg-blue-50" },
+  { icon: <Zap size={20} className="text-[#FA6404]" />, val: "47s", label: "Avg. Exam Duration", sub: "bg-orange-50" },
+  { icon: <Heart size={20} className="text-red-500" />, val: "2,000+", label: "Active Clinicians", sub: "bg-red-50" },
+  { icon: <Headphones size={20} className="text-indigo-500" />, val: "24/7", label: "Dedicated Support", sub: "bg-indigo-50" },
+];
+
+const CTASection = React.memo(() => {
 
   return (
     <section className="w-full py-10 px-6 md:px-12 bg-white">
@@ -575,7 +591,7 @@ const CTASection = () => {
 
           {/* Stats Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {stats.map((stat, idx) => (
+            {CTA_STATS.map((stat, idx) => (
               <div key={idx} className="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow-xl">
                 <div className={`w-12 h-12 rounded-full ${stat.sub} flex items-center justify-center mb-4`}>
                   {stat.icon}
@@ -601,8 +617,17 @@ const CTASection = () => {
     </section>
   );
 }
+CTASection.displayName = 'CTASection';
 
-const CertificationsBar = () => {
+// Static certifications data
+const CERTIFICATIONS = [
+  { src: "/images/fda.png", alt: "FDA Cleared", text: "FDA CLEARED\n# K201299", pdf:"/docs/FDA-K201299.pdf" },
+  { src: "/images/iso.png", alt: "ISO Certification", text: "ISO\n13485: 2016", pdf:"/docs/ISO13485-Certificate.pdf" },
+  { src: "/images/tn.png", alt: "TN Certification", text: "TN/M/MD/004806", pdf:"/docs/TN-Certificate.pdf" },
+  { src: "/images/iec.png", alt: "CE Certification", text: "60601-2-27", pdf:"/docs/CE-Certificate.pdf" }
+];
+
+const CertificationsBar = React.memo(() => {
   return (
       <section className="bg-[#101585] py-12 w-full">
         <div className="max-w-full px-4 sm:px-6 md:px-12 lg:px-24 mx-auto">
@@ -610,12 +635,7 @@ const CertificationsBar = () => {
             CERTIFICATES
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 gap-8 items-center justify-items-center max-w-none mx-auto">
-            {[
-              { src: "/images/fda.png", alt: "FDA Cleared", text: "FDA CLEARED\n# K201299", pdf:"/docs/FDA-K201299.pdf" },
-              { src: "/images/iso.png", alt: "ISO Certification", text: "ISO\n13485: 2016", pdf:"/docs/ISO13485-Certificate.pdf" },
-              { src: "/images/tn.png", alt: "TN Certification", text: "TN/M/MD/004806", pdf:"/docs/TN-Certificate.pdf" },
-              { src: "/images/iec.png", alt: "CE Certification", text: "60601-2-27", pdf:"/docs/CE-Certificate.pdf" }
-              ].map((cert, index) => (
+            {CERTIFICATIONS.map((cert, index) => (
               <div key={index} className="flex flex-col items-center text-center">
                 <div>
                   <Image
@@ -642,9 +662,10 @@ const CertificationsBar = () => {
       </section>
 
   );
-}
+};
+CertificationsBar.displayName = 'CertificationsBar';
 
-const FDAClearanceSection = () => {
+const FDAClearanceSection = React.memo(() => {
   return (
     <section className="w-full py-20 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -705,6 +726,7 @@ const FDAClearanceSection = () => {
     </section>
   );
 };
+FDAClearanceSection.displayName = 'FDAClearanceSection';
 
 const App = () => {
   return (

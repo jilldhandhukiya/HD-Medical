@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Globe } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -233,15 +233,17 @@ export default function Contact() {
   const centerTopSvgRef = useRef(null);
   const centerBottomSvgRef = useRef(null);
 
-  const handleChange = (e) => {
+  // Memoize handleChange
+  const handleChange = useCallback((e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
-  };
+  }, []);
 
-  const handleSubmit = async () => {
+  // Memoize handleSubmit
+  const handleSubmit = useCallback(async () => {
     setError("");
     setSubmitted(false);
     setIsLoading(true);
@@ -315,9 +317,10 @@ export default function Contact() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [formData]);
 
   // Mouse tracking for wave animations (expanded for all waves)
+  // Optimize by only adding event listeners if refs exist
   useEffect(() => {
     const svgs = [
       { svg: topRightSvgRef.current, container: topRightSvgRef.current?.parentElement },
@@ -326,10 +329,11 @@ export default function Contact() {
       { svg: bottomRightSvgRef.current, container: bottomRightSvgRef.current?.parentElement },
       { svg: centerTopSvgRef.current, container: centerTopSvgRef.current?.parentElement },
       { svg: centerBottomSvgRef.current, container: centerBottomSvgRef.current?.parentElement },
-    ];
+    ].filter(({ svg, container }) => svg && container);
+
+    if (svgs.length === 0) return;
 
     const handleMouseMove = (e, svg, container) => {
-      if (!svg || !container) return;
       const rect = container.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
@@ -342,20 +346,27 @@ export default function Contact() {
     };
 
     const handleMouseLeave = (svg) => {
-      if (svg) svg.style.transform = 'translate(0, 0)';
+      svg.style.transform = 'translate(0, 0)';
     };
 
-    svgs.forEach(({ svg, container }) => {
-      if (!svg || !container) return;
+    const handlers = svgs.map(({ svg, container }) => {
       const moveHandler = (e) => handleMouseMove(e, svg, container);
-      container.addEventListener('mousemove', moveHandler);
-      container.addEventListener('mouseleave', () => handleMouseLeave(svg));
-      return () => {
-        container.removeEventListener('mousemove', moveHandler);
-        container.removeEventListener('mouseleave', () => handleMouseLeave(svg));
-      };
+      const leaveHandler = () => handleMouseLeave(svg);
+      
+      // Use passive listeners for better scroll performance
+      container.addEventListener('mousemove', moveHandler, { passive: true });
+      container.addEventListener('mouseleave', leaveHandler, { passive: true });
+      
+      return { container, moveHandler, leaveHandler };
     });
-  }, []);
+
+    return () => {
+      handlers.forEach(({ container, moveHandler, leaveHandler }) => {
+        container.removeEventListener('mousemove', moveHandler);
+        container.removeEventListener('mouseleave', leaveHandler);
+      });
+    };
+  }, []); // Empty dependency array - only run once on mount
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative">
