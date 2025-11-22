@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-
+import Image from 'next/image';
 import {
     Play,
     Menu,
@@ -73,41 +73,62 @@ const EssentialResourcesSection = () => {
             title: "Quick Start Guide",
             desc: "Step-by-step setup in under 5 minutes",
             action: "Download PDF",
-            type: "pdf"
+            type: "pdf",
+            file: "/docs/HDSteth-Quick Start Guide-FB-27July2024.pdf" 
         },
         {
             icon: <BookOpen size={28} />,
-            title: "Complete Manual",
-            desc: "Comprehensive user instructions",
+            title: "Teaching Solutions",
+            desc: "Curriculum & training materials",
             action: "View Online",
-            type: "link"
+            type: "link",
+            file: "/docs/Teaching Solution-FB-27July2024.pdf"
         },
         {
             icon: <Smartphone size={28} />,
             title: "Mobile App",
             desc: "iOS & Android companion app",
-            type: "mobile-app"
+            type: "mobile-app",
         },
         {
             icon: <FileText size={28} />,
-            title: "Technical Specs",
-            desc: "Detailed specifications & features",
+            title: "Raipur Report",
+            desc: "Clinical performance data",
             action: "View Datasheet",
-            type: "link"
+            type: "link",
+            file: "/docs/Raipur Report--FB-27July2024.pdf"
         },
         {
             icon: <LayoutTemplate size={28} />,
             title: "Product Brochure",
             desc: "Overview & key benefits",
             action: "Download",
-            type: "pdf"
+            type: "pdf",
+            file: "/docs/HDSteth-Product Brochure-FB-27July2024.pdf"
         },
         {
             icon: <Award size={28} />,
-            title: "Certifications",
-            desc: "FDA, ISO, CE, and more",
+            title: "HeArtificial Sheet",
+            desc: "HeArtificial Intelligence Overview",
             action: "View Certificates",
-            type: "link"
+            type: "link",
+            file: "/docs/HeArtificial Intelligence-Sheet-FB-27July2024.pdf"
+        },
+        {
+            icon: <HeartPulse size={28} />,
+            title: "Product Data - India Sheet",
+            desc: "India Product Data Overview",
+            action: "View",
+            type: "link",
+            file: "/docs/Product-Data-India-Sheet-FB-27July2024.pdf"
+        },
+        {
+            icon: <HeartPulse size={28} />,
+            title: "Customer Adoption",
+            desc: "Customer adoption case studies",
+            action: "View",
+            type: "link",
+            file: "/docs/Customer Adoption-FB-27July2024.pdf"
         }
     ];
 
@@ -121,7 +142,7 @@ const EssentialResourcesSection = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {resources.map((item, idx) => (
                         <div key={idx} className="bg-white rounded-2xl p-8 shadow-lg shadow-slate-100 border border-slate-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center">
 
@@ -134,6 +155,7 @@ const EssentialResourcesSection = () => {
 
                             {item.type === 'mobile-app' ? (
                                 <div className="mt-auto flex flex-col gap-3 w-full items-center">
+                                    {/* Android Download */}
                                     <a 
                                         href="/app/hdsteth.apk" 
                                         download="hdsteth.apk"
@@ -141,6 +163,7 @@ const EssentialResourcesSection = () => {
                                     >
                                         Download Android <Download size={14} />
                                     </a>
+                                    {/* iOS Link */}
                                     <a 
                                         href="https://apps.apple.com/in/app/hd-steth/id1565203803" 
                                         target="_blank" 
@@ -151,10 +174,18 @@ const EssentialResourcesSection = () => {
                                     </a>
                                 </div>
                             ) : (
-                                <button className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2">
+                                /* REPLACED BUTTON WITH A TAG FOR LINKS/DOWNLOADS */
+                                <a 
+                                    href={item.file}
+                                    /* Adds 'download' attribute if type is pdf, otherwise opens in new tab */
+                                    download={item.type === 'pdf'} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2 cursor-pointer"
+                                >
                                     {item.action}
-                                    {item.type === 'download' ? <Download size={14} /> : <ExternalLink size={14} />}
-                                </button>
+                                    {item.type === 'pdf' ? <Download size={14} /> : <ExternalLink size={14} />}
+                                </a>
                             )}
                         </div>
                     ))}
@@ -163,6 +194,7 @@ const EssentialResourcesSection = () => {
         </section>
     );
 };
+
 
 const CareMaintenanceSection = () => {
     return (
@@ -241,17 +273,43 @@ const AccessoriesSection = () => {
     ];
 
     return (
-        <section className="w-full py-20 px-6 md:px-12 bg-white">
+        <section className="w-full py-2 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-12">
+                {/* Header Text */}
+                <div className="text-center mb-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Accessories</h2>
                     <p className="text-slate-500">Enhance your HD Steth experience with genuine parts</p>
                 </div>
 
+               <div className="flex flex-col md:flex-row gap-6 mb-12 max-w-6xl mx-auto">
+    {/* Left Image */}
+    <div className="w-full md:w-1/2 aspect-[3/4] relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200 group">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+        <Image 
+            src="/images/HDS-Inside-Box.png" 
+            alt="Device Left View" 
+            className="w-full h-full group-hover:scale-105 transition-transform duration-700"
+            fill
+        />
+    </div>
+
+    {/* Right Image */}
+    <div className="w-full md:w-1/2 aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200 group">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+        <Image 
+            src="/images/In the Box.png" 
+            alt="Device Right View" 
+            className="w-full h-full group-hover:scale-105 transition-transform duration-700"
+            fill
+        />
+    </div>
+</div>
+            
+                {/* Accessories Grid */}
                 <div className="grid md:grid-cols-3 gap-8 mb-12">
                     {accessories.map((item, idx) => (
-                        <div key={idx} className="flex flex-col items-center text-center p-6 rounded-xl hover:shadow-lg transition-shadow border border-transparent hover:border-slate-50">
-                            <div className="w-20 h-20 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-4 shadow-lg shadow-[#FA6404]/20">
+                        <div key={idx} className="flex flex-col items-center text-center p-6 rounded-xl hover:shadow-lg transition-shadow border border-transparent hover:border-slate-50 group">
+                            <div className="w-20 h-20 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-4 shadow-lg shadow-[#FA6404]/20 group-hover:scale-110 transition-transform">
                                 {item.icon}
                             </div>
                             <h4 className="text-[#101585] font-bold text-lg mb-1">{item.name}</h4>
@@ -272,6 +330,7 @@ const AccessoriesSection = () => {
         </section>
     );
 };
+
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
     return (
