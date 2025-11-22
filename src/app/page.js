@@ -391,14 +391,14 @@ const ProductDetailSection = () => {
 
             <div className="flex flex-wrap gap-6 pt-2">
               <div className="flex items-center gap-3 bg-[#0d1160] border border-white/10 px-4 py-2 rounded-lg">
-                <div className="p-1 bg-green-500/20 rounded-full">
-                  <Check size={14} className="text-green-400" />
+                <div className="p-1 bg-orange-500/20 rounded-full">
+                  <Check size={14} className="text-orange-400" />
                 </div>
                 <span className="text-white font-semibold text-sm">FDA Cleared Class II</span>
               </div>
               <div className="flex items-center gap-3 bg-[#0d1160] border border-white/10 px-4 py-2 rounded-lg">
-                <div className="p-1 bg-green-500/20 rounded-full">
-                  <Check size={14} className="text-green-400" />
+                <div className="p-1 bg-orange-500/20 rounded-full">
+                  <Check size={14} className="text-orange-400" />
                 </div>
                 <span className="text-white font-semibold text-sm">HIPAA Compliant</span>
               </div>
@@ -408,18 +408,17 @@ const ProductDetailSection = () => {
           {/* Right Image Composition */}
           <div className="relative group">
             {/* Background decorative blob - Adjusted for dark theme */}
-            <div className="absolute -inset-1 bg-gradient-to-tr from-[#FA6404] to-blue-600 rounded-[2rem] opacity-30 blur-lg group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div className="absolute -inset-1  rounded-[2rem] opacity-30 blur-lg group-hover:opacity-50 transition-opacity duration-500"></div>
 
             {/* Main Image Frame */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 aspect-[4/5] md:aspect-square lg:aspect-[5/5]">
               <Image
-                src="https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                src="/images/Homepagesethimage.png"
                 alt="Doctor holding heart model"
-                className="w-full object-cover opacity-90"
+                className="w-full object-fit opacity-90"
                 fill
               />
               {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#101585]/80 to-transparent"></div>
             </div>
 
             {/* Floating Badge 1 - BPM (Kept White for Contrast) */}
@@ -606,10 +605,10 @@ const CTASection = () => {
                   {stat.icon}
                 </div>
                 <div className="text-3xl font-bold text-slate-900 mb-1">
-                  {stat.val.includes('%') || stat.val.includes('s') ? (
+                  {stat.val.includes('.')  ? (
                     <span>
                       {stat.val.replace(/[%s]/g, '')}
-                      <span className={`text-xl ml-0.5 ${idx === 1 ? 'text-[#FA6404]' : 'text-[#FA6404]'}`}>
+                      <span className={`text-xl ml-0.5 ${idx === 1 ? 'text-[#000000]' : 'text-[#000000]'}`}>
                         {stat.val.match(/[%s]/)[0]}
                       </span>
                     </span>
