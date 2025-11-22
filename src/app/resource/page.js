@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import {
     Play,
@@ -39,14 +39,11 @@ import {
     Headset
 } from 'lucide-react';
 
-const ResourcesHero = () => {
-  // place the provided image in public/images/resources-hero-bg.jpg (or update the path below)
-  const backgroundImageUrl = "/images/Resources-Top-Banner2.png";
-
+const ResourcesHero = React.memo(() => {
   return (
     <section
       className="w-full py-28 px-8 md:px-12 overflow-hidden relative bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+      style={{ backgroundImage: 'url(/images/Resources-Top-Banner2.png)' }}
     >
     
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
@@ -64,15 +61,16 @@ const ResourcesHero = () => {
       </div>
     </section>
   );
-};
+});
+ResourcesHero.displayName = 'ResourcesHero';
 
-const EssentialResourcesSection = () => {
-    const resources = [
-        {
-            icon: <Play size={28} fill="currentColor" />,
-            title: "Quick Start Guide",
-            desc: "Step-by-step setup in under 5 minutes",
-            action: "Download PDF",
+// Static resources data
+const ESSENTIAL_RESOURCES = [
+    {
+        icon: <Play size={28} fill="currentColor" />,
+        title: "Quick Start Guide",
+        desc: "Step-by-step setup in under 5 minutes",
+        action: "Download PDF",
             type: "pdf",
             file: "/docs/HDSteth-Quick Start Guide-FB-27July2024.pdf" 
         },
@@ -108,16 +106,16 @@ const EssentialResourcesSection = () => {
         },
     ];
 
+const EssentialResourcesSection = React.memo(() => {
     return (
         <section className="w-full py-24 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    {/* ... (Header remains the same) ... */}
+                    {/* Header placeholder */}
                 </div>
 
-                {/* 1. CHANGED: Grid -> Flex, added wrap and justify-center */}
                 <div className="flex flex-wrap justify-center gap-8">
-                    {resources.map((item, idx) => (
+                    {ESSENTIAL_RESOURCES.map((item, idx) => (
                         <div 
                             key={idx} 
                             /* 2. ADDED: Width calculations to mimic Grid columns 
@@ -171,10 +169,26 @@ const EssentialResourcesSection = () => {
             </div>
         </section>
     );
-};
+});
+EssentialResourcesSection.displayName = 'EssentialResourcesSection';
 
 
-const CareMaintenanceSection = () => {
+// Static care data
+const DAILY_CLEANING = [
+    "Clean chest piece after each patient use",
+    "Use alcohol wipes for diaphragm",
+    "Gentle dry cloth for device body",
+    "Store in a cool, dry place"
+];
+
+const IMPORTANT_WARNINGS = [
+    "Never immerse in water or liquids",
+    "Avoid extreme temperatures",
+    "Use only approved accessories",
+    "Do not use abrasive cleaners"
+];
+
+const CareMaintenanceSection = React.memo(() => {
     return (
         <section className="w-full pb-24 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto bg-slate-50 rounded-[2.5rem] p-8 md:p-16 lg:p-20">
@@ -196,12 +210,7 @@ const CareMaintenanceSection = () => {
                         </div>
 
                         <ul className="space-y-4">
-                            {[
-                                "Clean chest piece after each patient use",
-                                "Use alcohol wipes for diaphragm",
-                                "Gentle dry cloth for device body",
-                                "Store in a cool, dry place"
-                            ].map((point, i) => (
+                            {DAILY_CLEANING.map((point, i) => (
                                 <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
                                     <CheckCircle2 size={18} className="text-green-500 shrink-0 mt-0.5" />
                                     <span>{point}</span>
@@ -220,12 +229,7 @@ const CareMaintenanceSection = () => {
                         </div>
 
                         <ul className="space-y-4">
-                            {[
-                                "Never immerse in water or liquids",
-                                "Avoid extreme temperatures",
-                                "Use only approved accessories",
-                                "Do not use abrasive cleaners"
-                            ].map((point, i) => (
+                            {IMPORTANT_WARNINGS.map((point, i) => (
                                 <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
                                     <AlertCircle size={18} className="text-red-500 shrink-0 mt-0.5" />
                                     <span>{point}</span>
@@ -237,18 +241,21 @@ const CareMaintenanceSection = () => {
             </div>
         </section>
     );
-};
+});
+CareMaintenanceSection.displayName = 'CareMaintenanceSection';
 
 
-const AccessoriesSection = () => {
-    const accessories = [
-        { icon: <Disc size={32} />, name: "HD Diaphragm", part: "Part # HD00-001", desc: "Enhanced acoustic transmission" },
-        { icon: <Cable size={32} />, name: "USB Cable", part: "Part # HD00-002", desc: "1m Micro USB to USB-A" },
-        { icon: <Battery size={32} />, name: "Li-Ion Battery", part: "Part # HD00-003", desc: "700mAh, 3.7V" },
-        { icon: <Headphones size={32} />, name: "Soft Eartips", part: "Part # HD00-004", desc: "Comfortable silicone design" },
-        { icon: <PlugZap size={32} />, name: "AC Charger", part: "Part # HD00-005", desc: "100-240V, 5V/1A Output" },
-        { icon: <Speaker size={32} />, name: "HD Speaker", part: "Part # HD00-006", desc: "Active replay device" },
-    ];
+// Static accessories data
+const ACCESSORIES = [
+    { icon: <Disc size={32} />, name: "HD Diaphragm", part: "Part # HD00-001", desc: "Enhanced acoustic transmission" },
+    { icon: <Cable size={32} />, name: "USB Cable", part: "Part # HD00-002", desc: "1m Micro USB to USB-A" },
+    { icon: <Battery size={32} />, name: "Li-Ion Battery", part: "Part # HD00-003", desc: "700mAh, 3.7V" },
+    { icon: <Headphones size={32} />, name: "Soft Eartips", part: "Part # HD00-004", desc: "Comfortable silicone design" },
+    { icon: <PlugZap size={32} />, name: "AC Charger", part: "Part # HD00-005", desc: "100-240V, 5V/1A Output" },
+    { icon: <Speaker size={32} />, name: "HD Speaker", part: "Part # HD00-006", desc: "Active replay device" },
+];
+
+const AccessoriesSection = React.memo(() => {
 
     return (
         <section className="w-full py-2 px-6 md:px-12 bg-white">
@@ -285,7 +292,7 @@ const AccessoriesSection = () => {
             
                 {/* Accessories Grid */}
                 <div className="grid md:grid-cols-3 gap-8 mb-12">
-                    {accessories.map((item, idx) => (
+                    {ACCESSORIES.map((item, idx) => (
                         <div key={idx} className="flex flex-col items-center text-center p-6 rounded-xl hover:shadow-lg transition-shadow border border-transparent hover:border-slate-50 group">
                             <div className="w-20 h-20 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-4 shadow-lg shadow-[#FA6404]/20 group-hover:scale-110 transition-transform">
                                 {item.icon}
@@ -307,10 +314,10 @@ const AccessoriesSection = () => {
             </div>
         </section>
     );
-};
+});
+AccessoriesSection.displayName = 'AccessoriesSection';
 
-
-const FAQItem = ({ question, answer, isOpen, onClick }) => {
+const FAQItem = React.memo(({ question, answer, isOpen, onClick }) => {
     return (
         <div className="border-b border-slate-100 last:border-0">
             <button
@@ -331,11 +338,11 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
             </div>
         </div>
     );
-};
+});
+FAQItem.displayName = 'FAQItem';
 
-const FAQSection = () => {
-    const [openIndex, setOpenIndex] = useState(0);
-    const faqs = [
+// Static FAQ data
+const FAQS = [
         {
             q: "Why use an electronic stethoscope?",
             a: (
@@ -395,6 +402,13 @@ const FAQSection = () => {
         }
     ];
 
+const FAQSection = React.memo(() => {
+    const [openIndex, setOpenIndex] = useState(0);
+    
+    const toggleFAQ = useCallback((index) => {
+        setOpenIndex(prevIndex => prevIndex === index ? -1 : index);
+    }, []);
+    
     return (
         <section className="w-full py-20 px-6 md:px-12 bg-white">
             <div className="max-w-3xl mx-auto">
@@ -404,22 +418,23 @@ const FAQSection = () => {
                 </div>
 
                 <div className="bg-white rounded-2xl shadow-xl shadow-slate-100 border border-slate-50 px-8">
-                    {faqs.map((faq, idx) => (
+                    {FAQS.map((faq, idx) => (
                         <FAQItem
                             key={idx}
                             question={faq.q}
                             answer={faq.a}
                             isOpen={openIndex === idx}
-                            onClick={() => setOpenIndex(openIndex === idx ? -1 : idx)}
+                            onClick={() => toggleFAQ(idx)}
                         />
                     ))}
                 </div>
             </div>
         </section>
     );
-};
+});
+FAQSection.displayName = 'FAQSection';
 
-const WhatsInTheBoxAndWhySection = () => {
+const WhatsInTheBoxAndWhySection = React.memo(() => {
     return (
         <section className="w-full py-20 px-6 md:px-12 bg-slate-50/50">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">

@@ -1,8 +1,9 @@
 "use client"
 import Image from 'next/image';
+import React from 'react';
 
-// Card Component
-function PersonCard({ person }) {
+// Card Component - Memoized to prevent unnecessary re-renders
+const PersonCard = React.memo(({ person }) => {
   return (
     <div className="w-full max-w-[360px] mx-auto bg-white border-[2px] border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-lg relative transition-all duration-300 hover:scale-105 hover:shadow-2xl"
       style={{ boxSizing: 'border-box' }}>
@@ -27,9 +28,10 @@ function PersonCard({ person }) {
       </div>
     </div>
   );
-}
+});
+PersonCard.displayName = 'PersonCard';
 
-// Dummy Data
+// Static leadership data
 const leadership = [
   {
     name: "Arvind Thiagarajan",
@@ -266,13 +268,16 @@ const medicalAdvisors = [
 //   }
 // ];
 
-// Section Component
-function Section({ title, people }) {
-  // Split people array into rows of 3
-  const rows = [];
-  for (let i = 0; i < people.length; i += 3) {
-    rows.push(people.slice(i, i + 3));
-  }
+// Section Component - Memoized
+const Section = React.memo(({ title, people }) => {
+  // Memoize rows calculation
+  const rows = React.useMemo(() => {
+    const result = [];
+    for (let i = 0; i < people.length; i += 3) {
+      result.push(people.slice(i, i + 3));
+    }
+    return result;
+  }, [people]);
 
   return (
     <section className="bg-white w-full px-2 py-12 md:px-8 lg:px-24">
@@ -314,7 +319,8 @@ function Section({ title, people }) {
       </div>
     </section>
   );
-}
+});
+Section.displayName = 'Section';
 
 export default function AboutUs() {
   return (
