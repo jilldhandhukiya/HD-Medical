@@ -531,29 +531,31 @@ export default function ProductHero() {
         </div>
       </section>
       {/* HD Steth - Intelligent Solution (heading inline with icon, content below; slightly larger text) */}
-        <section className="w-full py-8 px-6 md:px-12 lg:px-20 bg-white">
+        <section className="w-full py-16 px-6 md:px-12 lg:px-20 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-6 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold" style={{ color: PRIMARY_ORANGE }}>
+          <div className="mb-12 text-center">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: PRIMARY_ORANGE }}>
               HD Steth: Intelligent Solution for Cardiac Care
             </h3>
+            <div className="w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: PRIMARY_BLUE }}></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="flex flex-wrap justify-center gap-6">
             {intelligentItems.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: PRIMARY_BLUE }}>
-                      <Icon className="w-6 h-6 text-white" />
+                <div 
+                  key={idx} 
+                  className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm" style={{ backgroundColor: PRIMARY_BLUE }}>
+                      <Icon className="w-7 h-7 text-white" />
                     </div>
-                    <div className="flex-1">
-                      <h4 className="text-lg md:text-xl font-semibold text-gray-900">{item.title}</h4>
-                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 leading-tight">{item.title}</h4>
                   </div>
 
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
+                  <p className="text-gray-600 leading-relaxed text-base">
                     {item.text}
                   </p>
                 </div>
