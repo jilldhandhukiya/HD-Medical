@@ -121,11 +121,11 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/app"
+              href="/resource"
               className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold text-center mt-4"
               onClick={() => setIsOpen(false)}
             >
-              HD STETH APP
+              GET STARTED
             </Link>
           </div>
         </div>

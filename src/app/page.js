@@ -77,7 +77,7 @@ const IntelligentSolutionsSection = () => {
   ];
 
   return (
-    <section className="relative w-full h-[85vh] min-h-[800px] bg-white overflow-hidden flex flex-col items-center py-8">
+    <section className="relative w-full lg:h-[85vh] lg:min-h-[800px] bg-white overflow-hidden flex flex-col items-center py-12 lg:py-8">
 
       {/* --- 1. Background Subtle Grid --- */}
       <div className="absolute inset-0 pointer-events-none opacity-30"
@@ -90,64 +90,64 @@ const IntelligentSolutionsSection = () => {
       ></div>
 
       {/* --- 2. Section Header (More Compact to save space) --- */}
-      <div className="relative z-10 text-center mb-6 shrink-0">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#101585] tracking-tight">
+      <div className="relative z-10 text-center mb-8 lg:mb-6 shrink-0 px-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#101585] tracking-tight">
           Intelligent <span className="text-[#FA6404]">Architecture</span>
         </h2>
-        <p className="text-slate-400 text-sm md:text-base mt-2 font-medium uppercase tracking-widest">
+        <p className="text-slate-400 text-xs md:text-sm lg:text-base mt-2 font-medium uppercase tracking-widest">
           The Anatomy of Advanced Care
         </p>
       </div>
 
       {/* --- 3. Main Content Layout --- */}
-      <div className="relative w-full max-w-7xl mx-auto flex-1 flex items-center justify-between px-4 md:px-8 z-10">
+      <div className="relative w-full max-w-7xl mx-auto flex-1 flex flex-col lg:flex-row items-center justify-between px-4 md:px-8 z-10 gap-12 lg:gap-0">
 
-        {/* LEFT COLUMN (4 Items) - Wider width for better text fit */}
-        <div className="flex flex-col justify-between h-full py-4 w-[30%] items-end">
+        {/* LEFT COLUMN (4 Items) */}
+        <div className="flex flex-col gap-8 lg:gap-0 lg:justify-between h-full py-4 w-full lg:w-[30%] items-center lg:items-end order-2 lg:order-1">
           {features.filter(f => f.position === 'left').map((feature) => (
             <div
               key={feature.id}
               onMouseEnter={() => setHoveredIndex(feature.id)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`group flex flex-col items-end text-right cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 translate-x-2' : 'opacity-90 hover:opacity-100'}`}
+              className={`group flex flex-col items-center lg:items-end text-center lg:text-right cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 lg:translate-x-2' : 'opacity-90 hover:opacity-100'}`}
             >
-              <div className="flex items-center gap-4 mb-2">
-                <h3 className={`font-bold text-xl md:text-2xl transition-colors leading-tight ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+              <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-4 mb-2">
+                <h3 className={`font-bold text-xl md:text-xl lg:text-2xl transition-colors leading-tight order-2 lg:order-1 ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
                   {feature.title}
                 </h3>
                 {/* Bigger Icon Container */}
-                <div className={`w-18 h-18 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
+                <div className={`w-20 h-20 lg:w-18 lg:h-18 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 order-1 lg:order-2 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
                   <Image
                     src={`/icons/homepage/${feature.iconName}.png`}
                     alt={feature.title}
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
                     className={`object-contain transition-opacity duration-200 ${hoveredIndex === feature.id ? 'brightness-0 invert' : ''}`}
                   />
                 </div>
               </div>
-              <p className="text-sm md:text-base text-slate-500 font-medium max-w-[280px] leading-snug">
+              <p className="text-base lg:text-base text-slate-500 font-medium max-w-[280px] leading-snug">
                 {feature.desc}
               </p>
               {/* Active Line Indicator */}
-              <div className={`h-[2px] bg-gradient-to-l from-[#FA6404] to-transparent mt-2 transition-all duration-300 ${hoveredIndex === feature.id ? 'w-32 opacity-100' : 'w-0 opacity-0'}`}></div>
+              <div className={`hidden lg:block h-[2px] bg-gradient-to-l from-[#FA6404] to-transparent mt-2 transition-all duration-300 ${hoveredIndex === feature.id ? 'w-32 opacity-100' : 'w-0 opacity-0'}`}></div>
             </div>
           ))}
         </div>
 
-        {/* CENTER DEVICE (Compact Width to give space to sides) */}
-        <div className="relative w-[30%] flex justify-center items-center h-full">
-          {/* Rings - Slightly smaller to not overlap text */}
-          <div className="absolute w-[280px] h-[280px] md:w-[380px] md:h-[380px] border border-slate-100 rounded-full animate-[spin_20s_linear_infinite]"></div>
-          <div className="absolute w-[220px] h-[220px] md:w-[300px] md:h-[300px] border border-dashed border-blue-100 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+        {/* CENTER DEVICE */}
+        <div className="relative w-full lg:w-[30%] flex justify-center items-center h-[300px] lg:h-full order-1 lg:order-2 my-4 lg:my-0">
+          {/* Rings */}
+          <div className="absolute w-[260px] h-[260px] md:w-[380px] md:h-[380px] border border-slate-100 rounded-full animate-[spin_20s_linear_infinite]"></div>
+          <div className="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] border border-dashed border-blue-100 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
 
-          <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent top-1/2 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-20"></div>
+          <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent top-1/2 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-20 hidden lg:block"></div>
 
-          <div className="relative w-48 h-48 md:w-60 md:h-60 bg-white rounded-full shadow-[0_20px_60px_-15px_rgba(16,21,133,0.25)] flex items-center justify-center z-20 border-[6px] border-slate-50">
-            <div className="w-36 h-36 md:w-44 md:h-44 bg-gradient-to-br from-[#101585] to-blue-900 rounded-full shadow-inner flex items-center justify-center relative overflow-hidden">
+          <div className="relative w-40 h-40 md:w-60 md:h-60 bg-white rounded-full shadow-[0_20px_60px_-15px_rgba(16,21,133,0.25)] flex items-center justify-center z-20 border-[6px] border-slate-50">
+            <div className="w-28 h-28 md:w-44 md:h-44 bg-gradient-to-br from-[#101585] to-blue-900 rounded-full shadow-inner flex items-center justify-center relative overflow-hidden">
               {/* Heartbeat Animation */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <svg className="w-full h-30 text-[#FA6404] opacity-80" viewBox="0 0 100 20" preserveAspectRatio="none">
+                <svg className="w-full h-24 md:h-30 text-[#FA6404] opacity-80" viewBox="0 0 100 20" preserveAspectRatio="none">
                   <path d="M0 10 H 40 L 45 5 L 50 15 L 55 5 L 60 10 H 100"
                     stroke="currentColor" strokeWidth="2" fill="none"
                     className="animate-[dash_2s_linear_infinite]"
@@ -161,39 +161,39 @@ const IntelligentSolutionsSection = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN (3 Items) - Spaced evenly to match height */}
-        <div className="flex flex-col justify-evenly h-full py-8 w-[30%] items-start">
+        {/* RIGHT COLUMN (3 Items) */}
+        <div className="flex flex-col gap-8 lg:gap-0 lg:justify-evenly h-full py-8 w-full lg:w-[30%] items-center lg:items-start order-3">
           {features.filter(f => f.position === 'right').map((feature) => (
             <div
               key={feature.id}
               onMouseEnter={() => setHoveredIndex(feature.id)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`group flex flex-col items-start text-left cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 -translate-x-2' : 'opacity-90 hover:opacity-100'}`}
+              className={`group flex flex-col items-center lg:items-start text-center lg:text-left cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 lg:-translate-x-2' : 'opacity-90 hover:opacity-100'}`}
             >
-              <div className="flex items-center gap-4 mb-2 flex-row-reverse">
-                <h3 className={`font-bold text-xl md:text-2xl transition-colors leading-tight ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+              <div className="flex flex-col lg:flex-row-reverse items-center gap-3 lg:gap-4 mb-2">
+                <h3 className={`font-bold text-xl md:text-xl lg:text-2xl transition-colors leading-tight ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
                   {feature.title}
                 </h3>
-                <div className={`w-18 h-18 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
+                <div className={`w-20 h-20 lg:w-18 lg:h-18 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
                   <Image
                     src={`/icons/homepage/${feature.iconName}.png`}
                     alt={feature.title}
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
                     className={`object-contain transition-opacity duration-200 ${hoveredIndex === feature.id ? 'brightness-0 invert' : ''}`}
                   />
                 </div>
               </div>
-              <p className="text-sm md:text-base text-slate-500 font-medium max-w-[280px] leading-snug pl-1">
+              <p className="text-base lg:text-base text-slate-500 font-medium max-w-[280px] leading-snug lg:pl-1">
                 {feature.desc}
               </p>
-              <div className={`h-[2px] bg-gradient-to-r from-[#FA6404] to-transparent mt-2 transition-all duration-300 ${hoveredIndex === feature.id ? 'w-32 opacity-100' : 'w-0 opacity-0'}`}></div>
+              <div className={`hidden lg:block h-[2px] bg-gradient-to-r from-[#FA6404] to-transparent mt-2 transition-all duration-300 ${hoveredIndex === feature.id ? 'w-32 opacity-100' : 'w-0 opacity-0'}`}></div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="relative z-10 w-full flex justify-center mt-8">
+      <div className="relative z-10 w-full flex justify-center mt-8 lg:mt-8 mb-8 lg:mb-0">
         <Link
           href="/product"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-bold shadow-lg transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2"
@@ -290,9 +290,9 @@ const HeroSection = () => {
 
 const TrustedBySection = () => {
   const stats = [
-    { icon: <CheckCircle2 size={32} />, value: "200k+", label: "Lives Screened" },
-    { icon: <TrendingUp size={32} />, value: "90%", label: "Sensitivity" },
-    { icon: <Award size={32} />, value: "99%", label: "Specificity" },
+    { icon: <CheckCircle2 size={32} />, value: "300k+", label: "Total Screened" },
+    { icon: <TrendingUp size={32} />, value: "1500+", label: "Detected Abnormalities" },
+    { icon: <Award size={32} />, value: "600+", label: "Surgeries Completed" },
   ];
 
   return (
@@ -336,10 +336,9 @@ const TrustedBySection = () => {
                 </h3>
 
                 {/* Label Text */}
-                <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">
+                <p className="text-center text-sm font-bold text-slate-500 uppercase tracking-wider">
                   {stat.label}
                 </p>
-
               </div>
               
               {/* Static Floor Shadow */}
@@ -418,29 +417,6 @@ const ProductDetailSection = () => {
                 className="w-full object-fit opacity-90"
                 fill
               />
-              {/* Overlay Gradient */}
-            </div>
-
-            {/* Floating Badge 1 - BPM (Kept White for Contrast) */}
-            <div className="absolute top-12 left-0 md:-left-8 bg-white p-5 rounded-xl shadow-xl shadow-black/20 flex items-center gap-3 animate-bounce-slow z-20 border-l-4 border-[#101585]">
-              <div className="p-2 bg-blue-50 text-[#101585] rounded-lg">
-                <Activity size={20} />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-400 font-bold uppercase">Live BPM</p>
-                <p className="text-xl font-bold text-[#101585]">72</p>
-              </div>
-            </div>
-
-            {/* Floating Badge 2 - AI Confidence (Kept White for Contrast) */}
-            <div className="absolute bottom-12 right-0 md:-right-8 bg-white p-5 rounded-xl shadow-xl shadow-black/20 flex items-center gap-3 z-20 border-r-4 border-[#FA6404]">
-              <div>
-                <p className="text-[10px] text-slate-400 font-bold uppercase text-right">AI Confidence</p>
-                <p className="text-xl font-bold text-[#FA6404] text-right">94%</p>
-              </div>
-              <div className="p-2 bg-orange-50 text-[#FA6404] rounded-lg">
-                <Target size={20} />
-              </div>
             </div>
           </div>
 
@@ -691,10 +667,10 @@ const FDAClearanceSection = () => {
           </h2>
 
           {/* Classification Codes Grid */}
-          <div className="grid grid-cols-3 items-start">
+          <div className="grid grid-cols-3 items-stretch">
             
             {/* Code 1: DQD */}
-            <div className="flex flex-col items-center px-2 border-r-2 border-[#FA6404]">
+            <div className="flex flex-col items-center px-2 border-r-2 border-[#FA6404] justify-center">
               <div className="bg-[#FA6404] text-white text-xl md:text-2xl font-bold py-1.5 px-6 rounded-full mb-4 shadow-sm">
                 DQD
               </div>
@@ -704,22 +680,22 @@ const FDAClearanceSection = () => {
             </div>
 
             {/* Code 2: DQC */}
-            <div className="flex flex-col items-center px-2 border-r-2 border-[#FA6404]">
+            <div className="flex flex-col items-center px-2 border-r-2 border-[#FA6404] justify-center">
               <div className="bg-[#FA6404] text-white text-xl md:text-2xl font-bold py-1.5 px-6 rounded-full mb-4 shadow-sm">
                 DQC
               </div>
               <p className="text-slate-900 font-bold text-sm md:text-lg text-center leading-tight">
-                Phonocardiograph System
+                Phonocardiograph
               </p>
             </div>
 
             {/* Code 3: DPS */}
-            <div className="flex flex-col items-center px-2">
+            <div className="flex flex-col items-center px-2 justify-center">
               <div className="bg-[#FA6404] text-white text-xl md:text-2xl font-bold py-1.5 px-6 rounded-full mb-4 shadow-sm">
                 DPS
               </div>
               <p className="text-slate-900 font-bold text-sm md:text-lg text-center leading-tight">
-                Electrocardiograph & Cardiac monitor
+                Electrocardiograph & Cardiac monitor (including cardiotachometer and rate alarm)
               </p>
             </div>
 
@@ -764,7 +740,6 @@ const App = () => {
         <ClinicalExcellenceSection />
         <CertificationsBar />
         <FDAClearanceSection />
-        <CTASection />
       </div>
     </div>
   );

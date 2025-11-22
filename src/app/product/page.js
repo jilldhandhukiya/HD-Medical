@@ -717,7 +717,7 @@ export default function ProductHero() {
             {/* Content card below image */}
             <div className="w-full max-w-3xl mx-auto mt-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-start">
+                <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-center text-center">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
                     <Check className="w-5 h-5 text-white" />
                   </div>
@@ -725,7 +725,7 @@ export default function ProductHero() {
                   <p className="text-sm text-gray-600">HD Steth App mirrors most functionality of the device and extends portability for clinicians.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-start">
+                <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-center text-center">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
                     <Check className="w-5 h-5 text-white" />
                   </div>
@@ -733,7 +733,7 @@ export default function ProductHero() {
                   <p className="text-sm text-gray-600">Simultaneous HS and ECG waveforms provide validation and speed up clinical diagnosis.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-start">
+                <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-center text-center">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
                     <Check className="w-5 h-5 text-white" />
                   </div>
@@ -769,11 +769,11 @@ export default function ProductHero() {
 
               <div className="mx-auto w-full max-w-[520px] h-[200px] bg-gray-50 rounded-lg overflow-hidden mb-4">
                 <Image
-                  src="/images/1stbox.jpg"
+                  src="/images/1stbox.png"
                   alt="Simultaneous visualization"
                   width={920}
                   height={480}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
@@ -791,7 +791,7 @@ export default function ProductHero() {
                   alt="Positions and postures"
                   width={920}
                   height={480}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
@@ -808,11 +808,11 @@ export default function ProductHero() {
 
               <div className="mx-auto w-full max-w-[520px] h-[200px] bg-gray-50 rounded-lg overflow-hidden mb-4">
                 <Image
-                  src="/images/3rdbox.jpg"
+                  src="/images/3rdbox.png"
                   alt="Review after recording"
                   width={920}
                   height={480}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
@@ -830,7 +830,7 @@ export default function ProductHero() {
                   alt="Save history"
                   width={920}
                   height={480}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
@@ -847,11 +847,11 @@ export default function ProductHero() {
 
               <div className="mx-auto w-full max-w-[520px] h-[200px] bg-gray-50 rounded-lg overflow-hidden mb-4">
                 <Image
-                  src="/images/5thbox.jpg"
+                  src="/images/5thbox.png"
                   alt="Share recordings"
                   width={920}
                   height={480}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
@@ -865,11 +865,11 @@ export default function ProductHero() {
 
               <div className="mx-auto w-full max-w-[520px] h-[200px] bg-gray-50 rounded-lg overflow-hidden mb-4">
                 <Image
-                  src="/images/6thbox.jpg"
+                  src="/images/6thbox.png"
                   alt="Replay saved sessions"
                   width={920}
                   height={480}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
 

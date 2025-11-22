@@ -16,7 +16,8 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        {/* Grid: 1 col mobile, 2 cols tablet, 4 cols desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
           
           {/* Col 1: Brand */}
           <div className="space-y-6">
@@ -29,15 +30,16 @@ export default function Footer() {
                 className="object-contain h-8 w-auto"
               />
             </Link>
-            <p className="text-blue-200 text-sm leading-relaxed">
+            <p className="text-blue-200 text-sm leading-relaxed max-w-xs">
               Revolutionizing cardiac diagnostics with intelligent stethoscope technology for better patient care.
             </p>
           </div>
 
           {/* Col 2: Quick Links */}
           <div>
-            <h4 className="text-center text-lg font-bold mb-6 text-white">Quick Links</h4>
-            <ul className="text-center space-y-3 columns-2 text-blue-200 text-sm">
+            <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
+            {/* Removed text-center for consistent alignment */}
+            <ul className="space-y-3 text-blue-200 text-sm">
               {[
                 { label: 'Home', href: '/' },
                 { label: 'Products', href: '/product' },
@@ -46,18 +48,22 @@ export default function Footer() {
                 { label: 'Privacy Policy', href: '#' },
                 { label: 'Terms of Service', href: '#' },
               ].map((link) => (
-                <li key={link.label}><Link href={link.href} className="hover:text-[#FA6404] transition-colors">{link.label}</Link></li>
+                <li key={link.label}>
+                  <Link href={link.href} className="hover:text-[#FA6404] transition-colors block w-fit">
+                    {link.label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
 
           {/* Col 3: Contact Us */}
           <div>
-             <h4 className=" text-lg font-bold mb-6 text-white">Contact Us</h4>
+             <h4 className="text-lg font-bold mb-6 text-white">Contact Us</h4>
              <div className="space-y-4 text-blue-200 text-sm">
                <div className="flex items-start gap-3">
-                 <Mail size={18} className="mt-0.5 text-[#FA6404]" />
-                 <span>info@hdsteth.com</span>
+                 <Mail size={18} className="mt-0.5 text-[#FA6404] shrink-0" />
+                 <span className="break-all">info@hdmedicalgroup.com</span>
                </div>
              </div>
           </div>
@@ -82,9 +88,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-blue-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300">
+        <div className="pt-8 border-t border-blue-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300 text-center md:text-left">
           <p>© {new Date().getFullYear()} HD Medical. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link href="#" className="hover:text-white transition-colors">Cookie Policy</Link>
