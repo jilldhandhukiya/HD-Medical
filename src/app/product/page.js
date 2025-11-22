@@ -443,7 +443,7 @@ export default function ProductHero() {
             <p className="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
               Experience the next generation of cardiac auscultation with HD Steth&apos;s intelligent technology.
             </p>
-            <button onClick={scrollToAdvantages} className="bg-[#FA6404] hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-all transform hover:-translate-y-0.5">
+            <button onClick={() => window.location.href = '/resource'} className="bg-[#FA6404] hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-all transform hover:-translate-y-0.5">
               Learn More
             </button>
           </div>
@@ -458,13 +458,13 @@ export default function ProductHero() {
       <section className="w-full bg-white px-4 py-12">
         <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center">
           <div className="mb-8">
-            <Image src="/images/hd-steth-controls-heading.png" alt="HD Steth Controls" width={600} height={250} className="mx-auto w-auto h-auto max-w-full" />
+            <Image src="/images/hd-steth-controls-heading.png" alt="HD Steth Controls" width={700} height={300} className="mx-auto w-auto h-auto max-w-full" />
           </div>
 
           <div className="relative w-full flex justify-center">
             <div className="w-full max-w-3xl md:max-w-4xl lg:max-w-5xl">
               <div className="relative aspect-[16/11]">
-                <Image src="/images/productpagescope.png" alt="HD Steth Device with Labels" fill className="object-contain" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 75vw, 900px" priority />
+                <Image src="/images/hd steth.png" alt="HD Steth Device with Labels" fill className="object-contain" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 75vw, 900px" priority />
               </div>
             </div>
           </div>
@@ -653,8 +653,8 @@ export default function ProductHero() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
             <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: PRIMARY_BLUE }}>
-                  <BatteryFull className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/b5-battery-life-w.png" alt="Battery Life" width={40} height={40} className="object-contain" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-semibold text-gray-900">Battery Life</h4>
@@ -667,8 +667,8 @@ export default function ProductHero() {
 
             <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: PRIMARY_BLUE }}>
-                  <Weight className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/b8-3intgrted-leads-w.png" alt="Ergonomic Form Factor" width={40} height={40} className="object-contain" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-semibold text-gray-900">Ergonomic Form Factor</h4>
@@ -681,8 +681,8 @@ export default function ProductHero() {
 
             <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: PRIMARY_BLUE }}>
-                  <Smartphone className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/6-Femilr-steth-frm-fctr-w.png" alt="Customised App" width={40} height={40} className="object-contain" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-semibold text-gray-900">Customised App</h4>
@@ -695,8 +695,8 @@ export default function ProductHero() {
 
             <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: PRIMARY_BLUE }}>
-                  <Activity className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/1-Intl-steth-ekg-leads-w.png" alt="Three Integrated Electrodes" width={40} height={40} className="object-contain" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-semibold text-gray-900">Three Integrated Electrodes</h4>
@@ -792,7 +792,7 @@ export default function ProductHero() {
 
                     <div className="pt-6 pb-6 px-4">
                       <Image
-                        src="/images/hd-steth-app.png"
+                        src="/images/3rdbox.jpg"
                         alt="HD Steth App screenshot"
                         width={1000}
                         height={600}
@@ -823,94 +823,7 @@ export default function ProductHero() {
       </section>
 
 
-            {/* NEW: Centered App Showcase (insert below previous Bluetooth App section) */}
-            <section className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-slate-50 to-white">
-              <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col items-center text-center gap-8">
-                  <span className="inline-block px-4 py-2 rounded-full text-sm font-semibold text-[#FA6404] bg-[#FA6404]/10">HD Steth Bluetooth enabled APP</span>
-      
-                  <div className="max-w-4xl">
-                    <h3 className="text-lg md:text-xl font-semibold text-gray-600">SEE WHAT YOU HEAR</h3>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mt-3 mb-4" style={{ color: PRIMARY_BLUE }}>
-                      SEE WHAT YOU COULD NOT HEAR
-                    </h2>
-                    <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                      HD Steth uses a custom App that runs on smartphones and tablets. It connects via Bluetooth and simultaneously displays HS waveforms and single‑lead ECG — empowering faster, evidence‑based decisions.
-                    </p>
-                  </div>
-      
-                  {/* Centered device / app image */}
-                  <div className="w-full flex justify-center">
-                    <div className="relative w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl bg-white p-6" style={{ border: `1px solid rgba(16,21,133,0.04)` }}>
-                      <div className="mx-auto max-w-[920px]">
-                        <Image
-                          src="/images/hd-steth-app.png"
-                          alt="HD Steth App screenshot"
-                          width={1200}
-                          height={700}
-                          className="mx-auto object-contain rounded-lg"
-                          priority
-                        />
-                      </div>
-                      <div className="mt-4 flex items-center justify-center gap-6 text-sm text-gray-500">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 rounded-full" style={{ background: PRIMARY_BLUE }} />
-                          <span>Live HS + ECG</span>
-                        </div>
-                        <div className="hidden sm:block">•</div>
-                        <div className="flex items-center gap-2">
-                          <span>Bluetooth • Real‑time</span>
-                        </div>
-                        <div className="hidden sm:block">•</div>
-                        <div className="flex items-center gap-2">
-                          <span>Save • Share • Export</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-      
-                  {/* Content card below image - replaced with three separate boxes and centered CTA */}
-                  <div className="w-full max-w-3xl mx-auto mt-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-start">
-                        <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
-                          <Check className="w-5 h-5 text-white" />
-                        </div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Complements the Device</h4>
-                        <p className="text-sm text-gray-600">HD Steth App mirrors most functionality of the device and extends portability for clinicians.</p>
-                      </div>
 
-                      <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-start">
-                        <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
-                          <Check className="w-5 h-5 text-white" />
-                        </div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Surface Feeble Sounds</h4>
-                        <p className="text-sm text-gray-600">Superior audio captures weak heart sounds and makes them visible for reliable review.</p>
-                      </div>
-
-                      <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-start">
-                        <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
-                          <Check className="w-5 h-5 text-white" />
-                        </div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">HS + ECG Together</h4>
-                        <p className="text-sm text-gray-600">Simultaneous HS and ECG waveforms provide validation and speed up clinical diagnosis.</p>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 flex justify-center">
-                      <button
-                        className="px-12 py-3 rounded-full text-white font-bold shadow-xl transform hover:scale-105 transition"
-                        style={{ background: `linear-gradient(90deg, ${PRIMARY_ORANGE}, #ff7a2f)` }}
-                      >
-                        Get the App
-                      </button>
-                    </div>
-                  </div>
-      
-                </div>
-              </div>
-            </section>
 
 
       {/* NEW: App Features Boxes (insert above "SECTION 2: Ideal Solution") */}
