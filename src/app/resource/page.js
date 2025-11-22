@@ -1,78 +1,67 @@
 'use client';
 import React, { useState } from 'react';
-
-import { 
-  Play, 
-  Menu, 
-  X, 
-  HeartPulse, 
-  FileText, 
-  Smartphone,
-  BookOpen,
-  LayoutTemplate,
-  Award,
-  ShieldCheck,
-  AlertTriangle,
-  CheckCircle2,
-  AlertCircle,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Mail,
-  Phone,
-  MapPin,
-  Download,
-  ExternalLink,
-  Disc,
-  Cable,
-  Battery,
-  Headphones,
-  PlugZap,
-  Speaker,
-  ChevronDown,
-  ChevronUp,
-  Package,
-  Box,
-  Activity,
-  Quote,
-  Headset
+import Image from 'next/image';
+import {
+    Play,
+    Menu,
+    X,
+    HeartPulse,
+    FileText,
+    Smartphone,
+    BookOpen,
+    LayoutTemplate,
+    Award,
+    ShieldCheck,
+    AlertTriangle,
+    CheckCircle2,
+    AlertCircle,
+    Facebook,
+    Twitter,
+    Linkedin,
+    Instagram,
+    Mail,
+    Phone,
+    MapPin,
+    Download,
+    ExternalLink,
+    Disc,
+    Cable,
+    Battery,
+    Headphones,
+    PlugZap,
+    Speaker,
+    ChevronDown,
+    ChevronUp,
+    Package,
+    Box,
+    Activity,
+    Quote,
+    Headset
 } from 'lucide-react';
 
 const ResourcesHero = () => {
+  // place the provided image in public/images/resources-hero-bg.jpg (or update the path below)
+  const backgroundImageUrl = "/images/Resources-Top-Banner2.png";
+
   return (
-    <section className="w-full bg-[#101585] py-20 px-6 md:px-12 overflow-hidden relative">
-        
-        {/* Background Elements */}
-        <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-             <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#FA6404] rounded-full blur-[120px]"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-            {/* Left Content */}
-            <div className="space-y-6">
-                <div className="w-16 h-1 bg-[#FA6404] mb-6"></div>
-                <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
-                    HD Steth <br/>
-                    <span className="text-[#FA6404]">Resources</span>
-                </h1>
-                <p className="text-blue-100 text-lg md:text-xl max-w-lg leading-relaxed font-light">
-                    Revolutionizing auscultation with cutting-edge technology and unparalleled precision. Access all your essential guides and tools here.
-                </p>
-            </div>
-
-            {/* Right Visual Icon */}
-            <div className="flex justify-center md:justify-end">
-                <div className="relative">
-                    {/* Outer Glow */}
-                    <div className="absolute inset-0 bg-white/10 rounded-full blur-xl transform scale-110"></div>
-                    {/* Main Circle */}
-                    <div className="w-64 h-64 md:w-80 md:h-80 bg-white rounded-full flex items-center justify-center shadow-2xl relative z-10 border-8 border-[#FA6404]/10">
-                        <HeartPulse size={120} className="text-[#101585] fill-[#101585]/10" />
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section
+      className="w-full py-28 px-8 md:px-12 overflow-hidden relative bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+    >
+    
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Left Content */}
+          <div className="space-y-6">
+              <div className="w-16 h-1 bg-[#FA6404] mb-6"></div>
+              <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                  HD Steth <br/>
+                  <span className="text-[#FA6404]">Resources</span>
+              </h1>
+              <p className="text-blue-100 text-lg md:text-xl max-w-lg leading-relaxed font-light">
+                  Revolutionizing auscultation with cutting-edge technology and unparalleled precision. Access all your essential guides and tools here.
+              </p>
+          </div>
+      </div>
     </section>
   );
 };
@@ -84,42 +73,62 @@ const EssentialResourcesSection = () => {
             title: "Quick Start Guide",
             desc: "Step-by-step setup in under 5 minutes",
             action: "Download PDF",
-            type: "pdf"
+            type: "pdf",
+            file: "/docs/HDSteth-Quick Start Guide-FB-27July2024.pdf" 
         },
         {
             icon: <BookOpen size={28} />,
-            title: "Complete Manual",
-            desc: "Comprehensive user instructions",
+            title: "Teaching Solutions",
+            desc: "Curriculum & training materials",
             action: "View Online",
-            type: "link"
+            type: "link",
+            file: "/docs/Teaching Solution-FB-27July2024.pdf"
         },
         {
             icon: <Smartphone size={28} />,
             title: "Mobile App",
             desc: "iOS & Android companion app",
-            action: "Download Now",
-            type: "download"
+            type: "mobile-app",
         },
         {
             icon: <FileText size={28} />,
-            title: "Technical Specs",
-            desc: "Detailed specifications & features",
+            title: "Raipur Report",
+            desc: "Clinical performance data",
             action: "View Datasheet",
-            type: "link"
+            type: "link",
+            file: "/docs/Raipur Report--FB-27July2024.pdf"
         },
         {
             icon: <LayoutTemplate size={28} />,
             title: "Product Brochure",
             desc: "Overview & key benefits",
             action: "Download",
-            type: "pdf"
+            type: "pdf",
+            file: "/docs/HDSteth-Product Brochure-FB-27July2024.pdf"
         },
         {
             icon: <Award size={28} />,
-            title: "Certifications",
-            desc: "FDA, ISO, CE, and more",
+            title: "HeArtificial Sheet",
+            desc: "HeArtificial Intelligence Overview",
             action: "View Certificates",
-            type: "link"
+            type: "link",
+            file: "/docs/HeArtificial Intelligence-Sheet-FB-27July2024.pdf"
+        },
+        {
+            icon: <HeartPulse size={28} />,
+            title: "Product Data - India Sheet",
+            desc: "India Product Data Overview",
+            action: "View",
+            type: "link",
+            file: "/docs/Product-Data-India-Sheet-FB-27July2024.pdf"
+        },
+        {
+            icon: <HeartPulse size={28} />,
+            title: "Customer Adoption",
+            desc: "Customer adoption case studies",
+            action: "View",
+            type: "link",
+            file: "/docs/Customer Adoption-FB-27July2024.pdf"
         }
     ];
 
@@ -133,10 +142,10 @@ const EssentialResourcesSection = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {resources.map((item, idx) => (
                         <div key={idx} className="bg-white rounded-2xl p-8 shadow-lg shadow-slate-100 border border-slate-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center">
-                            
+
                             <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-200 group-hover:scale-110 transition-transform">
                                 {item.icon}
                             </div>
@@ -144,10 +153,40 @@ const EssentialResourcesSection = () => {
                             <h3 className="text-xl font-bold text-[#101585] mb-2">{item.title}</h3>
                             <p className="text-slate-400 text-sm mb-8">{item.desc}</p>
 
-                            <button className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2">
-                                {item.action}
-                                {item.type === 'download' ? <Download size={14} /> : <ExternalLink size={14} />}
-                            </button>
+                            {item.type === 'mobile-app' ? (
+                                <div className="mt-auto flex flex-col gap-3 w-full items-center">
+                                    {/* Android Download */}
+                                    <a 
+                                        href="/app/hdsteth.apk" 
+                                        download="hdsteth.apk"
+                                        className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
+                                    >
+                                        Download Android <Download size={14} />
+                                    </a>
+                                    {/* iOS Link */}
+                                    <a 
+                                        href="https://apps.apple.com/in/app/hd-steth/id1565203803" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
+                                    >
+                                        Download iOS <ExternalLink size={14} />
+                                    </a>
+                                </div>
+                            ) : (
+                                /* REPLACED BUTTON WITH A TAG FOR LINKS/DOWNLOADS */
+                                <a 
+                                    href={item.file}
+                                    /* Adds 'download' attribute if type is pdf, otherwise opens in new tab */
+                                    download={item.type === 'pdf'} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2 cursor-pointer"
+                                >
+                                    {item.action}
+                                    {item.type === 'pdf' ? <Download size={14} /> : <ExternalLink size={14} />}
+                                </a>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -156,18 +195,19 @@ const EssentialResourcesSection = () => {
     );
 };
 
+
 const CareMaintenanceSection = () => {
     return (
         <section className="w-full pb-24 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto bg-slate-50 rounded-[2.5rem] p-8 md:p-16 lg:p-20">
-                
+
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Care & Maintenance</h2>
                     <p className="text-slate-500">Keep your HD Steth performing at its best with proper care</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    
+
                     {/* Daily Cleaning Card */}
                     <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-100">
                         <div className="flex items-center gap-3 mb-6">
@@ -176,7 +216,7 @@ const CareMaintenanceSection = () => {
                             </div>
                             <h3 className="text-xl font-bold text-[#101585]">Daily Cleaning</h3>
                         </div>
-                        
+
                         <ul className="space-y-4">
                             {[
                                 "Clean chest piece after each patient use",
@@ -202,7 +242,7 @@ const CareMaintenanceSection = () => {
                         </div>
 
                         <ul className="space-y-4">
-                             {[
+                            {[
                                 "Never immerse in water or liquids",
                                 "Avoid extreme temperatures",
                                 "Use only approved accessories",
@@ -233,17 +273,43 @@ const AccessoriesSection = () => {
     ];
 
     return (
-        <section className="w-full py-20 px-6 md:px-12 bg-white">
+        <section className="w-full py-2 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-12">
+                {/* Header Text */}
+                <div className="text-center mb-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Accessories</h2>
                     <p className="text-slate-500">Enhance your HD Steth experience with genuine parts</p>
                 </div>
 
+               <div className="flex flex-col md:flex-row gap-6 mb-12 max-w-6xl mx-auto">
+    {/* Left Image */}
+    <div className="w-full md:w-1/2 aspect-[3/4] relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200 group">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+        <Image 
+            src="/images/HDS-Inside-Box.png" 
+            alt="Device Left View" 
+            className="w-full h-full group-hover:scale-105 transition-transform duration-700"
+            fill
+        />
+    </div>
+
+    {/* Right Image */}
+    <div className="w-full md:w-1/2 aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200 group">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+        <Image 
+            src="/images/In the Box.png" 
+            alt="Device Right View" 
+            className="w-full h-full group-hover:scale-105 transition-transform duration-700"
+            fill
+        />
+    </div>
+</div>
+            
+                {/* Accessories Grid */}
                 <div className="grid md:grid-cols-3 gap-8 mb-12">
                     {accessories.map((item, idx) => (
-                        <div key={idx} className="flex flex-col items-center text-center p-6 rounded-xl hover:shadow-lg transition-shadow border border-transparent hover:border-slate-50">
-                            <div className="w-20 h-20 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-4 shadow-lg shadow-[#FA6404]/20">
+                        <div key={idx} className="flex flex-col items-center text-center p-6 rounded-xl hover:shadow-lg transition-shadow border border-transparent hover:border-slate-50 group">
+                            <div className="w-20 h-20 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-4 shadow-lg shadow-[#FA6404]/20 group-hover:scale-110 transition-transform">
                                 {item.icon}
                             </div>
                             <h4 className="text-[#101585] font-bold text-lg mb-1">{item.name}</h4>
@@ -265,34 +331,90 @@ const AccessoriesSection = () => {
     );
 };
 
+
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
-  return (
-    <div className="border-b border-slate-100 last:border-0">
-      <button 
-        className="w-full flex justify-between items-center py-6 text-left hover:text-[#FA6404] transition-colors group"
-        onClick={onClick}
-      >
-        <span className={`font-bold text-lg ${isOpen ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
-            {question}
-        </span>
-        {isOpen ? <ChevronUp className="text-[#FA6404]" /> : <ChevronDown className="text-slate-400 group-hover:text-[#FA6404]" />}
-      </button>
-      <div 
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-40 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}
-      >
-        <p className="text-slate-500 leading-relaxed">{answer}</p>
-      </div>
-    </div>
-  );
+    return (
+        <div className="border-b border-slate-100 last:border-0">
+            <button
+                className="w-full flex justify-between items-center py-6 text-left hover:text-[#FA6404] transition-colors group"
+                onClick={onClick}
+            >
+                <span className={`font-bold text-lg pr-8 ${isOpen ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+                    {question}
+                </span>
+                {isOpen ? <ChevronUp className="text-[#FA6404] shrink-0" /> : <ChevronDown className="text-slate-400 group-hover:text-[#FA6404] shrink-0" />}
+            </button>
+            <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}
+            >
+                <div className="text-slate-500 leading-relaxed">
+                    {answer}
+                </div>
+            </div>
+        </div>
+    );
 };
 
 const FAQSection = () => {
     const [openIndex, setOpenIndex] = useState(0);
     const faqs = [
-        { q: "Why choose an electronic stethoscope?", a: "Electronic stethoscopes amplify sounds up to 40x, reduce ambient noise, and allow for visual representation of waveforms, enabling earlier detection of pathologies." },
-        { q: "Can HD Steth work without battery?", a: "No, HD Steth requires a charged battery for its active amplification and noise cancellation features. However, it charges quickly via USB." },
-        { q: "Battery life and charging details?", a: "The device provides 10+ hours of continuous use on a single charge. A full recharge takes approximately 60 minutes using the provided cable." },
-        { q: "What's the Bluetooth range?", a: "The device maintains a stable connection up to 10 meters (33 feet) in open space, ensuring flexibility in clinical environments." },
+        {
+            q: "Why use an electronic stethoscope?",
+            a: (
+                <ul className="list-disc pl-5 space-y-2">
+                    <li>Exceptional sound quality</li>
+                    <li>Enhanced frequency range</li>
+                    <li>Smart Ambient noise reduction</li>
+                    <li>Record and replay capabilities</li>
+                    <li>Visual display in app</li>
+                    <li>Sharing Records for Specialist consultation</li>
+                    <li>Ability to save in EHR</li>
+                </ul>
+            )
+        },
+        {
+            q: "Can HD Steth be used as a manual Stethoscope without the Battery?",
+            a: "No, even the Audio is digitized, so a battery is needed for operations."
+        },
+        {
+            q: "What type of battery does the HD Steth use?",
+            a: "HD Steth uses Panasonic Lithium ion 18650 battery."
+        },
+        {
+            q: "How long does the battery last?",
+            a: "It lasts for about 8 hours of continuous usage. Normally, HD Steth is used only intermittently, so may last 3-5 days on a full charge."
+        },
+        {
+            q: "How long does it take to charge the battery?",
+            a: "4-5 hours."
+        },
+        {
+            q: "Can HD Steth be used while it is being charged?",
+            a: "No."
+        },
+        {
+            q: "What kind of cable is used for charging?",
+            a: "A standard USB Micro B cable."
+        },
+        {
+            q: "What is BT range?",
+            a: "BT range is 10 meters if there are no obstructions. For ideal results, it is recommended that the smart device be within 1.5 meters of the HD Steth."
+        },
+        {
+            q: "What is the turnaround time for HD Medical Group support to get back to us?",
+            a: "1 business day."
+        },
+        {
+            q: "Where can you access the training video links?",
+            a: (
+                <span>
+                    From the HD Medical Group YouTube channel,<br />
+                    <a href="https://www.youtube.com/channel/UCiCF-U82vogdogFuClswdBg" target="_blank" rel="noopener noreferrer" className="text-[#FA6404] hover:underline break-all">
+                        https://www.youtube.com/channel/UCiCF-U82vogdogFuClswdBg
+                    </a>
+                </span>
+            )
+        }
     ];
 
     return (
@@ -305,7 +427,7 @@ const FAQSection = () => {
 
                 <div className="bg-white rounded-2xl shadow-xl shadow-slate-100 border border-slate-50 px-8">
                     {faqs.map((faq, idx) => (
-                        <FAQItem 
+                        <FAQItem
                             key={idx}
                             question={faq.q}
                             answer={faq.a}
@@ -323,7 +445,7 @@ const WhatsInTheBoxAndWhySection = () => {
     return (
         <section className="w-full py-20 px-6 md:px-12 bg-slate-50/50">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
-                
+
                 {/* Left: What's in the Box */}
                 <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-[#101585] mb-8">What&apos;s in the Box</h3>
@@ -334,7 +456,7 @@ const WhatsInTheBoxAndWhySection = () => {
                                 { icon: <Cable size={18} />, text: "Micro USB Cable" },
                                 { icon: <PlugZap size={18} />, text: "USB Charger" },
                                 { icon: <BookOpen size={18} />, text: "Quick Start Guide" },
-                                { icon: <Headphones size={18} />, text: "Spare Eartips" },
+                                { icon: <Headphones size={18} />, text: "Spare Ear Plugs (1 Set)" },
                                 { icon: <Speaker size={18} />, text: "HD Speaker" },
                             ].map((item, idx) => (
                                 <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
@@ -351,20 +473,20 @@ const WhatsInTheBoxAndWhySection = () => {
                     <h3 className="text-2xl md:text-3xl font-bold text-[#101585] mb-8">Why HD Steth?</h3>
                     <div className="space-y-6">
                         {[
-                            { 
-                                icon: <Headphones size={24} />, 
-                                title: "Crystal Clear Audio", 
-                                desc: "Advanced noise cancellation delivers pristine heart and lung sounds." 
+                            {
+                                icon: <Headphones size={24} />,
+                                title: "Crystal Clear Audio",
+                                desc: "Advanced noise cancellation delivers pristine heart and lung sounds."
                             },
-                            { 
-                                icon: <Activity size={24} />, 
-                                title: "Smart Integration", 
-                                desc: "Seamlessly record, visualize, and share via mobile app." 
+                            {
+                                icon: <Activity size={24} />,
+                                title: "Smart Integration",
+                                desc: "Seamlessly record, visualize, and share via mobile app."
                             },
-                            { 
-                                icon: <ShieldCheck size={24} />, 
-                                title: "Medical Grade", 
-                                desc: "FDA approved, durable design with global certifications." 
+                            {
+                                icon: <ShieldCheck size={24} />,
+                                title: "Medical Grade",
+                                desc: "FDA approved, durable design with global certifications."
                             }
                         ].map((item, idx) => (
                             <div key={idx} className="flex gap-4 items-start group">
@@ -386,7 +508,7 @@ const WhatsInTheBoxAndWhySection = () => {
 };
 
 // Helper icon for Stethoscope since it wasn't imported in earlier snippet if distinct from Headset
-const Stethoscope = ({size, className}) => (
+const Stethoscope = ({ size, className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
         <path d="M11 2v2" />
         <path d="M5 2v2" />
@@ -400,7 +522,7 @@ const Stethoscope = ({size, className}) => (
 const TestimonialsSection = () => {
     return (
         <section className="w-full py-20 px-6 md:px-12 bg-white">
-             <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Trusted by Professionals</h2>
                     <p className="text-slate-500">Hear from doctors who rely on HD Steth</p>
@@ -440,7 +562,7 @@ const TestimonialsSection = () => {
                         </div>
                     ))}
                 </div>
-             </div>
+            </div>
         </section>
     );
 };
@@ -449,19 +571,19 @@ const NeedAssistanceSection = () => {
     return (
         <section className="w-full px-6 md:px-12 pb-12 bg-white">
             <div className="max-w-7xl mx-auto bg-[#101585] rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
-                 {/* Background Glow */}
+                {/* Background Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-800/30 rounded-full blur-3xl pointer-events-none"></div>
-                
+
                 <div className="relative z-10 flex flex-col items-center">
                     <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-lg shadow-[#FA6404]/30">
                         <Headset size={32} />
                     </div>
-                    
+
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Need Assistance?</h2>
                     <p className="text-blue-200 max-w-2xl mx-auto mb-10 text-lg">
                         Our expert support team is here to help. Get responses within 1 business day.
                     </p>
-                    
+
                     <div className="flex flex-wrap justify-center gap-4">
                         <button className="bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-3.5 rounded-lg font-bold transition-colors shadow-lg flex items-center gap-2">
                             <Mail size={18} /> Email Support
@@ -475,24 +597,24 @@ const NeedAssistanceSection = () => {
 
 
 const ResourcesPage = () => {
-  return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-orange-100 selection:text-orange-900">
+    return (
+        <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-orange-100 selection:text-orange-900">
 
-      <div className="relative z-10">
-        <br />
-        <br />
-        <ResourcesHero />
-        <EssentialResourcesSection />
-        <CareMaintenanceSection />
-         <AccessoriesSection />
-        <FAQSection />
-        <WhatsInTheBoxAndWhySection />
-        <TestimonialsSection />
-        <NeedAssistanceSection />
-      </div>
+            <div className="relative z-10">
+                <br />
+                <br />
+                <ResourcesHero />
+                <EssentialResourcesSection />
+                <CareMaintenanceSection />
+                <AccessoriesSection />
+                <FAQSection />
+                <WhatsInTheBoxAndWhySection />
+                <TestimonialsSection />
+                <NeedAssistanceSection />
+            </div>
 
-    </div>
-  );
+        </div>
+    );
 };
 
 export default ResourcesPage;
