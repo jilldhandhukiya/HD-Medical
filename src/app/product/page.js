@@ -464,7 +464,7 @@ export default function ProductHero() {
           <div className="relative w-full flex justify-center">
             <div className="w-full max-w-3xl md:max-w-4xl lg:max-w-5xl">
               <div className="relative aspect-[16/11]">
-                <Image src="/images/productpagescope.png" alt="HD Steth Device with Labels" fill className="object-contain" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 75vw, 900px" priority />
+                <Image src="/images/hd-controls.png" alt="HD Steth Device with Labels" fill className="object-contain" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 75vw, 900px" priority />
               </div>
             </div>
           </div>
@@ -722,17 +722,7 @@ const PRIMARY_ORANGE = '#FA6404 */}
                         <p className="text-sm text-gray-600">Simultaneous HS and ECG waveforms provide validation and speed up clinical diagnosis.</p>
                       </div>
                     </div>
-
-                    <div className="mt-8 flex justify-center">
-                      <button
-                        className="px-12 py-3 rounded-full text-white font-bold shadow-xl transform hover:scale-105 transition"
-                        style={{ background: `linear-gradient(90deg, ${PRIMARY_ORANGE}, #ff7a2f)` }}
-                      >
-                        Get the App
-                      </button>
-                    </div>
                   </div>
-      
                 </div>
               </div>
             </section>
@@ -757,7 +747,8 @@ const PRIMARY_ORANGE = '#FA6404 */}
             ))}
           </div>
 
-          <button className="mt-16 px-12 py-4 rounded-lg text-xl font-bold shadow-xl transition-all hover:bg-gray-100 hover:shadow-2xl" style={{ backgroundColor: 'white', color: primaryBlue }}>
+          <button className="mt-16 px-12 py-4 rounded-lg text-xl font-bold shadow-xl transition-all hover:bg-gray-100 hover:shadow-2xl" style={{ backgroundColor: 'white', color: primaryBlue }}
+          onClick={() => window.location.href = '/resource'}>
             Get HD Steth Now
           </button>
         </div>
