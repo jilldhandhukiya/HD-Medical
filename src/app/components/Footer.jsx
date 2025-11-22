@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import {  Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -32,25 +32,19 @@ export default function Footer() {
             <p className="text-blue-200 text-sm leading-relaxed">
               Revolutionizing cardiac diagnostics with intelligent stethoscope technology for better patient care.
             </p>
-            <div className="flex gap-4">
-              {[<Facebook size={18} />, <Twitter size={18} />, <Linkedin size={18} />, <Instagram size={18} />].map((icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center hover:bg-[#FA6404] transition-colors text-white">
-                  {icon}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Col 2: Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
-            <ul className="space-y-3 text-blue-200 text-sm">
+            <h4 className="text-center text-lg font-bold mb-6 text-white">Quick Links</h4>
+            <ul className="text-center space-y-3 columns-2 text-blue-200 text-sm">
               {[
                 { label: 'Home', href: '/' },
                 { label: 'Products', href: '/product' },
                 { label: 'About Us', href: '/aboutus' },
                 { label: 'Contact', href: '/contactus' },
-                { label: 'Privacy Policy', href: '#' }
+                { label: 'Privacy Policy', href: '#' },
+                { label: 'Terms of Service', href: '#' },
               ].map((link) => (
                 <li key={link.label}><Link href={link.href} className="hover:text-[#FA6404] transition-colors">{link.label}</Link></li>
               ))}
@@ -59,19 +53,11 @@ export default function Footer() {
 
           {/* Col 3: Contact Us */}
           <div>
-             <h4 className="text-lg font-bold mb-6 text-white">Contact Us</h4>
+             <h4 className=" text-lg font-bold mb-6 text-white">Contact Us</h4>
              <div className="space-y-4 text-blue-200 text-sm">
                <div className="flex items-start gap-3">
                  <Mail size={18} className="mt-0.5 text-[#FA6404]" />
                  <span>info@hdsteth.com</span>
-               </div>
-               <div className="flex items-start gap-3">
-                 <Phone size={18} className="mt-0.5 text-[#FA6404]" />
-                 <span>+1 (234) 567-890</span>
-               </div>
-               <div className="flex items-start gap-3">
-                 <MapPin size={18} className="mt-0.5 text-[#FA6404]" />
-                 <span>123 Medical Plaza<br/>Healthcare City, HC 12345</span>
                </div>
              </div>
           </div>
