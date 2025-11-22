@@ -272,15 +272,17 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         className="w-full flex justify-between items-center py-6 text-left hover:text-[#FA6404] transition-colors group"
         onClick={onClick}
       >
-        <span className={`font-bold text-lg ${isOpen ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+        <span className={`font-bold text-lg pr-8 ${isOpen ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
             {question}
         </span>
-        {isOpen ? <ChevronUp className="text-[#FA6404]" /> : <ChevronDown className="text-slate-400 group-hover:text-[#FA6404]" />}
+        {isOpen ? <ChevronUp className="text-[#FA6404] shrink-0" /> : <ChevronDown className="text-slate-400 group-hover:text-[#FA6404] shrink-0" />}
       </button>
       <div 
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-40 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}
       >
-        <p className="text-slate-500 leading-relaxed">{answer}</p>
+        <div className="text-slate-500 leading-relaxed">
+            {answer}
+        </div>
       </div>
     </div>
   );
@@ -289,10 +291,63 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 const FAQSection = () => {
     const [openIndex, setOpenIndex] = useState(0);
     const faqs = [
-        { q: "Why choose an electronic stethoscope?", a: "Electronic stethoscopes amplify sounds up to 40x, reduce ambient noise, and allow for visual representation of waveforms, enabling earlier detection of pathologies." },
-        { q: "Can HD Steth work without battery?", a: "No, HD Steth requires a charged battery for its active amplification and noise cancellation features. However, it charges quickly via USB." },
-        { q: "Battery life and charging details?", a: "The device provides 10+ hours of continuous use on a single charge. A full recharge takes approximately 60 minutes using the provided cable." },
-        { q: "What's the Bluetooth range?", a: "The device maintains a stable connection up to 10 meters (33 feet) in open space, ensuring flexibility in clinical environments." },
+        { 
+            q: "Why use an electronic stethoscope?", 
+            a: (
+                <ul className="list-disc pl-5 space-y-2">
+                    <li>Exceptional sound quality</li>
+                    <li>Enhanced frequency range</li>
+                    <li>Smart Ambient noise reduction</li>
+                    <li>Record and replay capabilities</li>
+                    <li>Visual display in app</li>
+                    <li>Sharing Records for Specialist consultation</li>
+                    <li>Ability to save in EHR</li>
+                </ul>
+            )
+        },
+        { 
+            q: "Can HD Steth be used as a manual Stethoscope without the Battery?", 
+            a: "No, even the Audio is digitized, so a battery is needed for operations." 
+        },
+        { 
+            q: "What type of battery does the HD Steth use?", 
+            a: "HD Steth uses Panasonic Lithium ion 18650 battery." 
+        },
+        { 
+            q: "How long does the battery last?", 
+            a: "It lasts for about 8 hours of continuous usage. Normally, HD Steth is used only intermittently, so may last 3-5 days on a full charge." 
+        },
+        { 
+            q: "How long does it take to charge the battery?", 
+            a: "4-5 hours." 
+        },
+        { 
+            q: "Can HD Steth be used while it is being charged?", 
+            a: "No." 
+        },
+        { 
+            q: "What kind of cable is used for charging?", 
+            a: "A standard USB Micro B cable." 
+        },
+        { 
+            q: "What is BT range?", 
+            a: "BT range is 10 meters if there are no obstructions. For ideal results, it is recommended that the smart device be within 1.5 meters of the HD Steth." 
+        },
+        { 
+            q: "What is the turnaround time for HD Medical Group support to get back to us?", 
+            a: "1 business day." 
+        },
+        { 
+            q: "Where can you access the training video links?", 
+            a: (
+                <span>
+                    From the HD Medical Group YouTube channel,<br/>
+                    <a href="https://www.youtube.com/channel/UCiCF-U82vogdogFuClswdBg" target="_blank" rel="noopener noreferrer" className="text-[#FA6404] hover:underline break-all">
+                        https://www.youtube.com/channel/UCiCF-U82vogdogFuClswdBg
+                    </a>
+                </span>
+            )
+        }
     ];
 
     return (
@@ -334,7 +389,7 @@ const WhatsInTheBoxAndWhySection = () => {
                                 { icon: <Cable size={18} />, text: "Micro USB Cable" },
                                 { icon: <PlugZap size={18} />, text: "USB Charger" },
                                 { icon: <BookOpen size={18} />, text: "Quick Start Guide" },
-                                { icon: <Headphones size={18} />, text: "Spare Eartips" },
+                                { icon: <Headphones size={18} />, text: "Spare Ear Plugs (1 Set)" },
                                 { icon: <Speaker size={18} />, text: "HD Speaker" },
                             ].map((item, idx) => (
                                 <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
