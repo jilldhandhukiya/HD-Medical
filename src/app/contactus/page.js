@@ -353,9 +353,9 @@ export default function Contact() {
       const moveHandler = (e) => handleMouseMove(e, svg, container);
       const leaveHandler = () => handleMouseLeave(svg);
       
-      // Use passive listeners for better scroll performance
-      container.addEventListener('mousemove', moveHandler, { passive: true });
-      container.addEventListener('mouseleave', leaveHandler, { passive: true });
+      // Don't use passive for mouse events - they may need preventDefault
+      container.addEventListener('mousemove', moveHandler);
+      container.addEventListener('mouseleave', leaveHandler);
       
       return { container, moveHandler, leaveHandler };
     });

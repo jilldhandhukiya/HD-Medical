@@ -67,7 +67,7 @@ const AdvantagesSection = React.memo(React.forwardRef((props, ref) => {
     observer.observe(currentRef);
     
     return () => {
-      if (currentRef) observer.unobserve(currentRef);
+      observer.disconnect();
     };
   }, []);
 
@@ -242,7 +242,7 @@ const TechnicalExcellenceSection = React.memo(() => {
     
     observer.observe(currentRef);
     return () => {
-      if (currentRef) observer.unobserve(currentRef);
+      observer.disconnect();
     };
   }, []);
 
