@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import {
   Shield, Activity, Volume2, Cloud, Stethoscope, Smartphone, User, BatteryFull,
   Weight, ShieldCheck, ChevronDown, ChevronUp, Monitor, Globe, Zap, Leaf,
@@ -8,10 +8,11 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
-const PRIMARY_BLUE = '#101585'; // use this everywhere for blue accents
+const PRIMARY_BLUE = '#101585';
 const PRIMARY_ORANGE = '#FA6404';
 
-const advantages = [
+// Move static data outside component for better performance
+const ADVANTAGES = [
   {
     icon: Shield,
     title: "Patented Noise Cancellation",
@@ -38,17 +39,20 @@ const advantages = [
   },
 ];
 
-const AdvantagesSection = React.forwardRef((props, ref) => {
+const AdvantagesSection = React.memo(React.forwardRef((props, ref) => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [visibleModules, setVisibleModules] = useState([]);
 
   useEffect(() => {
-    const observer = new window.IntersectionObserver(
+    const currentRef = sectionRef.current;
+    if (!currentRef) return;
+
+    const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          advantages.forEach((_, index) => {
+          ADVANTAGES.forEach((_, index) => {
             setTimeout(() => {
               setVisibleModules((prev) => {
                 if (!prev.includes(index)) return [...prev, index];
@@ -60,8 +64,11 @@ const AdvantagesSection = React.forwardRef((props, ref) => {
       },
       { threshold: 0.2 }
     );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    observer.observe(currentRef);
+    
+    return () => {
+      if (currentRef) observer.unobserve(currentRef);
+    };
   }, []);
 
   return (
@@ -85,7 +92,7 @@ const AdvantagesSection = React.forwardRef((props, ref) => {
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {advantages.map((advantage, index) => {
+          {ADVANTAGES.map((advantage, index) => {
             const Icon = advantage.icon;
             const isModuleVisible = visibleModules.includes(index);
             return (
@@ -110,7 +117,7 @@ const AdvantagesSection = React.forwardRef((props, ref) => {
       </div>
     </section>
   );
-});
+}));
 
 AdvantagesSection.displayName = 'AdvantagesSection';
 
@@ -175,59 +182,68 @@ function HowItWorksSection() {
   );
 }
 
-function TechnicalExcellenceSection() {
+// Static specs data moved outside component
+const KEY_SPECS = [
+  { icon: BatteryFull, label: "8-Hour Continuous Operation", value: "8 Hours", color: "from-green-400 to-emerald-500" },
+  { icon: Weight, label: "Lightweight Design", value: "230g", color: "from-blue-400 to-cyan-500" },
+  { icon: Smartphone, label: "Mobile App Support", value: "iOS/Android", color: "from-purple-400 to-pink-500" },
+  { icon: ShieldCheck, label: "FDA Cleared", value: "Certified", color: "from-orange-400 to-red-500" },
+];
+
+const FULL_SPECIFICATIONS = [
+  {
+    category: "Device Specifications", specs: [
+      { label: "Weight", value: "230 grams (Approx)" },
+      { label: "Battery Life", value: "8-hour continuous operation" },
+      { label: "Connectivity", value: "Bluetooth 5.0, Wi-Fi" },
+      { label: "Display", value: "OLED touchscreen" }
+    ]
+  },
+  {
+    category: "Audio Performance", specs: [
+      { label: "Frequency Response", value: "20 Hz - 20 kHz" },
+      { label: "Noise Cancellation", value: "Patented active noise cancellation" },
+      { label: "Amplification", value: "Smart amplification up to 40x" },
+      { label: "Sound Quality", value: "Hi-Fi audio recording" }
+    ]
+  },
+  {
+    category: "ECG Capabilities", specs: [
+      { label: "Lead Configuration", value: "3-lead ECG integrated" },
+      { label: "Sampling Rate", value: "500 Hz" },
+      { label: "Recording Duration", value: "Continuous monitoring" },
+      { label: "Waveform Display", value: "Real-time visualization" }
+    ]
+  },
+  {
+    category: "Compatibility", specs: [
+      { label: "Mobile Apps", value: "iOS 12+, Android 8+" },
+      { label: "Cloud Platform", value: "HD Medical Cloud" },
+      { label: "Export Formats", value: "PDF, WAV, XML" },
+      { label: "Integration", value: "EMR/EHR compatible" }
+    ]
+  }
+];
+
+const TechnicalExcellenceSection = React.memo(() => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [expandedSpecs, setExpandedSpecs] = useState(false);
 
-  const keySpecs = [
-    { icon: BatteryFull, label: "8-Hour Continuous Operation", value: "8 Hours", color: "from-green-400 to-emerald-500" },
-    { icon: Weight, label: "Lightweight Design", value: "230g", color: "from-blue-400 to-cyan-500" },
-    { icon: Smartphone, label: "Mobile App Support", value: "iOS/Android", color: "from-purple-400 to-pink-500" },
-    { icon: ShieldCheck, label: "FDA Cleared", value: "Certified", color: "from-orange-400 to-red-500" },
-  ];
-
-  const fullSpecifications = [
-    {
-      category: "Device Specifications", specs: [
-        { label: "Weight", value: "230 grams (Approx)" },
-        { label: "Battery Life", value: "8-hour continuous operation" },
-        { label: "Connectivity", value: "Bluetooth 5.0, Wi-Fi" },
-        { label: "Display", value: "OLED touchscreen" }
-      ]
-    },
-    {
-      category: "Audio Performance", specs: [
-        { label: "Frequency Response", value: "20 Hz - 20 kHz" },
-        { label: "Noise Cancellation", value: "Patented active noise cancellation" },
-        { label: "Amplification", value: "Smart amplification up to 40x" },
-        { label: "Sound Quality", value: "Hi-Fi audio recording" }
-      ]
-    },
-    {
-      category: "ECG Capabilities", specs: [
-        { label: "Lead Configuration", value: "3-lead ECG integrated" },
-        { label: "Sampling Rate", value: "500 Hz" },
-        { label: "Recording Duration", value: "Continuous monitoring" },
-        { label: "Waveform Display", value: "Real-time visualization" }
-      ]
-    },
-    {
-      category: "Compatibility", specs: [
-        { label: "Mobile Apps", value: "iOS 12+, Android 8+" },
-        { label: "Cloud Platform", value: "HD Medical Cloud" },
-        { label: "Export Formats", value: "PDF, WAV, XML" },
-        { label: "Integration", value: "EMR/EHR compatible" }
-      ]
-    }
-  ];
+  const toggleSpecs = useCallback(() => setExpandedSpecs(prev => !prev), []);
 
   useEffect(() => {
-    const observer = new window.IntersectionObserver(([entry]) => {
+    const currentRef = sectionRef.current;
+    if (!currentRef) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) setIsVisible(true);
     }, { threshold: 0.2 });
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    
+    observer.observe(currentRef);
+    return () => {
+      if (currentRef) observer.unobserve(currentRef);
+    };
   }, []);
 
   return (
@@ -240,7 +256,7 @@ function TechnicalExcellenceSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-          {keySpecs.map((spec, idx) => {
+          {KEY_SPECS.map((spec, idx) => {
             const Icon = spec.icon;
             return (
               <div key={idx} className={`bg-white shadow-md rounded-xl p-6 text-center transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
@@ -255,7 +271,7 @@ function TechnicalExcellenceSection() {
         </div>
 
         <div className="flex justify-center mb-4">
-          <button onClick={() => setExpandedSpecs(!expandedSpecs)} className="flex items-center justify-center gap-2 text-base font-medium px-6 py-3 rounded-full border border-gray-300 shadow-sm bg-white hover:bg-gray-100 transition">
+          <button onClick={toggleSpecs} className="flex items-center justify-center gap-2 text-base font-medium px-6 py-3 rounded-full border border-gray-300 shadow-sm bg-white hover:bg-gray-100 transition">
             View All Specifications
             {expandedSpecs ? <ChevronUp className="w-5 h-5 text-gray-700" /> : <ChevronDown className="w-5 h-5 text-gray-700" />}
           </button>
@@ -263,7 +279,7 @@ function TechnicalExcellenceSection() {
 
         <div className={`transition-all duration-500 ${expandedSpecs ? "opacity-100 mt-8" : "opacity-0 h-0 overflow-hidden"}`}>
           <div className="grid md:grid-cols-2 gap-8 mt-8">
-            {fullSpecifications.map((category, categoryIndex) => (
+            {FULL_SPECIFICATIONS.map((category, categoryIndex) => (
               <div key={categoryIndex} className="bg-white shadow rounded-xl p-6 border border-gray-100">
                 <h3 className="text-xl font-bold text-gray-900 mb-6">{category.category}</h3>
                 <div className="space-y-4">
@@ -297,9 +313,10 @@ function TechnicalExcellenceSection() {
       </div>
     </section>
   );
-}
+});
+TechnicalExcellenceSection.displayName = 'TechnicalExcellenceSection';
 
-const AboutHero = () => {
+const AboutHero = React.memo(() => {
   return (
     <section className="relative w-full h-[600px] md:h-[700px] bg-slate-900 overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 z-0">
@@ -338,8 +355,9 @@ const AboutHero = () => {
     </section>
   );
 };
+AboutHero.displayName = 'AboutHero';
 
-const MissionSection = () => {
+const MissionSection = React.memo(() => {
   return (
     <section className="w-full py-24 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -380,52 +398,52 @@ const MissionSection = () => {
     </section>
   );
 };
+MissionSection.displayName = 'MissionSection';
+
+// Static product features
+const PRODUCT_FEATURES = [
+  "Enables effective screening",
+  "Save time, cost and saves lives",
+  "Improve patient outcomes",
+  "For Pediatricians and neo-natal",
+  "Detect CHD, hear fetal HS",
+  "Support prior to patient reaching hospital",
+  "Critical for urgent care situations",
+  "Easy to use on seniors",
+  "Ideal for post-op patients",
+  "Enables clear lung sound detection"
+];
+
+// Static intelligent items
+const INTELLIGENT_ITEMS = [
+  {
+    icon: Stethoscope,
+    title: "Integrated ECG",
+    text: "HD Steth is the third‑generation solution from HD Medical — the first intelligent stethoscope with integrated triple‑electrode ECG."
+  },
+  {
+    icon: Zap,
+    title: "Patented Audio Tech",
+    text: "Leverages patented noise cancellation and smart amplification for high‑fidelity auscultation."
+  },
+  {
+    icon: Heart,
+    title: "Accurate Evaluation",
+    text: "Provides accurate cardiac evaluation which helps clinicians diagnose more effectively."
+  },
+  {
+    icon: Users,
+    title: "Build Patient Trust",
+    text: "Enables evidence‑based care to build patient trust and improve retention through objective data."
+  },
+  {
+    icon: Target,
+    title: "Optimize Care Delivery",
+    text: "Optimizes clinicians' time, reduces costs, increases efficiency and improves patient outcomes — ultimately saving lives."
+  }
+];
 
 export default function ProductHero() {
-  const primaryBlue = PRIMARY_BLUE;
-  const primaryOrange = PRIMARY_ORANGE;
-
-  const features = [
-    "Enables effective screening",
-    "Save time, cost and saves lives",
-    "Improve patient outcomes",
-    "For Pediatricians and neo-natal",
-    "Detect CHD, hear fetal HS",
-    "Support prior to patient reaching hospital",
-    "Critical for urgent care situations",
-    "Easy to use on seniors",
-    "Ideal for post-op patients",
-    "Enables clear lung sound detection"
-  ];
-
-  // prepare items array (place this inside ProductHero, before the JSX return)
-  const intelligentItems = [
-    {
-      icon: Stethoscope,
-      title: "Integrated ECG",
-      text: "HD Steth is the third‑generation solution from HD Medical — the first intelligent stethoscope with integrated triple‑electrode ECG."
-    },
-    {
-      icon: Zap,
-      title: "Patented Audio Tech",
-      text: "Leverages patented noise cancellation and smart amplification for high‑fidelity auscultation."
-    },
-    {
-      icon: Heart,
-      title: "Accurate Evaluation",
-      text: "Provides accurate cardiac evaluation which helps clinicians diagnose more effectively."
-    },
-    {
-      icon: Users,
-      title: "Build Patient Trust",
-      text: "Enables evidence‑based care to build patient trust and improve retention through objective data."
-    },
-    {
-      icon: Target,
-      title: "Optimize Care Delivery",
-      text: "Optimizes clinicians' time, reduces costs, increases efficiency and improves patient outcomes — ultimately saving lives."
-    }
-  ];
 
   return (
     <>
@@ -470,14 +488,14 @@ export default function ProductHero() {
       <section className="w-full py-10 px-6 md:px-12 lg:px-20 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold" style={{ color: primaryOrange }}>Key Listening Modes & Signal Processing</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: PRIMARY_ORANGE }}>Key Listening Modes & Signal Processing</h3>
             <p className="text-gray-600 max-w-2xl mx-auto mt-2">Carefully designed audio processing and listening modes to maximise clinical fidelity.</p>
           </div>
 
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: PRIMARY_BLUE }}>
                   <Image
                     src="/icons/product/7-bestin-audio-qlipty-w.png"
                     alt="Smart amplification icon"
@@ -495,7 +513,7 @@ export default function ProductHero() {
 
             <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: PRIMARY_BLUE }}>
                   <Image
                     src="/icons/product/noise-cancelation-w.png"
                     alt="Active noise cancellation icon"
@@ -513,7 +531,7 @@ export default function ProductHero() {
 
             <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: PRIMARY_BLUE }}>
                   <Image
                     src="/icons/product/3-crystlclear-hs-w.png"
                     alt="Advanced filtering icon"
@@ -531,7 +549,7 @@ export default function ProductHero() {
 
             <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: PRIMARY_BLUE }}>
                   <Image
                     src="/icons/product/4-smart-amplification-exp-auscltatn-w.png"
                     alt="Pulmonary icon"
@@ -561,7 +579,7 @@ export default function ProductHero() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
-            {intelligentItems.map((item, idx) => {
+            {INTELLIGENT_ITEMS.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div 
@@ -883,26 +901,26 @@ export default function ProductHero() {
       </section>
 
       {/* SECTION 2: Ideal Solution */}
-      <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: primaryBlue }}>
+      <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: PRIMARY_BLUE }}>
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">HD Steth – The Ideal Solution for All Clinicians</h2>
           <h3 className="text-white text-2xl md:text-3xl font-semibold text-center mb-16 opacity-90">Screen. Monitor. Help Diagnose.</h3>
 
           <div className="flex flex-wrap justify-center gap-6 w-full">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center p-6 rounded-xl shadow-xl border-2 w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] transition-transform hover:-translate-y-1" style={{ backgroundColor: 'white', borderColor: primaryOrange }}>
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-5" style={{ backgroundColor: primaryOrange }}>
+            {PRODUCT_FEATURES.map((feature, index) => (
+              <div key={index} className="flex items-center p-6 rounded-xl shadow-xl border-2 w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] transition-transform hover:-translate-y-1" style={{ backgroundColor: 'white', borderColor: PRIMARY_ORANGE }}>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-5" style={{ backgroundColor: PRIMARY_ORANGE }}>
                   <Check className="text-white w-7 h-7" strokeWidth={3} />
                 </div>
 
-                <p className="text-lg md:text-xl font-semibold leading-tight" style={{ color: primaryBlue }}>
+                <p className="text-lg md:text-xl font-semibold leading-tight" style={{ color: PRIMARY_BLUE }}>
                   {feature}
                 </p>
               </div>
             ))}
           </div>
 
-          <button className="mt-16 px-12 py-4 rounded-lg text-xl font-bold shadow-xl transition-all hover:bg-gray-100 hover:shadow-2xl" style={{ backgroundColor: 'white', color: primaryBlue }}
+          <button className="mt-16 px-12 py-4 rounded-lg text-xl font-bold shadow-xl transition-all hover:bg-gray-100 hover:shadow-2xl" style={{ backgroundColor: 'white', color: PRIMARY_BLUE }}
           onClick={() => window.location.href = '/resource'}>
             Get HD Steth Now
           </button>
