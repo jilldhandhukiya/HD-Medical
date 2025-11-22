@@ -443,7 +443,7 @@ export default function ProductHero() {
             <p className="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
               Experience the next generation of cardiac auscultation with HD Steth&apos;s intelligent technology.
             </p>
-            <button onClick={scrollToAdvantages} className="bg-[#FA6404] hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-all transform hover:-translate-y-0.5">
+            <button onClick={() => window.location.href = '/resource'} className="bg-[#FA6404] hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-all transform hover:-translate-y-0.5">
               Learn More
             </button>
           </div>
@@ -458,7 +458,7 @@ export default function ProductHero() {
       <section className="w-full bg-white px-4 py-12">
         <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center">
           <div className="mb-8">
-            <Image src="/images/hd-steth-controls-heading.png" alt="HD Steth Controls" width={600} height={250} className="mx-auto w-auto h-auto max-w-full" />
+            <Image src="/images/hd-steth-controls-heading.png" alt="HD Steth Controls" width={700} height={300} className="mx-auto w-auto h-auto max-w-full" />
           </div>
 
           <div className="relative w-full flex justify-center">
@@ -471,59 +471,154 @@ export default function ProductHero() {
         </div>
       </section>
 
-      {/* Key Listening Modes - horizontal responsive boxes */}
-      <section className="w-full py-10 px-6 md:px-12 lg:px-20 bg-gray-50">
+      {/* Key Listening Modes & Signal Processing */}
+
+            <section className="w-full py-10 px-6 md:px-12 lg:px-20 bg-gray-50">
+              <div className="max-w-7xl mx-auto">
+                <div className="mb-8 text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold" style={{ color: primaryOrange }}>Key Listening Modes & Signal Processing</h3>
+                  <p className="text-gray-600 max-w-2xl mx-auto mt-2">Carefully designed audio processing and listening modes to maximise clinical fidelity.</p>
+                </div>
+      
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
+                        <Image
+                          src="/icons/product/7-bestin-audio-qlipty-w.png"
+                          alt="Smart amplification icon"
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900">Smart amplification</h4>
+                        <p className="text-sm text-gray-600 mt-2">Delivers best in class clarity of Heart sounds. Smart amplification is better than high amplification.</p>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
+                        <Image
+                          src="/icons/product/noise-cancelation-w.png"
+                          alt="Active noise cancellation icon"
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900">Active Noise cancellation</h4>
+                        <p className="text-sm text-gray-600 mt-2">Blocks ambient noise to provide superior listening experience, so you can focus on vital body sounds.</p>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
+                        <Image
+                          src="/icons/product/3-crystlclear-hs-w.png"
+                          alt="Advanced filtering icon"
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900">Advanced filtering</h4>
+                        <p className="text-sm text-gray-600 mt-2">Two precise filtering modes. Bell for lower frequency sounds (HS/Murmur). Dia for higher frequency sounds (bowel).</p>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
+                        <Image
+                          src="/icons/product/4-smart-amplification-exp-auscltatn-w.png"
+                          alt="Pulmonary icon"
+                          width={35}
+                          height={35}
+                          className="object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900">Pulmonary</h4>
+                        <p className="text-sm text-gray-600 mt-2">Dedicated listening mode to capture the full spectrum of Lung sounds. Toggling between modes is a simple press of a button.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+        <section className="w-full py-8 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-8 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold" style={{ color: primaryOrange }}>Key Listening Modes & Signal Processing</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto mt-2">Carefully designed audio processing and listening modes to maximise clinical fidelity.</p>
+          <div className="mb-6 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold" style={{ color: PRIMARY_ORANGE }}>
+              HD Steth: Intelligent Solution for Cardiac Care
+            </h3>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+
+            <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
-                  <Zap className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/Electrode-ECG-icon-w.png" alt="Integrated ECG" width={40} height={40} className="object-contain" />
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900">Smart amplification</h4>
-                  <p className="text-sm text-gray-600 mt-2">Delivers best in class clarity of Heart sounds. Smart amplification is better than high amplification.</p>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-gray-900">Integrated ECG</h4>
                 </div>
               </div>
+
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
+                HD Steth is the third‑generation solution from HD Medical — the first intelligent stethoscope with integrated triple‑electrode ECG.
+              </p>
             </div>
 
-            <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
-                  <Volume2 className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/noise-cancelation-w.png" alt="Patented Audio Tech" width={40} height={40} className="object-contain" />
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900">Active Noise cancellation</h4>
-                  <p className="text-sm text-gray-600 mt-2">Blocks ambient noise to provide superior listening experience, so you can focus on vital body sounds.</p>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-gray-900">Patented Audio Tech</h4>
                 </div>
               </div>
+
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
+                Leverages patented noise cancellation and smart amplification for high‑fidelity auscultation.
+              </p>
             </div>
 
-            <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
-                  <Filter className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/b7-customized-app-w.png" alt="Accurate Evaluation" width={40} height={40} className="object-contain" />
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900">Advanced filtering</h4>
-                  <p className="text-sm text-gray-600 mt-2">Two precise filtering modes. Bell for lower frequency sounds (HS/Murmur). Dia for higher frequency sounds (bowel).</p>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-gray-900">Accurate Evaluation</h4>
                 </div>
               </div>
+
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
+                Provides accurate cardiac evaluation which helps clinicians diagnose more effectively.
+              </p>
             </div>
 
-            <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: primaryBlue }}>
-                  <Heart className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/patient-trusst-w.png" alt="Build Patient Trust" width={40} height={40} className="object-contain" />
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900">Pulmonary</h4>
-                  <p className="text-sm text-gray-600 mt-2">Dedicated listening mode to capture the full spectrum of Lung sounds. Toggling between modes is a simple press of a button.</p>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-gray-900">Build Patient Trust</h4>
                 </div>
               </div>
             </div>
@@ -559,11 +654,17 @@ export default function ProductHero() {
                     {item.text}
                   </p>
                 </div>
-              );
-            })}
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
+                Optimizes clinicians' time, reduces costs, increases efficiency and improves patient outcomes — ultimately saving lives.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
+
 
             {/* New: Additional product boxes (Battery, Ergonomic, App, Electrodes) */}
       <section className="w-full py-6 px-6 md:px-12 lg:px-20 bg-white">
@@ -571,8 +672,8 @@ export default function ProductHero() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
             <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: PRIMARY_BLUE }}>
-                  <BatteryFull className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/b5-battery-life-w.png" alt="Battery Life" width={40} height={40} className="object-contain" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-semibold text-gray-900">Battery Life</h4>
@@ -585,8 +686,8 @@ export default function ProductHero() {
 
             <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: PRIMARY_BLUE }}>
-                  <Weight className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/b8-3intgrted-leads-w.png" alt="Ergonomic Form Factor" width={40} height={40} className="object-contain" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-semibold text-gray-900">Ergonomic Form Factor</h4>
@@ -599,8 +700,8 @@ export default function ProductHero() {
 
             <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: PRIMARY_BLUE }}>
-                  <Smartphone className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/6-Femilr-steth-frm-fctr-w.png" alt="Customised App" width={40} height={40} className="object-contain" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-semibold text-gray-900">Customised App</h4>
@@ -613,8 +714,8 @@ export default function ProductHero() {
 
             <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: PRIMARY_BLUE }}>
-                  <Activity className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: PRIMARY_BLUE }}>
+                  <Image src="/icons/product/1-Intl-steth-ekg-leads-w.png" alt="Three Integrated Electrodes" width={40} height={40} className="object-contain" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-semibold text-gray-900">Three Integrated Electrodes</h4>
@@ -628,9 +729,7 @@ export default function ProductHero() {
         </div>
       </section>
 
-      {/* SECTION 1: EHR Integration
-      '#101585'; // use this everywhere for blue accents
-const PRIMARY_ORANGE = '#FA6404 */}
+      {/* SECTION 1: EHR Integration*/}
 
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: PRIMARY_BLUE }}>
         <div className="max-w-7xl mx-auto text-center flex flex-col items-center">
@@ -708,13 +807,6 @@ const PRIMARY_ORANGE = '#FA6404 */}
                         <p className="text-sm text-gray-600">HD Steth App mirrors most functionality of the device and extends portability for clinicians.</p>
                       </div>
 
-                      <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-start">
-                        <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
-                          <Check className="w-5 h-5 text-white" />
-                        </div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Surface Feeble Sounds</h4>
-                        <p className="text-sm text-gray-600">Superior audio captures weak heart sounds and makes them visible for reliable review.</p>
-                      </div>
 
                       <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 flex flex-col items-start">
                         <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
@@ -726,8 +818,174 @@ const PRIMARY_ORANGE = '#FA6404 */}
                     </div>
                   </div>
                 </div>
+                <h4 className="text-xl font-semibold text-gray-900">Simultaneous visualization</h4>
+                <p className="text-sm text-gray-600 mt-2">PCG and ECG shown together for immediate correlation and validation.</p>
               </div>
-            </section>
+
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 flex flex-col items-center">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
+                  <Cloud className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900">Record & Manage</h4>
+                <p className="text-sm text-gray-600 mt-2">Record, review, share, save and retrieve patient sessions easily.</p>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 flex flex-col items-center">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
+                  <Smartphone className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900">Wireless Transmission</h4>
+                <p className="text-sm text-gray-600 mt-2">Real‑time Bluetooth streaming to phones/tablets for instant review.</p>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 flex flex-col items-center">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4" style={{ background: PRIMARY_BLUE }}>
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900">Enables Telemedicine</h4>
+                <p className="text-sm text-gray-600 mt-2">Seamless telemedicine capability — extend care remotely (Enables Telemedicine to ad Babu).</p>
+              </div>
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              <button
+                className="px-12 py-3 rounded-full text-white font-bold shadow-xl transform hover:scale-105 transition"
+                style={{ background: `linear-gradient(90deg, ${PRIMARY_ORANGE}, #ff7a2f)` }}
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: Six feature boxes — grouped as three sections with 2 boxes each (rectangular images, heading → image → text, larger boxes) */}
+      <section className="w-full py-16 px-6 md:px-12 lg:px-20 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8" style={{ color: PRIMARY_BLUE }}>
+            App Screens & Details
+          </h2>
+
+          {/* Row 1: Boxes 1 & 2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center min-h-[360px] flex flex-col">
+              <h3 className="text-xl md:text-2xl font-semibold mb-4" style={{ color: PRIMARY_BLUE }}>Simultaneous visualization</h3>
+
+              <div className="mx-auto w-full max-w-[520px] h-[200px] bg-gray-50 rounded-lg overflow-hidden mb-4">
+                <Image
+                  src="/images/1stbox.jpg"
+                  alt="Simultaneous visualization"
+                  width={920}
+                  height={480}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 mt-auto">
+                PCG and ECG shown together for immediate correlation. Record, freeze and snapshot the live display.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center min-h-[360px] flex flex-col">
+              <h3 className="text-xl md:text-2xl font-semibold mb-4" style={{ color: PRIMARY_BLUE }}>Positions & Postures</h3>
+
+              <div className="mx-auto w-full max-w-[520px] h-[200px] bg-gray-50 rounded-lg overflow-hidden mb-4">
+                <Image
+                  src="/images/2ndbox.jpg"
+                  alt="Positions and postures"
+                  width={920}
+                  height={480}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 mt-auto">
+                Label chest location and patient posture when saving recordings for clear documentation.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 2: Boxes 3 & 4 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center min-h-[360px] flex flex-col">
+              <h3 className="text-xl md:text-2xl font-semibold mb-4" style={{ color: PRIMARY_BLUE }}>Review after Recording</h3>
+
+              <div className="mx-auto w-full max-w-[520px] h-[200px] bg-gray-50 rounded-lg overflow-hidden mb-4">
+                <Image
+                  src="/images/3rdbox.jpg"
+                  alt="Review after recording"
+                  width={920}
+                  height={480}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 mt-auto">
+                View static waveform images, save snapshots and annotate for later review.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center min-h-[360px] flex flex-col">
+              <h3 className="text-xl md:text-2xl font-semibold mb-4" style={{ color: PRIMARY_BLUE }}>Save & History</h3>
+
+              <div className="mx-auto w-full max-w-[520px] h-[200px] bg-gray-50 rounded-lg overflow-hidden mb-4">
+                <Image
+                  src="/images/4thbox.jpg"
+                  alt="Save history"
+                  width={920}
+                  height={480}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 mt-auto">
+                Store recordings in-app and access full history for each patient.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 3: Boxes 5 & 6 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center min-h-[360px] flex flex-col">
+              <h3 className="text-xl md:text-2xl font-semibold mb-4" style={{ color: PRIMARY_BLUE }}>Share</h3>
+
+              <div className="mx-auto w-full max-w-[520px] h-[200px] bg-gray-50 rounded-lg overflow-hidden mb-4">
+                <Image
+                  src="/images/5thbox.jpg"
+                  alt="Share recordings"
+                  width={920}
+                  height={480}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 mt-auto">
+                Share recorded sessions securely with colleagues for consultation.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center min-h-[360px] flex flex-col">
+              <h3 className="text-xl md:text-2xl font-semibold mb-4" style={{ color: PRIMARY_BLUE }}>Replay</h3>
+
+              <div className="mx-auto w-full max-w-[520px] h-[200px] bg-gray-50 rounded-lg overflow-hidden mb-4">
+                <Image
+                  src="/images/6thbox.jpg"
+                  alt="Replay saved sessions"
+                  width={920}
+                  height={480}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 mt-auto">
+                Replay saved recordings anytime for review, teaching or second opinions.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
 
       {/* SECTION 2: Ideal Solution */}
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: primaryBlue }}>
