@@ -40,39 +40,28 @@ import {
 } from 'lucide-react';
 
 const ResourcesHero = () => {
+  // place the provided image in public/images/resources-hero-bg.jpg (or update the path below)
+  const backgroundImageUrl = "/images/Resources-Top-Banner2.png";
+
   return (
-    <section className="w-full bg-[#101585] py-20 px-6 md:px-12 overflow-hidden relative">
-        
-        {/* Background Elements */}
-        <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-             <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#FA6404] rounded-full blur-[120px]"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-            {/* Left Content */}
-            <div className="space-y-6">
-                <div className="w-16 h-1 bg-[#FA6404] mb-6"></div>
-                <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
-                    HD Steth <br/>
-                    <span className="text-[#FA6404]">Resources</span>
-                </h1>
-                <p className="text-blue-100 text-lg md:text-xl max-w-lg leading-relaxed font-light">
-                    Revolutionizing auscultation with cutting-edge technology and unparalleled precision. Access all your essential guides and tools here.
-                </p>
-            </div>
-
-            {/* Right Visual Icon */}
-            <div className="flex justify-center md:justify-end">
-                <div className="relative">
-                    {/* Outer Glow */}
-                    <div className="absolute inset-0 bg-white/10 rounded-full blur-xl transform scale-110"></div>
-                    {/* Main Circle */}
-                    <div className="w-64 h-64 md:w-80 md:h-80 bg-white rounded-full flex items-center justify-center shadow-2xl relative z-10 border-8 border-[#FA6404]/10">
-                        <HeartPulse size={120} className="text-[#101585] fill-[#101585]/10" />
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section
+      className="w-full py-28 px-8 md:px-12 overflow-hidden relative bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+    >
+    
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Left Content */}
+          <div className="space-y-6">
+              <div className="w-16 h-1 bg-[#FA6404] mb-6"></div>
+              <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                  HD Steth <br/>
+                  <span className="text-[#FA6404]">Resources</span>
+              </h1>
+              <p className="text-blue-100 text-lg md:text-xl max-w-lg leading-relaxed font-light">
+                  Revolutionizing auscultation with cutting-edge technology and unparalleled precision. Access all your essential guides and tools here.
+              </p>
+          </div>
+      </div>
     </section>
   );
 };
