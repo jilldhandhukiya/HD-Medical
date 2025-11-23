@@ -259,15 +259,15 @@ const AccessoriesSection = () => {
                     <p className="text-slate-500">Enhance your HD Steth experience with genuine parts</p>
                 </div>
 
-               <div className="flex flex-col md:flex-row gap-6 mb-12 max-w-6xl mx-auto">
+               <div className="flex justify-center mb-12 max-w-6xl mx-auto">
     {/* Left Image */}
-    <div className="w-full md:w-1/2 aspect-[3/4] relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200 group">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+    <div className="w-full max-w-4xl aspect-[16/10] relative rounded-2xl overflow-hidden">
         <Image 
             src="/images/HDS-Inside-Box.png" 
             alt="Device Left View" 
-            className="w-full h-full group-hover:scale-105 transition-transform duration-700"
+            className="object-contain p-2 group-hover:scale-105 transition-transform duration-700"
             fill
+            sizes="(max-width: 768px) 100vw, 1000px"
         />
     </div>
 
