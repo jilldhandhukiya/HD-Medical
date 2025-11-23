@@ -272,7 +272,7 @@ const AccessoriesSection = () => {
     </div>
 
     {/* Right Image */}
-    <div className="w-full md:w-1/2 aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200 group">
+    {/* <div className="w-full md:w-1/2 aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200 group">
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
         <Image 
             src="/images/In the Box.png" 
@@ -280,7 +280,7 @@ const AccessoriesSection = () => {
             className="w-full h-full group-hover:scale-105 transition-transform duration-700"
             fill
         />
-    </div>
+    </div> */}
 </div>
             
                 {/* Accessories Grid */}

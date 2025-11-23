@@ -451,15 +451,22 @@ export default function ProductHero() {
 
       {/* Controls / Central Image */}
       <section className="w-full bg-white px-4 py-12">
-        <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center">
+        <div className="max-w-[1400px] mx-auto flex flex-col items-center justify-center text-center">
           <div className="mb-8">
             <Image src="/images/hd-steth-controls-heading.png" alt="HD Steth Controls" width={700} height={300} className="mx-auto w-auto h-auto max-w-full" />
           </div>
 
           <div className="relative w-full flex justify-center">
-            <div className="w-full max-w-3xl md:max-w-4xl lg:max-w-5xl">
+            <div className="w-full max-w-4xl md:max-w-6xl lg:max-w-[1300px]">
               <div className="relative aspect-[16/11]">
-                <Image src="/images/hd-controls.png" alt="HD Steth Device with Labels" fill className="object-contain" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 75vw, 900px" priority />
+                <Image 
+                  src="/images/hd-controls.png" 
+                  alt="HD Steth Device with Labels" 
+                  fill 
+                  className="object-contain" 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1300px" 
+                  priority 
+                />
               </div>
             </div>
           </div>

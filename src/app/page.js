@@ -47,13 +47,6 @@ const IntelligentSolutionsSection = () => {
       position: "left"
     },
     {
-      id: 7, // Moved 4th item to bottom of left column
-      iconName: "b2-noise-cancel-b",
-      title: "Noise Cancellation",
-      desc: "Patented noise cancellation technology.",
-      position: "left"
-    },
-    {
       id: 4,
       iconName: "5-presin-enginrd-b",
       title: "Precision Engineering",
@@ -73,11 +66,22 @@ const IntelligentSolutionsSection = () => {
       title: "Superior Audio Quality",
       desc: "Best in class audio for crystal clear Heart sounds.",
       position: "right"
+    },
+    {
+      id: 7,
+      iconName: "b2-noise-cancel-b",
+      title: "Noise Cancellation",
+      desc: "Patented noise cancellation technology.",
+      position: "center"
     }
   ];
 
+  const leftFeatures = features.filter(f => f.position === 'left');
+  const rightFeatures = features.filter(f => f.position === 'right');
+  const centerFeature = features.find(f => f.position === 'center');
+
   return (
-    <section className="relative w-full lg:h-[85vh] lg:min-h-[800px] bg-white overflow-hidden flex flex-col items-center py-12 lg:py-8">
+    <section className="relative w-full bg-white overflow-hidden flex flex-col items-center py-12 lg:py-20">
 
       {/* --- 1. Background Subtle Grid --- */}
       <div className="absolute inset-0 pointer-events-none opacity-30"
@@ -89,8 +93,8 @@ const IntelligentSolutionsSection = () => {
         }}
       ></div>
 
-      {/* --- 2. Section Header (More Compact to save space) --- */}
-      <div className="relative z-10 text-center mb-8 lg:mb-6 shrink-0 px-4">
+      {/* --- 2. Section Header --- */}
+      <div className="relative z-10 text-center mb-12 lg:mb-16 shrink-0 px-4">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#101585] tracking-tight">
           Intelligent <span className="text-[#FA6404]">Architecture</span>
         </h2>
@@ -100,100 +104,124 @@ const IntelligentSolutionsSection = () => {
       </div>
 
       {/* --- 3. Main Content Layout --- */}
-      <div className="relative w-full max-w-7xl mx-auto flex-1 flex flex-col lg:flex-row items-center justify-between px-4 md:px-8 z-10 gap-12 lg:gap-0">
+      <div className="relative w-full max-w-7xl mx-auto px-4 md:px-8 z-10">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0 items-stretch">
+            
+            {/* LEFT COLUMN */}
+            <div className="flex flex-col gap-12 lg:gap-0 justify-between py-4 lg:py-6 items-center lg:items-end order-2 lg:order-1 h-auto lg:h-[600px]">
+              {leftFeatures.map((feature) => (
+                <div
+                  key={feature.id}
+                  onMouseEnter={() => setHoveredIndex(feature.id)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  className={`group flex flex-col items-center lg:items-end text-center lg:text-right cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 lg:translate-x-2' : 'opacity-90 hover:opacity-100'}`}
+                >
+                  <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-4 mb-2">
+                    <h3 className={`font-bold text-xl md:text-xl lg:text-2xl transition-colors leading-tight order-2 lg:order-1 ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+                      {feature.title}
+                    </h3>
+                    <div className={`w-20 h-20 lg:w-20 lg:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 order-1 lg:order-2 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
+                      <Image
+                        src={`/icons/homepage/${feature.iconName}.png`}
+                        alt={feature.title}
+                        width={40}
+                        height={40}
+                        className={`object-contain transition-opacity duration-200 ${hoveredIndex === feature.id ? 'brightness-0 invert' : ''}`}
+                      />
+                    </div>
+                  </div>
+                  <p className="text-base lg:text-base text-slate-500 font-medium max-w-[280px] leading-snug">
+                    {feature.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
 
-        {/* LEFT COLUMN (4 Items) */}
-        <div className="flex flex-col gap-8 lg:gap-0 lg:justify-between h-full py-4 w-full lg:w-[30%] items-center lg:items-end order-2 lg:order-1">
-          {features.filter(f => f.position === 'left').map((feature) => (
-            <div
-              key={feature.id}
-              onMouseEnter={() => setHoveredIndex(feature.id)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className={`group flex flex-col items-center lg:items-end text-center lg:text-right cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 lg:translate-x-2' : 'opacity-90 hover:opacity-100'}`}
-            >
-              <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-4 mb-2">
-                <h3 className={`font-bold text-xl md:text-xl lg:text-2xl transition-colors leading-tight order-2 lg:order-1 ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
-                  {feature.title}
-                </h3>
-                {/* Bigger Icon Container */}
-                <div className={`w-20 h-20 lg:w-18 lg:h-18 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 order-1 lg:order-2 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
-                  <Image
-                    src={`/icons/homepage/${feature.iconName}.png`}
-                    alt={feature.title}
-                    width={40}
-                    height={40}
-                    className={`object-contain transition-opacity duration-200 ${hoveredIndex === feature.id ? 'brightness-0 invert' : ''}`}
-                  />
+            {/* CENTER DEVICE */}
+            <div className="relative flex justify-center items-center h-[300px] lg:h-[600px] order-1 lg:order-2">
+              {/* Rings */}
+              <div className="absolute w-[260px] h-[260px] md:w-[380px] md:h-[380px] lg:w-[450px] lg:h-[450px] border border-slate-100 rounded-full animate-[spin_20s_linear_infinite]"></div>
+              <div className="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] border border-dashed border-blue-100 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+
+              <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent top-1/2 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-20 hidden lg:block"></div>
+
+              <div className="relative w-40 h-40 md:w-60 md:h-60 bg-white rounded-full shadow-[0_20px_60px_-15px_rgba(16,21,133,0.25)] flex items-center justify-center z-20 border-[6px] border-slate-50">
+                <div className="w-28 h-28 md:w-44 md:h-44 bg-gradient-to-br from-[#101585] to-blue-900 rounded-full shadow-inner flex items-center justify-center relative overflow-hidden">
+                  {/* Heartbeat Animation */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg className="w-full h-24 md:h-30 text-[#FA6404] opacity-80" viewBox="0 0 100 20" preserveAspectRatio="none">
+                      <path d="M0 10 H 40 L 45 5 L 50 15 L 55 5 L 60 10 H 100"
+                        stroke="currentColor" strokeWidth="2" fill="none"
+                        className="animate-[dash_2s_linear_infinite]"
+                        strokeDasharray="100" strokeDashoffset="100">
+                        <animate attributeName="stroke-dashoffset" from="100" to="-100" dur="2s" repeatCount="indefinite" />
+                      </path>
+                    </svg>
+                  </div>
                 </div>
               </div>
-              <p className="text-base lg:text-base text-slate-500 font-medium max-w-[280px] leading-snug">
-                {feature.desc}
-              </p>
-              {/* Active Line Indicator */}
-              <div className={`hidden lg:block h-[2px] bg-gradient-to-l from-[#FA6404] to-transparent mt-2 transition-all duration-300 ${hoveredIndex === feature.id ? 'w-32 opacity-100' : 'w-0 opacity-0'}`}></div>
             </div>
-          ))}
+
+            {/* RIGHT COLUMN */}
+            <div className="flex flex-col gap-12 lg:gap-0 justify-between py-4 lg:py-6 items-center lg:items-start order-3 lg:order-3 h-auto lg:h-[600px]">
+              {rightFeatures.map((feature) => (
+                <div
+                  key={feature.id}
+                  onMouseEnter={() => setHoveredIndex(feature.id)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  className={`group flex flex-col items-center lg:items-start text-center lg:text-left cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 lg:-translate-x-2' : 'opacity-90 hover:opacity-100'}`}
+                >
+                  <div className="flex flex-col lg:flex-row-reverse items-center gap-3 lg:gap-4 mb-2">
+                    <h3 className={`font-bold text-xl md:text-xl lg:text-2xl transition-colors leading-tight ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+                      {feature.title}
+                    </h3>
+                    <div className={`w-20 h-20 lg:w-20 lg:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
+                      <Image
+                        src={`/icons/homepage/${feature.iconName}.png`}
+                        alt={feature.title}
+                        width={40}
+                        height={40}
+                        className={`object-contain transition-opacity duration-200 ${hoveredIndex === feature.id ? 'brightness-0 invert' : ''}`}
+                      />
+                    </div>
+                  </div>
+                  <p className="text-base lg:text-base text-slate-500 font-medium max-w-[280px] leading-snug lg:pl-1">
+                    {feature.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
         </div>
 
-        {/* CENTER DEVICE */}
-        <div className="relative w-full lg:w-[30%] flex justify-center items-center h-[300px] lg:h-full order-1 lg:order-2 my-4 lg:my-0">
-          {/* Rings */}
-          <div className="absolute w-[260px] h-[260px] md:w-[380px] md:h-[380px] border border-slate-100 rounded-full animate-[spin_20s_linear_infinite]"></div>
-          <div className="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] border border-dashed border-blue-100 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-
-          <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent top-1/2 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-20 hidden lg:block"></div>
-
-          <div className="relative w-40 h-40 md:w-60 md:h-60 bg-white rounded-full shadow-[0_20px_60px_-15px_rgba(16,21,133,0.25)] flex items-center justify-center z-20 border-[6px] border-slate-50">
-            <div className="w-28 h-28 md:w-44 md:h-44 bg-gradient-to-br from-[#101585] to-blue-900 rounded-full shadow-inner flex items-center justify-center relative overflow-hidden">
-              {/* Heartbeat Animation */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg className="w-full h-24 md:h-30 text-[#FA6404] opacity-80" viewBox="0 0 100 20" preserveAspectRatio="none">
-                  <path d="M0 10 H 40 L 45 5 L 50 15 L 55 5 L 60 10 H 100"
-                    stroke="currentColor" strokeWidth="2" fill="none"
-                    className="animate-[dash_2s_linear_infinite]"
-                    strokeDasharray="100" strokeDashoffset="100">
-                    <animate attributeName="stroke-dashoffset" from="100" to="-100" dur="2s" repeatCount="indefinite" />
-                  </path>
-                </svg>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT COLUMN (3 Items) */}
-        <div className="flex flex-col gap-8 lg:gap-0 lg:justify-evenly h-full py-8 w-full lg:w-[30%] items-center lg:items-start order-3">
-          {features.filter(f => f.position === 'right').map((feature) => (
+        {/* CENTER BOTTOM ITEM */}
+        <div className="flex justify-center mt-8 lg:-mt-16 relative z-20">
             <div
-              key={feature.id}
-              onMouseEnter={() => setHoveredIndex(feature.id)}
+              onMouseEnter={() => setHoveredIndex(centerFeature.id)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`group flex flex-col items-center lg:items-start text-center lg:text-left cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 lg:-translate-x-2' : 'opacity-90 hover:opacity-100'}`}
+              className={`group flex flex-col items-center text-center cursor-pointer transition-all duration-300 ${hoveredIndex === centerFeature.id ? 'scale-105 -translate-y-2' : 'opacity-90 hover:opacity-100'}`}
             >
-              <div className="flex flex-col lg:flex-row-reverse items-center gap-3 lg:gap-4 mb-2">
-                <h3 className={`font-bold text-xl md:text-xl lg:text-2xl transition-colors leading-tight ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
-                  {feature.title}
-                </h3>
-                <div className={`w-20 h-20 lg:w-18 lg:h-18 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
+               <div className={`w-20 h-20 lg:w-20 lg:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 mb-3 ${hoveredIndex === centerFeature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
                   <Image
-                    src={`/icons/homepage/${feature.iconName}.png`}
-                    alt={feature.title}
+                    src={`/icons/homepage/${centerFeature.iconName}.png`}
+                    alt={centerFeature.title}
                     width={40}
                     height={40}
-                    className={`object-contain transition-opacity duration-200 ${hoveredIndex === feature.id ? 'brightness-0 invert' : ''}`}
+                    className={`object-contain transition-opacity duration-200 ${hoveredIndex === centerFeature.id ? 'brightness-0 invert' : ''}`}
                   />
                 </div>
-              </div>
-              <p className="text-base lg:text-base text-slate-500 font-medium max-w-[280px] leading-snug lg:pl-1">
-                {feature.desc}
-              </p>
-              <div className={`hidden lg:block h-[2px] bg-gradient-to-r from-[#FA6404] to-transparent mt-2 transition-all duration-300 ${hoveredIndex === feature.id ? 'w-32 opacity-100' : 'w-0 opacity-0'}`}></div>
+                <h3 className={`font-bold text-xl md:text-xl lg:text-2xl transition-colors leading-tight mb-1 ${hoveredIndex === centerFeature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+                  {centerFeature.title}
+                </h3>
+                <p className="text-base lg:text-base text-slate-500 font-medium max-w-[280px] leading-snug">
+                  {centerFeature.desc}
+                </p>
             </div>
-          ))}
         </div>
+
       </div>
 
-      <div className="relative z-10 w-full flex justify-center mt-8 lg:mt-8 mb-8 lg:mb-0">
+      <div className="relative z-10 w-full flex justify-center mt-12 lg:mt-16 mb-8 lg:mb-0">
         <Link
           href="/product"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-bold shadow-lg transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2"
@@ -412,7 +440,7 @@ const ProductDetailSection = () => {
             {/* Main Image Frame */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 aspect-[4/5] md:aspect-square lg:aspect-[5/5]">
               <Image
-                src="/images/Homepagesethimage.png"
+                src="/images/Home-Top-image.png"
                 alt="Doctor holding heart model"
                 className="w-full object-fit opacity-90"
                 fill
