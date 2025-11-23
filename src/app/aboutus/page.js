@@ -200,7 +200,7 @@ export default function AboutUs() {
 <section className="w-full relative h-screen md:h-[87vh] overflow-hidden flex items-center justify-center">        {/* Background Image */}
         {/* Background Image */}
         <Image
-          src="/images/Heart-with-ECG.png" 
+          src="/images/About-Top.png" 
           alt="We Work to Save Lives Banner"
           fill
           className="object-cover absolute inset-0"
