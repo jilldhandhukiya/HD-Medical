@@ -170,7 +170,6 @@ function Section({ title, people }) {
                   flexBasis: "calc(33.333% - 2rem)"
                 }}
               >
-                <PersonCard person={person} />
               </div>
             ))}
             {/* Fill empty spots for alignment if last row has < 3 cards */}
