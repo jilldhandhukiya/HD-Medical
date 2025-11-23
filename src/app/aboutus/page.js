@@ -1,33 +1,50 @@
 "use client"
 import Image from 'next/image';
 
-// Card Component
-function PersonCard({ person }) {
-  return (
-    <div className="w-full max-w-[360px] mx-auto bg-white border-[2px] border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-lg relative transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-      style={{ boxSizing: 'border-box' }}>
-      <div className="w-full aspect-[4/4] relative border-b-[2px] border-gray-200 bg-gray-100">
-        <Image
-          src={person.image}
-          alt={`${person.name} - ${person.position}`}
-          fill
-          className="w-full h-full"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          placeholder="blur"
-          blurDataURL={person.blurDataURL || "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="}
-          style={{ objectPosition: 'center' }}
-        />
-      </div>
-      <div className="bg-[#101585] px-4 py-3 text-center">
-        <h3 className="text-white text-xl font-bold leading-tight">{person.name}</h3>
-      </div>
-      <div className="px-4 py-2 border-t border-gray-200 text-center">
-        <p className="text-[#101585] text-base font-semibold">{person.position}</p>
-        <p className="text-gray-600 text-sm mt-2">{person.description}</p>
-      </div>
+const PRIMARY_BLUE = '#101585';
+const PRIMARY_ORANGE = '#FA6404';
+
+// New Team Layout Component
+const TeamGroup = ({ title, members }) => (
+  <div className="mb-24 last:mb-0 w-full">
+    <h3 className="text-3xl md:text-4xl font-bold text-center mb-16" style={{ color: PRIMARY_BLUE }}>{title}</h3>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12 justify-items-center max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+      {members.map((member, index) => (
+        <div key={index} className="flex flex-col items-center text-center max-w-[240px] group">
+          {/* Circular Image */}
+          <div className="w-48 h-48 rounded-full overflow-hidden mb-6 bg-gray-100 relative shadow-md border-4 border-white group-hover:border-orange-100 transition-all duration-300">
+            <Image 
+              src={member.image} 
+              alt={member.name}
+              fill
+              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              // Fallback for missing images
+              onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.style.backgroundColor = '#e5e7eb'; }}
+            />
+          </div>
+          
+          {/* Name */}
+          <h4 className="text-xl font-bold mb-2 leading-tight" style={{ color: PRIMARY_ORANGE }}>
+            {member.name}
+          </h4>
+          
+          {/* Role */}
+          <p className="text-sm font-bold mb-3 min-h-[2.5rem] flex items-start justify-center leading-tight" style={{ color: PRIMARY_BLUE }}>
+            {member.position}
+          </p>
+          
+          {/* Bio/Description */}
+          {member.description && (
+            <p className="text-xs text-gray-600 leading-relaxed font-medium">
+              {member.description}
+            </p>
+          )}
+        </div>
+      ))}
     </div>
-  );
-}
+  </div>
+);
 
 // Dummy Data
 const leadership = [
@@ -35,7 +52,7 @@ const leadership = [
     name: "Arvind Thiagarajan",
     position: "Founder, CEO & Chief Inventor",
     image: "/images/company/Arvind.png",
-    description: "Visionary leaderrr driving innovation and growth. Passionate about healthcare transformation."
+    description: "Visionary leader driving innovation and growth. Passionate about healthcare transformation."
   },
   {
     name: "Eric Fronk",
@@ -123,148 +140,6 @@ const medicalAdvisors = [
     image: "/images/company/Dr Raj.png"
   }
 ];
-
-// // Replace the existing majorInvestors array with this:
-
-// const majorInvestors = [
-//   {
-//     name: "Steve Killelea",
-//     position: "Chairman of Integrated Research",
-//     image: "/images/company/Steve Killelea.jpeg",
-//     description: "Founder of Ascent Capital, specializing in healthcare technology investments with 20+ years experience.",
-//     flags: ["australia"]
-//   },
-//   {
-//     name: "Young Jin Kim",
-//     position: "Chairman & CEO of Handok Pharma",
-//     image: "/images/company/Young Jin Kim.jpg",
-//     description: "Former CEO of MedTech Ventures, leading investments in breakthrough medical technologies.",
-//     flags: ["korea"]
-//   },
-//   {
-//     name: "Suk Jin Kim",
-//     position: "Investor & Handok Pharma",
-//     image: "/images/company/Suk Jin Kim.jpg",
-//     description: "Principal at HealthTech Innovation Fund, focused on AI-driven healthcare solutions.",
-//     flags: ["korea"]
-//   },
-//   {
-//     name: "A Balasubramanian",
-//     position: "MD, Aditya Birla Sun Life Asset Management",
-//     image: "/images/company/A_Balasubramanian.jpeg",
-//     description: "Board-certified cardiologist and active investor in medical device companies.",
-//     flags: ["india"]
-//   },
-//   {
-//     name: "Dr. Praveen Kollipara",
-//     position: "Leading Oncologist & AAPI Member Fort Wayne, Indiana",
-//     image: "/images/investors/investor5.jpg",
-//     description: "Managing Partner at Global Health Ventures, specializing in cross-border healthcare investments.",
-//     flags: ["us"]
-//   }
-// ];
-
-// const businessAdvisors = [
-//   {
-//     name: "Dr. Prem Pillay",
-//     position: "Leading Neuro Surgeon Venture Capitalist",
-//     image: "/images/company/Dr. Prem Pillay.jpg",
-//     flags: ["us"]
-//   },
-//   {
-//     name: "Dr. Jon Freudmam ",
-//     position: "Reimbursement Expert Ex-Kaiser & BlueShield",
-//     image: "/images/company/Dr. Jon Freudmam.jpeg",
-//     flags: ["india", "us"]
-//   },
-//   {
-//     name: "Umesh Singh",
-//     position: "Finance Ex - IBM",
-//     image: "/images/company/Umesh Singh.jpg",
-//     flags: ["us"]
-//   },
-//   {
-//     name: "Vivek Pendharkar",
-//     position: "Execution & Operations Ex - Intel",
-//     image: "/images/company/Vivek Pendharkar.webp",
-//     flags: ["us", "korea"]
-//   },
-//   {
-//     name: "Rangarajan Raghavan",
-//     position: "India / Asia Sales Ex - HCL",
-//     image: "/images/advisors/business5.jpg",
-//     flags: ["us", "india"]
-//   },
-//   {
-//     name: "Jessica Richter",
-//     position: "Regulatory & Quality GM of Veranex",
-//     image: "/images/company/Jessica Richter.jpeg",
-//     flags: ["us"]
-//   },
-//   {
-//     name: "Ashley Moore",
-//     position: "PR & Media AM PR, Florida",
-//     image: "/images/company/Ashley_Moore.avif",
-//     flags: ["uk"]
-//   },
-//   {
-//     name: "Kang Lim",
-//     position: "Patent Counsel",
-//     image: "/images/company/Kang Lim.webp",
-//     flags: ["us"]
-//   },
-//   {
-//     name: "Kristi Furrer",
-//     position: "Marketing & Tradeshows Golden Impressions, Colorado",
-//     image: "/images/advisors/business9.jpg",
-//     flags: ["us"]
-//   }
-// ];
-
-// const indiaTeam = [
-//   {
-//     name: "Ganesh Kumar B R",
-//     position: "General Manager R&D",
-//     image: "/images/company/Ganesh.png",
-//     description: "Experience: 20+ years",
-//     flags: ["india"]
-//   },
-//   {
-//     name: "V Dinesh Kumar",
-//     position: "General Manager Admin / Finance",
-//     image: "/images/team/india2.jpg",
-//     description: "Experience: 25+ years ",
-//     flags: ["india"]
-//   },
-//   {
-//     name: "Senthil Kumar S",
-//     position: "Principal Architect Embedded Design",
-//     image: "/images/company/Senthil.jpg",
-//     description: "Experience 25+ Years",
-//     flags: ["india"]
-//   },
-//   {
-//     name: "Babu N",
-//     position: "Head of Design",
-//     image: "/images/team/india4.jpg",
-//     description: "Experience: 25+ years ",
-//     flags: ["india"]
-//   },
-//   {
-//     name: "Geetha V",
-//     position: "Senior Manager Materials & Manufacturing",
-//     image: "/images/company/Geetha.jpeg",
-//     description: "Experience: 30+ years ",
-//     flags: ["india"]
-//   },
-//   {
-//     name: "Ravikumar K",
-//     position: "Senior Engineer Hardware & Service ",
-//     image: "/images/team/india6.jpg",
-//     description: "Experience: 25+ years",
-//     flags: ["india"]
-//   }
-// ];
 
 // Section Component
 function Section({ title, people }) {
@@ -378,21 +253,13 @@ export default function AboutUs() {
         </section>
 
         {/* Leadership Team */}
-        <section className="mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Our Team</h2>
-            <div className="w-20 h-1 bg-[#101585] mx-auto mt-4 rounded-full"></div>
-          </div>
+        <section className="py-20 bg-white w-full">
+           <TeamGroup title="Our Leadership" members={leadership} />
+           <div className="w-full h-px bg-gray-100 my-16 max-w-4xl mx-auto"></div>
+           <TeamGroup title="Board Members" members={boardMembers} />
+           <div className="w-full h-px bg-gray-100 my-16 max-w-4xl mx-auto"></div>
+           <TeamGroup title="Medical Advisors" members={medicalAdvisors} />
         </section>
-
-      {/* Leadership Section */}
-      <Section title="Our Leadership" people={leadership} />
-
-      {/* Board Members Section */}
-      <Section title="Board Members" people={boardMembers} />
-
-      {/* Medical Advisors Section */}
-      <Section title="Medical Advisors" people={medicalAdvisors} />
     </>
   );
 }
