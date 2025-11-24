@@ -141,7 +141,6 @@ const IntelligentSolutionsSection = () => {
             {/* CENTER DEVICE */}
             <div className="relative flex justify-center items-center h-[300px] lg:h-[600px] order-1 lg:order-2">
               {/* Rings */}
-              <div className="absolute w-[260px] h-[260px] md:w-[380px] md:h-[380px] lg:w-[450px] lg:h-[450px] border border-slate-100 rounded-full animate-[spin_20s_linear_infinite]"></div>
               <div className="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] border border-dashed border-blue-100 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
 
               <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent top-1/2 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-20 hidden lg:block"></div>
@@ -267,10 +266,13 @@ const HeroSection = () => {
           Transform <br />
           Cardiac Care with <br />
           <span className="text-[#FA6404] relative">
-            HD Steth
-            <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#FA6404] opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
-              <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="3" fill="none" />
-            </svg>
+            <Image
+              src="/images/hd-steth-logo.png" // Replace with your actual image path
+              alt="HD Steth"
+              width={400} // Adjust width to match text size
+              height={100} // Adjust height to match text size
+              className="object-contain"
+            />
           </span>
         </h1>
 
@@ -351,7 +353,7 @@ const TrustedBySection = () => {
             <div key={index} className="flex flex-col items-center">
               
               {/* The Static Circle Container */}
-              <div className="w-56 h-56 rounded-full bg-white border-[6px] border-[#eff6ff] outline outline-2 outline-[#101585] shadow-xl flex flex-col items-center justify-center p-4 z-10 hover:transform hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-56 h-56 rounded-full bg-white border-[3px] border-[#FA6404] outline outline-2 outline-[#FA6404] shadow-xl flex flex-col items-center justify-center p-4 z-10 hover:transform hover:-translate-y-1 transition-transform duration-300">
                 
                 {/* Icon */}
                 <div className="text-[#FA6404] mb-3 bg-orange-50 p-3 rounded-full">
@@ -456,7 +458,7 @@ const ProductDetailSection = () => {
 
 const VideoSection = () => {
   return (
-    <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-slate-50">
+    <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-white">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 bg-blue-100 px-4 py-1.5 rounded-full mb-6">
           <div className="w-2 h-2 bg-[#FA6404] rounded-full"></div>
@@ -713,7 +715,7 @@ const FDAClearanceSection = () => {
                 DQC
               </div>
               <p className="text-slate-900 font-bold text-sm md:text-lg text-center leading-tight">
-                Phonocardiograph
+                Phonocardiograph System
               </p>
             </div>
 
@@ -723,7 +725,7 @@ const FDAClearanceSection = () => {
                 DPS
               </div>
               <p className="text-slate-900 font-bold text-sm md:text-lg text-center leading-tight">
-                Electrocardiograph & Cardiac monitor (including cardiotachometer and rate alarm)
+                Electrocardiograph & Cardiac monitor
               </p>
             </div>
 
