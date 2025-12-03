@@ -41,7 +41,7 @@ import {
 
 const ResourcesHero = () => {
   // place the provided image in public/images/resources-hero-bg.jpg (or update the path below)
-  const backgroundImageUrl = "/images/Resources-Top-Banner2.png";
+  const backgroundImageUrl = "/images/Resources.jpg";
 
   return (
     <section
@@ -259,15 +259,15 @@ const AccessoriesSection = () => {
                     <p className="text-slate-500">Enhance your HD Steth experience with genuine parts</p>
                 </div>
 
-               <div className="flex justify-center mb-12 max-w-6xl mx-auto">
+               <div className="flex justify-center mb-12 max-w-7xl mx-auto">
     {/* Left Image */}
-    <div className="w-full max-w-4xl aspect-[16/10] relative rounded-2xl overflow-hidden">
+    <div className="w-full max-w-6xl aspect-[16/10] relative rounded-2xl overflow-hidden">
         <Image 
-            src="/images/HDS-Inside-Box.png" 
+            src="/images/Accessories.jpg" 
             alt="Device Left View" 
             className="object-contain p-2 group-hover:scale-105 transition-transform duration-700"
             fill
-            sizes="(max-width: 768px) 100vw, 1000px"
+            sizes="(max-width: 768px) 100vw, 1500px"
         />
     </div>
 
@@ -419,67 +419,28 @@ const FAQSection = () => {
     );
 };
 
-const WhatsInTheBoxAndWhySection = () => {
+const WhatsInTheBoxSection = () => {
     return (
         <section className="w-full py-20 px-6 md:px-12 bg-slate-50/50">
-            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
-
-                {/* Left: What's in the Box */}
-                <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#101585] mb-8">What&apos;s in the Box</h3>
-                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                        <div className="grid sm:grid-cols-2 gap-4">
-                            {[
-                                { icon: <Stethoscope size={18} />, text: "HD Steth Device" },
-                                { icon: <Cable size={18} />, text: "Micro USB Cable" },
-                                { icon: <PlugZap size={18} />, text: "USB Charger" },
-                                { icon: <BookOpen size={18} />, text: "Quick Start Guide" },
-                                { icon: <Headphones size={18} />, text: "Spare Ear Plugs (1 Set)" },
-                                { icon: <Speaker size={18} />, text: "HD Speaker" },
-                            ].map((item, idx) => (
-                                <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
-                                    <div className="text-[#FA6404]">{item.icon}</div>
-                                    <span className="text-slate-700 font-medium text-sm">{item.text}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                {/* Right: Why HD Steth? */}
-                <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#101585] mb-8">Why HD Steth?</h3>
-                    <div className="space-y-6">
+            <div className="max-w-4xl mx-auto">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#101585] mb-8 text-center">What&apos;s in the Box</h3>
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div className="grid sm:grid-cols-2 gap-4">
                         {[
-                            {
-                                icon: <Headphones size={24} />,
-                                title: "Crystal Clear Audio",
-                                desc: "Advanced noise cancellation delivers pristine heart and lung sounds."
-                            },
-                            {
-                                icon: <Activity size={24} />,
-                                title: "Smart Integration",
-                                desc: "Seamlessly record, visualize, and share via mobile app."
-                            },
-                            {
-                                icon: <ShieldCheck size={24} />,
-                                title: "Medical Grade",
-                                desc: "FDA approved, durable design with global certifications."
-                            }
+                            { icon: <Stethoscope size={18} />, text: "HD Steth Device" },
+                            { icon: <Cable size={18} />, text: "Micro USB Cable" },
+                            { icon: <PlugZap size={18} />, text: "USB Charger" },
+                            { icon: <BookOpen size={18} />, text: "Quick Start Guide" },
+                            { icon: <Headphones size={18} />, text: "Spare Ear Plugs (1 Set)" },
+                            { icon: <Speaker size={18} />, text: "HD Speaker" },
                         ].map((item, idx) => (
-                            <div key={idx} className="flex gap-4 items-start group">
-                                <div className="w-12 h-12 rounded-full bg-[#FA6404] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#FA6404]/20">
-                                    {item.icon}
-                                </div>
-                                <div>
-                                    <h4 className="text-[#101585] font-bold text-lg mb-1">{item.title}</h4>
-                                    <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
-                                </div>
+                            <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
+                                <div className="text-[#FA6404]">{item.icon}</div>
+                                <span className="text-slate-700 font-medium text-sm">{item.text}</span>
                             </div>
                         ))}
                     </div>
                 </div>
-
             </div>
         </section>
     );
@@ -498,6 +459,37 @@ const Stethoscope = ({ size, className }) => (
 );
 
 const TestimonialsSection = () => {
+    const testimonials = [
+        {
+            name: "Dr. Nelson B. Schiller",
+            role: "MD, FACC, FRCP | Professor of Medicine & Anesthesia, UCSF",
+            quote: "HD Steth has applied digital science to produce superior auscultatory experience with suppression of extraneous noise for true fidelity of heart transient and coupled this technology with an ECG. As an academic cardiologist, I am assured that new observations of fundamental importance will emerge from this exciting technology.",
+            initials: "NS",
+            color: "bg-[#FA6404]"
+        },
+        {
+            name: "Dr. Douglas Johnston",
+            role: "MD | Thoracic and Cardiovascular Surgery, Northwestern Medicine",
+            quote: "HD Steth is transforming the way medicine is practiced at the point of care setting by enhancing the patient experience, saving time and costs while improving outcomes.",
+            initials: "DJ",
+            color: "bg-[#FA6404]"
+        },
+        {
+            name: "Dr. Thomas Krummel",
+            role: "MD, FACS, FAAP | Professor of Surgery, Stanford Byers Center for Biodesign",
+            quote: "HD Steth makes it simple to tag my high risk pediatric patients and screen for murmurs quickly and accurately at the point-of-care enhancing treatment. It moves the point of care from my office to anywhere.",
+            initials: "TK",
+            color: "bg-[#FA6404]"
+        },
+        {
+            name: "Dr. Ethiraj Raj",
+            role: "MD, FACC, FSCAI, FASNC | Cardiovascular Disease Specialist, Flint, Michigan",
+            quote: "The quality and intensity of heart sounds are phenomenal on HD Steth and it delivers the most impressive sound quality advancements in my last 40 years of stethoscope use. It is truly a giant leap forward in technology.",
+            initials: "ER",
+            color: "bg-[#FA6404]"
+        }
+    ];
+
     return (
         <section className="w-full py-20 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto">
@@ -507,22 +499,7 @@ const TestimonialsSection = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
-                    {[
-                        {
-                            name: "Dr. Sarah Chen",
-                            role: "Cardiologist",
-                            quote: "The audio clarity is unmatched. I can finally hear subtle murmurs that traditional stethoscopes miss.",
-                            initials: "SC",
-                            color: "bg-[#FA6404]"
-                        },
-                        {
-                            name: "Dr. Raj Patel",
-                            role: "General Physician",
-                            quote: "Recording and sharing with specialists has dramatically improved patient outcomes in my practice.",
-                            initials: "RP",
-                            color: "bg-[#FA6404]"
-                        }
-                    ].map((item, idx) => (
+                    {testimonials.map((item, idx) => (
                         <div key={idx} className="p-8 rounded-2xl border border-slate-100 shadow-lg shadow-slate-50 flex gap-4 hover:-translate-y-1 transition-transform">
                             <div className="shrink-0">
                                 <div className={`w-12 h-12 rounded-full ${item.color} text-white flex items-center justify-center font-bold text-lg`}>
@@ -534,7 +511,7 @@ const TestimonialsSection = () => {
                                 <p className="text-xs text-slate-400 font-bold uppercase tracking-wide mb-4">{item.role}</p>
                                 <p className="text-slate-600 italic leading-relaxed relative">
                                     <span className="text-4xl text-slate-200 absolute -top-4 -left-2 font-serif">&quot;</span>
-                                    {item.quote}&quot;
+                                    {item.quote}
                                 </p>
                             </div>
                         </div>
@@ -545,33 +522,7 @@ const TestimonialsSection = () => {
     );
 };
 
-const NeedAssistanceSection = () => {
-    return (
-        <section className="w-full px-6 md:px-12 pb-12 bg-white">
-            <div className="max-w-7xl mx-auto bg-[#101585] rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
-                {/* Background Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-800/30 rounded-full blur-3xl pointer-events-none"></div>
 
-                <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-lg shadow-[#FA6404]/30">
-                        <Headset size={32} />
-                    </div>
-
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Need Assistance?</h2>
-                    <p className="text-blue-200 max-w-2xl mx-auto mb-10 text-lg">
-                        Our expert support team is here to help. Get responses within 1 business day.
-                    </p>
-
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <button className="bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-3.5 rounded-lg font-bold transition-colors shadow-lg flex items-center gap-2">
-                            <Mail size={18} /> Email Support
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
 
 
 const ResourcesPage = () => {
@@ -586,9 +537,8 @@ const ResourcesPage = () => {
                 <CareMaintenanceSection />
                 <AccessoriesSection />
                 <FAQSection />
-                <WhatsInTheBoxAndWhySection />
+                <WhatsInTheBoxSection />
                 <TestimonialsSection />
-                <NeedAssistanceSection />
             </div>
 
         </div>
