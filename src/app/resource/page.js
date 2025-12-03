@@ -15,13 +15,6 @@ import {
     AlertTriangle,
     CheckCircle2,
     AlertCircle,
-    Facebook,
-    Twitter,
-    Linkedin,
-    Instagram,
-    Mail,
-    Phone,
-    MapPin,
     Download,
     ExternalLink,
     Disc,
@@ -32,11 +25,6 @@ import {
     Speaker,
     ChevronDown,
     ChevronUp,
-    Package,
-    Box,
-    Activity,
-    Quote,
-    Headset
 } from 'lucide-react';
 
 const ResourcesHero = () => {
@@ -45,7 +33,7 @@ const ResourcesHero = () => {
 
   return (
     <section
-      className="w-full py-28 px-8 md:px-12 overflow-hidden relative bg-cover bg-center bg-no-repeat"
+      className="w-full py-28 px-8 md:px-12 overflow-hidden relative bg-cover bg-center bg-no-repeat opacity-90"
       style={{ backgroundImage: `url(${backgroundImageUrl})` }}
     >
     

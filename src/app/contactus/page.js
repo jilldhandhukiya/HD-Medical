@@ -217,7 +217,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    countryCode: "+91",
+    countryCode: "+1",
     phone: "",
     message: ""
   });

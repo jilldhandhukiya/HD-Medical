@@ -8,13 +8,13 @@ const PRIMARY_ORANGE = '#FA6404';
 const TeamGroup = ({ title, members }) => (
   <div className="mb-24 last:mb-0 w-full">
     <h3 className="text-3xl md:text-4xl font-bold text-center mb-16" style={{ color: PRIMARY_BLUE }}>{title}</h3>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12 justify-items-center max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-12 justify-items-center max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
       {members.map((member, index) => (
-        <div key={index} className="flex flex-col items-center text-center max-w-[240px] group">
+        <div key={index} className="flex flex-col items-center text-center max-w-[260px] w-full group">
           {/* Circular Image */}
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-6 bg-gray-100 relative shadow-md border-4 border-white group-hover:border-orange-100 transition-all duration-300">
-            <Image 
-              src={member.image} 
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-4 bg-gray-100 relative shadow-md border-4 border-white group-hover:border-orange-100 transition-all duration-300 shrink-0">
+            <Image
+              src={member.image}
               alt={member.name}
               fill
               className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
@@ -23,22 +23,29 @@ const TeamGroup = ({ title, members }) => (
               onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.style.backgroundColor = '#e5e7eb'; }}
             />
           </div>
-          
-          {/* Name */}
-          <h4 className="text-xl font-bold mb-2 leading-tight" style={{ color: PRIMARY_ORANGE }}>
-            {member.name}
-          </h4>
-          
-          {/* Role */}
-          <p className="text-sm font-bold mb-3 min-h-[2.5rem] flex items-start justify-center leading-tight" style={{ color: PRIMARY_BLUE }}>
-            {member.position}
-          </p>
-          
-          {/* Bio/Description */}
-          {member.description && (
-            <p className="text-xs text-gray-600 leading-relaxed font-medium">
-              {member.description}
+
+          {/* Name - Fixed Height Container for Alignment on Desktop */}
+          {/* Using items-end on desktop to minimize visual gap between Name and Position */}
+          <div className="w-full h-auto md:h-[3.5rem] flex items-center md:items-end justify-center mb-1">
+            <h4 className="text-lg md:text-xl font-bold leading-tight" style={{ color: PRIMARY_ORANGE }}>
+              {member.name}
+            </h4>
+          </div>
+
+          {/* Role - Fixed Height Container for Alignment on Desktop */}
+          <div className="w-full h-auto md:h-[4.5rem] flex items-start justify-center mb-1">
+            <p className="text-sm font-bold leading-tight px-2" style={{ color: PRIMARY_BLUE }}>
+              {member.position}
             </p>
+          </div>
+
+          {/* Bio/Description - Fixed Height on Desktop */}
+          {member.description && (
+            <div className="w-full h-auto md:h-[4.5rem] flex items-start justify-center">
+              <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                {member.description}
+              </p>
+            </div>
           )}
         </div>
       ))}
@@ -89,7 +96,7 @@ const boardMembers = [
   },
   {
     name: "Arjun Malhotra",
-    position:" Board Member",
+    position: " Board Member",
     image: "/images/company/Arjun-Malhotra.png",
     description: "Co-Founder of HCL & Headstrong"
   },
@@ -120,7 +127,7 @@ const medicalAdvisors = [
     image: "/images/company/Dr Nelson.png"
   },
   {
-    name: "Dr Douglas R Johnston,",
+    name: "Dr Douglas R Johnston",
     position: "MD, Chief of Cardiac Surgery, \n Fellow: Cleveland Clinic",
     image: "/images/company/Dr Dougles.png"
   },
@@ -135,60 +142,12 @@ const medicalAdvisors = [
     image: "/images/company/Dr Wael.png"
   },
   {
-    name: "Dr. Raj E G",
+    name: "Dr. Ethiraj G. Raj",
     position: "MD, FACC, FSCAI, FASNC, Cardiologist, Hurley Medical Center, Michigan",
     image: "/images/company/Dr Raj.png"
   }
 ];
 
-// Section Component
-function Section({ title, people }) {
-  // Split people array into rows of 3
-  const rows = [];
-  for (let i = 0; i < people.length; i += 3) {
-    rows.push(people.slice(i, i + 3));
-  }
-
-  return (
-    <section className="bg-white w-full px-2 py-12 md:px-8 lg:px-24">
-      <div className="text-center mb-10">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 tracking-wide">
-          {title}
-        </h1>
-      </div>
-      <div className="w-full flex flex-col gap-8 items-center">
-        {rows.map((row, rowIdx) => (
-          <div
-            key={rowIdx}
-            className="w-full flex flex-wrap justify-center gap-8"
-          >
-            {row.map((person, idx) => (
-              <div
-                key={idx}
-                className="flex-1 min-w-[260px] max-w-[350px] flex justify-center"
-                style={{
-                  flexBasis: "calc(33.333% - 2rem)"
-                }}
-              >
-              </div>
-            ))}
-            {/* Fill empty spots for alignment if last row has < 3 cards */}
-            {row.length < 3 &&
-              Array.from({ length: 3 - row.length }).map((_, i) => (
-                <div
-                  key={`empty-${i}`}
-                  className="flex-1 min-w-[260px] max-w-[340px] flex justify-center invisible"
-                  style={{
-                    flexBasis: "calc(33.333% - 2rem)"
-                  }}
-                />
-              ))}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 export default function AboutUs() {
   return (
@@ -196,19 +155,19 @@ export default function AboutUs() {
       <br />
       <br />
       {/* Hero Section with Banner */}
-<section className="w-full relative h-screen md:h-[87vh] overflow-hidden flex items-center justify-center">        {/* Background Image */}
+      <section className="w-full relative h-screen md:h-[87vh] overflow-hidden flex items-center justify-center">        {/* Background Image */}
         {/* Background Image */}
         <Image
-          src="/images/About-Top.png" 
+          src="/images/About-Top.jpg"
           alt="We Work to Save Lives Banner"
           fill
-          className="object-cover absolute inset-0"
+          className="object-cover absolute inset-0 opacity-80"
           priority
         />
-        
+
         {/* Overlay for better text visibility */}
         <div className="absolute inset-0 bg-black/40"></div>
-        
+
         {/* Text Content */}
         <div className="relative z-10 flex items-center justify-center w-full h-full">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center px-4 leading-tight">
@@ -217,48 +176,88 @@ export default function AboutUs() {
         </div>
       </section>
 
-      
 
-        <section id="about-details" className="py-20 bg-gradient-to-b from-white to-blue-50/30">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <div className="inline-flex items-center justify-center p-3 mb-6 bg-blue-50 rounded-full">
-              <svg className="w-6 h-6 text-[#101585]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
+
+      <section id="about-details" className="py-20 bg-gradient-to-b from-white to-blue-50/30">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center justify-center p-3 mb-6 bg-blue-50 rounded-full">
+            <svg className="w-6 h-6 text-[#101585]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About HD Medical</h2>
+          <div className="w-24 h-1 bg-[#101585] mx-auto mb-8 rounded-full"></div>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light">
+            <span className="font-semibold text-[#101585]">HD Medical</span> is a global leader in the detection and management of cardiovascular disease.
+            We create clinically validated devices and software that put powerful diagnostic tools into the
+            hands of clinicians — delivering fast, reliable, evidence-based information at the point of care.
+            Our solutions are designed to improve outcomes, streamline workflows and help save lives.
+          </p>
+        </div>
+      </section>
+
+      {/* Vision & Mission Section */}
+      <section className="w-full py-16 md:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-10 items-center">
+
+            {/* Left: Vision (Aligns Right towards image on Desktop) */}
+            <div className="flex flex-col items-center lg:items-end text-center lg:text-right space-y-6 order-1">
+              <h3 className="text-3xl md:text-5xl font-bold text-[#101585]">Our Vision</h3>
+              <p className="text-slate-600 leading-relaxed max-w-lg font-medium text-lg md:text-xl">
+                To be a global leader in innovative,
+                high-precision medical devices that
+                empower healthcare professionals
+                and improve patient outcomes through
+                advanced technology, uncompromising
+                quality and continuous innovation.
+              </p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About HD Medical</h2>
-            <div className="w-24 h-1 bg-[#101585] mx-auto mb-8 rounded-full"></div>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light">
-              <span className="font-semibold text-[#101585]">HD Medical</span> is a global leader in the detection and management of cardiovascular disease.
-              We create clinically validated devices and software that put powerful diagnostic tools into the
-              hands of clinicians — delivering fast, reliable, evidence-based information at the point of care.
-              Our solutions are designed to improve outcomes, streamline workflows and help save lives.
-            </p>
-          </div>
-        </section>
 
-        {/* Vision & Mission Section */}
-        <section className="mt-16 w-full">
-          <div className="max-w-6xl mx-auto px-4">
-            <Image
-              src="/images/Vision-Mission.png"
-              alt="Vision and Mission"
-              width={1400}
-              height={800}
-              className="w-full h-auto object-contain"
-              priority
-            />
-          </div>
-        </section>
+            {/* Center: Image Graphic */}
+            <div className="flex justify-center items-center order-2 py-8 lg:py-0">
+              <div className="relative w-[200px] h-[380px] md:w-[240px] md:h-[480px]">
+                <Image
+                  src="/images/VM_pages-to-jpg-0001.jpg" // Replace this with your cut-out center graphic
+                  alt="Vision and Mission Graphic"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
 
-        {/* Leadership Team */}
-        <section className="py-20 bg-white w-full">
-           <TeamGroup title="Our Leadership" members={leadership} />
-           <div className="w-full h-px bg-gray-100 my-16 max-w-4xl mx-auto"></div>
-           <TeamGroup title="Board Members" members={boardMembers} />
-           <div className="w-full h-px bg-gray-100 my-16 max-w-4xl mx-auto"></div>
-           <TeamGroup title="Medical Advisors" members={medicalAdvisors} />
-        </section>
-    </>
+            {/* Right: Mission (Aligns Left away from image on Desktop) */}
+            <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 order-3">
+              <h3 className="text-3xl md:text-5xl font-bold text-[#FA6404]">Our Mission</h3>
+              <div className="space-y-6 text-slate-600 leading-relaxed max-w-lg font-medium text-lg md:text-xl">
+                <p>
+                  At HD Medical, we are dedicated to designing,
+                  developing, manufacturing and delivering
+                  innovative healthcare technology. We strive to
+                  exceed customer expectations by maintaining
+                  the highest quality standards, adhering to
+                  global regulatory requirements and fostering a
+                  culture of innovation, integrity and service.
+                </p>
+                <p>
+                  Through our commitment to excellence, we aim
+                  to make healthcare more accurate, accessible and
+                  efficient worldwide.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Team */}
+      <section className="py-20 bg-white w-full">
+        <TeamGroup title="Our Leadership" members={leadership} />
+        <div className="w-full h-px bg-gray-100 my-16 max-w-4xl mx-auto"></div>
+        <TeamGroup title="Board Members" members={boardMembers} />
+        <div className="w-full h-px bg-gray-100 my-16 max-w-4xl mx-auto"></div>
+        <TeamGroup title="Medical Advisors" members={medicalAdvisors} />
+      </section>
+    </> 
   );
 }

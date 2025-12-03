@@ -433,8 +433,8 @@ export default function ProductHero() {
       <section className="w-full py-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-start">
-            <span className="text-[#FA6404] font-bold tracking-wider uppercase text-sm md:text-base mb-4">INSTANT CARDIAC INSIGHTS. ANYTIME.</span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold" style={{ color: PRIMARY_BLUE, lineHeight: 1.1 }}>HD Steth – The Intelligent Stethoscope</h1>
+            <h1 className="text-5xl md:text-6xl lg:text-6xl font-extrabold" style={{ color: PRIMARY_BLUE, lineHeight: 1.1 }}>HD Steth™ <br /> INSTANT CARDIAC INSIGHTS  <span className="text-[#FA6404] font-bold tracking-wider uppercase "> ANYTIME.</span>
+            </h1>
             <p className="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
               Experience the next generation of cardiac auscultation with HD Steth&apos;s intelligent technology.
             </p>
@@ -444,7 +444,7 @@ export default function ProductHero() {
           </div>
 
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden shadow-2xl">
-            <Image src="/images/blackladydocProductpage.jpg" alt="Doctor using HD Steth" fill className="object-cover" priority />
+            <Image src="/images/fda_section_image.jpg" alt="Doctor using HD Steth" fill className="object-cover" priority />
           </div>
         </div>
       </section>
@@ -452,22 +452,23 @@ export default function ProductHero() {
       {/* Controls / Central Image */}
       <section className="w-full bg-white px-4 py-12">
         <div className="max-w-[1400px] mx-auto flex flex-col items-center justify-center text-center">
-          <div className="mb-8">
-            <Image src="/images/hd-steth-controls-heading.png" alt="HD Steth Controls" width={700} height={300} className="mx-auto w-auto h-auto max-w-full" />
-          </div>
+          
 
           <div className="relative w-full flex justify-center">
             <div className="w-full max-w-4xl md:max-w-6xl lg:max-w-[1300px]">
               <div className="relative aspect-[16/11]">
-                <Image 
-                  src="/images/hd-controls.png" 
-                  alt="HD Steth Device with Labels" 
-                  fill 
-                  className="object-contain" 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1300px" 
-                  priority 
+                <Image
+                  src="/images/hd-controls.png"
+                  alt="HD Steth Device with Labels"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1300px"
+                  priority
                 />
               </div>
+              <button onClick={() => window.location.href = '/resource'} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-bold text-sm shadow-lg transition-all hover:-translate-y-0.5">
+                Known More
+              </button>
             </div>
           </div>
         </div>
@@ -571,8 +572,8 @@ export default function ProductHero() {
             {intelligentItems.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                 >
                   <div className="flex items-center gap-4 mb-4">
@@ -659,19 +660,19 @@ export default function ProductHero() {
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: PRIMARY_BLUE }}>
         <div className="max-w-7xl mx-auto text-center flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8" style={{ color: '#ffffff' }}>
-            Seamless EHR Integration
+            EHR Integration Support
           </h2>
 
-            <p className="text-xl md:text-2xl leading-relaxed text-center max-w-5xl mb-12 font-medium" style={{ color: '#ffffff' }}>
-              HD Steth App has an open APK that can be integrated into providers&apos; EHR systems. It enables critical cardiac data to be seamlessly transferred into EHRs.
-            </p>
+          <p className="text-xl md:text-2xl leading-relaxed text-center max-w-5xl mb-12 font-medium" style={{ color: '#ffffff' }}>
+            HD Steth App has an open APK that can be integrated into providers&apos; EHR systems. It enables critical cardiac data to be seamlessly transferred into EHRs.
+          </p>
 
-            <button
-              className="px-10 py-4 rounded-lg text-lg font-bold tracking-wide transition-transform hover:scale-105 shadow-lg border-2"
-              style={{ backgroundColor: '#FA6404', color: '#ffffff', borderColor: `${PRIMARY_ORANGE}` }}
-            >
-              KNOW MORE
-            </button>
+          <button
+            className="px-10 py-4 rounded-lg text-lg font-bold tracking-wide transition-transform hover:scale-105 shadow-lg border-2"
+            style={{ backgroundColor: '#FA6404', color: '#ffffff', borderColor: `${PRIMARY_ORANGE}` }}
+          >
+            KNOW MORE
+          </button>
         </div>
       </section>
 
@@ -910,7 +911,7 @@ export default function ProductHero() {
           </div>
 
           <button className="mt-16 px-12 py-4 rounded-lg text-xl font-bold shadow-xl transition-all hover:bg-gray-100 hover:shadow-2xl" style={{ backgroundColor: 'white', color: primaryBlue }}
-          onClick={() => window.location.href = '/resource'}>
+            onClick={() => window.location.href = '/resource'}>
             Get HD Steth Now
           </button>
         </div>
