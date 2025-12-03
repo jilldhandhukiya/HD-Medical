@@ -1,24 +1,24 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import {  Mail, Phone, MapPin } from 'lucide-react'
+import { Mail } from 'lucide-react'
 
 export default function Footer() {
   return (
     <footer className="w-full bg-[#101585] text-white pt-16 pb-8 px-6 md:px-12 relative overflow-hidden">
-      
+
       {/* Background Pattern (subtle circles) */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
-         <div className="absolute top-0 left-0 w-full h-full" style={{
-             backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
-             backgroundSize: '30px 30px'
-         }}></div>
+        <div className="absolute top-0 left-0 w-full h-full" style={{
+          backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
+          backgroundSize: '30px 30px'
+        }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Grid: 1 col mobile, 2 cols tablet, 4 cols desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
-          
+
           {/* Col 1: Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center">
@@ -31,7 +31,9 @@ export default function Footer() {
               />
             </Link>
             <p className="text-blue-200 text-sm leading-relaxed max-w-xs">
-              Revolutionizing cardiac diagnostics with intelligent stethoscope technology for better patient care.
+              Revolutionizing diagnostics with
+              instant cardiac insights at point of
+              care for improved patient outcomes.
             </p>
           </div>
 
@@ -58,26 +60,30 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Contact Us */}
-          <div>
-             <h4 className="text-lg font-bold mb-6 text-white">Contact Us</h4>
-             <div className="space-y-4 text-blue-200 text-sm">
-               <div className="flex items-start gap-3">
-                 <Mail size={18} className="mt-0.5 text-[#FA6404] shrink-0" />
-                 <span className="break-all">info@hdmedicalgroup.com</span>
-               </div>
-             </div>
-          </div>
+                <div>
+                <h4 className="text-lg font-bold mb-6 text-white">Contact Us</h4>
+                <div className="space-y-4 text-blue-200 text-sm">
+                  <a
+                  href="mailto:info@hdmedicalgroup.com"
+                  className="flex items-start gap-3 hover:text-white transition-colors"
+                  aria-label="Email info@hdmedicalgroup.com"
+                  >
+                  <Mail size={18} className="mt-0.5 text-[#FA6404] shrink-0" />
+                  <span className="break-all">info@hdmedicalgroup.com</span>
+                  </a>
+                </div>
+                </div>
 
-          {/* Col 4: Stay Updated */}
+                {/* Col 4: Stay Updated */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-white">Stay Updated</h4>
             <p className="text-blue-200 text-sm mb-4">
               Subscribe to our newsletter for the latest updates and cardiac care insights.
             </p>
             <div className="space-y-3">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
+              <input
+                type="email"
+                placeholder="Your email address"
                 className="w-full px-4 py-3 rounded bg-blue-900/40 border border-blue-800 text-white placeholder-blue-400 focus:outline-none focus:border-[#FA6404] transition-colors text-sm"
               />
               <button className="w-full bg-[#FA6404] hover:bg-orange-600 text-white py-3 rounded font-bold text-sm transition-colors">
