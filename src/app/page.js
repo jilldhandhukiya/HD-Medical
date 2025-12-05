@@ -489,12 +489,26 @@ const VideoSection = () => {
       <div className="relative max-w-5xl mx-auto">
 
         <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ">
-          <Image
-            src="/images/Youtube-Banner.jpg" // Replace with your actual image path
-            alt="HD Steth Demo"
-            fill
-            className="object-cover"
-          />
+          <a 
+            href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block w-full h-full relative group"
+          >
+            <Image
+              src="/images/Youtube-Banner.jpg" // Replace with your actual image path
+              alt="HD Steth Demo"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center pl-1 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 md:w-10 md:h-10 text-[#FA6404]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M10 8.64V15.36L15.36 12 10 8.64zm0-2.64L18.36 12 10 18.36V6.72z"/>
+                </svg>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
