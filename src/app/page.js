@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {
   ArrowRight,
   X,
+  Play,
 } from 'lucide-react';
 
 const MailingListPopup = () => {
@@ -477,36 +478,48 @@ const ProductDetailSection = () => {
 const VideoSection = () => {
   return (
     <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-white">
-      <div className="text-center max-w-3xl mx-auto mb-16">
+      <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-[#101585] mb-4">
           Instant cardiac insights. <span className="text-[#FA6404]">Anytime.</span>
         </h2>
-        <p className="text-slate-500 text-lg md:text-xl leading-relaxed">
+        <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-8">
           Experience the future of cardiac diagnostics with real-time insights delivered at the point of care.
         </p>
+        
+        <a 
+          href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition-all hover:-translate-y-1 shadow-lg shadow-orange-200"
+        >
+          <Play size={20} fill="currentColor" />
+          Watch Demo
+        </a>
       </div>
 
       <div className="relative max-w-5xl mx-auto">
-
-        <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ">
+        <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl group">
           <a 
             href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
             target="_blank" 
-            // rel="noopener noreferrer"
-            className="block w-full h-full relative group"
+            rel="noopener noreferrer"
+            className="block w-full h-full relative"
           >
             <Image
               src="/images/Youtube-Banner.jpg" // Replace with your actual image path
               alt="HD Steth Demo"
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
-              {/* <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center pl-1 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 md:w-10 md:h-10 text-[#FA6404]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M10 8.64V15.36L15.36 12 10 8.64zm0-2.64L18.36 12 10 18.36V6.72z"/>
-                </svg>
-              </div> */}
+            
+            {/* Overlay Label */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors duration-300">
+                <div className="bg-white/90 backdrop-blur px-6 py-3 rounded-full flex items-center gap-3 shadow-xl transform transition-transform duration-300 group-hover:scale-110">
+                    <Play size={24} className="text-[#FA6404] fill-[#FA6404]" />
+                    <span className="text-[#101585] font-bold text-lg">
+                      Watch on Youtube
+                    </span>
+                </div>
             </div>
           </a>
         </div>
