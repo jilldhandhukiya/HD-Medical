@@ -492,7 +492,7 @@ const VideoSection = () => {
           <a 
             href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
             target="_blank" 
-            rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             className="block w-full h-full relative group"
           >
             <Image
@@ -502,11 +502,11 @@ const VideoSection = () => {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center pl-1 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              {/* <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center pl-1 shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 md:w-10 md:h-10 text-[#FA6404]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M10 8.64V15.36L15.36 12 10 8.64zm0-2.64L18.36 12 10 18.36V6.72z"/>
                 </svg>
-              </div>
+              </div> */}
             </div>
           </a>
         </div>
