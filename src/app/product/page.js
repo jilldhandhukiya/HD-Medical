@@ -475,13 +475,8 @@ export default function ProductHero() {
       </section>
 
       {/* Key Listening Modes & Signal Processing */}
-      <section className="w-full py-10 px-6 md:px-12 lg:px-20 bg-gray-50">
+      <section className="w-full py-10 px-6 md:px-12 lg:px-20 bg-[#101585]">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-8 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold" style={{ color: primaryOrange }}>Key Listening Modes & Signal Processing</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto mt-2">Carefully designed audio processing and listening modes to maximise clinical fidelity.</p>
-          </div>
-
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
               <div className="flex items-start gap-4">
@@ -685,7 +680,7 @@ export default function ProductHero() {
             <div className="max-w-4xl">
               <h3 className="text-lg md:text-xl font-semibold text-gray-600">SEE WHAT YOU HEAR</h3>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mt-3 mb-4" style={{ color: PRIMARY_BLUE }}>
-                SEE WHAT YOU COULD NOT HEAR
+                SEE WHAT YOU DID NOT HEAR
               </h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                 HD Steth uses a custom App that runs on smartphones and tablets. It connects via Bluetooth and simultaneously displays HS waveforms and single‑lead ECG — empowering faster, evidence‑based decisions.
