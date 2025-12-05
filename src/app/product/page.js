@@ -681,15 +681,20 @@ export default function ProductHero() {
 </section>
 
       {/* Additional product boxes (Battery, Ergonomic, App, Electrodes) */}
-      <section className="w-full py-4 bg-white"> {/* reduced top spacing */}
-  <div className="max-w-7xl mx-auto px-0"> {/* removed left-right padding */}
-    
+     <section className="w-full py-4 bg-white">
+  <div className="max-w-7xl mx-auto px-0">
+
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-2">
 
       {/* CARD 1 */}
       <div
-        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100"
-        style={{ borderTop: "6px solid #FA6404" }}
+        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
+        style={{
+          borderTop: "6px solid #FA6404",
+          borderLeft: "2px solid #FA6404",
+          borderRight: "2px solid #FA6404",
+          borderBottom: "2px solid #FA6404"
+        }}
       >
         <div className="flex items-start gap-4">
           <div
@@ -702,6 +707,7 @@ export default function ProductHero() {
             <h4 className="text-lg md:text-xl font-semibold text-gray-900">Battery Life</h4>
           </div>
         </div>
+
         <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
           Rechargeable Li-ion battery that provides up to 5 days of use on a single charge.
         </p>
@@ -709,8 +715,13 @@ export default function ProductHero() {
 
       {/* CARD 2 */}
       <div
-        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100"
-        style={{ borderTop: "6px solid #FA6404" }}
+        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
+        style={{
+          borderTop: "6px solid #FA6404",
+          borderLeft: "2px solid #FA6404",
+          borderRight: "2px solid #FA6404",
+          borderBottom: "2px solid #FA6404"
+        }}
       >
         <div className="flex items-start gap-4">
           <div
@@ -723,6 +734,7 @@ export default function ProductHero() {
             <h4 className="text-lg md:text-xl font-semibold text-gray-900">Ergonomic Form Factor</h4>
           </div>
         </div>
+
         <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
           Traditional stethoscope look and feel. Full control panel can be managed with one hand.
         </p>
@@ -730,8 +742,13 @@ export default function ProductHero() {
 
       {/* CARD 3 */}
       <div
-        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100"
-        style={{ borderTop: "6px solid #FA6404" }}
+        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
+        style={{
+          borderTop: "6px solid #FA6404",
+          borderLeft: "2px solid #FA6404",
+          borderRight: "2px solid #FA6404",
+          borderBottom: "2px solid #FA6404"
+        }}
       >
         <div className="flex items-start gap-4">
           <div
@@ -744,6 +761,7 @@ export default function ProductHero() {
             <h4 className="text-lg md:text-xl font-semibold text-gray-900">Customised App</h4>
           </div>
         </div>
+
         <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
           Bluetooth enabled App which displays heart sound and ECG waveforms and has integrated data management.
         </p>
@@ -751,8 +769,13 @@ export default function ProductHero() {
 
       {/* CARD 4 */}
       <div
-        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100"
-        style={{ borderTop: "6px solid #FA6404" }}
+        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
+        style={{
+          borderTop: "6px solid #FA6404",
+          borderLeft: "2px solid #FA6404",
+          borderRight: "2px solid #FA6404",
+          borderBottom: "2px solid #FA6404"
+        }}
       >
         <div className="flex items-start gap-4">
           <div
@@ -765,6 +788,7 @@ export default function ProductHero() {
             <h4 className="text-lg md:text-xl font-semibold text-gray-900">Three Integrated Electrodes</h4>
           </div>
         </div>
+
         <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
           Three gold plated electrodes around the chest piece, which provides superior conductivity for better signal acquisition.
         </p>
@@ -1105,7 +1129,9 @@ export default function ProductHero() {
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: primaryBlue }}>
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">HD Steth – The Ideal Solution for All Clinicians</h2>
-          <h3 className="text-white text-2xl md:text-3xl font-semibold text-center mb-16 opacity-90">Screen. Monitor. Help Diagnose.</h3>
+<h3 className="text-[#FA6404] text-5xl md:text-5xl font-semibold text-center mb-16 opacity-90">
+  Screen. Monitor. Help Diagnose.
+</h3>
 
           <div className="flex flex-wrap justify-center gap-6 w-full">
             {features.map((feature, index) => (
