@@ -401,11 +401,6 @@ export default function ProductHero() {
   // prepare items array (place this inside ProductHero, before the JSX return)
   const intelligentItems = [
     {
-      icon: Stethoscope,
-      title: "Integrated ECG",
-      text: "HD Steth is the third‑generation solution from HD Medical — the first intelligent stethoscope with integrated triple‑electrode ECG."
-    },
-    {
       icon: Zap,
       title: "Patented Audio Tech",
       text: "Leverages patented noise cancellation and smart amplification for high‑fidelity auscultation."
@@ -467,7 +462,7 @@ export default function ProductHero() {
                 />
               </div>
               <button onClick={() => window.location.href = '/resource'} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-bold text-sm shadow-lg transition-all hover:-translate-y-0.5">
-                Known More
+                Know More
               </button>
             </div>
           </div>
@@ -555,38 +550,64 @@ export default function ProductHero() {
 
       {/* HD Steth - Intelligent Solution (Corrected Section) */}
       <section className="w-full py-16 px-6 md:px-12 lg:px-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12 text-center">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: PRIMARY_ORANGE }}>
-              HD Steth: Intelligent Solution for Cardiac Care
-            </h3>
-            <div className="w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: PRIMARY_BLUE }}></div>
-          </div>
+      <div className="max-w-7xl mx-auto">
 
-          <div className="flex flex-wrap justify-center gap-6">
-            {intelligentItems.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm" style={{ backgroundColor: PRIMARY_BLUE }}>
-                      <Icon className="w-7 h-7 text-white" />
-                    </div>
-                    <h4 className="text-xl font-bold text-gray-900 leading-tight">{item.title}</h4>
-                  </div>
+    {/* --- UPDATED HEADER WITH IMAGE LIKE YOUR REFERENCE --- */}
+    <div className="flex flex-col md:flex-row items-center justify-between mb-12">
+      {/* Text */}
+      <div className="text-center md:text-left">
+        <h3
+          className="text-3xl md:text-4xl font-bold mb-4"
+          style={{ color: PRIMARY_ORANGE }}
+        >
+          HD Steth is the third-generation solution from HD Medical - the first intelligent stethoscope with integrated triple electrode ECG.
+        </h3>
+      </div>
 
-                  <p className="text-gray-600 leading-relaxed text-base">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
+      {/* Image on Right */}
+      <img
+        src="images/chip.jpg"
+        alt="demo"
+        className="w-28 md:w-36 lg:w-40 h-auto mt-6 md:mt-0"
+      />
+    </div>
+
+    {/* --- CARDS (NOW 4 PER ROW) --- */}
+
+      <div className="flex flex-wrap justify-between gap-6 ">
+      {intelligentItems.map((item, idx) => {
+        const Icon = item.icon;
+        return (
+          <div
+            key={idx}
+            className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col 
+            w-full 
+            md:w-[calc(50%-12px)] 
+            lg:w-[calc(25%-18px)]"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm"
+                style={{ backgroundColor: PRIMARY_BLUE }}
+              >
+                <Icon className="w-7 h-7 text-white" />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 leading-tight">
+                {item.title}
+              </h4>
+            </div>
+
+            <p className="text-gray-600 leading-relaxed text-base">
+              {item.text}
+            </p>
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+    </div>
+</section>
+
+
 
       {/* Additional product boxes (Battery, Ergonomic, App, Electrodes) */}
       <section className="w-full py-6 px-6 md:px-12 lg:px-20 bg-white">
@@ -651,26 +672,7 @@ export default function ProductHero() {
         </div>
       </section>
 
-      {/* SECTION 1: EHR Integration*/}
-      <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: PRIMARY_BLUE }}>
-        <div className="max-w-7xl mx-auto text-center flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8" style={{ color: '#ffffff' }}>
-            EHR Integration Support
-          </h2>
-
-          <p className="text-xl md:text-2xl leading-relaxed text-center max-w-5xl mb-12 font-medium" style={{ color: '#ffffff' }}>
-            HD Steth App has an open APK that can be integrated into providers&apos; EHR systems. It enables critical cardiac data to be seamlessly transferred into EHRs.
-          </p>
-
-          <button
-            className="px-10 py-4 rounded-lg text-lg font-bold tracking-wide transition-transform hover:scale-105 shadow-lg border-2"
-            style={{ backgroundColor: '#FA6404', color: '#ffffff', borderColor: `${PRIMARY_ORANGE}` }}
-          >
-            KNOW MORE
-          </button>
-        </div>
-      </section>
-
+      
       {/* Centered App Showcase */}
       <section className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto">
@@ -884,6 +886,27 @@ export default function ProductHero() {
 
         </div>
       </section>
+      {/* SECTION 1: EHR Integration*/}
+      <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: PRIMARY_BLUE }}>
+        <div className="max-w-7xl mx-auto text-center flex flex-col items-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8" style={{ color: '#ffffff' }}>
+            EHR Integration Support
+          </h2>
+
+          <p className="text-xl md:text-2xl leading-relaxed text-center max-w-5xl mb-12 font-medium" style={{ color: '#ffffff' }}>
+            HD Steth App has an open APK that can be integrated into providers&apos; EHR systems. It enables critical cardiac data to be seamlessly transferred into EHRs.
+          </p>
+
+          <button
+            className="px-12 py-4 rounded-lg text-xl font-bold tracking-wide transition-transform hover:scale-105 shadow-lg border-2"
+            style={{ backgroundColor: '#FA6404', color: '#ffffff', borderColor: `${PRIMARY_ORANGE}` }}
+          >
+            KNOW MORE
+          </button>
+
+        </div>
+      </section>
+
 
       {/* SECTION 2: Ideal Solution */}
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: primaryBlue }}>
