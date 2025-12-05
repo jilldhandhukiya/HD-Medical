@@ -154,29 +154,31 @@ export default function AboutUs() {
     <>
       <br />
       <br />
-      {/* Hero Section with Banner */}
-      <section className="w-full relative h-screen md:h-[87vh] overflow-hidden flex items-center justify-center">        {/* Background Image */}
-        {/* Background Image */}
-        <Image
-          src="/images/About-Top.jpg"
-          alt="We Work to Save Lives Banner"
-          fill
-          className="object-cover absolute inset-0 opacity-80"
-          priority
-        />
+      {/* Hero Section */}
+      <section className="w-full py-12 md:py-24 bg-white flex items-center justify-center">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Text Content */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#101585] leading-tight">
+                We Work to <br className="hidden lg:block" />
+                Save Lives
+              </h1>
+            </div>
 
-        {/* Overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black/40"></div>
-
-        {/* Text Content */}
-        <div className="relative z-10 flex items-center justify-center w-full h-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center px-4 leading-tight">
-            We Work to Save Lives
-          </h1>
+            {/* Image */}
+            <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] order-1 md:order-2">
+              <Image
+                src="/images/About-Top.jpg"
+                alt="We Work to Save Lives"
+                fill
+                className="object-contain md:object-cover rounded-xl"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
-
-
 
       <section id="about-details" className="py-20 bg-gradient-to-b from-white to-blue-50/30">
         <div className="max-w-4xl mx-auto px-6 text-center">

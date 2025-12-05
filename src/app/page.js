@@ -11,9 +11,10 @@ const MailingListPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Show popup after 3 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 20000); // 20 seconds
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -22,36 +23,34 @@ const MailingListPopup = () => {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm transition-opacity duration-300">
-      <div className="relative w-full max-w-[850px] bg-white shadow-2xl flex flex-col md:flex-row border-[4px] border-[#555555]">
-
-        {/* Close Button */}
+      <div className="relative w-full max-w-[800px] bg-white shadow-2xl flex flex-col md:flex-row overflow-hidden rounded-lg">
+        
         <button
           onClick={() => setIsVisible(false)}
-          className="absolute top-3 right-3 z-20 p-1 text-gray-400 hover:text-gray-800 transition-colors"
+          className="absolute top-2 right-2 z-20 p-1 text-gray-400 hover:text-gray-600 transition-colors"
           aria-label="Close popup"
         >
-          <X size={24} />
+          <X size={20} />
         </button>
 
-        {/* Left Image Section */}
-        <div className="w-full md:w-[45%] relative min-h-[220px] md:min-h-auto bg-white flex items-center justify-center p-6">
-          <div className="relative w-full h-48 md:h-64">
-            {/* Replace with the specific image showing two devices as in your design */}
+        {/* Image Section */}
+        <div className="w-full md:w-[40%] relative bg-white flex items-center justify-center p-4 md:p-0">
+          <div className="relative w-full h-48 md:h-full min-h-[200px]">
             <Image
               src="/images/Device-F-B.png"
               alt="HD Steth Devices"
               fill
-              className="object-contain"
+              className="object-contain p-4"
             />
           </div>
         </div>
 
-        {/* Right Content Section */}
-        <div className="w-full md:w-[55%] p-8 md:py-12 md:pr-12 flex flex-col justify-center items-center md:items-start text-center md:text-left bg-white">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-1 uppercase tracking-tight">
+        {/* Content Section */}
+        <div className="w-full md:w-[60%] p-6 md:p-8 flex flex-col justify-center items-center md:items-start text-center md:text-left bg-white">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-1 uppercase tracking-tight leading-none">
             JOIN OUR MAILING LIST
           </h2>
-          <p className="text-gray-500 text-base md:text-lg mb-8 font-medium">
+          <p className="text-gray-500 text-sm md:text-base mb-6 font-medium">
             Sign Up for exclusive updates
           </p>
 
@@ -59,12 +58,12 @@ const MailingListPopup = () => {
             <input
               type="email"
               placeholder="enter your email address"
-              className="w-full bg-[#e0e0e0] text-gray-800 px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm md:text-base placeholder:text-gray-500"
+              className="w-full bg-[#e0e0e0] text-gray-800 px-4 py-2.5 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm placeholder:text-gray-500"
               required
             />
             <button
               type="submit"
-              className="w-full sm:w-auto bg-[#F58220] hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-full transition-colors shadow-sm whitespace-nowrap"
+              className="w-full sm:w-auto bg-[#F58220] hover:bg-orange-600 text-white font-bold px-6 py-2.5 rounded-full transition-colors shadow-sm whitespace-nowrap text-sm"
             >
               Submit
             </button>
@@ -317,7 +316,7 @@ const HeroSection = () => {
           Transform <br className="hidden lg:block" />
           Cardiac <br className="hidden lg:block" />
           Care with <br className="hidden lg:block" />
-          <span className="text-[#FA6404]">HD Steth™</span>
+          <span>HD Steth™</span>
         </h1>
 
         {/* Features List - Centered block on mobile, Left on Desktop */}
@@ -441,9 +440,7 @@ const ProductDetailSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left Content */}
           <div className="space-y-6">
-            {/* Tag */}
             <h4 className="text-[#FA6404] font-bold text-2xl md:text-xl tracking-wide">
               Next-Generation Cardiac Intelligence
             </h4>
@@ -458,14 +455,15 @@ const ProductDetailSection = () => {
             </p>
           </div>
 
-          {/* Right Image Composition */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[100vh] aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#fdf6ba]">
+            <div className="relative w-full rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#fdf6ba]">
               <Image
                 src="/images/diagnosis.jpg"
                 alt="Doctor holding heart model"
-                className="w-full h-auto object-fit opacity-90"
-                fill
+                width={0}
+                height={0}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto"
               />
             </div>
           </div>

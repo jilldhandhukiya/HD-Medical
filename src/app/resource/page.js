@@ -32,23 +32,32 @@ const ResourcesHero = () => {
   const backgroundImageUrl = "/images/Resources.jpg";
 
   return (
-    <section
-      className="w-full py-28 px-8 md:px-12 overflow-hidden relative bg-cover bg-center bg-no-repeat opacity-90"
-      style={{ backgroundImage: `url(${backgroundImageUrl})` }}
-    >
-    
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-          {/* Left Content */}
-          <div className="space-y-6">
-              <div className="w-16 h-1 bg-[#FA6404] mb-6"></div>
-              <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
-                  HD Steth <br/>
-                  <span className="text-[#FA6404]">Resources</span>
-              </h1>
-              <p className="text-blue-100 text-lg md:text-xl max-w-lg leading-relaxed font-light">
-                  Revolutionizing auscultation with cutting-edge technology and unparalleled precision. Access all your essential guides and tools here.
-              </p>
+    <section className="w-full py-12 md:py-24 bg-white flex items-center justify-center">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* Text Content */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1 space-y-6">
+            {/* <div className="w-16 h-1 bg-[#FA6404] mb-2"></div> */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#101585] leading-tight">
+              HD Steth <br />
+              <span className="text-[#FA6404]">Resources</span>
+            </h1>
+            <p className="text-slate-600 text-lg md:text-xl max-w-lg">
+              Revolutionizing auscultation with cutting-edge technology and unparalleled precision. Access all your essential guides and tools here.
+            </p>
           </div>
+
+          {/* Image */}
+          <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] order-1 md:order-2">
+            <Image
+              src={backgroundImageUrl}
+              alt="HD Steth Resources"
+              fill
+              className="object-contain md:object-cover rounded-xl"
+              priority
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
