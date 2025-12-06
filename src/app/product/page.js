@@ -3,8 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import {
   Shield, Activity, Volume2, Cloud, Stethoscope, Smartphone, User, BatteryFull,
   Weight, ShieldCheck, ChevronDown, ChevronUp, Monitor, Globe, Zap, Leaf,
-  Menu, X, Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin,
-  Heart, Users, Target, ArrowRight, Check, Filter
+  Heart, Users, Target, ArrowRight, Check
 } from "lucide-react";
 import Image from "next/image";
 
@@ -429,16 +428,16 @@ export default function ProductHero() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-start">
             <h1
-              className="text-6xl md:text-7xl lg:text-6xl font-extrabold"
+              className="text-5xl md:text-7xl lg:text-6xl font-extrabold"
               style={{ color: PRIMARY_BLUE, lineHeight: 1.1 }}
             >
-              <span className="text-8xl md:text-9xl lg:text-7xl font-extrabold">
+              <span className="text-5xl md:text-9xl lg:text-7xl font-extrabold">
                 HD Steth™
               </span>
               <br />
-              Instant Cardiac Isights. <br></br>   
+              Instant Cardiac Insights. <br></br>
               <span className="text-[#FA6404] font-bold tracking-wider">
-                 Anytime.
+                Anytime.
               </span>
             </h1>
 
@@ -458,13 +457,12 @@ export default function ProductHero() {
       </section>
 
       {/* Controls / Central Image */}
-      <section className="w-full bg-white px-4 py-12">
+      <section className="w-full bg-white px-2 py-2">
         <div className="max-w-[1400px] mx-auto flex flex-col items-center justify-center text-center">
-          
 
           <div className="relative w-full flex justify-center">
-            <div className="w-full max-w-4xl md:max-w-6xl lg:max-w-[1300px]">
-              <div className="relative aspect-[16/11]">
+            <div className="w-full max-w-xl md:max-w-6xl lg:max-w-[1300px]">
+              <div className="relative lg:aspect-[16/11] aspect-[12/11] ">
                 <Image
                   src="/images/hd-controls.png"
                   alt="HD Steth Device with Labels"
@@ -474,7 +472,8 @@ export default function ProductHero() {
                   priority
                 />
               </div>
-              <button onClick={() => window.location.href = '/resource'} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-bold text-sm shadow-lg transition-all hover:-translate-y-0.5">
+              <br /> <br />
+              <button onClick={() => window.location.href = '/resource'} className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 bg-[#FA6404] hover:bg-orange-600 text-white px-10 py-2 sm:px-8 sm:py-3 rounded-lg font-bold text-xs sm:text-sm shadow-lg transition-all hover:-translate-y-0.5">
                 Know More
               </button>
             </div>
@@ -482,351 +481,349 @@ export default function ProductHero() {
         </div>
       </section>
 
-{/* Key Listening Modes & Signal Processing */}
-<section className="w-full py-8 bg-[#101585]"> {/* reduced top spacing + full width */}
-  <div className="max-w-7xl mx-auto px-0"> {/* remove horizontal padding */}
-
-    <div className="flex flex-col md:flex-row gap-6">
-
-      {/* CARD 1 */}
-      <div
-        className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all"
-        style={{ borderTop: "6px solid #FA6404" }}
-      >
-        <div className="flex items-start gap-4">
-          <div
-            className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white"
-            style={{ backgroundColor: primaryBlue }}
-          >
-            <Image
-              src="/icons/product/7-bestin-audio-qlipty-w.png"
-              alt="Smart amplification icon"
-              width={40}
-              height={40}
-              className="object-contain"
-            />
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-gray-900">Smart amplification</h4>
-            <p className="text-sm text-gray-600 mt-2">
-              Delivers best in class clarity of Heart sounds. Smart amplification is better than high amplification.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* CARD 2 */}
-      <div
-        className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all"
-        style={{ borderTop: "6px solid #FA6404" }}
-      >
-        <div className="flex items-start gap-4">
-          <div
-            className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white"
-            style={{ backgroundColor: primaryBlue }}
-          >
-            <Image
-              src="/icons/product/noise-cancelation-w.png"
-              alt="Active noise cancellation icon"
-              width={40}
-              height={40}
-              className="object-contain"
-            />
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-gray-900">Active Noise cancellation</h4>
-            <p className="text-sm text-gray-600 mt-2">
-              Blocks ambient noise to provide superior listening experience, so you can focus on vital body sounds.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* CARD 3 */}
-      <div
-        className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all"
-        style={{ borderTop: "6px solid #FA6404" }}
-      >
-        <div className="flex items-start gap-4">
-          <div
-            className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white"
-            style={{ backgroundColor: primaryBlue }}
-          >
-            <Image
-              src="/icons/product/3-crystlclear-hs-w.png"
-              alt="Advanced filtering icon"
-              width={40}
-              height={40}
-              className="object-contain"
-            />
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-gray-900">Advanced filtering</h4>
-            <p className="text-sm text-gray-600 mt-2">
-              Two precise filtering modes. Bell for lower frequency sounds (HS/Murmur). Dia for higher frequency sounds (bowel).
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* CARD 4 */}
-      <div
-        className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all"
-        style={{ borderTop: "6px solid #FA6404" }}
-      >
-        <div className="flex items-start gap-4">
-          <div
-            className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white"
-            style={{ backgroundColor: primaryBlue }}
-          >
-            <Image
-              src="/icons/product/4-smart-amplification-exp-auscltatn-w.png"
-              alt="Pulmonary icon"
-              width={35}
-              height={35}
-              className="object-contain"
-            />
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-gray-900">Pulmonary</h4>
-            <p className="text-sm text-gray-600 mt-2">
-              Dedicated listening mode to capture the full spectrum of Lung sounds. Toggling between modes is a simple press of a button.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-{/* HD Steth - Intelligent Solution (Corrected Section) */}
-<section className="w-full py-16 bg-slate-50">
-
-  {/* SECTION 1 – Image + Text */}
-  <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-    <div className="flex flex-col md:flex-row items-center justify-between mb-12">
-      <h3
-        className="text-3xl md:text-4xl font-bold mb-4"
-        style={{ color: PRIMARY_ORANGE }}
-      >
-        HD Steth is the third-generation solution from HD Medical – 
-        the first intelligent stethoscope with integrated triple electrode ECG.
-      </h3>
-
-      <img
-        src="images/chip.jpg"
-        alt="demo"
-        className="w-28 md:w-36 lg:w-40 h-auto mt-6 md:mt-0"
-      />
-    </div>
-  </div>
-
-  {/* SECTION 2 – FULL WIDTH BLUE BACKGROUND */}
-  <div className="w-full py-14" style={{ backgroundColor: "#101585" }}>
-    <div className="max-w-7xl mx-auto flex flex-wrap justify-between gap-6 px-0 md:px-0 lg:px-0">
-
-      {intelligentItems.slice(0, 4).map((item, idx) => {
-        const Icon = item.icon;
-        return (
-          <div
-            key={idx}
-            className="bg-white rounded-xl p-8 shadow-md border border-gray-200 
-            hover:shadow-xl hover:-translate-y-1 transition-all duration-300
-            w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
-            style={{
-              borderTop: "6px solid #FA6404",
-              borderRadius: "12px",
-            }}
-          >
-            <div className="flex items-center gap-4 mb-4">
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm"
-                style={{ backgroundColor: PRIMARY_BLUE }}
-              >
-                <Icon className="w-7 h-7 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-gray-900 leading-tight">{item.title}</h4>
-            </div>
-
-            <p className="text-gray-600 leading-relaxed text-base">{item.text}</p>
-          </div>
-        );
-      })}
-
-    </div>
-  </div>
-
-  {/* SECTION 3 – SECOND ROW OF 4 CARDS */}
-  <div className="max-w-7xl mx-auto mt-10 flex flex-wrap justify-between gap-6 px-6 md:px-12 lg:px-20">
-    {intelligentItems.slice(4, 8).map((item, idx) => {
-      const Icon = item.icon;
-      return (
-        <div
-          key={idx}
-          className="bg-white rounded-xl p-8 shadow-md border border-gray-200 
-          hover:shadow-xl hover:-translate-y-1 transition-all duration-300 
-          w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
-          style={{
-            borderTop: "6px solid #FA6404",
-            borderRadius: "12px",
-          }}
-        >
-          <div className="flex items-center gap-4 mb-4">
+      {/* Key Listening Modes & Signal Processing */}
+      <section className="w-full py-8 bg-[#101585]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-0">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+            {/* CARD 1 */}
             <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm"
-              style={{ backgroundColor: PRIMARY_BLUE }}
+              className="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all"
+              style={{ borderTop: "6px solid #FA6404" }}
             >
-              <Icon className="w-7 h-7 text-white" />
+              <div className="flex flex-col items-center md:items-start gap-3 md:gap-4">
+                <div
+                  className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white"
+                  style={{ backgroundColor: primaryBlue }}
+                >
+                  <Image
+                    src="/icons/product/7-bestin-audio-qlipty-w.png"
+                    alt="Smart amplification icon"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center md:text-left">
+                  <h4 className="text-base md:text-lg font-semibold text-gray-900">Smart amplification</h4>
+                  <p className="text-xs md:text-sm text-gray-600 mt-2">
+                    Delivers best in class clarity of Heart sounds. Smart amplification is better than high amplification.
+                  </p>
+                </div>
+              </div>
             </div>
-            <h4 className="text-xl font-bold text-gray-900 leading-tight">{item.title}</h4>
+
+            {/* CARD 2 */}
+            <div
+              className="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all"
+              style={{ borderTop: "6px solid #FA6404" }}
+            >
+              <div className="flex flex-col items-center md:items-start gap-3 md:gap-4">
+                <div
+                  className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white"
+                  style={{ backgroundColor: primaryBlue }}
+                >
+                  <Image
+                    src="/icons/product/noise-cancelation-w.png"
+                    alt="Active noise cancellation icon"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center md:text-left">
+                  <h4 className="text-base md:text-lg font-semibold text-gray-900">Active Noise cancellation</h4>
+                  <p className="text-xs md:text-sm text-gray-600 mt-2">
+                    Blocks ambient noise to provide superior listening experience, so you can focus on vital body sounds.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CARD 3 */}
+            <div
+              className="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all"
+              style={{ borderTop: "6px solid #FA6404" }}
+            >
+              <div className="flex flex-col items-center md:items-start gap-3 md:gap-4">
+                <div
+                  className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white"
+                  style={{ backgroundColor: primaryBlue }}
+                >
+                  <Image
+                    src="/icons/product/3-crystlclear-hs-w.png"
+                    alt="Advanced filtering icon"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center md:text-left">
+                  <h4 className="text-base md:text-lg font-semibold text-gray-900">Advanced filtering</h4>
+                  <p className="text-xs md:text-sm text-gray-600 mt-2">
+                    Two precise filtering modes. Bell for lower frequency sounds (HS/Murmur). Dia for higher frequency sounds (bowel).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CARD 4 */}
+            <div
+              className="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all"
+              style={{ borderTop: "6px solid #FA6404" }}
+            >
+              <div className="flex flex-col items-center md:items-start gap-3 md:gap-4">
+                <div
+                  className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white"
+                  style={{ backgroundColor: primaryBlue }}
+                >
+                  <Image
+                    src="/icons/product/4-smart-amplification-exp-auscltatn-w.png"
+                    alt="Pulmonary icon"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center md:text-left">
+                  <h4 className="text-base md:text-lg font-semibold text-gray-900">Pulmonary</h4>
+                  <p className="text-xs md:text-sm text-gray-600 mt-2">
+                    Dedicated listening mode to capture the full spectrum of Lung sounds. Toggling between modes is a simple press of a button.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <p className="text-gray-600 leading-relaxed text-base">{item.text}</p>
         </div>
-      );
-    })}
+      </section>
 
-  </div>
-</section>
+      {/* HD Steth - Intelligent Solution (Corrected Section) */}
+      <section className="w-full py-16 bg-slate-50">
+
+         {/* SECTION 1 – Image + Text */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 mb-12">
+            <h3
+              className="text-3xl md:text-4xl font-bold text-center md:text-left flex-1"
+              style={{ color: PRIMARY_ORANGE }}
+            >
+              HD Steth is the third-generation solution from HD Medical –
+              the first intelligent stethoscope with integrated triple electrode ECG.
+            </h3>
+
+            <div className="w-32 md:w-40 lg:w-48 flex-shrink-0">
+              <Image
+                src="/images/chip.jpg"
+                alt="demo"
+                width={250}
+                height={205}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* SECTION 2 – FULL WIDTH BLUE BACKGROUND */}
+        <div className="w-full py-14" style={{ backgroundColor: "#101585" }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {intelligentItems.slice(0, 4).map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-200 
+      hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    style={{
+                      borderTop: "6px solid #FA6404",
+                      borderRadius: "12px",
+                    }}
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <div
+                        className="w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center shadow-sm"
+                        style={{ backgroundColor: PRIMARY_BLUE }}
+                      >
+                        <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                      </div>
+                      <h4 className="text-lg md:text-xl font-bold text-gray-900 leading-tight">{item.title}</h4>
+                    </div>
+
+                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* SECTION 3 – SECOND ROW OF 4 CARDS */}
+        <div className="max-w-7xl mx-auto mt-10 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {intelligentItems.slice(4, 8).map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="mx-4 md:mx-0 bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-200 
+            hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  style={{
+                    borderTop: "6px solid #FA6404",
+                    borderRadius: "12px",
+                  }}
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div
+                      className="w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center shadow-sm"
+                      style={{ backgroundColor: PRIMARY_BLUE }}
+                    >
+                      <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                    </div>
+                    <h4 className="text-lg md:text-xl font-bold text-gray-900 leading-tight">{item.title}</h4>
+                  </div>
+
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">{item.text}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        
+      </section>
 
       {/* Additional product boxes (Battery, Ergonomic, App, Electrodes) */}
-     <section className="w-full py-4 bg-white">
-  <div className="max-w-7xl mx-auto px-0">
+      <section className="w-full py-4 bg-white">
+        <div className="max-w-7xl mx-auto px-0">
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-2">
 
-      {/* CARD 1 */}
-      <div
-        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
-        style={{
-          borderTop: "6px solid #FA6404",
-          borderLeft: "2px solid #FA6404",
-          borderRight: "2px solid #FA6404",
-          borderBottom: "2px solid #FA6404"
-        }}
-      >
-        <div className="flex items-start gap-4">
-          <div
-            className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden"
-            style={{ backgroundColor: PRIMARY_BLUE }}
-          >
-            <Image src="/icons/product/b5-battery-life-w.png" alt="Battery Life" width={40} height={40} className="object-contain" />
-          </div>
-          <div className="flex-1">
-            <h4 className="text-lg md:text-xl font-semibold text-gray-900">Battery Life</h4>
+            {/* CARD 1 */}
+            <div
+              className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
+              style={{
+                borderTop: "6px solid #FA6404",
+                borderLeft: "2px solid #FA6404",
+                borderRight: "2px solid #FA6404",
+                borderBottom: "2px solid #FA6404"
+              }}
+            >
+              <div className="flex items-start gap-4">
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden"
+                  style={{ backgroundColor: PRIMARY_BLUE }}
+                >
+                  <Image src="/icons/product/b5-battery-life-w.png" alt="Battery Life" width={40} height={40} className="object-contain" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-gray-900">Battery Life</h4>
+                </div>
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
+                Rechargeable Li-ion battery that provides up to 5 days of use on a single charge.
+              </p>
+            </div>
+
+            {/* CARD 2 */}
+            <div
+              className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
+              style={{
+                borderTop: "6px solid #FA6404",
+                borderLeft: "2px solid #FA6404",
+                borderRight: "2px solid #FA6404",
+                borderBottom: "2px solid #FA6404"
+              }}
+            >
+              <div className="flex items-start gap-4">
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden"
+                  style={{ backgroundColor: PRIMARY_BLUE }}
+                >
+                  <Image src="/icons/product/b8-3intgrted-leads-w.png" alt="Ergonomic Form Factor" width={40} height={40} className="object-contain" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-gray-900">Ergonomic Form Factor</h4>
+                </div>
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
+                Traditional stethoscope look and feel. Full control panel can be managed with one hand.
+              </p>
+            </div>
+
+            {/* CARD 3 */}
+            <div
+              className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
+              style={{
+                borderTop: "6px solid #FA6404",
+                borderLeft: "2px solid #FA6404",
+                borderRight: "2px solid #FA6404",
+                borderBottom: "2px solid #FA6404"
+              }}
+            >
+              <div className="flex items-start gap-4">
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden"
+                  style={{ backgroundColor: PRIMARY_BLUE }}
+                >
+                  <Image src="/icons/product/6-Femilr-steth-frm-fctr-w.png" alt="Customised App" width={40} height={40} className="object-contain" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-gray-900">Customised App</h4>
+                </div>
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
+                Bluetooth enabled App which displays heart sound and ECG waveforms and has integrated data management.
+              </p>
+            </div>
+
+            {/* CARD 4 */}
+            <div
+              className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
+              style={{
+                borderTop: "6px solid #FA6404",
+                borderLeft: "2px solid #FA6404",
+                borderRight: "2px solid #FA6404",
+                borderBottom: "2px solid #FA6404"
+              }}
+            >
+              <div className="flex items-start gap-4">
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden"
+                  style={{ backgroundColor: PRIMARY_BLUE }}
+                >
+                  <Image src="/icons/product/1-Intl-steth-ekg-leads-w.png" alt="Three Integrated Electrodes" width={40} height={40} className="object-contain" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-gray-900">Three Integrated Electrodes</h4>
+                </div>
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
+                Three gold plated electrodes around the chest piece, which provides superior conductivity for better signal acquisition.
+              </p>
+            </div>
+
           </div>
         </div>
+      </section>
 
-        <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
-          Rechargeable Li-ion battery that provides up to 5 days of use on a single charge.
-        </p>
-      </div>
 
-      {/* CARD 2 */}
-      <div
-        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
-        style={{
-          borderTop: "6px solid #FA6404",
-          borderLeft: "2px solid #FA6404",
-          borderRight: "2px solid #FA6404",
-          borderBottom: "2px solid #FA6404"
-        }}
-      >
-        <div className="flex items-start gap-4">
-          <div
-            className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden"
-            style={{ backgroundColor: PRIMARY_BLUE }}
-          >
-            <Image src="/icons/product/b8-3intgrted-leads-w.png" alt="Ergonomic Form Factor" width={40} height={40} className="object-contain" />
-          </div>
-          <div className="flex-1">
-            <h4 className="text-lg md:text-xl font-semibold text-gray-900">Ergonomic Form Factor</h4>
-          </div>
-        </div>
-
-        <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
-          Traditional stethoscope look and feel. Full control panel can be managed with one hand.
-        </p>
-      </div>
-
-      {/* CARD 3 */}
-      <div
-        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
-        style={{
-          borderTop: "6px solid #FA6404",
-          borderLeft: "2px solid #FA6404",
-          borderRight: "2px solid #FA6404",
-          borderBottom: "2px solid #FA6404"
-        }}
-      >
-        <div className="flex items-start gap-4">
-          <div
-            className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden"
-            style={{ backgroundColor: PRIMARY_BLUE }}
-          >
-            <Image src="/icons/product/6-Femilr-steth-frm-fctr-w.png" alt="Customised App" width={40} height={40} className="object-contain" />
-          </div>
-          <div className="flex-1">
-            <h4 className="text-lg md:text-xl font-semibold text-gray-900">Customised App</h4>
-          </div>
-        </div>
-
-        <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
-          Bluetooth enabled App which displays heart sound and ECG waveforms and has integrated data management.
-        </p>
-      </div>
-
-      {/* CARD 4 */}
-      <div
-        className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
-        style={{
-          borderTop: "6px solid #FA6404",
-          borderLeft: "2px solid #FA6404",
-          borderRight: "2px solid #FA6404",
-          borderBottom: "2px solid #FA6404"
-        }}
-      >
-        <div className="flex items-start gap-4">
-          <div
-            className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden"
-            style={{ backgroundColor: PRIMARY_BLUE }}
-          >
-            <Image src="/icons/product/1-Intl-steth-ekg-leads-w.png" alt="Three Integrated Electrodes" width={40} height={40} className="object-contain" />
-          </div>
-          <div className="flex-1">
-            <h4 className="text-lg md:text-xl font-semibold text-gray-900">Three Integrated Electrodes</h4>
-          </div>
-        </div>
-
-        <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2 ml-16">
-          Three gold plated electrodes around the chest piece, which provides superior conductivity for better signal acquisition.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-      
       {/* Centered App Showcase */}
       <section className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center gap-8">
-          <h2 className="text-6xl md:text-6xl font-extrabold text-[#101585]">
-  HD Steth Bluetooth Enabled APP
-</h2>
+            <h2 className="text-6xl md:text-6xl font-extrabold text-[#101585]">
+              HD Steth Bluetooth Enabled APP
+            </h2>
 
 
             <div className="max-w-4xl">
               <h3 className="text-4xl md:text-2l font-bold ">SEE WHAT YOU HEAR</h3>
               <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold mt-3 mb-4">
-  <span style={{ color: PRIMARY_BLUE }}>SEE WHAT YOU </span>
-  <span style={{ color: '#FA6404' }}>DID NOT HEAR</span>
-</h2>
+                <span style={{ color: PRIMARY_BLUE }}>SEE WHAT YOU </span>
+                <span style={{ color: '#FA6404' }}>DID NOT HEAR</span>
+              </h2>
 
               <p className="text-lg md:text-xl text-bold  max-w-3xl mx-auto">
                 HD Steth uses a custom App that runs on smartphones and tablets. It connects via Bluetooth and simultaneously displays HS waveforms and single‑lead ECG — empowering faster, evidence‑based decisions.
@@ -834,148 +831,148 @@ export default function ProductHero() {
             </div>
 
             {/* App Screens Section (Matches Screenshot) */}
-<div className="w-full flex flex-col items-center mt-12">
+            <div className="w-full flex flex-col items-center mt-12">
 
-  {/* 4 Images Grid */}
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
+              {/* 4 Images Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
 
-  <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
-    <Image
-      src="/images/ss1.jpg"
-      alt="app screenshot 1"
-      width={800}
-      height={600}
-      className="w-full h-full object-cover"
-    />
-  </div>
+                <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/ss1.jpg"
+                    alt="app screenshot 1"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-  <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
-    <Image
-      src="/images/ss2.jpeg"
-      alt="app screenshot 2"
-      width={800}
-      height={600}
-      className="w-full h-full object-cover"
-    />
-  </div>
+                <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/ss2.jpeg"
+                    alt="app screenshot 2"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-  <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
-    <Image
-      src="/images/ss3.jpeg"
-      alt="app screenshot 3"
-      width={800}
-      height={600}
-      className="w-full h-full object-cover"
-    />
-  </div>
+                <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/ss3.jpeg"
+                    alt="app screenshot 3"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-  <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
-    <Image
-      src="/images/ss4.jpg"
-      alt="app screenshot 4"
-      width={800}
-      height={600}
-      className="w-full h-full object-cover"
-    />
-  </div>
+                <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/ss4.jpg"
+                    alt="app screenshot 4"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-</div>
+              </div>
 
 
-  {/* Bullet points below images */}
-  <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm md:text-base text-gray-600 font-medium">
-    
-    <span>Live HS + ECG</span>
-    <span className="hidden sm:block">•</span>
+              {/* Bullet points below images */}
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm md:text-base text-gray-600 font-medium">
 
-    <span>Bluetooth • Real-time</span>
-    <span className="hidden sm:block">•</span>
+                <span>Live HS + ECG</span>
+                <span className="hidden sm:block">•</span>
 
-    <span>Save • Share • Export</span>
-  </div>
-</div>
+                <span>Bluetooth • Real-time</span>
+                <span className="hidden sm:block">•</span>
+
+                <span>Save • Share • Export</span>
+              </div>
+            </div>
 
 
             {/* Content cards below images */}
-<div className="w-full max-w-5xl mx-auto mt-10">
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="w-full max-w-5xl mx-auto mt-10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-    {/* CARD 1 */}
-    <div
-      className="bg-white rounded-3xl p-6 flex flex-col items-center text-center"
-      style={{
-        border: "2px solid #FA6404",
-      }}
-    >
-      <Image
-        src="/icons/product/b7-customized-app-b.png" // replace with your logo
-        alt="Complements the Device"
-        width={50}
-        height={50}
-        className="mb-4"
-      />
+                {/* CARD 1 */}
+                <div
+                  className="bg-white rounded-3xl p-6 flex flex-col items-center text-center"
+                  style={{
+                    border: "2px solid #FA6404",
+                  }}
+                >
+                  <Image
+                    src="/icons/product/b7-customized-app-b.png" // replace with your logo
+                    alt="Complements the Device"
+                    width={50}
+                    height={50}
+                    className="mb-4"
+                  />
 
-      <h4 className="text-lg font-semibold text-gray-900 mb-2">
-        Complements the Device
-      </h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                    Complements the Device
+                  </h4>
 
-      <p className="text-sm text-gray-700">
-        HD Steth App mirrors most functionality of the device and extends
-        portability for clinicians.
-      </p>
-    </div>
+                  <p className="text-sm text-gray-700">
+                    HD Steth App mirrors most functionality of the device and extends
+                    portability for clinicians.
+                  </p>
+                </div>
 
-    {/* CARD 2 */}
-    <div
-      className="bg-white rounded-3xl p-6 flex flex-col items-center text-center"
-      style={{
-        border: "2px solid #FA6404",
-      }}
-    >
-      <Image
-        src="/icons/product/patient-trusst-b.png" // replace with your logo
-        alt="HS + ECG Together"
-        width={50}
-        height={50}
-        className="mb-4"
-      />
+                {/* CARD 2 */}
+                <div
+                  className="bg-white rounded-3xl p-6 flex flex-col items-center text-center"
+                  style={{
+                    border: "2px solid #FA6404",
+                  }}
+                >
+                  <Image
+                    src="/icons/product/patient-trusst-b.png" // replace with your logo
+                    alt="HS + ECG Together"
+                    width={50}
+                    height={50}
+                    className="mb-4"
+                  />
 
-      <h4 className="text-lg font-semibold text-gray-900 mb-2">
-        HS + ECG Together
-      </h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                    HS + ECG Together
+                  </h4>
 
-      <p className="text-sm text-gray-700">
-        Simultaneous HS and ECG waveforms provide validation and speed up
-        clinical diagnosis.
-      </p>
-    </div>
+                  <p className="text-sm text-gray-700">
+                    Simultaneous HS and ECG waveforms provide validation and speed up
+                    clinical diagnosis.
+                  </p>
+                </div>
 
-    {/* CARD 3 */}
-    <div
-      className="bg-white rounded-3xl p-6 flex flex-col items-center text-center"
-      style={{
-        border: "2px solid #FA6404",
-      }}
-    >
-      <Image
-        src="/icons/product/noise-cancelation-b.png" // replace with your logo
-        alt="Wireless Transmission"
-        width={50}
-        height={50}
-        className="mb-4"
-      />
+                {/* CARD 3 */}
+                <div
+                  className="bg-white rounded-3xl p-6 flex flex-col items-center text-center"
+                  style={{
+                    border: "2px solid #FA6404",
+                  }}
+                >
+                  <Image
+                    src="/icons/product/noise-cancelation-b.png" // replace with your logo
+                    alt="Wireless Transmission"
+                    width={50}
+                    height={50}
+                    className="mb-4"
+                  />
 
-      <h4 className="text-lg font-semibold text-gray-900 mb-2">
-        Wireless Transmission
-      </h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                    Wireless Transmission
+                  </h4>
 
-      <p className="text-sm text-gray-700">
-        Real-time Bluetooth streaming to phones/tablets for instant review.
-      </p>
-    </div>
+                  <p className="text-sm text-gray-700">
+                    Real-time Bluetooth streaming to phones/tablets for instant review.
+                  </p>
+                </div>
 
-  </div>
-</div>
+              </div>
+            </div>
 
 
             <div className="mt-8 flex justify-center">
@@ -996,19 +993,19 @@ export default function ProductHero() {
           <h3 className="text-5xl md:text-5xl font-bold text-center mb-8" style={{ color: PRIMARY_BLUE }}>
             HD Steth App Features
           </h3>
-           {/* FEATURES IMAGE */}
-              <div className="w-full flex justify-center">
-                <Image
-                  src="/images/features.png" 
-                  alt="HD Steth Features"
-                  width={2000}
-                  height={1200}
-                  className="w-full max-w-6xl object-contain"
-                />
-              </div>
-              <div>
+          {/* FEATURES IMAGE */}
+          <div className="w-full flex justify-center">
+            <Image
+              src="/images/features.png"
+              alt="HD Steth Features"
+              width={2000}
+              height={1200}
+              className="w-full max-w-6xl object-contain"
+            />
+          </div>
+          <div>
 
-              </div>
+          </div>
 
           {/* Row 1: Boxes 1 & 2 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -1132,34 +1129,34 @@ export default function ProductHero() {
 
 
       {/* HD Steth System – Closed Loop of Cardiac Care */}
-<section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-white">
-  <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+      <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-white">
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
 
-    {/* Heading */}
-    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: PRIMARY_BLUE }}>
-      HD Steth System – Closed Loop of Cardiac Care
-    </h2>
+          {/* Heading */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: PRIMARY_BLUE }}>
+            HD Steth System – Closed Loop of Cardiac Care
+          </h2>
 
-    {/* Description */}
-      <p className="text-lg md:text-xl text-gray-700 max-w-4xl mb-12 leading-relaxed">
-      About 90% of healthcare providers in USA are using EHR systems to manage their patients
-      medical information. Having the ability to transfer patients medical records to the EHR 
-      significantly improves clinicians efficiency and improves patients outcomes.
-     </p>
+          {/* Description */}
+          <p className="text-lg md:text-xl text-gray-700 max-w-4xl mb-12 leading-relaxed">
+            About 90% of healthcare providers in USA are using EHR systems to manage their patients
+            medical information. Having the ability to transfer patients medical records to the EHR
+            significantly improves clinicians efficiency and improves patients outcomes.
+          </p>
 
-        {/* Flow Image (Replace with your actual flow.png) */}
-        <div className="w-full flex justify-center">
-          <Image
-            src="/images/flow.png"   // <-- replace with your flow image
-            alt="HD Steth Closed Loop Flow"
-            width={1800}
-            height={1000}
-            className="w-full max-w-6xl object-contain"
-          />
+          {/* Flow Image (Replace with your actual flow.png) */}
+          <div className="w-full flex justify-center">
+            <Image
+              src="/images/flow.png"   // <-- replace with your flow image
+              alt="HD Steth Closed Loop Flow"
+              width={1600}
+              height={800}
+              className="w-full max-w-6xl object-contain"
+            />
+          </div>
+
         </div>
-
-      </div>
-    </section>
+      </section>
 
       {/* SECTION 1: EHR Integration*/}
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: PRIMARY_BLUE }}>
@@ -1186,10 +1183,10 @@ export default function ProductHero() {
       {/* SECTION 2: Ideal Solution */}
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: primaryBlue }}>
         <div className="max-w-7xl mx-auto flex flex-col items-center">
-                <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">HD Steth – The Ideal Solution for All Clinicians</h2>
-      <h3 className="text-[#FA6404] text-5xl md:text-5xl font-semibold text-center mb-16 opacity-90">
-        Screen. Monitor. Help Diagnose.
-      </h3>
+          <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">HD Steth – The Ideal Solution for All Clinicians</h2>
+          <h3 className="text-[#FA6404] text-5xl md:text-5xl font-semibold text-center mb-16 opacity-90">
+            Screen. Monitor. Help Diagnose.
+          </h3>
 
           <div className="flex flex-wrap justify-center gap-6 w-full">
             {features.map((feature, index) => (
