@@ -966,11 +966,11 @@ export default function ProductHero() {
 
 
             <div className="mt-8 flex justify-center">
-              <button
-                className="px-12 py-3 rounded-full text-white font-bold shadow-xl transform hover:scale-105 transition"
+              <button onClick={() => window.location.href = '/resource'}
+                className="px-12 py-3 rounded-md text-white font-bold shadow-xl transform hover:scale-105 transition"
                 style={{ background: `linear-gradient(90deg, ${PRIMARY_ORANGE}, #ff7a2f)` }}
               >
-                Learn More
+                Get the App
               </button>
             </div>
           </div>
@@ -980,9 +980,22 @@ export default function ProductHero() {
       {/* App Screens & Details */}
       <section className="w-full py-16 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8" style={{ color: PRIMARY_BLUE }}>
-            App Screens & Details
-          </h2>
+          <h3 className="text-5xl md:text-5xl font-bold text-center mb-8" style={{ color: PRIMARY_BLUE }}>
+            HD Steth App Features
+          </h3>
+           {/* FEATURES IMAGE */}
+              <div className="w-full flex justify-center">
+                <Image
+                  src="/images/features.png" 
+                  alt="HD Steth Features"
+                  width={2000}
+                  height={1200}
+                  className="w-full max-w-6xl object-contain"
+                />
+              </div>
+              <div>
+
+              </div>
 
           {/* Row 1: Boxes 1 & 2 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -1103,6 +1116,38 @@ export default function ProductHero() {
 
         </div>
       </section>
+
+
+      {/* HD Steth System – Closed Loop of Cardiac Care */}
+<section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-white">
+  <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+
+    {/* Heading */}
+    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: PRIMARY_BLUE }}>
+      HD Steth System – Closed Loop of Cardiac Care
+    </h2>
+
+    {/* Description */}
+      <p className="text-lg md:text-xl text-gray-700 max-w-4xl mb-12 leading-relaxed">
+      About 90% of healthcare providers in USA are using EHR systems to manage their patients
+      medical information. Having the ability to transfer patients medical records to the EHR 
+      significantly improves clinicians efficiency and improves patients outcomes.
+     </p>
+
+        {/* Flow Image (Replace with your actual flow.png) */}
+        <div className="w-full flex justify-center">
+          <Image
+            src="/images/flow.png"   // <-- replace with your flow image
+            alt="HD Steth Closed Loop Flow"
+            width={1800}
+            height={1000}
+            className="w-full max-w-6xl object-contain"
+          />
+        </div>
+
+      </div>
+    </section>
+
       {/* SECTION 1: EHR Integration*/}
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: PRIMARY_BLUE }}>
         <div className="max-w-7xl mx-auto text-center flex flex-col items-center">
@@ -1114,7 +1159,7 @@ export default function ProductHero() {
             HD Steth App has an open APK that can be integrated into providers&apos; EHR systems. It enables critical cardiac data to be seamlessly transferred into EHRs.
           </p>
 
-          <button
+          <button onClick={() => window.location.href = '/resource'}
             className="px-12 py-4 rounded-lg text-xl font-bold tracking-wide transition-transform hover:scale-105 shadow-lg border-2"
             style={{ backgroundColor: '#FA6404', color: '#ffffff', borderColor: `${PRIMARY_ORANGE}` }}
           >
@@ -1128,10 +1173,10 @@ export default function ProductHero() {
       {/* SECTION 2: Ideal Solution */}
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: primaryBlue }}>
         <div className="max-w-7xl mx-auto flex flex-col items-center">
-          <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">HD Steth – The Ideal Solution for All Clinicians</h2>
-<h3 className="text-[#FA6404] text-5xl md:text-5xl font-semibold text-center mb-16 opacity-90">
-  Screen. Monitor. Help Diagnose.
-</h3>
+                <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">HD Steth – The Ideal Solution for All Clinicians</h2>
+      <h3 className="text-[#FA6404] text-5xl md:text-5xl font-semibold text-center mb-16 opacity-90">
+        Screen. Monitor. Help Diagnose.
+      </h3>
 
           <div className="flex flex-wrap justify-center gap-6 w-full">
             {features.map((feature, index) => (
