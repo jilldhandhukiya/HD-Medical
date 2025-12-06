@@ -428,8 +428,21 @@ export default function ProductHero() {
       <section className="w-full py-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-start">
-            <h1 className="text-5xl md:text-6xl lg:text-6xl font-extrabold" style={{ color: PRIMARY_BLUE, lineHeight: 1.1 }}>HD Steth™ <br /> INSTANT CARDIAC INSIGHTS  <span className="text-[#FA6404] font-bold tracking-wider uppercase "> ANYTIME.</span>
+            <h1
+              className="text-6xl md:text-7xl lg:text-6xl font-extrabold"
+              style={{ color: PRIMARY_BLUE, lineHeight: 1.1 }}
+            >
+              <span className="text-8xl md:text-9xl lg:text-7xl font-extrabold">
+                HD Steth™
+              </span>
+              <br />
+              Instant Cardiac Isights. <br></br>   
+              <span className="text-[#FA6404] font-bold tracking-wider">
+                 Anytime.
+              </span>
             </h1>
+
+
             <p className="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
               Experience the next generation of cardiac auscultation with HD Steth&apos;s intelligent technology.
             </p>
