@@ -28,39 +28,39 @@ import {
 } from 'lucide-react';
 
 const ResourcesHero = () => {
-  // place the provided image in public/images/resources-hero-bg.jpg (or update the path below)
-  const backgroundImageUrl = "/images/Resources.jpg";
+    // place the provided image in public/images/resources-hero-bg.jpg (or update the path below)
+    const backgroundImageUrl = "/images/Resources.jpg";
 
-  return (
-    <section className="w-full py-12 md:py-24 bg-white flex items-center justify-center">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Text Content */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1 space-y-6">
-            {/* <div className="w-16 h-1 bg-[#FA6404] mb-2"></div> */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#101585] leading-tight">
-              HD Steth <br />
-              <span className="text-[#FA6404]">Resources</span>
-            </h1>
-            <p className="text-slate-600 text-lg md:text-xl max-w-lg">
-              Revolutionizing auscultation with cutting-edge technology and unparalleled precision. Access all your essential guides and tools here.
-            </p>
-          </div>
+    return (
+        <section className="w-full py-12 md:py-24 bg-white flex items-center justify-center">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
+                    {/* Text Content */}
+                    <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1 space-y-6">
+                        {/* <div className="w-16 h-1 bg-[#FA6404] mb-2"></div> */}
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#101585] leading-tight">
+                            HD Steth <br />
+                            <span className="text-[#FA6404]">Resources</span>
+                        </h1>
+                        <p className="text-slate-600 text-lg md:text-xl max-w-lg">
+                            Revolutionizing auscultation with cutting-edge technology and unparalleled precision. Access all your essential guides and tools here.
+                        </p>
+                    </div>
 
-          {/* Image */}
-          <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] order-1 md:order-2">
-            <Image
-              src={backgroundImageUrl}
-              alt="HD Steth Resources"
-              fill
-              className="object-contain md:object-cover rounded-xl"
-              priority
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+                    {/* Image */}
+                    <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] order-1 md:order-2">
+                        <Image
+                            src={backgroundImageUrl}
+                            alt="HD Steth Resources"
+                            fill
+                            className="object-contain md:object-cover rounded-xl"
+                            priority
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 const EssentialResourcesSection = () => {
@@ -71,7 +71,7 @@ const EssentialResourcesSection = () => {
             desc: "Step-by-step setup in under 5 minutes",
             action: "Download PDF",
             type: "pdf",
-            file: "/docs/HDSteth-Quick Start Guide-FB-27July2024.pdf" 
+            file: "/docs/HDSteth-Quick Start Guide-FB-27July2024.pdf"
         },
         {
             icon: <Smartphone size={28} />,
@@ -106,23 +106,16 @@ const EssentialResourcesSection = () => {
     ];
 
     return (
-        <section className="w-full py-24 px-6 md:px-12 bg-white">
+        <section className="w-full py-12 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16">
-                    {/* ... (Header remains the same) ... */}
-                </div>
 
                 {/* 1. CHANGED: Grid -> Flex, added wrap and justify-center */}
+                {/* Essential Resources Cards */}
                 <div className="flex flex-wrap justify-center gap-8">
                     {resources.map((item, idx) => (
-                        <div 
-                            key={idx} 
-                            /* 2. ADDED: Width calculations to mimic Grid columns 
-                               - w-full (Mobile: 1 per row)
-                               - md:w-[calc(50%-1rem)] (Tablet: 2 per row minus half the gap)
-                               - lg:w-[calc(33.33%-1.5rem)] (Desktop: 3 per row minus the gap distribution)
-                            */
-                            className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] bg-white rounded-2xl p-8 shadow-lg shadow-slate-100 border border-slate-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
+                        <div
+                            key={idx}
+                            className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] bg-white rounded-2xl p-8 shadow-lg shadow-slate-100 border-3 border-[#FA6404] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
                         >
 
                             <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-200 group-hover:scale-110 transition-transform">
@@ -134,16 +127,16 @@ const EssentialResourcesSection = () => {
 
                             {item.type === 'mobile-app' ? (
                                 <div className="mt-auto flex flex-col gap-3 w-full items-center">
-                                    <a 
-                                        href="/app/hdsteth.apk" 
+                                    <a
+                                        href="/app/hdsteth.apk"
                                         download="hdsteth.apk"
                                         className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
                                     >
                                         Download Android <Download size={14} />
                                     </a>
-                                    <a 
-                                        href="https://apps.apple.com/in/app/hd-steth/id1565203803" 
-                                        target="_blank" 
+                                    <a
+                                        href="https://apps.apple.com/in/app/hd-steth/id1565203803"
+                                        target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
                                     >
@@ -151,9 +144,9 @@ const EssentialResourcesSection = () => {
                                     </a>
                                 </div>
                             ) : (
-                                <a 
+                                <a
                                     href={item.file}
-                                    download={item.type === 'pdf'} 
+                                    download={item.type === 'pdf'}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2 cursor-pointer"
@@ -256,30 +249,20 @@ const AccessoriesSection = () => {
                     <p className="text-slate-500">Enhance your HD Steth experience with genuine parts</p>
                 </div>
 
-               <div className="flex justify-center mb-12 max-w-7xl mx-auto">
-    {/* Left Image */}
-    <div className="w-full max-w-6xl aspect-[16/10] relative rounded-2xl overflow-hidden">
-        <Image 
-            src="/images/Accessories.jpg" 
-            alt="Device Left View" 
-            className="object-contain p-2 group-hover:scale-105 transition-transform duration-700"
-            fill
-            sizes="(max-width: 768px) 100vw, 1500px"
-        />
-    </div>
+                <div className="flex justify-center mb-12 max-w-7xl mx-auto">
+                    {/* Centre Image */}
+                    <div className="w-full max-w-6xl aspect-[11/12] md:aspect-[16/10] relative rounded-2xl overflow-hidden">
+                        <Image
+                            src="/images/Accessories.jpg"
+                            alt="Device Centre View"
+                            className="object-contain p-0 md:p-2 group-hover:scale-105 transition-transform duration-700"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 1500px"
+                        />
+                    </div>
 
-    {/* Right Image */}
-    {/* <div className="w-full md:w-1/2 aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200 group">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
-        <Image 
-            src="/images/In the Box.png" 
-            alt="Device Right View" 
-            className="w-full h-full group-hover:scale-105 transition-transform duration-700"
-            fill
-        />
-    </div> */}
-</div>
-            
+                </div>
+
                 {/* Accessories Grid */}
                 <div className="grid md:grid-cols-3 gap-8 mb-12">
                     {accessories.map((item, idx) => (
@@ -527,8 +510,6 @@ const ResourcesPage = () => {
         <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-orange-100 selection:text-orange-900">
 
             <div className="relative z-10">
-                <br />
-                <br />
                 <ResourcesHero />
                 <EssentialResourcesSection />
                 <CareMaintenanceSection />
