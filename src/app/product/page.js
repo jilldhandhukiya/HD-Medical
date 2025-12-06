@@ -822,7 +822,7 @@ export default function ProductHero() {
 
 
             <div className="max-w-4xl">
-              <h3 className="text-lg md:text-xl font-semibold text-gray-600">SEE WHAT YOU HEAR</h3>
+              <h3 className="text-4xl md:text-2l font-bold ">SEE WHAT YOU HEAR</h3>
               <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold mt-3 mb-4">
   <span style={{ color: PRIMARY_BLUE }}>SEE WHAT YOU </span>
   <span style={{ color: '#FA6404' }}>DID NOT HEAR</span>
