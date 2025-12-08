@@ -4,56 +4,6 @@ import Image from 'next/image';
 const PRIMARY_BLUE = '#101585';
 const PRIMARY_ORANGE = '#FA6404';
 
-// New Team Layout Component
-const TeamGroup = ({ title, members }) => (
-  <div className="mb-24 last:mb-0 w-full">
-    <h3 className="text-3xl md:text-4xl font-bold text-center mb-16" style={{ color: PRIMARY_BLUE }}>{title}</h3>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-12 justify-items-center max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-      {members.map((member, index) => (
-        <div key={index} className="flex flex-col items-center text-center max-w-[260px] w-full group">
-          {/* Circular Image */}
-          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-4 bg-gray-100 relative shadow-md border-4 border-white group-hover:border-orange-100 transition-all duration-300 shrink-0">
-            <Image
-              src={member.image}
-              alt={member.name}
-              fill
-              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              // Fallback for missing images
-              onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.style.backgroundColor = '#e5e7eb'; }}
-            />
-          </div>
-
-          {/* Name - Fixed Height Container for Alignment on Desktop */}
-          {/* Using items-end on desktop to minimize visual gap between Name and Position */}
-          <div className="w-full h-auto md:h-[3.5rem] flex items-center md:items-end justify-center mb-1">
-            <h4 className="text-lg md:text-xl font-bold leading-tight" style={{ color: PRIMARY_ORANGE }}>
-              {member.name}
-            </h4>
-          </div>
-
-          {/* Role - Fixed Height Container for Alignment on Desktop */}
-          <div className="w-full h-auto md:h-[4.5rem] flex items-start justify-center mb-1">
-            <p className="text-sm font-bold leading-tight px-2" style={{ color: PRIMARY_BLUE }}>
-              {member.position}
-            </p>
-          </div>
-
-          {/* Bio/Description - Fixed Height on Desktop */}
-          {member.description && (
-            <div className="w-full h-auto md:h-[4.5rem] flex items-start justify-center">
-              <p className="text-xs text-gray-600 leading-relaxed font-medium">
-                {member.description}
-              </p>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  </div>
-);
-
-// Dummy Data
 const leadership = [
   {
     name: "Arvind Thiagarajan",
@@ -148,12 +98,58 @@ const medicalAdvisors = [
   }
 ];
 
+// New Team Layout Component
+const TeamGroup = ({ title, members }) => (
+  <div className="mb-24 last:mb-0 w-full">
+    <h3 className="text-3xl md:text-4xl font-bold text-center mb-16" style={{ color: PRIMARY_BLUE }}>{title}</h3>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-12 justify-items-center max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+      {members.map((member, index) => (
+        <div key={index} className="flex flex-col items-center text-center max-w-[260px] w-full group">
+          {/* Circular Image */}
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-4 bg-gray-100 relative shadow-md border-4 border-white group-hover:border-orange-100 transition-all duration-300 shrink-0">
+            <Image
+              src={member.image}
+              alt={member.name}
+              fill
+              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              // Fallback for missing images
+              onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.style.backgroundColor = '#e5e7eb'; }}
+            />
+          </div>
+
+          {/* Name - Fixed Height Container for Alignment on Desktop */}
+          {/* Using items-end on desktop to minimize visual gap between Name and Position */}
+          <div className="w-full h-auto md:h-[3.5rem] flex items-center md:items-end justify-center mb-1">
+            <h4 className="text-lg md:text-xl font-bold leading-tight" style={{ color: PRIMARY_ORANGE }}>
+              {member.name}
+            </h4>
+          </div>
+
+          {/* Role - Fixed Height Container for Alignment on Desktop */}
+          <div className="w-full h-auto md:h-[4.5rem] flex items-start justify-center mb-1">
+            <p className="text-sm font-bold leading-tight px-2" style={{ color: PRIMARY_BLUE }}>
+              {member.position}
+            </p>
+          </div>
+
+          {/* Bio/Description - Fixed Height on Desktop */}
+          {member.description && (
+            <div className="w-full h-auto md:h-[4.5rem] flex items-start justify-center">
+              <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                {member.description}
+              </p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
 export default function AboutUs() {
   return (
     <>
-      <br />
-      <br />
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 bg-white flex items-center justify-center">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full">

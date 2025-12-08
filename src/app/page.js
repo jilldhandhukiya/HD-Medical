@@ -15,7 +15,7 @@ const MailingListPopup = () => {
     // Show popup after 3 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 3000);
+    }, 8000);
 
     return () => clearTimeout(timer);
   }, []);
