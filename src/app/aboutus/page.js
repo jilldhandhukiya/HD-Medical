@@ -31,7 +31,7 @@ const leadership = [
   },
   {
     name: "Ganesh Kumar B R",
-    position: "VP of R&D",
+    position: "Director - India operations",
     image: "/images/company/GaneshKumar.png",
     description: "Driving research and development initiatives to deliver innovative healthcare solutions."
   }
@@ -49,12 +49,6 @@ const boardMembers = [
     position: " Board Member",
     image: "/images/company/Arjun-Malhotra.png",
     description: "Co-Founder of HCL & Headstrong"
-  },
-  {
-    name: "Guru Gurushankar",
-    position: "Board Member",
-    image: "/images/company/GuruShankar.png",
-    description: "Successful Corporate Executive & Leader"
   },
   {
     name: "Riaz A. Karamali",
@@ -86,6 +80,12 @@ const medicalAdvisors = [
     position: "MD, FACS/FAPP Professor of Co-Director Stanford Byers Center for Bio-design",
     image: "/images/company/Dr Thomas.png"
   },
+   {
+    name: "Guru Gurushankar",
+    position: "Strategic Advisor",
+    image: "/images/company/GuruShankar.png",
+    // description: "Successful Healthcare Executive & Leader Ex-Phillips, AWS, Cardinal, J&J, GE Healthcare"
+  },
   {
     name: "Dr. Wael Al Mahmeed",
     position: "MD Leading Cardiologist Owner of City Pharma, UAE",
@@ -99,10 +99,10 @@ const medicalAdvisors = [
 ];
 
 // New Team Layout Component
-const TeamGroup = ({ title, members }) => (
+const TeamGroup = ({ title, members, gridCols = "lg:grid-cols-3" }) => (
   <div className="mb-24 last:mb-0 w-full">
     <h3 className="text-3xl md:text-4xl font-bold text-center mb-16" style={{ color: PRIMARY_BLUE }}>{title}</h3>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-12 justify-items-center max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className={`grid grid-cols-1 sm:grid-cols-2 ${gridCols} gap-x-4 gap-y-12 justify-items-center max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8`}>
       {members.map((member, index) => (
         <div key={index} className="flex flex-col items-center text-center max-w-[260px] w-full group">
           {/* Circular Image */}
