@@ -801,7 +801,7 @@ export default function ProductHero() {
             </h2>
 
 
-            <div className="max-w-4xl w-full text-left">
+            <div className="flex flex-col items-start">
               <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold" style={{ color: PRIMARY_BLUE }}>
                 SEE WHAT YOU HEAR
               </h2>
@@ -809,11 +809,11 @@ export default function ProductHero() {
                 <span style={{ color: PRIMARY_BLUE }}>SEE WHAT YOU </span>
                 <span style={{ color: '#FA6404' }}>DID NOT HEAR</span>
               </h2>
-
-              <p className="text-lg md:text-xl text-bold max-w-3xl">
-                HD Steth uses a custom App that runs on smartphones and tablets. It connects via Bluetooth and simultaneously displays HS waveforms and single‑lead ECG — empowering faster, evidence‑based decisions.
-              </p>
             </div>
+
+            <p className="text-lg md:text-xl text-bold max-w-3xl mx-auto">
+              HD Steth uses a custom App that runs on smartphones and tablets. It connects via Bluetooth and simultaneously displays HS waveforms and single‑lead ECG — empowering faster, evidence‑based decisions.
+            </p>
 
             {/* App Screens Section (Matches Screenshot) */}
             <div className="w-full flex flex-col items-center mt-12">
@@ -861,19 +861,6 @@ export default function ProductHero() {
                   />
                 </div>
 
-              </div>
-
-
-              {/* Bullet points below images */}
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm md:text-base text-gray-600 font-medium">
-
-                <span>Live HS + ECG</span>
-                <span className="hidden sm:block">•</span>
-
-                <span>Bluetooth • Real-time</span>
-                <span className="hidden sm:block">•</span>
-
-                <span>Save • Share • Export</span>
               </div>
             </div>
 
@@ -1186,11 +1173,6 @@ export default function ProductHero() {
               </div>
             ))}
           </div>
-
-          <button className="mt-16 px-12 py-4 rounded-lg text-xl font-bold shadow-xl transition-all hover:bg-gray-100 hover:shadow-2xl" style={{ backgroundColor: 'white', color: primaryBlue }}
-            onClick={() => window.location.href = '/resource'}>
-            Get HD Steth Now
-          </button>
         </div>
       </section>
 
