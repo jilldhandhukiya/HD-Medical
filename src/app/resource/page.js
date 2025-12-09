@@ -106,28 +106,26 @@ const EssentialResourcesSection = () => {
         <section className="w-full py-12 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto">
 
-                {/* 1. CHANGED: Grid -> Flex, added wrap and justify-center */}
                 {/* Essential Resources Cards */}
                 <div className="flex flex-wrap justify-center gap-8">
                     {resources.map((item, idx) => (
                         <div
                             key={idx}
-                            className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] bg-[#101585] rounded-2xl p-8 shadow-lg shadow-slate-200 border-t-[6px] border-[#FA6404] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
-                        >
-
-                            <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-900/20 group-hover:scale-110 transition-transform">
-                                {item.icon}
+                            className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] bg-white rounded-2xl p-8 shadow-lg shadow-slate-100 border-3 border-[#FA6404] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
+                       >
+                             <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-200 group-hover:scale-110 transition-transform">
+                              {item.icon}
                             </div>
 
-                            <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                            <p className="text-slate-300 text-sm mb-8">{item.desc}</p>
+                             <h3 className="text-xl font-bold text-[#101585] mb-2">{item.title}</h3>
+                            <p className="text-slate-400 text-sm mb-8">{item.desc}</p>
 
                             {item.type === 'mobile-app' ? (
                                 <div className="mt-auto flex flex-col gap-3 w-full items-center">
                                     <a
                                         href="/app/hdsteth.apk"
                                         download="hdsteth.apk"
-                                        className="text-[#FA6404] font-bold text-sm hover:text-white transition-colors flex items-center gap-2"
+                                        className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
                                     >
                                         Download Android <Download size={14} />
                                     </a>
@@ -135,7 +133,7 @@ const EssentialResourcesSection = () => {
                                         href="https://apps.apple.com/in/app/hd-steth/id1565203803"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-[#FA6404] font-bold text-sm hover:text-white transition-colors flex items-center gap-2"
+                                        className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
                                     >
                                         Download iOS <ExternalLink size={14} />
                                     </a>
@@ -146,7 +144,7 @@ const EssentialResourcesSection = () => {
                                     download={item.type === 'pdf'}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="mt-auto text-[#FA6404] font-bold text-sm hover:text-white transition-colors flex items-center gap-2 cursor-pointer"
+                                    className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2 cursor-pointer"
                                 >
                                     {item.action}
                                     {item.type === 'pdf' ? <Download size={14} /> : <ExternalLink size={14} />}
@@ -438,28 +436,28 @@ const TestimonialsSection = () => {
     const testimonials = [
         {
             name: "Dr. Nelson B. Schiller",
-            role: "MD, FACC, FRCP | Professor of Medicine & Anesthesia, UCSF",
+            role: "MD | FACC, FRCP Professor of Medicine & Anesthesia",
             quote: "HD Steth has applied digital science to produce superior auscultatory experience with suppression of extraneous noise for true fidelity of heart transient and coupled this technology with an ECG. As an academic cardiologist, I am assured that new observations of fundamental importance will emerge from this exciting technology.",
             initials: "NS",
             color: "bg-[#FA6404]"
         },
         {
             name: "Dr. Douglas Johnston",
-            role: "MD | Thoracic and Cardiovascular Surgery, Northwestern Medicine",
+            role: "MD | Chief of Cardiac Surgery, Fellow: Cleveland Clinic",
             quote: "HD Steth is transforming the way medicine is practiced at the point of care setting by enhancing the patient experience, saving time and costs while improving outcomes.",
             initials: "DJ",
             color: "bg-[#FA6404]"
         },
         {
             name: "Dr. Thomas Krummel",
-            role: "MD, FACS, FAAP | Professor of Surgery, Stanford Byers Center for Biodesign",
+            role: "MD | FACS, FAAP | Professor of Surgery, Stanford Byers Center for Biodesign",
             quote: "HD Steth makes it simple to tag my high risk pediatric patients and screen for murmurs quickly and accurately at the point-of-care enhancing treatment. It moves the point of care from my office to anywhere.",
             initials: "TK",
             color: "bg-[#FA6404]"
         },
         {
-            name: "Dr. Ethiraj Raj",
-            role: "MD, FACC, FSCAI, FASNC | Cardiovascular Disease Specialist, Flint, Michigan",
+            name: "Dr. Ethiraj G. Raj",
+            role: "MD | FACC, FSCAI, FASNC | Cardiovascular Disease Specialist, Flint, Michigan",
             quote: "The quality and intensity of heart sounds are phenomenal on HD Steth and it delivers the most impressive sound quality advancements in my last 40 years of stethoscope use. It is truly a giant leap forward in technology.",
             initials: "ER",
             color: "bg-[#FA6404]"
@@ -476,7 +474,7 @@ const TestimonialsSection = () => {
 
                 <div className="grid md:grid-cols-2 gap-8">
                     {testimonials.map((item, idx) => (
-                        <div key={idx} className="p-8 rounded-2xl border border-slate-100 shadow-lg shadow-slate-50 flex gap-4 hover:-translate-y-1 transition-transform">
+                        <div key={idx} className="p-8 rounded-2xl border border-[#FA6404] shadow-lg shadow-slate-50 flex gap-4 hover:-translate-y-1 transition-transform">
                             <div className="shrink-0">
                                 <div className={`w-12 h-12 rounded-full ${item.color} text-white flex items-center justify-center font-bold text-lg`}>
                                     {item.initials}
