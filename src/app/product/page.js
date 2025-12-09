@@ -463,6 +463,9 @@ export default function ProductHero() {
       </section>
       {/* Key Listening Modes & Signal Processing */}
       <section className="w-full py-8 bg-[#101585]">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+          HD Steth: Intelligent Solution for Cardiac Care
+        </h2>
         <div className="max-w-7xl mx-auto px-4 sm:px-0">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6">
             {/* CARD 1 */}
