@@ -475,8 +475,8 @@ const VideoSection = () => {
         </p>
       </div>
 
-      <div className="relative max-w-5xl mx-auto flex flex-col items-center">
-        <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl group mb-8">
+      <div className="relative max-w-5xl mx-auto flex flex-col items-center gap-8 md:gap-10">
+        <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl group">
           <a 
             href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
             target="_blank" 
@@ -497,7 +497,7 @@ const VideoSection = () => {
             href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-white border border-slate-200 px-8 py-3 rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group"
+            className="relative z-10 bg-white border border-slate-200 px-8 py-3 rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group"
         >
             <Play size={24} className="text-[#FA6404] fill-[#FA6404] group-hover:scale-110 transition-transform" />
             <span className="text-[#101585] font-bold text-lg">
