@@ -831,25 +831,7 @@ export default function ProductHero() {
                   />
                 </div>
 
-                <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
-                  <Image
-                    src="/images/ss2.jpeg"
-                    alt="app screenshot 2"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
-                  <Image
-                    src="/images/ss3.jpeg"
-                    alt="app screenshot 3"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+  
 
                 <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
                   <Image
