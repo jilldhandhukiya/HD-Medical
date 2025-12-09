@@ -422,7 +422,7 @@ export default function ProductHero() {
               style={{ color: PRIMARY_BLUE, lineHeight: 1.1 }}
             >
               <span className="text-5xl md:text-9xl lg:text-7xl font-extrabold">
-                HD Steth™
+                HD Steth<span className="text-[0.5em] align-super">™</span>
               </span>
               <br />
               Instant Cardiac Insights. <br></br>
@@ -431,7 +431,7 @@ export default function ProductHero() {
               </span>
             </h1>
             <p className="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
-              Experience the next generation of cardiac auscultation with HD Steth&apos;s intelligent technology.
+              
             </p>
             <button onClick={() => window.location.href = '/resource'} className="bg-[#FA6404] hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-all transform hover:-translate-y-0.5">
               Learn More
@@ -801,14 +801,16 @@ export default function ProductHero() {
             </h2>
 
 
-            <div className="max-w-4xl">
-              <h3 className="text-4xl md:text-2l font-bold ">SEE WHAT YOU HEAR</h3>
-              <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold mt-3 mb-4">
+            <div className="max-w-4xl w-full text-left">
+              <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold" style={{ color: PRIMARY_BLUE }}>
+                SEE WHAT YOU HEAR
+              </h2>
+              <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold mb-4">
                 <span style={{ color: PRIMARY_BLUE }}>SEE WHAT YOU </span>
                 <span style={{ color: '#FA6404' }}>DID NOT HEAR</span>
               </h2>
 
-              <p className="text-lg md:text-xl text-bold  max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-bold max-w-3xl">
                 HD Steth uses a custom App that runs on smartphones and tablets. It connects via Bluetooth and simultaneously displays HS waveforms and single‑lead ECG — empowering faster, evidence‑based decisions.
               </p>
             </div>
