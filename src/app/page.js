@@ -315,7 +315,7 @@ const HeroSection = () => {
           Transform <br className="hidden lg:block" />
           Cardiac <br className="hidden lg:block" />
           Care with <br className="hidden lg:block" />
-          <span>HD Steth™</span>
+          <span>HD Steth<span className="text-[0.5em] align-super">™</span></span>
         </h1>
 
         {/* Features List - Centered block on mobile, Left on Desktop */}
@@ -340,16 +340,6 @@ const HeroSection = () => {
             ))}
           </div>
         </div>
-
-        {/* CTA Button */}
-        {/* <div className="pt-2 w-full flex justify-center lg:justify-start">
-          <Link 
-            href="/product" 
-            className="inline-flex items-center gap-2 bg-[#FA6404] hover:bg-orange-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg shadow-lg shadow-[#FA6404]/25 transition-transform hover:-translate-y-1"
-          >
-            Explore Technology <ArrowRight size={20} />
-          </Link>
-        </div> */}
       </div>
 
       {/* Image Column */}
