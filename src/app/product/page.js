@@ -433,9 +433,7 @@ export default function ProductHero() {
             <p className="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
               
             </p>
-            <button onClick={() => window.location.href = '/resource'} className="bg-[#FA6404] hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-all transform hover:-translate-y-0.5">
-              Learn More
-            </button>
+        
           </div>
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden shadow-2xl">
             <Image src="/images/fda_section_image.jpg" alt="Doctor using HD Steth" fill className="object-cover" priority />
@@ -458,9 +456,7 @@ export default function ProductHero() {
                 />
               </div>
               <br /> <br />
-              <button onClick={() => window.location.href = '/resource'} className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 bg-[#FA6404] hover:bg-orange-600 text-white px-10 py-2 sm:px-8 sm:py-3 rounded-lg font-bold text-xs sm:text-sm shadow-lg transition-all hover:-translate-y-0.5">
-                Know More
-              </button>
+
             </div>
           </div>
         </div>
@@ -1123,12 +1119,6 @@ export default function ProductHero() {
             HD Steth App has an open APK that can be integrated into providers&apos; EHR systems. It enables critical cardiac data to be seamlessly transferred into EHRs.
           </p>
 
-          <button onClick={() => window.location.href = '/resource'}
-            className="px-12 py-4 rounded-lg text-xl font-bold tracking-wide transition-transform hover:scale-105 shadow-lg border-2"
-            style={{ backgroundColor: '#FA6404', color: '#ffffff', borderColor: `${PRIMARY_ORANGE}` }}
-          >
-            KNOW MORE
-          </button>
 
         </div>
       </section>
