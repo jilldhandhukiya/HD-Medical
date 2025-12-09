@@ -18,7 +18,7 @@ export const metadata = {
     siteName: 'HD Medical Group',
     images: [
       {
-        url: 'https://hdmedicalgroup.com/images/logo.png',
+        url: 'https://hdmedicalgroup.com/assets/images/logo/HD-Logos.png',
         width: 1200,
         height: 630,
         alt: 'HD Medical Group image',
@@ -30,7 +30,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'HD Medical Group',
     description: 'Next-gen cardiovascular diagnostics & AI-powered health tech.',
-    images: ['https://hdmedicalgroup.com/images/logo.png'],
+    images: ['https://hdmedicalgroup.com/assets/images/logo/HD-Logos.png'],
   },
 };
 
