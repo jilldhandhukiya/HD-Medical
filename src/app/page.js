@@ -784,6 +784,7 @@ const App = () => {
         {/* <ClinicalExcellenceSection /> */}
         <FDAClearanceSection />
         <CertificationsBar />
+        <div className="w-full h-2 bg-white"></div>
       </div>
     </div>
   );
