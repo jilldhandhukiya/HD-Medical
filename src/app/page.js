@@ -471,7 +471,7 @@ const VideoSection = () => {
           Instant cardiac insights. <span className="text-[#FA6404]">Anytime.</span>
         </h2>
         <p className="text-slate-500 text-lg md:text-xl leading-relaxed">
-          Experience the future of cardiac diagnostics with real-time insights delivered at the point of care.
+          {/* Experience the future of cardiac diagnostics with real-time insights delivered at the point of care. */}
         </p>
       </div>
 

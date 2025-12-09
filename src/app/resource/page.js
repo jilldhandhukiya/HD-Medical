@@ -40,7 +40,7 @@ const ResourcesHero = () => {
                             <span className="text-[#FA6404]">Resources</span>
                         </h1>
                         <p className="text-slate-600 text-lg md:text-xl max-w-lg">
-                            Revolutionizing auscultation with cutting-edge technology and unparalleled precision. Access all your essential guides and tools here.
+                            {/* Revolutionizing auscultation with cutting-edge technology and unparalleled precision. Access all your essential guides and tools here. */}
                         </p>
                     </div>
 

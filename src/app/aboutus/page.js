@@ -60,7 +60,7 @@ const boardMembers = [
     name: "Dr. Guru Gurushankar",
     position: "Strategic Advisor",
     image: "/images/company/GuruShankar.png",
-    description: "Successful Healthcare Executive & Leader Ex-Phillips, AWS, Cardinal, J&J, GE Healthcare"
+    description: "Successful Healthcare Executive & Leader Ex-Philips, AWS, Cardinal, J&J, GE Healthcare"
   },
   {
     name: "Investor & Board Observer",
