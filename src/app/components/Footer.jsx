@@ -47,8 +47,6 @@ export default function Footer() {
                 { label: 'Products', href: '/product' },
                 { label: 'About Us', href: '/aboutus' },
                 { label: 'Contact', href: '/contactus' },
-                { label: 'Privacy Policy', href: '#' },
-                { label: 'Terms of Service', href: '#' },
               ].map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="hover:text-[#FA6404] transition-colors block w-fit">
@@ -96,11 +94,6 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-blue-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300 text-center md:text-left">
           <p>© {new Date().getFullYear()} HD Medical. All rights reserved.</p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link href="#" className="hover:text-white transition-colors">Cookie Policy</Link>
-          </div>
         </div>
       </div>
     </footer>

@@ -3,14 +3,11 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import {
     Play,
-    Menu,
-    X,
     HeartPulse,
     FileText,
     Smartphone,
     BookOpen,
     LayoutTemplate,
-    Award,
     ShieldCheck,
     AlertTriangle,
     CheckCircle2,
@@ -39,7 +36,7 @@ const ResourcesHero = () => {
                     <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1 space-y-6">
                         {/* <div className="w-16 h-1 bg-[#FA6404] mb-2"></div> */}
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#101585] leading-tight">
-                            HD Steth <br />
+                            HD Steth<span className="text-[0.6em] align-super">™</span> <br />
                             <span className="text-[#FA6404]">Resources</span>
                         </h1>
                         <p className="text-slate-600 text-lg md:text-xl max-w-lg">
@@ -115,22 +112,22 @@ const EssentialResourcesSection = () => {
                     {resources.map((item, idx) => (
                         <div
                             key={idx}
-                            className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] bg-white rounded-2xl p-8 shadow-lg shadow-slate-100 border-3 border-[#FA6404] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
+                            className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] bg-[#101585] rounded-2xl p-8 shadow-lg shadow-slate-200 border-t-[6px] border-[#FA6404] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
                         >
 
-                            <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-200 group-hover:scale-110 transition-transform">
+                            <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-900/20 group-hover:scale-110 transition-transform">
                                 {item.icon}
                             </div>
 
-                            <h3 className="text-xl font-bold text-[#101585] mb-2">{item.title}</h3>
-                            <p className="text-slate-400 text-sm mb-8">{item.desc}</p>
+                            <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                            <p className="text-slate-300 text-sm mb-8">{item.desc}</p>
 
                             {item.type === 'mobile-app' ? (
                                 <div className="mt-auto flex flex-col gap-3 w-full items-center">
                                     <a
                                         href="/app/hdsteth.apk"
                                         download="hdsteth.apk"
-                                        className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
+                                        className="text-[#FA6404] font-bold text-sm hover:text-white transition-colors flex items-center gap-2"
                                     >
                                         Download Android <Download size={14} />
                                     </a>
@@ -138,7 +135,7 @@ const EssentialResourcesSection = () => {
                                         href="https://apps.apple.com/in/app/hd-steth/id1565203803"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
+                                        className="text-[#FA6404] font-bold text-sm hover:text-white transition-colors flex items-center gap-2"
                                     >
                                         Download iOS <ExternalLink size={14} />
                                     </a>
@@ -149,7 +146,7 @@ const EssentialResourcesSection = () => {
                                     download={item.type === 'pdf'}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2 cursor-pointer"
+                                    className="mt-auto text-[#FA6404] font-bold text-sm hover:text-white transition-colors flex items-center gap-2 cursor-pointer"
                                 >
                                     {item.action}
                                     {item.type === 'pdf' ? <Download size={14} /> : <ExternalLink size={14} />}
@@ -166,12 +163,12 @@ const EssentialResourcesSection = () => {
 
 const CareMaintenanceSection = () => {
     return (
-        <section className="w-full pb-24 px-6 md:px-12 bg-white">
-            <div className="max-w-7xl mx-auto bg-slate-50 rounded-[2.5rem] p-8 md:p-16 lg:p-20">
+        <section className="w-full pb-15 px-6 md:px-12 bg-[#101585]">
+            <div className="max-w-7xl mx-auto p-8 md:p-16 lg:p-20">
 
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Care & Maintenance</h2>
-                    <p className="text-slate-500">Keep your HD Steth performing at its best with proper care</p>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Care & Maintenance</h2>
+                    <p className="text-slate-200">Keep your HD Steth performing at its best with proper care</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -192,7 +189,7 @@ const CareMaintenanceSection = () => {
                                 "Gentle dry cloth for device body",
                                 "Store in a cool, dry place"
                             ].map((point, i) => (
-                                <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+                                <li key={i} className="flex items-start gap-3 text-s text-slate-600">
                                     <CheckCircle2 size={18} className="text-green-500 shrink-0 mt-0.5" />
                                     <span>{point}</span>
                                 </li>
@@ -216,7 +213,7 @@ const CareMaintenanceSection = () => {
                                 "Use only approved accessories",
                                 "Do not use abrasive cleaners"
                             ].map((point, i) => (
-                                <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+                                <li key={i} className="flex items-start gap-3 text-s text-slate-600">
                                     <AlertCircle size={18} className="text-red-500 shrink-0 mt-0.5" />
                                     <span>{point}</span>
                                 </li>
@@ -244,8 +241,8 @@ const AccessoriesSection = () => {
         <section className="w-full py-2 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto">
                 {/* Header Text */}
-                <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Accessories</h2>
+                <div className="text-center py-12">
+                    <h1 className="text-3xl md:text-5xl font-bold text-[#101585] mb-4">Accessories</h1>
                     <p className="text-slate-500">Enhance your HD Steth experience with genuine parts</p>
                 </div>
 
@@ -266,13 +263,13 @@ const AccessoriesSection = () => {
                 {/* Accessories Grid */}
                 <div className="grid md:grid-cols-3 gap-8 mb-12">
                     {accessories.map((item, idx) => (
-                        <div key={idx} className="flex flex-col items-center text-center p-6 rounded-xl hover:shadow-lg transition-shadow border border-transparent hover:border-slate-50 group">
+                        <div key={idx} className="flex flex-col items-center text-center bg-[#101585] p-6 rounded-xl shadow-lg border-t-[6px] border-[#FA6404] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
                             <div className="w-20 h-20 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-4 shadow-lg shadow-[#FA6404]/20 group-hover:scale-110 transition-transform">
                                 {item.icon}
                             </div>
-                            <h4 className="text-[#101585] font-bold text-lg mb-1">{item.name}</h4>
+                            <h4 className="text-white font-bold text-lg mb-1">{item.name}</h4>
                             <p className="text-xs text-slate-400 font-medium mb-2">{item.part}</p>
-                            <p className="text-sm text-slate-500">{item.desc}</p>
+                            <p className="text-sm text-slate-300">{item.desc}</p>
                         </div>
                     ))}
                 </div>
@@ -288,7 +285,6 @@ const AccessoriesSection = () => {
         </section>
     );
 };
-
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
     return (
@@ -401,22 +397,22 @@ const FAQSection = () => {
 
 const WhatsInTheBoxSection = () => {
     return (
-        <section className="w-full py-20 px-6 md:px-12 bg-slate-50/50">
+        <section className="w-full py-20 px-6 md:px-12 bg-[#101585]">
             <div className="max-w-4xl mx-auto">
-                <h3 className="text-2xl md:text-3xl font-bold text-[#101585] mb-8 text-center">What&apos;s in the Box</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">What&apos;s in the Box</h3>
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                     <div className="grid sm:grid-cols-2 gap-4">
                         {[
-                            { icon: <Stethoscope size={18} />, text: "HD Steth Device" },
-                            { icon: <Cable size={18} />, text: "Micro USB Cable" },
-                            { icon: <PlugZap size={18} />, text: "USB Charger" },
-                            { icon: <BookOpen size={18} />, text: "Quick Start Guide" },
-                            { icon: <Headphones size={18} />, text: "Spare Ear Plugs (1 Set)" },
-                            { icon: <Speaker size={18} />, text: "HD Speaker" },
+                            { icon: <Stethoscope size={25} />, text: "HD Steth Device" },
+                            { icon: <Cable size={25} />, text: "Micro USB Cable" },
+                            { icon: <PlugZap size={25} />, text: "USB Charger" },
+                            { icon: <BookOpen size={25} />, text: "Quick Start Guide" },
+                            { icon: <Headphones size={25} />, text: "Spare Ear Plugs (1 Set)" },
+                            { icon: <Speaker size={25} />, text: "HD Speaker" },
                         ].map((item, idx) => (
                             <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
                                 <div className="text-[#FA6404]">{item.icon}</div>
-                                <span className="text-slate-700 font-medium text-sm">{item.text}</span>
+                                <span className="text-slate-700 font-bold text-sm">{item.text}</span>
                             </div>
                         ))}
                     </div>
@@ -492,6 +488,7 @@ const TestimonialsSection = () => {
                                 <p className="text-slate-600 italic leading-relaxed relative">
                                     <span className="text-4xl text-slate-200 absolute -top-4 -left-2 font-serif">&quot;</span>
                                     {item.quote}
+                                    <span className="text-4xl text-slate-200 absolute font-serif"> &quot;</span>
                                 </p>
                             </div>
                         </div>
