@@ -237,7 +237,6 @@ function TechnicalExcellenceSection() {
             Precision Engineered. Reliably Built.
           </h2>
         </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
           {keySpecs.map((spec, idx) => {
             const Icon = spec.icon;
@@ -252,14 +251,12 @@ function TechnicalExcellenceSection() {
             );
           })}
         </div>
-
         <div className="flex justify-center mb-4">
           <button onClick={() => setExpandedSpecs(!expandedSpecs)} className="flex items-center justify-center gap-2 text-base font-medium px-6 py-3 rounded-full border border-gray-300 shadow-sm bg-white hover:bg-gray-100 transition">
             View All Specifications
             {expandedSpecs ? <ChevronUp className="w-5 h-5 text-gray-700" /> : <ChevronDown className="w-5 h-5 text-gray-700" />}
           </button>
         </div>
-
         <div className={`transition-all duration-500 ${expandedSpecs ? "opacity-100 mt-8" : "opacity-0 h-0 overflow-hidden"}`}>
           <div className="grid md:grid-cols-2 gap-8 mt-8">
             {fullSpecifications.map((category, categoryIndex) => (
@@ -297,7 +294,6 @@ function TechnicalExcellenceSection() {
     </section>
   );
 }
-
 const AboutHero = () => {
   return (
     <section className="relative w-full h-[600px] md:h-[700px] bg-slate-900 overflow-hidden flex items-center justify-center">
@@ -322,11 +318,9 @@ const AboutHero = () => {
             We Work to <br />
             <span className="text-[#FA6404]">Save Lives</span>
           </h1>
-
           <p className="text-xl text-blue-100 leading-relaxed max-w-2xl drop-shadow-md">
             Driven by a passion for innovation and a dedication to patient care, we are redefining the boundaries of cardiac diagnostics.
           </p>
-
           <div className="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
             <button className="bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg shadow-[#FA6404]/30 transition-all transform hover:-translate-y-1 flex items-center gap-2">
               Read Our Story <ArrowRight size={18} />
@@ -337,7 +331,6 @@ const AboutHero = () => {
     </section>
   );
 };
-
 const MissionSection = () => {
   return (
     <section className="w-full py-24 px-6 md:px-12 bg-white">
@@ -373,13 +366,11 @@ const MissionSection = () => {
               <p className="text-slate-600 font-medium text-sm">Screenings Performed</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
   );
 };
-
 export default function ProductHero() {
   const primaryBlue = PRIMARY_BLUE;
   const primaryOrange = PRIMARY_ORANGE;
@@ -420,7 +411,6 @@ export default function ProductHero() {
       text: "Optimizes clinicians' time, reduces costs, increases efficiency and improves patient outcomes — ultimately saving lives."
     }
   ];
-
   return (
     <>
       {/* Hero Section */}
@@ -440,8 +430,6 @@ export default function ProductHero() {
                 Anytime.
               </span>
             </h1>
-
-
             <p className="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
               Experience the next generation of cardiac auscultation with HD Steth&apos;s intelligent technology.
             </p>
@@ -449,17 +437,14 @@ export default function ProductHero() {
               Learn More
             </button>
           </div>
-
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden shadow-2xl">
             <Image src="/images/fda_section_image.jpg" alt="Doctor using HD Steth" fill className="object-cover" priority />
           </div>
         </div>
       </section>
-
       {/* Controls / Central Image */}
       <section className="w-full bg-white px-2 py-2">
         <div className="max-w-[1400px] mx-auto flex flex-col items-center justify-center text-center">
-
           <div className="relative w-full flex justify-center">
             <div className="w-full max-w-xl md:max-w-6xl lg:max-w-[1300px]">
               <div className="relative lg:aspect-[16/11] aspect-[12/11] ">
@@ -480,7 +465,6 @@ export default function ProductHero() {
           </div>
         </div>
       </section>
-
       {/* Key Listening Modes & Signal Processing */}
       <section className="w-full py-8 bg-[#101585]">
         <div className="max-w-7xl mx-auto px-4 sm:px-0">
@@ -511,7 +495,6 @@ export default function ProductHero() {
                 </div>
               </div>
             </div>
-
             {/* CARD 2 */}
             <div
               className="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all"
