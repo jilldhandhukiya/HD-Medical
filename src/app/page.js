@@ -152,9 +152,7 @@ const IntelligentSolutionsSection = () => {
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#101585] tracking-tight">
           HD Steth - Intelligent solution for Cardiac Care
         </h2>
-        <p className="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 font-medium uppercase tracking-widest">
-          The Anatomy of Advanced Care
-        </p>
+
       </div>
 
       <section className="w-full relative h-[50vh] sm:h-[60vh] md:h-[80vh] overflow-hidden mb-8 lg:mb-0">
@@ -344,14 +342,14 @@ const HeroSection = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="pt-2 w-full flex justify-center lg:justify-start">
+        {/* <div className="pt-2 w-full flex justify-center lg:justify-start">
           <Link 
             href="/product" 
             className="inline-flex items-center gap-2 bg-[#FA6404] hover:bg-orange-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg shadow-lg shadow-[#FA6404]/25 transition-transform hover:-translate-y-1"
           >
             Explore Technology <ArrowRight size={20} />
           </Link>
-        </div>
+        </div> */}
       </div>
 
       {/* Image Column */}
@@ -482,23 +480,13 @@ const VideoSection = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-[#101585] mb-4">
           Instant cardiac insights. <span className="text-[#FA6404]">Anytime.</span>
         </h2>
-        <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-8">
+        <p className="text-slate-500 text-lg md:text-xl leading-relaxed">
           Experience the future of cardiac diagnostics with real-time insights delivered at the point of care.
         </p>
-        
-        <a 
-          href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition-all hover:-translate-y-1 shadow-lg shadow-orange-200"
-        >
-          <Play size={20} fill="currentColor" />
-          Watch Demo
-        </a>
       </div>
 
-      <div className="relative max-w-5xl mx-auto">
-        <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl group">
+      <div className="relative max-w-5xl mx-auto flex flex-col items-center">
+        <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl group mb-8">
           <a 
             href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
             target="_blank" 
@@ -511,18 +499,21 @@ const VideoSection = () => {
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            
-            {/* Overlay Label */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors duration-300">
-                <div className="bg-white/90 backdrop-blur px-6 py-3 rounded-full flex items-center gap-3 shadow-xl transform transition-transform duration-300 group-hover:scale-110">
-                    <Play size={24} className="text-[#FA6404] fill-[#FA6404]" />
-                    <span className="text-[#101585] font-bold text-lg">
-                      Watch on Youtube
-                    </span>
-                </div>
-            </div>
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
           </a>
         </div>
+
+        <a 
+            href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-white border border-slate-200 px-8 py-3 rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group"
+        >
+            <Play size={24} className="text-[#FA6404] fill-[#FA6404] group-hover:scale-110 transition-transform" />
+            <span className="text-[#101585] font-bold text-lg">
+                Watch on Youtube
+            </span>
+        </a>
       </div>
     </section>
   );
@@ -799,7 +790,7 @@ const App = () => {
         <VideoSection />
         {/* <TrustedBySection /> */}
         <IntelligentSolutionsSection />
-        <ProductDetailSection />
+        {/* <ProductDetailSection /> */}
         {/* <ClinicalExcellenceSection /> */}
         <FDAClearanceSection />
         <CertificationsBar />
