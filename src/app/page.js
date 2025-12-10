@@ -15,7 +15,7 @@ const MailingListPopup = () => {
     // Show popup after 3 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 8000);
+    }, 15000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -422,50 +422,50 @@ const HeroSection = () => {
 //   );
 // };
 
-const ProductDetailSection = () => {
-  return (
-    <section className="w-full py-24 px-6 md:px-12 bg-[#101585] relative overflow-hidden">
+// const ProductDetailSection = () => {
+//   return (
+//     <section className="w-full py-24 px-6 md:px-12 bg-[#101585] relative overflow-hidden">
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+//       <div className="max-w-7xl mx-auto relative z-10">
+//         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          <div className="space-y-6">
-            <h4 className="text-[#FA6404] font-bold text-2xl md:text-xl tracking-wide">
-              Next-Generation Cardiac Intelligence
-            </h4>
+//           <div className="space-y-6">
+//             <h4 className="text-[#FA6404] font-bold text-2xl md:text-xl tracking-wide">
+//               Next-Generation Cardiac Intelligence
+//             </h4>
 
-            <div>
-              <h2 className="text-5xl md:text-7xl font-bold text-white mb-2 tracking-tight">HD Steth</h2>
-              <h3 className="text-2xl md:text-3xl font-bold text-white">Reimagining Cardiac Assessment</h3>
-            </div>
+//             <div>
+//               <h2 className="text-5xl md:text-7xl font-bold text-white mb-2 tracking-tight">HD Steth</h2>
+//               <h3 className="text-2xl md:text-3xl font-bold text-white">Reimagining Cardiac Assessment</h3>
+//             </div>
 
-            <p className="text-white text-lg leading-relaxed max-w-xl opacity-90">
-              The world&apos;s first intelligent stethoscope that combines precision auscultation, full EKG mapping.
-            </p>
-          </div>
+//             <p className="text-white text-lg leading-relaxed max-w-xl opacity-90">
+//               The world&apos;s first intelligent stethoscope that combines precision auscultation, full EKG mapping.
+//             </p>
+//           </div>
 
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#fdf6ba]">
-              <Image
-                src="/images/diagnosis.jpg"
-                alt="Doctor holding heart model"
-                width={0}
-                height={0}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
+//           <div className="relative flex justify-center lg:justify-end">
+//             <div className="relative w-full rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#fdf6ba]">
+//               <Image
+//                 src="/images/diagnosis.jpg"
+//                 alt="Doctor holding heart model"
+//                 width={0}
+//                 height={0}
+//                 sizes="(max-width: 768px) 100vw, 50vw"
+//                 className="w-full h-auto"
+//               />
+//             </div>
+//           </div>
 
-        </div>
-      </div>
-    </section>
-  );
-};
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 const VideoSection = () => {
   return (
-    <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-white">
+     <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-white">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-[#101585] mb-4">
           Instant cardiac insights. <span className="text-[#FA6404]">Anytime.</span>
@@ -475,7 +475,7 @@ const VideoSection = () => {
         </p>
       </div>
 
-      <div className="relative max-w-5xl mx-auto flex flex-col items-center gap-8 md:gap-10">
+      <div className="relative max-w-5xl mx-auto">
         <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl group">
           <a 
             href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
@@ -489,23 +489,24 @@ const VideoSection = () => {
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+          </a>
+
+          <a 
+              href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-white border border-slate-200 px-6 py-2 md:px-8 md:py-3 rounded-full flex items-center gap-2 md:gap-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
+          >
+              <Play className="w-5 h-5 md:w-6 md:h-6 text-[#FA6404] fill-[#FA6404] group-hover:scale-110 transition-transform" />
+              <span className="text-[#101585] font-bold text-sm md:text-lg whitespace-nowrap">
+                  Watch on Youtube
+              </span>
           </a>
         </div>
-
-        <a 
-            href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="relative z-10 bg-white border border-slate-200 px-8 py-3 rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group"
-        >
-            <Play size={24} className="text-[#FA6404] fill-[#FA6404] group-hover:scale-110 transition-transform" />
-            <span className="text-[#101585] font-bold text-lg">
-                Watch on Youtube
-            </span>
-        </a>
       </div>
     </section>
+
   );
 }
 
