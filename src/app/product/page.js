@@ -814,37 +814,34 @@ export default function ProductHero() {
               HD Steth uses a custom App that runs on smartphones and tablets. It connects via Bluetooth and simultaneously displays HS waveforms and single‑lead ECG — empowering faster, evidence‑based decisions.
             </p>
 
-            {/* App Screens Section (Matches Screenshot) */}
+            {/* App Screens Section*/}
             <div className="w-full flex flex-col items-center mt-12">
 
-              {/* 4 Images Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
+              {/* 2 Images Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-3 w-full">
 
-                <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
+                <div className="w-full aspect-video relative overflow-hidden rounded-xl">
                   <Image
                     src="/images/ss1.jpg"
                     alt="app screenshot 1"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 
-  
-
-                <div className="w-full h-64 md:h-72 lg:h-80 overflow-hidden rounded-xl">
+                <div className="w-full aspect-video relative overflow-hidden rounded-xl">
                   <Image
                     src="/images/ss4.jpg"
                     alt="app screenshot 4"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 
               </div>
             </div>
-
 
             {/* Content cards below images */}
             <div className="w-full max-w-5xl mx-auto mt-10">
