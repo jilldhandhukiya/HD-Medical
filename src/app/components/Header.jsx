@@ -36,7 +36,9 @@ export default function Header() {
     { title: 'Home', url: '/' },
     { title: 'Products', url: '/product' },
     { title: 'About Us', url: '/aboutus' },
-    { title: 'Contact', url: '/contactus' }
+    { title: 'Testimonials', url: '/testimonials' },
+    { title: 'Contact', url: '/contactus' },
+    {title : "Resources", url: "/resource"}
   ]
 
   return (
@@ -71,12 +73,6 @@ export default function Header() {
                 {item.title}
               </Link>
             ))}
-            <Link
-              href="/resource"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-full font-semibold text-base shadow-lg shadow-orange-500/20 transition-all transform hover:-translate-y-0.5"
-            >
-              Get Started
-            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -120,13 +116,6 @@ export default function Header() {
                 {item.title}
               </Link>
             ))}
-            <Link
-              href="/resource"
-              className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold text-center mt-4"
-              onClick={() => setIsOpen(false)}
-            >
-              GET STARTED
-            </Link>
           </div>
         </div>
       </div>
