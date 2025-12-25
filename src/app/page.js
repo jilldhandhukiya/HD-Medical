@@ -25,7 +25,7 @@ const MailingListPopup = () => {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm transition-opacity duration-300">
       <div className="relative w-full max-w-[800px] bg-white shadow-2xl flex flex-col md:flex-row overflow-hidden rounded-lg">
-        
+
         <button
           onClick={() => setIsVisible(false)}
           className="absolute top-2 right-2 z-20 p-1 text-gray-400 hover:text-gray-600 transition-colors"
@@ -306,10 +306,10 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full pt-12 pb-16 md:pt-20 md:pb-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
-      
+
       {/* Text Content Column */}
       <div className="space-y-8 md:space-y-10 flex flex-col items-center lg:items-start order-1">
-        
+
         {/* Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#101585] leading-tight lg:leading-[1.1] text-center lg:text-left">
           Transform <br className="hidden lg:block" />
@@ -323,7 +323,7 @@ const HeroSection = () => {
           <div className="flex flex-col gap-5 md:gap-6 pl-4 relative">
             {/* Vertical Line */}
             <div className="absolute left-0 top-2 bottom-2 w-1 bg-slate-100 rounded-full"></div>
-            
+
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -465,7 +465,7 @@ const HeroSection = () => {
 
 const VideoSection = () => {
   return (
-     <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-white">
+    <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-white">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-[#101585] mb-4">
           Instant cardiac insights. <span className="text-[#FA6404]">Anytime.</span>
@@ -477,9 +477,9 @@ const VideoSection = () => {
 
       <div className="relative max-w-5xl mx-auto">
         <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl group">
-          <a 
-            href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
-            target="_blank" 
+          <a
+            href="https://www.youtube.com/watch?v=a1i9AGoZdUY"
+            target="_blank"
             rel="noopener noreferrer"
             className="block w-full h-full relative"
           >
@@ -492,16 +492,16 @@ const VideoSection = () => {
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
           </a>
 
-          <a 
-              href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-white border border-slate-200 px-6 py-2 md:px-8 md:py-3 rounded-full flex items-center gap-2 md:gap-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
+          <a
+            href="https://www.youtube.com/watch?v=a1i9AGoZdUY"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-white border border-slate-200 px-6 py-2 md:px-8 md:py-3 rounded-full flex items-center gap-2 md:gap-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
           >
-              <Play className="w-5 h-5 md:w-6 md:h-6 text-[#FA6404] fill-[#FA6404] group-hover:scale-110 transition-transform" />
-              <span className="text-[#101585] font-bold text-sm md:text-lg whitespace-nowrap">
-                  Watch on Youtube
-              </span>
+            <Play className="w-5 h-5 md:w-6 md:h-6 text-[#FA6404] fill-[#FA6404] group-hover:scale-110 transition-transform" />
+            <span className="text-[#101585] font-bold text-sm md:text-lg whitespace-nowrap">
+              Watch on Youtube
+            </span>
           </a>
         </div>
       </div>
@@ -707,8 +707,7 @@ const FDAClearanceSection = () => {
         <div className="space-y-10">
           {/* Header */}
           <h2 className="text-3xl md:text-5xl font-bold text-[#101585] leading-tight">
-            FDA cleared (Class II) for the three product classification codes in one device.
-          </h2>
+            FDA-cleared (Class II) with three product classification codes in one device.          </h2>
 
           {/* Classification Codes Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 items-stretch gap-8 sm:gap-0">

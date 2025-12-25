@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Star, Quote } from 'lucide-react';
+import { Quote } from 'lucide-react';
 
 const PRIMARY_BLUE = '#101585';
 
@@ -19,7 +19,7 @@ const testimonials = [
     position: "Thoracic and Cardiovascular Surgery, Northwestern Medicine",
     image: "/images/company/Dr Dougles.png",
     testimonial: "HD Steth is transforming the way medicine is practiced at the point of care setting by enhancing the patient experience, saving time and costs while improving outcomes."
-},
+  },
   {
     id: 3,
     name: "Dr. Thomas Krummel MD, FACS, FAAP",
@@ -32,8 +32,8 @@ const testimonials = [
     name: "Ethiraj Raj MD, FACC, FSCAI, FASNC",
     position: "Cardiovascular Disease Specialist Flint, Michigan",
     image: "/images/company/Dr Raj.png",
-    testimonial:"The quality and intensity of heart sounds are phenomenal on HD Steth and it delivers the most impressive sound quality advancements in my last 40 years of stethoscope use. It is truly a giant leap forward in technology." 
-},
+    testimonial: "The quality and intensity of heart sounds are phenomenal on HD Steth and it delivers the most impressive sound quality advancements in my last 40 years of stethoscope use. It is truly a giant leap forward in technology."
+  },
 ];
 
 const mediaCoverage = [
@@ -42,12 +42,12 @@ const mediaCoverage = [
     quote: "The Most Important Health Tech of CES",
     logo: "/media/cnet.png"
   },
-    {
+  {
     outlet: "MobiHealthNews",
     quote: "The devices, software and health tech Headlines of CES",
     logo: "/media/mobihealthnews.png"
   },
-    {
+  {
     outlet: "GearBrain",
     quote: "The Best of CES: Tech that will shape our life this year",
     logo: "/media/gearbrain.png"
@@ -57,7 +57,7 @@ const mediaCoverage = [
     quote: "A Cardiac monitoring device that can track 7 biometrics at HOME",
     logo: "/media/wired.png"
   },
-    {
+  {
     outlet: "Reviewed",
     quote: "These Devices Allow You to Take Detailed Heart Readings At Home – But Should You?",
     logo: "/media/reviewed.png"
@@ -79,7 +79,7 @@ const mediaCoverage = [
   },
   {
     outlet: "RidePlay",
-    quote : "Exciting Highlights for All-Digital CES",   
+    quote: "Exciting Highlights for All-Digital CES",
     logo: "/media/rideplay.png"
   },
   {
@@ -97,12 +97,12 @@ const mediaCoverage = [
     quote: "Health and Wellness Trends: CES Featured Products and Solutions",
     logo: "/media/archyde.png"
   },
-   {
+  {
     outlet: "Into Tomorrow",
     quote: "At Home Cardiac Care from HD Medical",
     logo: "/media/intotomorrow.png"
   },
-   {
+  {
     outlet: "Electronics 360",
     quote: "CES: A new year ushers in new healthcare tech",
     logo: "/media/elec360.png"
@@ -140,19 +140,18 @@ const TestimonialCard = ({ testimonial, index }) => {
   }, [index]);
 
   return (
-    <div className={`relative transition-all duration-500 transform ${
-      isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-    }`}>
-      
+    <div className={`relative transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+      }`}>
+
       {/* Main Card */}
       <div className="flex flex-col md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-        
+
         {/* Left: Profile Image Section - Plain Background */}
         <div className="md:w-2/5 bg-blue-50 p-12 flex flex-col items-center justify-center relative overflow-visible">
           <div className="absolute top-6 left-6 z-0">
             <Quote size={50} className="text-blue-200 opacity-40" />
           </div>
-          
+
           {/* 3D Profile Image Container */}
           <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
             {/* Main Image with 3D Effect */}
@@ -160,7 +159,7 @@ const TestimonialCard = ({ testimonial, index }) => {
               {/* Shadow layers for 3D depth */}
               <div className="absolute inset-0 rounded-full bg-blue-200 opacity-20 blur-xl transform translate-y-4"></div>
               <div className="absolute inset-0 rounded-full bg-blue-300 opacity-30 blur-lg transform translate-y-2"></div>
-              
+
               {/* Main image */}
               <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl">
                 <Image
@@ -179,7 +178,7 @@ const TestimonialCard = ({ testimonial, index }) => {
 
         {/* Right: Testimonial Content - Plain Background */}
         <div className="md:w-3/5 p-10 bg-white flex flex-col justify-center">
-          
+
           {/* Testimonial Quote */}
           <div className="mb-8">
             <p className="text-gray-700 text-base md:text-lg leading-relaxed italic">
@@ -207,50 +206,6 @@ const TestimonialCard = ({ testimonial, index }) => {
   );
 };
 
-const TestimonialsHero = () => {
-  return (
-    <section className="relative bg-gradient-to-br from-blue-50 to-white py-20 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6">
-          What Healthcare
-          <span className="text-blue-600 block">Professionals Say</span>
-        </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Discover how HD Medical&apos;s AI-powered cardiovascular devices are transforming
-          patient care across the globe. Real stories from real healthcare heroes.
-        </p>
-      </div>
-    </section>
-  );
-};
-
-const StatsSection = () => {
-  const stats = [
-    { number: "500+", label: "Healthcare Professionals" },
-    { number: "50K+", label: "Patient Assessments" },
-    { number: "98%", label: "Accuracy Rate" },
-    { number: "24/7", label: "Technical Support" }
-  ];
-
-  return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
-                {stat.number}
-              </div>
-              <div className="text-gray-600 font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const MediaCoverageSection = () => {
   return (
@@ -262,20 +217,20 @@ const MediaCoverageSection = () => {
           </h2>
           <div className="w-24 h-1.5 bg-blue-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            HD Medical has garnered significant attention from the world&apos;s leading tech and healthcare publications, 
+            HD Medical has garnered significant attention from the world&apos;s leading tech and healthcare publications,
             highlighting our commitment to cardiovascular innovation.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {mediaCoverage.map((item, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="group relative bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 flex flex-col h-full"
             >
               {/* Top Accent Bar */}
               <div className="absolute top-0 left-0 w-full h-1.5 bg-blue-600 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              
+
               {/* Logo Container */}
               <div className="h-24 flex items-center justify-center mb-6">
                 {item.logo ? (
@@ -332,17 +287,17 @@ const PublicationsSection = () => {
         {publications.map((publication, index) => (
           <div key={publication.id} className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300">
             <div className="flex flex-col lg:flex-row">
-              
+
               {/* Left Section: Profile & Quote */}
               <div className="lg:w-2/5 p-8 md:p-12 bg-gradient-to-br from-blue-50 to-white flex flex-col items-center justify-center">
-                
+
                 {/* Profile Image with 3D effect */}
                 <div className="mb-8">
                   <div className="relative w-40 h-40 md:w-48 md:h-48">
                     {/* Shadow layers */}
                     <div className="absolute inset-0 rounded-full bg-blue-200 opacity-20 blur-xl transform translate-y-4"></div>
                     <div className="absolute inset-0 rounded-full bg-blue-300 opacity-30 blur-lg transform translate-y-2"></div>
-                    
+
                     {/* Main Image with orange border accent */}
                     <div className="relative w-full h-full">
                       <div className="absolute inset-0 rounded-full border-4 border-orange-400"></div>
@@ -417,7 +372,7 @@ const PublicationsSection = () => {
 export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-     
+
       {/* Testimonials Grid */}
       <section className="py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
@@ -442,7 +397,7 @@ export default function TestimonialsPage() {
       <MediaCoverageSection />
 
       <PublicationsSection />
-      
+
     </div>
   );
 }
