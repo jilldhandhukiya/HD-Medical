@@ -36,6 +36,8 @@ const testimonials = [
   },
 ];
 
+
+
 const mediaCoverage = [
   {
     outlet: "CNET",
@@ -127,6 +129,67 @@ const publications = [
     journals: "International Journal of Cardiology (IJC) & American Society of Echocardiography (ASE)"
   }
 ];
+
+const PremiumTestimonialCard = ({ testimonial }) => {
+  return (
+    <div className="relative h-full">
+      {/* Premium Card with Elegant Design */}
+      <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 p-8 md:p-10 h-full flex flex-col">
+        {/* Top accent line */}
+        <div className="absolute top-0 left-0 w-12 h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-r-full"></div>
+        
+        <div className="relative z-10 flex flex-col h-full">
+          {/* Star Rating */}
+          <div className="flex gap-1 mb-6">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} className="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+              </svg>
+            ))}
+          </div>
+
+          {/* Testimonial Quote - Flexible height */}
+          <div className="mb-8 flex-grow">
+            <p className="text-gray-700 text-base leading-relaxed font-medium">
+              &ldquo;{testimonial.testimonial}&rdquo;
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-gray-200 mb-6 mt-auto"></div>
+
+          {/* Profile Section */}
+          <div className="flex items-center gap-4">
+            {/* Profile Image */}
+            <div className="flex-shrink-0">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-blue-600 shadow-md">
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=${PRIMARY_BLUE.slice(1)}&color=fff&size=256`;
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Name & Position */}
+            <div className="flex-grow min-w-0">
+              <h4 className="text-gray-900 font-semibold text-sm truncate">
+                {testimonial.name}
+              </h4>
+              <p className="text-gray-600 text-xs mt-0.5 leading-tight line-clamp-2">
+                {testimonial.position}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const TestimonialCard = ({ testimonial, index }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -390,6 +453,24 @@ export default function TestimonialsPage() {
                 index={index}
               />
             ))}
+          </div>
+
+          {/* Premium Testimonial Section */}
+          <div className="mt-20 pt-16 border-t border-gray-200">
+            <div className="mb-12">
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-blue-50 rounded-full">
+                <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                <span className="text-blue-600 font-semibold text-xs uppercase tracking-wider">Distinguished Endorsements</span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                Medical Excellence <span className="text-blue-600">Recognized</span>
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
+              {testimonials.map((testimonial) => (
+                <PremiumTestimonialCard key={testimonial.id} testimonial={testimonial} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
