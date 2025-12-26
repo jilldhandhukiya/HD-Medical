@@ -43,13 +43,13 @@ const mediaCoverage = [
     outlet: "CNET",
     quote: "The Most Important Health Tech of CES",
     logo: "/media/cnet.png",
-    url: "https://www.cnet.com"
+    url: "https://www.cnet.com/pictures/the-health-tech-of-ces-2021/"
   },
   {
     outlet: "MobiHealthNews",
     quote: "The devices, software and health tech Headlines of CES",
     logo: "/media/mobihealthnews.png",
-    url: "https://www.mobihealthnews.com"
+    url: "https://www.mobihealthnews.com/news/devices-software-and-health-tech-headlines-ces-2021"
   },
   {
     outlet: "GearBrain",
@@ -61,37 +61,37 @@ const mediaCoverage = [
     outlet: "Wired",
     quote: "A Cardiac monitoring device that can track 7 biometrics at HOME",
     logo: "/media/wired.png",
-    url: "https://www.wired.com"
+    url: "https://www.wired.com/story/ces-2021-highlights-liveblog-whole-show/"
   },
   {
     outlet: "Reviewed",
     quote: "These Devices Allow You to Take Detailed Heart Readings At Home – But Should You?",
     logo: "/media/reviewed.png",
-    url: "https://www.reviewed.com"
+    url: "https://www.reviewed.com/health/features/at-home-ecg-heart-device-healthyu-ces"
   },
   {
     outlet: "TechRepublic",
     quote: "New device listens to heart, measures ECG remotely",
     logo: "/media/techrepublic.png",
-    url: "https://www.techrepublic.com"
+    url: "https://www.techrepublic.com/article/ces-2021-new-device-listens-to-heart-measures-ecg-remotely/"
   },
   {
     outlet: "HealthTech Insider",
     quote: "CES 2021: Small Remote Monitor Records Vitals and Sounds",
     logo: "/media/healthtechinsider.png",
-    url: "https://www.healthtechinsider.com"
+    url: "https://healthtechinsider.com/2021/01/11/ces-2021-small-remote-monitor-records-vitals-and-sounds-video/"
   },
   {
     outlet: "TrendHunter",
     quote: "HD Medical's Revolutionary Device Made its Debut at CES",
     logo: "/media/trendhunter.png",
-    url: "https://www.trendhunter.com"
+    url: "https://www.trendhunter.com/trends/hd-medical"
   },
   {
     outlet: "RidePlay",
     quote: "Exciting Highlights for All-Digital CES",
     logo: "/media/rideplay.png",
-    url: "https://www.rideplay.com"
+    url: "https://www.rideplay.tv/blog/tech/exciting-highlights-for-all-digital-ces-2021"
   },
   {
     outlet: "iTWire",
@@ -115,13 +115,13 @@ const mediaCoverage = [
     outlet: "Into Tomorrow",
     quote: "At Home Cardiac Care from HD Medical",
     logo: "/media/intotomorrow.png",
-    url: "https://www.intotomorrow.com"
+    url: "https://intotomorrow.com/at-home-cardiac-care-from-hd-medical/"
   },
   {
     outlet: "Electronics 360",
     quote: "CES: A new year ushers in new healthcare tech",
     logo: "/media/elec360.png",
-    url: "https://www.electronics360.globalspec.com"
+    url: "https://electronics360.globalspec.com/article/16222/ces-2021-a-new-year-ushers-in-new-healthcare-tech"
   },
   {
     outlet: "Fierce Healthcare",
