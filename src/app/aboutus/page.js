@@ -157,8 +157,7 @@ export default function AboutUs() {
             {/* Text Content */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#0E1C3C] leading-tight">
-                We Work to <br className="hidden lg:block" />
-                Save Lives
+                Revolutionizing Cardiac Monitoring.
               </h1>
             </div>
 
