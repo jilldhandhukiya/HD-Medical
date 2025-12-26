@@ -66,8 +66,8 @@ export default function Header() {
                 href={item.url}
                 className={`font-bold text-lg transition-colors text-base ${
                   pathname === item.url
-                    ? 'text-[#101585]'
-                    : 'text-slate-600 hover:text-[#101585]'
+                    ? 'text-[#0E1C3C]'
+                    : 'text-slate-600 hover:text-[#0E1C3C]'
                 }`}
               >
                 {item.title}
@@ -108,7 +108,7 @@ export default function Header() {
                 href={item.url}
                 className={`font-medium p-2 rounded text-base ${
                   pathname === item.url
-                    ? 'text-[#101585] bg-blue-50'
+                    ? 'text-[#0E1C3C] bg-blue-50'
                     : 'text-slate-700 hover:bg-slate-50'
                 }`}
                 onClick={() => setIsOpen(false)}

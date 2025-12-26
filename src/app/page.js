@@ -648,7 +648,7 @@ const VideoSection = () => {
 
 const CertificationsBar = () => {
   return (
-    <section className="bg-[#101585] py-12 w-full">
+    <section className="bg-[#0E1C3C] py-12 w-full">
       <div className="max-w-full px-4 sm:px-6 md:px-12 lg:px-24 mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
           CERTIFICATES
@@ -784,7 +784,7 @@ const App = () => {
         {/* <ClinicalExcellenceSection /> */}
         <FDAClearanceSection />
         <CertificationsBar />
-        <div className="w-full h-2 bg-white"></div>
+        <div className="w-full h-px bg-gray-300"></div>
       </div>
     </div>
   );
