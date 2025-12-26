@@ -60,7 +60,7 @@ const boardMembers = [
     name: "Dr. Guru Gurushankar",
     position: "Strategic Advisor",
     image: "/images/company/GuruShankar.png",
-    description: "Successful Healthcare Executive & Leader Ex-Philips, AWS, Cardinal, J&J, GE Healthcare"
+    description: "Chief Business Officer Successful Healthcare Executive & Leader ex-Phillips, AWS,  Cardinal Health, JNJ, GEHC"
   },
   {
     name: "Investor & Board Observer",
@@ -78,7 +78,7 @@ const medicalAdvisors = [
   },
   {
     name: "Dr Douglas R Johnston",
-    position: "MD, Chief of Cardiac Surgery, \n Fellow: Cleveland Clinic",
+    position: "MD Thoracic and Cardiovascular Surgery",
     image: "/images/company/Dr Dougles.png"
   },
   {
@@ -93,7 +93,7 @@ const medicalAdvisors = [
   },
   {
     name: "Dr. Ethiraj G. Raj",
-    position: "MD, FACC, FSCAI, FASNC, Cardiologist, Hurley Medical Center, Michigan",
+    position: "Leading Private Cardiologist Flint, Michigan Hurley Medical Center",
     image: "/images/company/Dr Raj.png"
   }
 ];
