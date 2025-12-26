@@ -140,7 +140,7 @@ const IntelligentSolutionsSection = () => {
       {/* --- 1. Background Subtle Grid --- */}
       <div className="absolute inset-0 pointer-events-none opacity-30"
         style={{
-          backgroundImage: `radial-gradient(#101585 0.5px, transparent 0.5px), radial-gradient(#101585 0.5px, #ffffff 0.5px)`,
+          backgroundImage: `radial-gradient(#0E1C3C 0.5px, transparent 0.5px), radial-gradient(#0E1C3C 0.5px, #ffffff 0.5px)`,
           backgroundSize: '24px 24px',
           backgroundPosition: '0 0, 12px 12px',
           maskImage: 'radial-gradient(circle at center, black 40%, transparent 80%)'
@@ -149,7 +149,7 @@ const IntelligentSolutionsSection = () => {
 
       {/* --- 2. Section Header --- */}
       <div className="relative z-10 text-center mb-8 md:mb-12 lg:mb-16 shrink-0 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#101585] tracking-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0E1C3C] tracking-tight">
           HD Steth - Intelligent solution for Cardiac Care
         </h2>
 
@@ -179,7 +179,7 @@ const IntelligentSolutionsSection = () => {
                 className={`group flex flex-col items-center lg:items-end text-center lg:text-right cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 lg:translate-x-2' : 'opacity-90 hover:opacity-100'}`}
               >
                 <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-4 mb-2">
-                  <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight order-2 lg:order-1 ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+                  <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight order-2 lg:order-1 ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#0E1C3C]'}`}>
                     {feature.title}
                   </h3>
                   <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 order-1 lg:order-2 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
@@ -220,7 +220,7 @@ const IntelligentSolutionsSection = () => {
                 className={`group flex flex-col items-center lg:items-start text-center lg:text-left cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 lg:-translate-x-2' : 'opacity-90 hover:opacity-100'}`}
               >
                 <div className="flex flex-col-reverse lg:flex-row-reverse items-center gap-3 lg:gap-4 mb-2">
-                  <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+                  <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#0E1C3C]'}`}>
                     {feature.title}
                   </h3>
                   <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
@@ -257,7 +257,7 @@ const IntelligentSolutionsSection = () => {
                 className={`w-8 h-8 sm:w-10 sm:h-10 object-contain transition-opacity duration-200 ${hoveredIndex === centerFeature.id ? 'brightness-0 invert' : ''}`}
               />
             </div>
-            <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight mb-1 ${hoveredIndex === centerFeature.id ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+            <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight mb-1 ${hoveredIndex === centerFeature.id ? 'text-[#FA6404]' : 'text-[#0E1C3C]'}`}>
               {centerFeature.title}
             </h3>
             <p className="text-sm sm:text-base text-slate-500 font-medium max-w-[260px] sm:max-w-[280px] leading-snug">
@@ -311,7 +311,7 @@ const HeroSection = () => {
       <div className="space-y-8 md:space-y-10 flex flex-col items-center lg:items-start order-1">
         
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#101585] leading-tight lg:leading-[1.1] text-center lg:text-left">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#0E1C3C] leading-tight lg:leading-[1.1] text-center lg:text-left">
           Transform <br className="hidden lg:block" />
           Cardiac <br className="hidden lg:block" />
           Care with <br className="hidden lg:block" />
@@ -333,7 +333,7 @@ const HeroSection = () => {
                 {activeFeature === index && (
                   <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#FA6404] rounded-full transition-all duration-300 ease-out shadow-[0_0_10px_rgba(250,100,4,0.5)]"></div>
                 )}
-                <span className={`text-base sm:text-lg md:text-xl font-medium transition-colors duration-300 ${activeFeature === index ? 'text-[#101585] font-semibold' : 'text-slate-400 group-hover:text-slate-600'}`}>
+                <span className={`text-base sm:text-lg md:text-xl font-medium transition-colors duration-300 ${activeFeature === index ? 'text-[#0E1C3C] font-semibold' : 'text-slate-400 group-hover:text-slate-600'}`}>
                   {feature.text}
                 </span>
               </div>
@@ -371,7 +371,7 @@ const HeroSection = () => {
 //     <section className="w-full py-24 px-6 md:px-12 bg-white relative overflow-hidden">
 //       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
 //         style={{
-//           backgroundImage: `linear-gradient(#101585 1px, transparent 1px), linear-gradient(90deg, #101585 1px, transparent 1px)`,
+//           backgroundImage: `linear-gradient(#0E1C3C 1px, transparent 1px), linear-gradient(90deg, #0E1C3C 1px, transparent 1px)`,
 //           backgroundSize: '40px 40px'
 //         }}
 //       ></div>
@@ -379,7 +379,7 @@ const HeroSection = () => {
 //       <div className="max-w-7xl mx-auto relative z-10">
 //         <div className="text-center mb-20">
 //           <h4 className="text-[#FA6404] font-bold tracking-widest text-xs uppercase mb-3">Proven Excellence</h4>
-//           <h2 className="text-3xl md:text-5xl font-bold text-[#101585] mb-4 max-w-3xl mx-auto">
+//           <h2 className="text-3xl md:text-5xl font-bold text-[#0E1C3C] mb-4 max-w-3xl mx-auto">
 //             Trusted by Healthcare <br /> Professionals <span className="text-[#FA6404]">Worldwide</span>
 //           </h2>
 //           <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed text-lg">
@@ -397,7 +397,7 @@ const HeroSection = () => {
 //                   {stat.icon}
 //                 </div>
 
-//                 <h3 className="text-5xl font-extrabold text-[#101585] tracking-tight mb-1">
+//                 <h3 className="text-5xl font-extrabold text-[#0E1C3C] tracking-tight mb-1">
 //                   {stat.value}
 //                 </h3>
 
@@ -413,7 +413,7 @@ const HeroSection = () => {
 //         <div className="text-center">
 //           <div className="inline-block px-8 py-3 rounded-full bg-slate-50 border border-slate-200">
 //             <p className="text-slate-700 text-base font-semibold">
-//               Validated across <span className="text-[#101585] font-bold">50+ healthcare facilities</span> in <span className="text-[#FA6404] font-bold">20+ countries</span>
+//               Validated across <span className="text-[#0E1C3C] font-bold">50+ healthcare facilities</span> in <span className="text-[#FA6404] font-bold">20+ countries</span>
 //             </p>
 //           </div>
 //         </div>
@@ -424,7 +424,7 @@ const HeroSection = () => {
 
 // const ProductDetailSection = () => {
 //   return (
-//     <section className="w-full py-24 px-6 md:px-12 bg-[#101585] relative overflow-hidden">
+//     <section className="w-full py-24 px-6 md:px-12 bg-[#0E1C3C] relative overflow-hidden">
 
 //       <div className="max-w-7xl mx-auto relative z-10">
 //         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -467,7 +467,7 @@ const VideoSection = () => {
   return (
      <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-white">
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#101585] mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#0E1C3C] mb-4">
           Instant cardiac insights. <span className="text-[#FA6404]">Anytime.</span>
         </h2>
         <p className="text-slate-500 text-lg md:text-xl leading-relaxed">
@@ -499,7 +499,7 @@ const VideoSection = () => {
               className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-white border border-slate-200 px-6 py-2 md:px-8 md:py-3 rounded-full flex items-center gap-2 md:gap-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
           >
               <Play className="w-5 h-5 md:w-6 md:h-6 text-[#FA6404] fill-[#FA6404] group-hover:scale-110 transition-transform" />
-              <span className="text-[#101585] font-bold text-sm md:text-lg whitespace-nowrap">
+              <span className="text-[#0E1C3C] font-bold text-sm md:text-lg whitespace-nowrap">
                   Watch on Youtube
               </span>
           </a>
@@ -542,7 +542,7 @@ const VideoSection = () => {
 //     <section className="w-full py-20 px-6 md:px-12 bg-white">
 //       <div className="max-w-7xl mx-auto">
 //         <div className="text-center mb-12">
-//           <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">
+//           <h2 className="text-3xl md:text-4xl font-bold text-[#0E1C3C] mb-4">
 //             Engineered for Clinical Excellence
 //           </h2>
 //           <p className="text-slate-500 text-sm md:text-base max-w-2xl mx-auto">
@@ -563,7 +563,7 @@ const VideoSection = () => {
 //               </div>
 
 //               <div className="flex justify-between items-start mb-3">
-//                 <h3 className="font-bold text-[#101585] text-lg leading-tight pr-4">{item.title}</h3>
+//                 <h3 className="font-bold text-[#0E1C3C] text-lg leading-tight pr-4">{item.title}</h3>
 //                 {/* Chevron equivalent */}
 //                 <div className="text-slate-300 group-hover:text-[#FA6404] transition-colors">
 //                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -593,7 +593,7 @@ const VideoSection = () => {
 
 //   return (
 //     <section className="w-full py-10 px-6 md:px-12 bg-white">
-//       <div className="max-w-7xl mx-auto bg-[#101585] rounded-3xl p-8 md:p-12 lg:p-16 overflow-hidden relative">
+//       <div className="max-w-7xl mx-auto bg-[#0E1C3C] rounded-3xl p-8 md:p-12 lg:p-16 overflow-hidden relative">
 //         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
 //         <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FA6404]/10 rounded-full blur-[80px] pointer-events-none"></div>
 
@@ -648,7 +648,7 @@ const VideoSection = () => {
 
 const CertificationsBar = () => {
   return (
-    <section className="bg-[#101585] py-12 w-full">
+    <section className="bg-[#0E1C3C] py-12 w-full">
       <div className="max-w-full px-4 sm:px-6 md:px-12 lg:px-24 mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
           CERTIFICATES
@@ -706,7 +706,7 @@ const FDAClearanceSection = () => {
         {/* Right: Content (Styled exactly like the reference image) */}
         <div className="space-y-10">
           {/* Header */}
-          <h2 className="text-3xl md:text-5xl font-bold text-[#101585] leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#0E1C3C] leading-tight">
             FDA cleared (Class II) for the three product classification codes in one device.
           </h2>
 
