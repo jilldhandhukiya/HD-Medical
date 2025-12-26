@@ -42,77 +42,92 @@ const mediaCoverage = [
   {
     outlet: "CNET",
     quote: "The Most Important Health Tech of CES",
-    logo: "/media/cnet.png"
+    logo: "/media/cnet.png",
+    url: "https://www.cnet.com"
   },
   {
     outlet: "MobiHealthNews",
     quote: "The devices, software and health tech Headlines of CES",
-    logo: "/media/mobihealthnews.png"
+    logo: "/media/mobihealthnews.png",
+    url: "https://www.mobihealthnews.com"
   },
   {
     outlet: "GearBrain",
     quote: "The Best of CES: Tech that will shape our life this year",
-    logo: "/media/gearbrain.png"
+    logo: "/media/gearbrain.png",
+    url: "https://www.gearbrain.com"
   },
   {
     outlet: "Wired",
     quote: "A Cardiac monitoring device that can track 7 biometrics at HOME",
-    logo: "/media/wired.png"
+    logo: "/media/wired.png",
+    url: "https://www.wired.com"
   },
   {
     outlet: "Reviewed",
     quote: "These Devices Allow You to Take Detailed Heart Readings At Home – But Should You?",
-    logo: "/media/reviewed.png"
+    logo: "/media/reviewed.png",
+    url: "https://www.reviewed.com"
   },
   {
     outlet: "TechRepublic",
     quote: "New device listens to heart, measures ECG remotely",
-    logo: "/media/techrepublic.png"
+    logo: "/media/techrepublic.png",
+    url: "https://www.techrepublic.com"
   },
   {
     outlet: "HealthTech Insider",
     quote: "CES 2021: Small Remote Monitor Records Vitals and Sounds",
-    logo: "/media/healthtechinsider.png"
+    logo: "/media/healthtechinsider.png",
+    url: "https://www.healthtechinsider.com"
   },
   {
     outlet: "TrendHunter",
     quote: "HD Medical's Revolutionary Device Made its Debut at CES",
-    logo: "/media/trendhunter.png"
+    logo: "/media/trendhunter.png",
+    url: "https://www.trendhunter.com"
   },
   {
     outlet: "RidePlay",
     quote: "Exciting Highlights for All-Digital CES",
-    logo: "/media/rideplay.png"
+    logo: "/media/rideplay.png",
+    url: "https://www.rideplay.com"
   },
   {
     outlet: "iTWire",
     quote: "CES Health Tech Gamut that Deserves our Undivided Attention",
-    logo: "/media/itwire.png"
+    logo: "/media/itwire.png",
+    url: "https://www.itwire.com"
   },
   {
     outlet: "MUO",
     quote: "This Is the First Health Tracker to Monitor 7 Different Biometrics",
-    logo: "/media/muo.png"
+    logo: "/media/muo.png",
+    url: "https://www.makeuseof.com"
   },
   {
     outlet: "ARCHYDE",
     quote: "Health and Wellness Trends: CES Featured Products and Solutions",
-    logo: "/media/archyde.png"
+    logo: "/media/archyde.png",
+    url: "https://www.archyde.com"
   },
   {
     outlet: "Into Tomorrow",
     quote: "At Home Cardiac Care from HD Medical",
-    logo: "/media/intotomorrow.png"
+    logo: "/media/intotomorrow.png",
+    url: "https://www.intotomorrow.com"
   },
   {
     outlet: "Electronics 360",
     quote: "CES: A new year ushers in new healthcare tech",
-    logo: "/media/elec360.png"
+    logo: "/media/elec360.png",
+    url: "https://www.electronics360.globalspec.com"
   },
   {
     outlet: "Fierce Healthcare",
     quote: "At all-virtual CES, the spotlight is on touchless tech, robot companions — and smart bathrooms",
-    logo: "/media/fiercehealthcare.png"
+    logo: "/media/fiercehealthcare.png",
+    url: "https://www.fiercehealthcare.com"
   }
 ];
 
@@ -295,7 +310,7 @@ const MediaCoverageSection = () => {
               <div className="absolute top-0 left-0 w-full h-1.5 bg-[#0E1C3C] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
               {/* Logo Container */}
-              <div className="h-24 flex items-center justify-center mb-6">
+              <div className="h-24 flex items-center justify-center mb-6 cursor-pointer" onClick={() => window.open(item.url, '_blank')}>
                 {item.logo ? (
                   <div className="relative w-48 h-16">
                     <Image
@@ -335,7 +350,7 @@ const MediaCoverageSection = () => {
 
 const PublicationsSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-[#e8f5f9] via-white to-[#e8f5f9]">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6">
@@ -352,15 +367,12 @@ const PublicationsSection = () => {
             <div className="flex flex-col lg:flex-row">
 
               {/* Left Section: Profile & Quote */}
-              <div className="lg:w-2/5 p-8 md:p-12 bg-gradient-to-br from-[#e8f5f9] to-white flex flex-col items-center justify-center">
+              <div className="lg:w-2/5 p-8 md:p-12 flex flex-col items-center justify-center">
 
                 {/* Profile Image with 3D effect */}
                 <div className="mb-8">
                   <div className="relative w-40 h-40 md:w-48 md:h-48">
-                    {/* Shadow layers */}
-                    <div className="absolute inset-0 rounded-full bg-[#b8dae7] opacity-20 blur-xl transform translate-y-4"></div>
-                    <div className="absolute inset-0 rounded-full bg-[#9ccddc] opacity-30 blur-lg transform translate-y-2"></div>
-
+                   
                     {/* Main Image with orange border accent */}
                     <div className="relative w-full h-full">
                       <div className="absolute inset-0 rounded-full border-4 border-orange-400"></div>
