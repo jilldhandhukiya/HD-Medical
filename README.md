@@ -124,7 +124,7 @@ The application will automatically reload when you make changes to the code.
 - **Styling**: Tailwind CSS utilities with custom theme extensions
 - **Icons**: Lucide React for primary icons, Bootstrap icons for additional needs
 - **Images**: Next.js Image component with optimized loading and remote patterns
-- **Colors**: Consistent color palette with primary blue (`#101585`) and orange (`#FA6404`)
+- **Colors**: Consistent color palette with primary blue (`#0E1C3C`) and orange (`#FA6404`)
 
 ### Key Features Implementation
 

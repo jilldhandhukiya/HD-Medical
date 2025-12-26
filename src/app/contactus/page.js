@@ -656,7 +656,7 @@ export default function Contact() {
                       onClick={handleSubmit}
                       disabled={isLoading}
                       className={`w-full py-4 rounded-full text-white text-lg font-medium transition-all duration-300 shadow-lg ${isLoading ? "bg-gray-400 cursor-not-allowed" : "hover:bg-[#0d0f6b] hover:shadow-xl transform hover:-translate-y-1"}`}
-                      style={{ backgroundColor: isLoading ? undefined : "#101585" }}
+                      style={{ backgroundColor: isLoading ? undefined : "#0E1C3C" }}
                     >
                       {isLoading ? "Submitting..." : "Submit"}
                     </button>

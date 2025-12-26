@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image';
 
-const PRIMARY_BLUE = '#101585';
+const PRIMARY_BLUE = '#0E1C3C';
 const PRIMARY_ORANGE = '#FA6404';
 
 const leadership = [
@@ -156,7 +156,7 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Text Content */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#101585] leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#0E1C3C] leading-tight">
                 We Work to <br className="hidden lg:block" />
                 Save Lives
               </h1>
@@ -179,14 +179,14 @@ export default function AboutUs() {
       <section id="about-details" className="py-20 bg-gradient-to-b from-white to-blue-50/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center justify-center p-3 mb-6 bg-blue-50 rounded-full">
-            <svg className="w-6 h-6 text-[#101585]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-[#0E1C3C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About HD Medical</h2>
-          <div className="w-24 h-1 bg-[#101585] mx-auto mb-8 rounded-full"></div>
+          <div className="w-24 h-1 bg-[#0E1C3C] mx-auto mb-8 rounded-full"></div>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light">
-            <span className="font-semibold text-[#101585]">HD Medical</span> is a global leader in the detection and management of cardiovascular disease.
+            <span className="font-semibold text-[#0E1C3C]">HD Medical</span> is a global leader in the detection and management of cardiovascular disease.
             We create clinically validated devices and software that put powerful diagnostic tools into the
             hands of clinicians — delivering fast, reliable, evidence-based information at the point of care.
             Our solutions are designed to improve outcomes, streamline workflows and help save lives.
@@ -201,7 +201,7 @@ export default function AboutUs() {
 
             {/* Left: Vision (Aligns Right towards image on Desktop) */}
             <div className="flex flex-col items-center lg:items-end text-center lg:text-right space-y-6 order-1">
-              <h3 className="text-3xl md:text-5xl font-bold text-[#101585]">Our Vision</h3>
+              <h3 className="text-3xl md:text-5xl font-bold text-[#0E1C3C]">Our Vision</h3>
               <p className="text-slate-600 leading-relaxed max-w-lg font-medium text-lg md:text-xl">
                 To be a global leader in innovative,
                 high-precision medical devices that

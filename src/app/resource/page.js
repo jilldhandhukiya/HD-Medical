@@ -35,7 +35,7 @@ const ResourcesHero = () => {
                     {/* Text Content */}
                     <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1 space-y-6">
                         {/* <div className="w-16 h-1 bg-[#FA6404] mb-2"></div> */}
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#101585] leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#0E1C3C] leading-tight">
                             HD Steth<span className="text-[0.6em] align-super">™</span> <br />
                             <span className="text-[#FA6404]">Resources</span>
                         </h1>
@@ -114,7 +114,7 @@ const EssentialResourcesSection = () => {
                               {item.icon}
                             </div>
 
-                             <h3 className="text-xl font-bold text-[#101585] mb-2">{item.title}</h3>
+                             <h3 className="text-xl font-bold text-[#0E1C3C] mb-2">{item.title}</h3>
                             <p className="text-slate-400 text-sm mb-8">{item.desc}</p>
 
                             {item.type === 'mobile-app' ? (
@@ -122,7 +122,7 @@ const EssentialResourcesSection = () => {
                                     <a
                                         href="/app/hdsteth.apk"
                                         download="hdsteth.apk"
-                                        className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
+                                        className="text-[#FA6404] font-bold text-sm hover:text-[#0E1C3C] transition-colors flex items-center gap-2"
                                     >
                                         Download Android <Download size={14} />
                                     </a>
@@ -130,7 +130,7 @@ const EssentialResourcesSection = () => {
                                         href="https://apps.apple.com/in/app/hd-steth/id1565203803"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2"
+                                        className="text-[#FA6404] font-bold text-sm hover:text-[#0E1C3C] transition-colors flex items-center gap-2"
                                     >
                                         Download iOS <ExternalLink size={14} />
                                     </a>
@@ -141,7 +141,7 @@ const EssentialResourcesSection = () => {
                                     download={item.type === 'pdf'}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#101585] transition-colors flex items-center gap-2 cursor-pointer"
+                                    className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#0E1C3C] transition-colors flex items-center gap-2 cursor-pointer"
                                 >
                                     {item.action}
                                     {item.type === 'pdf' ? <Download size={14} /> : <ExternalLink size={14} />}
@@ -158,7 +158,7 @@ const EssentialResourcesSection = () => {
 
 const CareMaintenanceSection = () => {
     return (
-        <section className="w-full pb-15 px-6 md:px-12 bg-[#101585]">
+        <section className="w-full pb-15 px-6 md:px-12 bg-[#0E1C3C]">
             <div className="max-w-7xl mx-auto p-8 md:p-16 lg:p-20">
 
                 <div className="text-center mb-12">
@@ -174,7 +174,7 @@ const CareMaintenanceSection = () => {
                             <div className="p-2 bg-orange-50 rounded-lg">
                                 <ShieldCheck className="text-[#FA6404]" size={24} />
                             </div>
-                            <h3 className="text-xl font-bold text-[#101585]">Daily Cleaning</h3>
+                            <h3 className="text-xl font-bold text-[#0E1C3C]">Daily Cleaning</h3>
                         </div>
 
                         <ul className="space-y-4">
@@ -198,7 +198,7 @@ const CareMaintenanceSection = () => {
                             <div className="p-2 bg-red-50 rounded-lg">
                                 <AlertTriangle className="text-red-500" size={24} />
                             </div>
-                            <h3 className="text-xl font-bold text-[#101585]">Important Warnings</h3>
+                            <h3 className="text-xl font-bold text-[#0E1C3C]">Important Warnings</h3>
                         </div>
 
                         <ul className="space-y-4">
@@ -237,7 +237,7 @@ const AccessoriesSection = () => {
             <div className="max-w-7xl mx-auto">
                 {/* Header Text */}
                 <div className="text-center py-12">
-                    <h1 className="text-3xl md:text-5xl font-bold text-[#101585] mb-4">Accessories</h1>
+                    <h1 className="text-3xl md:text-5xl font-bold text-[#0E1C3C] mb-4">Accessories</h1>
                     <p className="text-slate-500">Enhance your HD Steth experience with genuine parts</p>
                 </div>
 
@@ -258,7 +258,7 @@ const AccessoriesSection = () => {
                 {/* Accessories Grid */}
                 <div className="grid md:grid-cols-3 gap-8 mb-12">
                     {accessories.map((item, idx) => (
-                        <div key={idx} className="flex flex-col items-center text-center bg-[#101585] p-6 rounded-xl shadow-lg border-t-[6px] border-[#FA6404] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div key={idx} className="flex flex-col items-center text-center bg-[#0E1C3C] p-6 rounded-xl shadow-lg border-t-[6px] border-[#FA6404] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
                             <div className="w-20 h-20 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-4 shadow-lg shadow-[#FA6404]/20 group-hover:scale-110 transition-transform">
                                 {item.icon}
                             </div>
@@ -288,7 +288,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
                 className="w-full flex justify-between items-center py-6 text-left hover:text-[#FA6404] transition-colors group"
                 onClick={onClick}
             >
-                <span className={`font-bold text-lg pr-8 ${isOpen ? 'text-[#FA6404]' : 'text-[#101585]'}`}>
+                <span className={`font-bold text-lg pr-8 ${isOpen ? 'text-[#FA6404]' : 'text-[#0E1C3C]'}`}>
                     {question}
                 </span>
                 {isOpen ? <ChevronUp className="text-[#FA6404] shrink-0" /> : <ChevronDown className="text-slate-400 group-hover:text-[#FA6404] shrink-0" />}
@@ -370,7 +370,7 @@ const FAQSection = () => {
         <section className="w-full py-20 px-6 md:px-12 bg-white">
             <div className="max-w-3xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Frequently Asked Questions</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#0E1C3C] mb-4">Frequently Asked Questions</h2>
                     <p className="text-slate-500">Get answers to common questions about your HD Steth</p>
                 </div>
 
@@ -392,7 +392,7 @@ const FAQSection = () => {
 
 const WhatsInTheBoxSection = () => {
     return (
-        <section className="w-full py-20 px-6 md:px-12 bg-[#101585]">
+        <section className="w-full py-20 px-6 md:px-12 bg-[#0E1C3C]">
             <div className="max-w-4xl mx-auto">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">What&apos;s in the Box</h3>
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
@@ -465,7 +465,7 @@ const TestimonialsSection = () => {
         <section className="w-full py-20 px-6 md:px-12 bg-white">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#101585] mb-4">Trusted by Professionals</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#0E1C3C] mb-4">Trusted by Professionals</h2>
                     <p className="text-slate-500">Hear from doctors who rely on HD Steth</p>
                 </div>
 
@@ -478,7 +478,7 @@ const TestimonialsSection = () => {
                                 </div>
                             </div>
                             <div>
-                                <h4 className="text-[#101585] font-bold text-lg">{item.name}</h4>
+                                <h4 className="text-[#0E1C3C] font-bold text-lg">{item.name}</h4>
                                 <p className="text-xs text-slate-400 font-bold uppercase tracking-wide mb-4">{item.role}</p>
                                 <p className="text-slate-600 italic leading-relaxed relative">
                                     <span className="text-4xl text-slate-200 absolute -top-4 -left-2 font-serif">&quot;</span>
