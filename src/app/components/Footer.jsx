@@ -5,7 +5,7 @@ import { Mail } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#101585] text-white pt-16 pb-8 px-6 md:px-12 relative overflow-hidden">
+    <footer className="w-full bg-[#0E1C3C] text-white pt-16 pb-8 px-6 md:px-12 relative overflow-hidden">
 
       {/* Background Pattern (subtle circles) */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">

@@ -494,9 +494,6 @@ const TestimonialsSection = () => {
     );
 };
 
-
-
-
 const ResourcesPage = () => {
     return (
         <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-orange-100 selection:text-orange-900">
@@ -508,7 +505,7 @@ const ResourcesPage = () => {
                 <AccessoriesSection />
                 <FAQSection />
                 <WhatsInTheBoxSection />
-                <TestimonialsSection />
+                {/* <TestimonialsSection /> */}
             </div>
 
         </div>
