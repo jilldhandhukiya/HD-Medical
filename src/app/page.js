@@ -149,7 +149,7 @@ const IntelligentSolutionsSection = () => {
 
       {/* --- 2. Section Header --- */}
       <div className="relative z-10 text-center mb-8 md:mb-12 lg:mb-16 shrink-0 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0E1C3C] tracking-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0E1C3C] tracking-tight">
           HD Steth - Intelligent solution for Cardiac Care
         </h2>
 
@@ -706,7 +706,7 @@ const FDAClearanceSection = () => {
         {/* Right: Content (Styled exactly like the reference image) */}
         <div className="space-y-10">
           {/* Header */}
-          <h2 className="text-3xl md:text-5xl font-bold text-[#0E1C3C] leading-tight">
+          <h2 className="text-3xl md:text-3xl font-bold text-[#0E1C3C] text-center">
             FDA cleared (Class II) for the three product classification codes in one device.
           </h2>
 

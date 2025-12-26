@@ -47,6 +47,8 @@ export default function Footer() {
                 { label: 'Products', href: '/product' },
                 { label: 'About Us', href: '/aboutus' },
                 { label: 'Contact', href: '/contactus' },
+                { label: 'Testimonials', href: '/testimonials' },
+                { label: 'Resources', href: '/resource' },
               ].map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="hover:text-[#FA6404] transition-colors block w-fit">
@@ -78,7 +80,7 @@ export default function Footer() {
             <p className="text-blue-200 text-sm mb-4">
               Subscribe to our newsletter for the latest updates and cardiac care insights.
             </p>
-            <div className="space-y-3">
+            <div className="space-y-3" suppressHydrationWarning={true}>
               <input
                 type="email"
                 placeholder="Your email address"
