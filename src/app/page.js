@@ -744,7 +744,7 @@ const HealthyUComingSoonSection = () => {
               <span className="text-[#FA6404] font-bold text-sm uppercase tracking-wider">Coming Soon</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0E1C3C] leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0E1C3C] leading-tight">
               HealthyU Platform
             </h2>
             
