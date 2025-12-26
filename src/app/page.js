@@ -728,6 +728,101 @@ const FDAClearanceSection = () => {
   );
 };
 
+const HealthyUComingSoonSection = () => {
+  return (
+    <section className="w-full py-20 px-6 md:px-12 bg-gradient-to-br from-[#f8faff] to-white relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#FA6404]/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#0E1C3C]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+        {/* Left: Content */}
+        <div className="space-y-8 flex flex-col justify-center">
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FA6404]/10 rounded-full w-fit">
+              <div className="w-2 h-2 bg-[#FA6404] rounded-full animate-pulse"></div>
+              <span className="text-[#FA6404] font-bold text-sm uppercase tracking-wider">Coming Soon</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0E1C3C] leading-tight">
+              HealthyU Platform
+            </h2>
+            
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-lg">
+              Experience the future of personalized health monitoring. HealthyU brings comprehensive wellness tracking, real-time health insights, and intelligent health recommendations directly to your fingertips.
+            </p>
+          </div>
+
+          <div className="space-y-4 pt-4">
+            <div className="flex items-start gap-4">
+              <div className="w-6 h-6 rounded-full bg-[#FA6404] flex items-center justify-center flex-shrink-0 mt-1">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-bold text-[#0E1C3C] text-lg">Real-Time Health Monitoring</h3>
+                <p className="text-slate-600 text-sm">Track vital signs and health metrics anytime, anywhere</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-6 h-6 rounded-full bg-[#FA6404] flex items-center justify-center flex-shrink-0 mt-1">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-bold text-[#0E1C3C] text-lg">Intelligent Insights</h3>
+                <p className="text-slate-600 text-sm">AI-powered analysis delivers personalized health recommendations</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-6 h-6 rounded-full bg-[#FA6404] flex items-center justify-center flex-shrink-0 mt-1">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-bold text-[#0E1C3C] text-lg">Seamless Integration</h3>
+                <p className="text-slate-600 text-sm">Works perfectly with your HD Steth device</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Image */}
+        <div className="relative flex justify-center items-center">
+          <div className="relative w-full max-w-md">
+            {/* Glowing background effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#FA6404]/20 to-[#0E1C3C]/10 rounded-3xl blur-2xl transform -rotate-3"></div>
+            
+            {/* Image container */}
+            <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-100">
+              <Image
+                src="/images/image-removebg-preview (24).png"
+                alt="HealthyU Platform"
+                width={350}
+                height={350}
+                className="w-full h-auto object-contain drop-shadow-lg"
+              />
+            </div>
+
+            {/* Floating badge */}
+            <div className="absolute -bottom-4 -right-4 bg-[#FA6404] text-white rounded-full p-4 shadow-lg">
+              <div className="text-center">
+                <div className="text-2xl font-bold">Q1</div>
+                <div className="text-xs font-semibold">2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const App = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-orange-100 selection:text-orange-900">
@@ -763,6 +858,7 @@ const App = () => {
         {/* <ClinicalExcellenceSection /> */}
         <FDAClearanceSection />
         <CertificationsBar />
+        <HealthyUComingSoonSection />
         <div className="w-full h-2 bg-white"></div>
       </div>
     </div>
