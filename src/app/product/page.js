@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
-const PRIMARY_BLUE = '#101585'; // use this everywhere for blue accents
+const PRIMARY_BLUE = '#0E1C3C'; // use this everywhere for blue accents
 const PRIMARY_ORANGE = '#FA6404';
 
 const advantages = [
@@ -304,7 +304,7 @@ const AboutHero = () => {
           className="w-full h-full object-cover"
           fill
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#101585]/90 via-[#101585]/70 to-transparent opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0E1C3C]/90 via-[#0E1C3C]/70 to-transparent opacity-90"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center md:text-left">
@@ -351,18 +351,18 @@ const MissionSection = () => {
 
           <div className="grid grid-cols-2 gap-6">
             <div className="bg-blue-50 p-6 rounded-2xl text-center">
-              <Users size={32} className="text-[#101585] mx-auto mb-4" />
+              <Users size={32} className="text-[#0E1C3C] mx-auto mb-4" />
               <h3 className="text-3xl font-bold" style={{ color: PRIMARY_ORANGE }} >100+</h3>
               <p className="text-slate-600 font-medium text-sm">Team Members</p>
             </div>
             <div className="bg-orange-50 p-6 rounded-2xl text-center">
               <Globe size={32} className="text-[#FA6404] mx-auto mb-4" />
-              <h3 className="text-3xl font-bold text-[#101585] mb-1">20+</h3>
+              <h3 className="text-3xl font-bold text-[#0E1C3C] mb-1">20+</h3>
               <p className="text-slate-600 font-medium text-sm">Countries</p>
             </div>
             <div className="bg-white border border-slate-100 shadow-lg p-6 rounded-2xl text-center col-span-2">
-              <Target size={32} className="text-[#101585] mx-auto mb-4" />
-              <h3 className="text-3xl font-bold text-[#101585] mb-1">200K+</h3>
+              <Target size={32} className="text-[#0E1C3C] mx-auto mb-4" />
+              <h3 className="text-3xl font-bold text-[#0E1C3C] mb-1">200K+</h3>
               <p className="text-slate-600 font-medium text-sm">Screenings Performed</p>
             </div>
           </div>
@@ -462,7 +462,7 @@ export default function ProductHero() {
         </div>
       </section>
       {/* Key Listening Modes & Signal Processing */}
-      <section className="w-full py-8 bg-[#101585]">
+      <section className="w-full py-8 bg-[#0E1C3C]">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
           HD Steth: Intelligent Solution for Cardiac Care
         </h2>
@@ -605,7 +605,7 @@ export default function ProductHero() {
         </div>
 
         {/* SECTION 2 – FULL WIDTH BLUE BACKGROUND */}
-        <div className="w-full py-14" style={{ backgroundColor: "#101585" }}>
+        <div className="w-full py-14" style={{ backgroundColor: "#0E1C3C" }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {intelligentItems.slice(0, 4).map((item, idx) => {
@@ -795,7 +795,7 @@ export default function ProductHero() {
       <section className="w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center gap-8">
-            <h2 className="text-6xl md:text-6xl font-extrabold text-[#101585]">
+            <h2 className="text-6xl md:text-6xl font-extrabold text-[#0E1C3C]">
               HD Steth Bluetooth Enabled APP
             </h2>
 

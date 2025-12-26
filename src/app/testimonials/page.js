@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Quote } from 'lucide-react';
 
-const PRIMARY_BLUE = '#6fb5ce';
+const PRIMARY_BLUE = '#0E1C3C';
 
 const testimonials = [
   {
@@ -136,7 +136,7 @@ const PremiumTestimonialCard = ({ testimonial }) => {
       {/* Premium Card with Elegant Design */}
       <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 p-8 md:p-10 h-full flex flex-col">
         {/* Top accent line */}
-        <div className="absolute top-0 left-0 w-12 h-1 bg-gradient-to-r from-[#6fb5ce] to-[#8fc5d9] rounded-r-full"></div>
+        <div className="absolute top-0 left-0 w-12 h-1 bg-[#0E1C3C] rounded-r-full"></div>
         
         <div className="relative z-10 flex flex-col h-full">
           {/* Star Rating */}
@@ -162,7 +162,7 @@ const PremiumTestimonialCard = ({ testimonial }) => {
           <div className="flex items-center gap-4">
             {/* Profile Image */}
             <div className="flex-shrink-0">
-              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#6fb5ce] shadow-md">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#0E1C3C] shadow-md">
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
@@ -254,7 +254,7 @@ const TestimonialCard = ({ testimonial, index }) => {
             <h4 className="font-bold text-gray-900 text-xl mb-2">
               {testimonial.name}
             </h4>
-            <p className="text-[#6fb5ce] font-semibold text-sm leading-snug">
+            <p className="text-[#0E1C3C] font-semibold text-sm leading-snug">
               {testimonial.position}
             </p>
             {testimonial.location && (
@@ -278,7 +278,7 @@ const MediaCoverageSection = () => {
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6">
             Global Media Recognition
           </h2>
-          <div className="w-24 h-1.5 bg-[#6fb5ce] mx-auto mb-8 rounded-full"></div>
+          <div className="w-24 h-1.5 bg-[#0E1C3C] mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             HD Medical has garnered significant attention from the world&apos;s leading tech and healthcare publications,
             highlighting our commitment to cardiovascular innovation.
@@ -292,7 +292,7 @@ const MediaCoverageSection = () => {
               className="group relative bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 flex flex-col h-full"
             >
               {/* Top Accent Bar */}
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-[#6fb5ce] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-[#0E1C3C] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
               {/* Logo Container */}
               <div className="h-24 flex items-center justify-center mb-6">
@@ -321,7 +321,7 @@ const MediaCoverageSection = () => {
 
               {/* Outlet Name Footer */}
               <div className="mt-6 pt-4 border-t border-gray-50 text-center">
-                <span className="text-[#6fb5ce] font-bold text-[10px] uppercase tracking-[0.2em]">
+                <span className="text-[#0E1C3C] font-bold text-[10px] uppercase tracking-[0.2em]">
                   {item.outlet}
                 </span>
               </div>
@@ -339,9 +339,9 @@ const PublicationsSection = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6">
-            Publications & <span className="text-[#6fb5ce]">Research</span>
+            Publications & <span className="text-[#0E1C3C]">Research</span>
           </h2>
-          <div className="w-24 h-1.5 bg-[#6fb5ce] mx-auto mb-8 rounded-full"></div>
+          <div className="w-24 h-1.5 bg-[#0E1C3C] mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our innovations are backed by rigorous research published in leading medical journals worldwide.
           </p>
@@ -381,7 +381,7 @@ const PublicationsSection = () => {
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {publication.name}
                   </h3>
-                  <p className="text-[#6fb5ce] font-semibold text-sm">
+                  <p className="text-[#0E1C3C] font-semibold text-sm">
                     {publication.position}
                   </p>
                 </div>
@@ -401,7 +401,7 @@ const PublicationsSection = () => {
               <div className="lg:w-3/5 p-8 md:p-12 bg-white">
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-8">
                   {publication.publicationImages.map((imgSrc, idx) => (
-                    <div key={idx} className="group relative rounded-xl overflow-hidden border-2 border-gray-200 hover:border-[#6fb5ce] transition-all duration-300 shadow-md hover:shadow-xl">
+                    <div key={idx} className="group relative rounded-xl overflow-hidden border-2 border-gray-200 hover:border-[#0E1C3C] transition-all duration-300 shadow-md hover:shadow-xl">
                       <div className="relative w-full aspect-[5/4]">
                         <Image
                           src={imgSrc}
@@ -420,7 +420,7 @@ const PublicationsSection = () => {
                 {/* Journal Information */}
                 <div className="text-center pt-6 border-t-2 border-gray-100">
                   <p className="text-gray-600 font-small text-sm leading-relaxed">
-                    Publications on <span className="text-[#6fb5ce] font-bold">{publication.journals}</span>
+                    Publications on <span className="text-[#0E1C3C] font-bold">{publication.journals}</span>
                   </p>
                 </div>
               </div>
@@ -441,7 +441,7 @@ export default function TestimonialsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Trusted by Medical <span className="text-[#6fb5ce]">Professionals</span> Worldwide
+              Trusted by Medical <span className="text-[#0E1C3C]">Professionals</span> Worldwide
             </h2>
           </div>
 
@@ -459,11 +459,11 @@ export default function TestimonialsPage() {
           <div className="mt-20 pt-16 border-t border-gray-200">
             <div className="mb-12">
               <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-[#e8f5f9] rounded-full">
-                <div className="w-2 h-2 bg-[#6fb5ce] rounded-full"></div>
-                <span className="text-[#6fb5ce] font-semibold text-xs uppercase tracking-wider">Distinguished Endorsements</span>
+                <div className="w-2 h-2 bg-[#0E1C3C] rounded-full"></div>
+                <span className="text-[#0E1C3C] font-semibold text-xs uppercase tracking-wider">Distinguished Endorsements</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-                Medical Excellence <span className="text-[#6fb5ce]">Recognized</span>
+                Medical Excellence <span className="text-[#0E1C3C]">Recognized</span>
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">

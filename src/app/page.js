@@ -476,33 +476,14 @@ const VideoSection = () => {
       </div>
 
       <div className="relative max-w-5xl mx-auto">
-        <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl group">
-          <a 
-            href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="block w-full h-full relative"
-          >
-            <Image
-              src="/images/Youtube-Banner.jpg" // Replace with your actual image path
-              alt="HD Steth Demo"
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-          </a>
-
-          <a 
-              href="https://www.youtube.com/watch?v=a1i9AGoZdUY" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-white border border-slate-200 px-6 py-2 md:px-8 md:py-3 rounded-full flex items-center gap-2 md:gap-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
-          >
-              <Play className="w-5 h-5 md:w-6 md:h-6 text-[#FA6404] fill-[#FA6404] group-hover:scale-110 transition-transform" />
-              <span className="text-[#0E1C3C] font-bold text-sm md:text-lg whitespace-nowrap">
-                  Watch on Youtube
-              </span>
-          </a>
+        <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl">
+          <iframe 
+            className="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/a1i9AGoZdUY" 
+            title="HD Steth Demo" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </section>
