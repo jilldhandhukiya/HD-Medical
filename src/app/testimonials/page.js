@@ -210,9 +210,9 @@ const TestimonialCard = ({ testimonial, index }) => {
       <div className="flex flex-col md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
 
         {/* Left: Profile Image Section - Plain Background */}
-        <div className="md:w-2/5 bg-[#e8f5f9] p-12 flex flex-col items-center justify-center relative overflow-visible">
+        <div className="md:w-2/5 bg-[#0E1C3C] p-12 flex flex-col items-center justify-center relative overflow-visible">
           <div className="absolute top-6 left-6 z-0">
-            <Quote size={50} className="text-[#b8dae7] opacity-40" />
+            <Quote size={50} className="text-white opacity-40" />
           </div>
 
           {/* 3D Profile Image Container */}
@@ -220,8 +220,8 @@ const TestimonialCard = ({ testimonial, index }) => {
             {/* Main Image with 3D Effect */}
             <div className="relative w-48 h-48 md:w-56 md:h-56">
               {/* Shadow layers for 3D depth */}
-              <div className="absolute inset-0 rounded-full bg-[#b8dae7] opacity-20 blur-xl transform translate-y-4"></div>
-              <div className="absolute inset-0 rounded-full bg-[#9ccddc] opacity-30 blur-lg transform translate-y-2"></div>
+              <div className="absolute inset-0 rounded-full bg-[#0E1C3C] opacity-20 blur-xl transform translate-y-4"></div>
+              <div className="absolute inset-0 rounded-full bg-[#0E1C3C] opacity-30 blur-lg transform translate-y-2"></div>
 
               {/* Main image */}
               <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl">
