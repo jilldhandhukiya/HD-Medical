@@ -311,11 +311,8 @@ const HeroSection = () => {
       <div className="space-y-8 md:space-y-10 flex flex-col items-center lg:items-start order-1">
         
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#0E1C3C] leading-tight lg:leading-[1.1] text-center lg:text-left">
-          Transform <br className="hidden lg:block" />
-          Cardiac <br className="hidden lg:block" />
-          Care with <br className="hidden lg:block" />
-          <span>HD Steth<span className="text-[0.5em] align-super">™</span></span>
+        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center text-[#0E1C3C] leading-[1.15] lg:leading-[1.1] lg:text-left">
+          Transform Cardiac Care <br className="hidden sm:block" />with <span>HD Steth<span className="text-[0.5em] align-super">™</span></span>
         </h1>
 
         {/* Features List - Centered block on mobile, Left on Desktop */}
