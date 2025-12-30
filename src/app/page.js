@@ -311,7 +311,7 @@ const HeroSection = () => {
 
         {/* Heading */}
         <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center text-[#0E1C3C] leading-[1.15] lg:leading-[1.1] lg:text-left">
-          Transform Cardiac Care <br className="hidden sm:block" />with <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={200} height={60} className="inline-block align-middle ml-2" />
+          Transform Cardiac Care <br className="hidden sm:block" />with <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={250} height={60} className="inline-block align-middle ml-2" />
         </h1>
 
         {/* Features List - Centered block on mobile, Left on Desktop */}
@@ -745,7 +745,7 @@ const HealthyUComingSoonSection = () => {
 
             
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold text-[#0E1C3C] leading-tight">
-              <Image src="/images/HealthyULogo.png" alt="HealthyU" width={200} height={60} className="inline-block align-middle ml-2" /> 
+              <Image src="/images/HealthyULogo.png" alt="HealthyU" width={250} height={60} className="inline-block align-middle ml-2" /> 
               Platform
             </h2>
 
@@ -877,7 +877,7 @@ const App = () => {
         {/* <ClinicalExcellenceSection /> */}
         <FDAClearanceSection />
         <CertificationsBar />
-        <div className="w-full h-2 bg-white"></div>
+        <div className="w-full h-0.5 bg-gray-200"></div>
       </div>
     </div>
   );

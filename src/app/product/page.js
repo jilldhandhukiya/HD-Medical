@@ -469,8 +469,8 @@ export default function ProductHero() {
       <section className="w-full py-8 bg-[#0E1C3C]">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
           <span>
-            <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={200} height={90} className="inline-block align-middle" />
-          </span>  Intelligent Solution for Cardiac Care
+            <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={160} height={90} className="inline-block align-middle" />
+          </span> - Intelligent Solution for Cardiac Care
         </h2>
         <div className="max-w-7xl mx-auto px-4 sm:px-0">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6">
@@ -595,7 +595,7 @@ export default function ProductHero() {
               style={{ color: PRIMARY_ORANGE }}
             >
               <span>
-                <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={200} height={90} className="inline-block align-middle" />
+                <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={180} height={90} className="inline-block align-middle" />
               </span>  is the third-generation solution from HD Medical –
               the first intelligent stethoscope with integrated triple electrode ECG.
             </h3>
@@ -805,7 +805,7 @@ export default function ProductHero() {
           <div className="flex flex-col items-center text-center gap-8">
             <h2 className="text-6xl md:text-6xl font-extrabold text-[#0E1C3C]">
               <span>
-                <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={300} height={90} className="inline-block align-middle" />
+                <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={250} height={90} className="inline-block align-middle" />
               </span>  Bluetooth Enabled APP
             </h2>
 
@@ -952,7 +952,7 @@ export default function ProductHero() {
         <div className="max-w-7xl mx-auto">
           <h3 className="text-5xl md:text-5xl font-bold text-center mb-8" style={{ color: PRIMARY_BLUE }}>
             <span>
-              <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={250} height={100} className="inline-block align-middle" />
+              <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={220} height={100} className="inline-block align-middle" />
             </span>  App Features
           </h3>
           {/* FEATURES IMAGE */}
@@ -1097,7 +1097,7 @@ export default function ProductHero() {
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: PRIMARY_BLUE }}>
             <span>
-              <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={250} height={90} className="inline-block align-middle" />
+              <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={220} height={90} className="inline-block align-middle" />
             </span>  System – Closed Loop of Cardiac Care
           </h2>
 
