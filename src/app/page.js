@@ -746,7 +746,6 @@ const HealthyUComingSoonSection = () => {
             
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold text-[#0E1C3C] leading-tight">
               <Image src="/images/HealthyULogo.png" alt="HealthyU" width={250} height={60} className="inline-block align-middle ml-2" /> 
-              Platform
             </h2>
 
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-lg">
