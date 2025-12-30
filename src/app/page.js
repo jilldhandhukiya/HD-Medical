@@ -149,7 +149,7 @@ const IntelligentSolutionsSection = () => {
       {/* --- 2. Section Header --- */}
       <div className="relative z-10 text-center mb-8 md:mb-12 lg:mb-16 shrink-0 px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0E1C3C] tracking-tight">
-          HD Steth - Intelligent solution for Cardiac Care
+          <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={200} height={60} className="inline-block align-middle ml-2" /> - Intelligent solution for Cardiac Care
         </h2>
 
       </div>
@@ -311,7 +311,7 @@ const HeroSection = () => {
 
         {/* Heading */}
         <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center text-[#0E1C3C] leading-[1.15] lg:leading-[1.1] lg:text-left">
-          Transform Cardiac Care <br className="hidden sm:block" />with <span>HD Steth<span className="text-[0.5em] align-super">™</span></span>
+          Transform Cardiac Care <br className="hidden sm:block" />with <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={200} height={60} className="inline-block align-middle ml-2" />
         </h1>
 
         {/* Features List - Centered block on mobile, Left on Desktop */}
@@ -729,7 +729,7 @@ const FDAClearanceSection = () => {
 
 const HealthyUComingSoonSection = () => {
   return (
-    <section className="w-full py-20 px-6 md:px-12 bg-white  relative overflow-hidden">
+    <section className="w-full py-1 px-6 md:px-12 bg-white  relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#FA6404]/5 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#0E1C3C]/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -743,8 +743,10 @@ const HealthyUComingSoonSection = () => {
               <span className="text-[#FA6404] font-bold text-sm uppercase tracking-wider">Coming Soon</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0E1C3C] leading-tight">
-              HealthyU Platform
+            
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold text-[#0E1C3C] leading-tight">
+              <Image src="/images/HealthyULogo.png" alt="HealthyU" width={200} height={60} className="inline-block align-middle ml-2" /> 
+              Platform
             </h2>
 
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-lg">
@@ -789,6 +791,18 @@ const HealthyUComingSoonSection = () => {
               </div>
             </div>
           </div>
+
+          <div className="pt-6">
+            <Link
+              href="/contactus"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-bold shadow-lg transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              style={{ backgroundColor: '#F58639' }}
+              aria-label="Know more about HealthyU"
+            >
+              Know More
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
 
         {/* Right: Image */}
@@ -798,15 +812,16 @@ const HealthyUComingSoonSection = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-[#FA6404]/20 to-[#0E1C3C]/10 rounded-3xl blur-2xl transform -rotate-3"></div>
 
             {/* Image container */}
-            <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-100">
+            <div className="relative bg-white rounded-4xl p-8 md:p-12 shadow-2xl border border-slate-100">
               <Image
-                src="/images/image-removebg-preview (24).png"
+                src="/images/HealthyULogo.png"
                 alt="HealthyU Platform"
-                width={350}
-                height={350}
-                className="w-full h-auto object-contain drop-shadow-lg"
+                width={450}
+                height={450}
+                className="w-full h-auto object-fit drop-shadow-lg"
               />
             </div>
+            
 
             {/* Floating badge */}
             <div className="absolute -bottom-4 -right-4 bg-[#F58639] text-white rounded-full p-4 shadow-lg">
@@ -815,6 +830,9 @@ const HealthyUComingSoonSection = () => {
                 <div className="text-xs font-semibold">2026</div>
               </div>
             </div>
+             <p className="text-center text-m text-slate-500 font-medium mt-4">
+                FDA Clearance Pending
+              </p>
           </div>
         </div>
       </div>

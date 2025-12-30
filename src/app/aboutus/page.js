@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 const PRIMARY_BLUE = '#0E1C3C';
-const PRIMARY_ORANGE = '#FA6404';
+const PRIMARY_ORANGE = '#F58639';
 
 const leadership = [
   {
@@ -182,10 +182,12 @@ export default function AboutUs() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About HD Medical</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 flex items-center gap-3 justify-center">
+            About <Image src="/images/logo.png" alt="HD Medical" width={150} height={45} className="object-contain" />
+          </h2>
           <div className="w-24 h-1 bg-[#0E1C3C] mx-auto mb-8 rounded-full"></div>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light">
-            <span className="font-semibold text-[#0E1C3C]">HD Medical</span> is a global leader in the detection and management of cardiovascular disease.
+            <Image src="/images/logo.png" alt="HD Medical" width={120} height={36} className="inline-block mr-2 align-middle" /> is a global leader in the detection and management of cardiovascular disease.
             We create clinically validated devices and software that put powerful diagnostic tools into the
             hands of clinicians — delivering fast, reliable, evidence-based information at the point of care.
             Our solutions are designed to improve outcomes, streamline workflows and help save lives.

@@ -36,7 +36,9 @@ const ResourcesHero = () => {
                     <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1 space-y-6">
                         {/* <div className="w-16 h-1 bg-[#FA6404] mb-2"></div> */}
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#0E1C3C] leading-tight">
-                            HD Steth<span className="text-[0.6em] align-super">™</span> <br />
+                            <span>
+                                <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={300} height={90} className="inline-block align-middle" />
+                            </span>  <br />
                             <span className="text-[#F58639]">Resources</span>
                         </h1>
                     </div>
@@ -109,12 +111,12 @@ const EssentialResourcesSection = () => {
                         <div
                             key={idx}
                             className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] bg-white rounded-2xl p-8 shadow-lg shadow-slate-100 border-3 border-[#F58639] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
-                       >
-                             <div className="w-16 h-16 rounded-full bg-[#F58639] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-200 group-hover:scale-110 transition-transform">
-                              {item.icon}
+                        >
+                            <div className="w-16 h-16 rounded-full bg-[#F58639] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-200 group-hover:scale-110 transition-transform">
+                                {item.icon}
                             </div>
 
-                             <h3 className="text-xl font-bold text-[#0E1C3C] mb-2">{item.title}</h3>
+                            <h3 className="text-xl font-bold text-[#0E1C3C] mb-2">{item.title}</h3>
                             <p className="text-slate-400 text-sm mb-8">{item.desc}</p>
 
                             {item.type === 'mobile-app' ? (

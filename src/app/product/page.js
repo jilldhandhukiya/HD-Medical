@@ -1,9 +1,8 @@
 'use client';
 import React, { useEffect, useRef, useState } from "react";
 import {
-  Shield, Activity, Volume2, Cloud, Stethoscope, Smartphone, User, BatteryFull,
-  Weight, ShieldCheck, ChevronDown, ChevronUp, Monitor, Globe, Zap, Leaf,
-  Heart, Users, Target, ArrowRight, Check
+  Shield, Activity, Volume2, Cloud, Zap,
+  Heart, Users, Target, Check
 } from "lucide-react";
 import Image from "next/image";
 
@@ -77,7 +76,9 @@ const AdvantagesSection = React.forwardRef((props, ref) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            The HD Steth Advantage
+            The<span>
+              <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={200} height={90} className="inline-block align-middle" />
+            </span>  Advantage
           </h2>
           <p className={`text-xl text-gray-700 max-w-3xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             Engineered for Clarity, Designed for Life. Unrivaled Clarity. Unprecedented Impact.
@@ -113,264 +114,267 @@ const AdvantagesSection = React.forwardRef((props, ref) => {
 
 AdvantagesSection.displayName = 'AdvantagesSection';
 
-function SpecCard({ icon, title, children, className = "" }) {
-  return (
-    <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 ${className}`}>
-      <div className="flex items-center mb-4">
-        <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white mr-3" style={{ background: PRIMARY_BLUE }}>
-          {icon}
-        </div>
-        <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-      </div>
-      <div className="text-gray-600 space-y-2">{children}</div>
-    </div>
-  );
-}
+// function SpecCard({ icon, title, children, className = "" }) {
+//   return (
+//     <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 ${className}`}>
+//       <div className="flex items-center mb-4">
+//         <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white mr-3" style={{ background: PRIMARY_BLUE }}>
+//           {icon}
+//         </div>
+//         <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
+//       </div>
+//       <div className="text-gray-600 space-y-2">{children}</div>
+//     </div>
+//   );
+// }
 
-function HowItWorksSection() {
-  return (
-    <section className="w-full bg-white px-4 py-16">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
-        <p className="text-xl text-gray-600 mb-12">
-          A simple, streamlined workflow for enhanced cardiac diagnostics
-        </p>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-          {/* Chest Piece */}
-          <div className="flex flex-col items-center flex-1">
-            <div className="rounded-full w-32 h-32 flex items-center justify-center mb-4" style={{ backgroundColor: PRIMARY_BLUE }}>
-              <Stethoscope className="text-white w-16 h-16" />
-            </div>
-            <div className="text-2xl font-bold mb-1">Chest Piece</div>
-            <div className="text-gray-500 text-lg">Place on patient</div>
-          </div>
-          {/* Mobile App */}
-          <div className="flex flex-col items-center flex-1">
-            <div className="rounded-full w-32 h-32 flex items-center justify-center mb-4" style={{ backgroundColor: PRIMARY_BLUE }}>
-              <Smartphone className="text-white w-16 h-16" />
-            </div>
-            <div className="text-2xl font-bold mb-1">Mobile App</div>
-            <div className="text-gray-500 text-lg">Visualize data</div>
-          </div>
-          {/* Cloud */}
-          <div className="flex flex-col items-center flex-1">
-            <div className="rounded-full w-32 h-32 flex items-center justify-center mb-4" style={{ backgroundColor: PRIMARY_BLUE }}>
-              <Cloud className="text-white w-16 h-16" />
-            </div>
-            <div className="text-2xl font-bold mb-1">Cloud</div>
-            <div className="text-gray-500 text-lg">Process & analyze</div>
-          </div>
-          {/* Doctor */}
-          <div className="flex flex-col items-center flex-1">
-            <div className="rounded-full w-32 h-32 flex items-center justify-center mb-4" style={{ backgroundColor: PRIMARY_BLUE }}>
-              <User className="text-white w-16 h-16" />
-            </div>
-            <div className="text-2xl font-bold mb-1">Doctor</div>
-            <div className="text-gray-500 text-lg">Review & diagnose</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+// function HowItWorksSection() {
+//   return (
+//     <section className="w-full bg-white px-4 py-16">
+//       <div className="max-w-5xl mx-auto text-center">
+//         <h2 className="text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
+//         <p className="text-xl text-gray-600 mb-12">
+//           A simple, streamlined workflow for enhanced cardiac diagnostics
+//         </p>
+//         <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+//           {/* Chest Piece */}
+//           <div className="flex flex-col items-center flex-1">
+//             <div className="rounded-full w-32 h-32 flex items-center justify-center mb-4" style={{ backgroundColor: PRIMARY_BLUE }}>
+//               <Stethoscope className="text-white w-16 h-16" />
+//             </div>
+//             <div className="text-2xl font-bold mb-1">Chest Piece</div>
+//             <div className="text-gray-500 text-lg">Place on patient</div>
+//           </div>
+//           {/* Mobile App */}
+//           <div className="flex flex-col items-center flex-1">
+//             <div className="rounded-full w-32 h-32 flex items-center justify-center mb-4" style={{ backgroundColor: PRIMARY_BLUE }}>
+//               <Smartphone className="text-white w-16 h-16" />
+//             </div>
+//             <div className="text-2xl font-bold mb-1">Mobile App</div>
+//             <div className="text-gray-500 text-lg">Visualize data</div>
+//           </div>
+//           {/* Cloud */}
+//           <div className="flex flex-col items-center flex-1">
+//             <div className="rounded-full w-32 h-32 flex items-center justify-center mb-4" style={{ backgroundColor: PRIMARY_BLUE }}>
+//               <Cloud className="text-white w-16 h-16" />
+//             </div>
+//             <div className="text-2xl font-bold mb-1">Cloud</div>
+//             <div className="text-gray-500 text-lg">Process & analyze</div>
+//           </div>
+//           {/* Doctor */}
+//           <div className="flex flex-col items-center flex-1">
+//             <div className="rounded-full w-32 h-32 flex items-center justify-center mb-4" style={{ backgroundColor: PRIMARY_BLUE }}>
+//               <User className="text-white w-16 h-16" />
+//             </div>
+//             <div className="text-2xl font-bold mb-1">Doctor</div>
+//             <div className="text-gray-500 text-lg">Review & diagnose</div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
-function TechnicalExcellenceSection() {
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [expandedSpecs, setExpandedSpecs] = useState(false);
+// function TechnicalExcellenceSection() {
+//   const sectionRef = useRef(null);
+//   const [isVisible, setIsVisible] = useState(false);
+//   const [expandedSpecs, setExpandedSpecs] = useState(false);
 
-  const keySpecs = [
-    { icon: BatteryFull, label: "8-Hour Continuous Operation", value: "8 Hours", color: "from-green-400 to-emerald-500" },
-    { icon: Weight, label: "Lightweight Design", value: "230g", color: "from-blue-400 to-cyan-500" },
-    { icon: Smartphone, label: "Mobile App Support", value: "iOS/Android", color: "from-purple-400 to-pink-500" },
-    { icon: ShieldCheck, label: "FDA Cleared", value: "Certified", color: "from-orange-400 to-red-500" },
-  ];
+//   const keySpecs = [
+//     { icon: BatteryFull, label: "8-Hour Continuous Operation", value: "8 Hours", color: "from-green-400 to-emerald-500" },
+//     { icon: Weight, label: "Lightweight Design", value: "230g", color: "from-blue-400 to-cyan-500" },
+//     { icon: Smartphone, label: "Mobile App Support", value: "iOS/Android", color: "from-purple-400 to-pink-500" },
+//     { icon: ShieldCheck, label: "FDA Cleared", value: "Certified", color: "from-orange-400 to-red-500" },
+//   ];
 
-  const fullSpecifications = [
-    {
-      category: "Device Specifications", specs: [
-        { label: "Weight", value: "230 grams (Approx)" },
-        { label: "Battery Life", value: "8-hour continuous operation" },
-        { label: "Connectivity", value: "Bluetooth 5.0, Wi-Fi" },
-        { label: "Display", value: "OLED touchscreen" }
-      ]
-    },
-    {
-      category: "Audio Performance", specs: [
-        { label: "Frequency Response", value: "20 Hz - 20 kHz" },
-        { label: "Noise Cancellation", value: "Patented active noise cancellation" },
-        { label: "Amplification", value: "Smart amplification up to 40x" },
-        { label: "Sound Quality", value: "Hi-Fi audio recording" }
-      ]
-    },
-    {
-      category: "ECG Capabilities", specs: [
-        { label: "Lead Configuration", value: "3-lead ECG integrated" },
-        { label: "Sampling Rate", value: "500 Hz" },
-        { label: "Recording Duration", value: "Continuous monitoring" },
-        { label: "Waveform Display", value: "Real-time visualization" }
-      ]
-    },
-    {
-      category: "Compatibility", specs: [
-        { label: "Mobile Apps", value: "iOS 12+, Android 8+" },
-        { label: "Cloud Platform", value: "HD Medical Cloud" },
-        { label: "Export Formats", value: "PDF, WAV, XML" },
-        { label: "Integration", value: "EMR/EHR compatible" }
-      ]
-    }
-  ];
+//   const fullSpecifications = [
+//     {
+//       category: "Device Specifications", specs: [
+//         { label: "Weight", value: "230 grams (Approx)" },
+//         { label: "Battery Life", value: "8-hour continuous operation" },
+//         { label: "Connectivity", value: "Bluetooth 5.0, Wi-Fi" },
+//         { label: "Display", value: "OLED touchscreen" }
+//       ]
+//     },
+//     {
+//       category: "Audio Performance", specs: [
+//         { label: "Frequency Response", value: "20 Hz - 20 kHz" },
+//         { label: "Noise Cancellation", value: "Patented active noise cancellation" },
+//         { label: "Amplification", value: "Smart amplification up to 40x" },
+//         { label: "Sound Quality", value: "Hi-Fi audio recording" }
+//       ]
+//     },
+//     {
+//       category: "ECG Capabilities", specs: [
+//         { label: "Lead Configuration", value: "3-lead ECG integrated" },
+//         { label: "Sampling Rate", value: "500 Hz" },
+//         { label: "Recording Duration", value: "Continuous monitoring" },
+//         { label: "Waveform Display", value: "Real-time visualization" }
+//       ]
+//     },
+//     {
+//       category: "Compatibility", specs: [
+//         { label: "Mobile Apps", value: "iOS 12+, Android 8+" },
+//         { label: "Cloud Platform", value: "HD Medical Cloud" },
+//         { label: "Export Formats", value: "PDF, WAV, XML" },
+//         { label: "Integration", value: "EMR/EHR compatible" }
+//       ]
+//     }
+//   ];
 
-  useEffect(() => {
-    const observer = new window.IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) setIsVisible(true);
-    }, { threshold: 0.2 });
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+//   useEffect(() => {
+//     const observer = new window.IntersectionObserver(([entry]) => {
+//       if (entry.isIntersecting) setIsVisible(true);
+//     }, { threshold: 0.2 });
+//     if (sectionRef.current) observer.observe(sectionRef.current);
+//     return () => observer.disconnect();
+//   }, []);
 
-  return (
-    <section ref={sectionRef} className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className={`text-3xl md:text-4xl font-semibold mb-4 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            Precision Engineered. Reliably Built.
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-          {keySpecs.map((spec, idx) => {
-            const Icon = spec.icon;
-            return (
-              <div key={idx} className={`bg-white shadow-md rounded-xl p-6 text-center transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-                <div className={`mx-auto mb-4 w-14 h-14 rounded-full bg-gradient-to-r ${spec.color} flex items-center justify-center`}>
-                  <Icon className="h-7 w-7 text-white" />
-                </div>
-                <h3 className="font-semibold text-lg text-gray-900">{spec.label}</h3>
-                <p className="text-2xl font-bold mt-1 text-gray-900">{spec.value}</p>
-              </div>
-            );
-          })}
-        </div>
-        <div className="flex justify-center mb-4">
-          <button onClick={() => setExpandedSpecs(!expandedSpecs)} className="flex items-center justify-center gap-2 text-base font-medium px-6 py-3 rounded-full border border-gray-300 shadow-sm bg-white hover:bg-gray-100 transition">
-            View All Specifications
-            {expandedSpecs ? <ChevronUp className="w-5 h-5 text-gray-700" /> : <ChevronDown className="w-5 h-5 text-gray-700" />}
-          </button>
-        </div>
-        <div className={`transition-all duration-500 ${expandedSpecs ? "opacity-100 mt-8" : "opacity-0 h-0 overflow-hidden"}`}>
-          <div className="grid md:grid-cols-2 gap-8 mt-8">
-            {fullSpecifications.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="bg-white shadow rounded-xl p-6 border border-gray-100">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">{category.category}</h3>
-                <div className="space-y-4">
-                  {category.specs.map((spec, specIndex) => {
-                    let icon = null;
-                    if (spec.label.toLowerCase().includes("weight")) icon = <Weight className="w-5 h-5 text-primary mr-2" />;
-                    if (spec.label.toLowerCase().includes("battery")) icon = <BatteryFull className="w-5 h-5 text-green-500 mr-2" />;
-                    if (spec.label.toLowerCase().includes("connectivity")) icon = <Cloud className="w-5 h-5 text-cyan-500 mr-2" />;
-                    if (spec.label.toLowerCase().includes("display") || spec.label.toLowerCase().includes("waveform")) icon = <Monitor className="w-5 h-5 text-purple-500 mr-2" />;
-                    if (spec.label.toLowerCase().includes("noise")) icon = <Volume2 className="w-5 h-5 text-orange-500 mr-2" />;
-                    if (spec.label.toLowerCase().includes("amplification") || spec.label.toLowerCase().includes("sound")) icon = <Zap className="w-5 h-5 text-yellow-500 mr-2" />;
-                    if (spec.label.toLowerCase().includes("lead") || spec.label.toLowerCase().includes("ecg")) icon = <Activity className="w-5 h-5 text-red-500 mr-2" />;
-                    if (spec.label.toLowerCase().includes("mobile")) icon = <Smartphone className="w-5 h-5" style={{ color: PRIMARY_BLUE, marginRight: 8 }} />;
-                    if (spec.label.toLowerCase().includes("cloud")) icon = <Cloud className="w-5 h-5 text-cyan-500 mr-2" />;
-                    if (spec.label.toLowerCase().includes("integration") || spec.label.toLowerCase().includes("emr") || spec.label.toLowerCase().includes("ehr")) icon = <ShieldCheck className="w-5 h-5 text-emerald-500 mr-2" />;
-                    if (spec.label.toLowerCase().includes("export")) icon = <Globe className="w-5 h-5 text-blue-400 mr-2" />;
-                    if (spec.label.toLowerCase().includes("frequency")) icon = <Leaf className="w-5 h-5 text-green-400 mr-2" />;
-                    if (spec.label.toLowerCase().includes("sampling")) icon = <Monitor className="w-5 h-5 text-purple-400 mr-2" />;
-                    return (
-                      <div key={specIndex} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
-                        <span className="flex items-center text-gray-700">{icon}{spec.label}</span>
-                        <span className="text-gray-900 font-semibold">{spec.value}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-const AboutHero = () => {
-  return (
-    <section className="relative w-full h-[600px] md:h-[700px] bg-slate-900 overflow-hidden flex items-center justify-center">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-          alt="Medical Team Working"
-          className="w-full h-full object-cover"
-          fill
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0E1C3C]/90 via-[#0E1C3C]/70 to-transparent opacity-90"></div>
-      </div>
+//   return (
+//     <section ref={sectionRef} className="py-20 bg-white">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="text-center mb-10">
+//           <h2 className={`text-3xl md:text-4xl font-semibold mb-4 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+//             Precision Engineered. Reliably Built.
+//           </h2>
+//         </div>
+//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+//           {keySpecs.map((spec, idx) => {
+//             const Icon = spec.icon;
+//             return (
+//               <div key={idx} className={`bg-white shadow-md rounded-xl p-6 text-center transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+//                 <div className={`mx-auto mb-4 w-14 h-14 rounded-full bg-gradient-to-r ${spec.color} flex items-center justify-center`}>
+//                   <Icon className="h-7 w-7 text-white" />
+//                 </div>
+//                 <h3 className="font-semibold text-lg text-gray-900">{spec.label}</h3>
+//                 <p className="text-2xl font-bold mt-1 text-gray-900">{spec.value}</p>
+//               </div>
+//             );
+//           })}
+//         </div>
+//         <div className="flex justify-center mb-4">
+//           <button onClick={() => setExpandedSpecs(!expandedSpecs)} className="flex items-center justify-center gap-2 text-base font-medium px-6 py-3 rounded-full border border-gray-300 shadow-sm bg-white hover:bg-gray-100 transition">
+//             View All Specifications
+//             {expandedSpecs ? <ChevronUp className="w-5 h-5 text-gray-700" /> : <ChevronDown className="w-5 h-5 text-gray-700" />}
+//           </button>
+//         </div>
+//         <div className={`transition-all duration-500 ${expandedSpecs ? "opacity-100 mt-8" : "opacity-0 h-0 overflow-hidden"}`}>
+//           <div className="grid md:grid-cols-2 gap-8 mt-8">
+//             {fullSpecifications.map((category, categoryIndex) => (
+//               <div key={categoryIndex} className="bg-white shadow rounded-xl p-6 border border-gray-100">
+//                 <h3 className="text-xl font-bold text-gray-900 mb-6">{category.category}</h3>
+//                 <div className="space-y-4">
+//                   {category.specs.map((spec, specIndex) => {
+//                     let icon = null;
+//                     if (spec.label.toLowerCase().includes("weight")) icon = <Weight className="w-5 h-5 text-primary mr-2" />;
+//                     if (spec.label.toLowerCase().includes("battery")) icon = <BatteryFull className="w-5 h-5 text-green-500 mr-2" />;
+//                     if (spec.label.toLowerCase().includes("connectivity")) icon = <Cloud className="w-5 h-5 text-cyan-500 mr-2" />;
+//                     if (spec.label.toLowerCase().includes("display") || spec.label.toLowerCase().includes("waveform")) icon = <Monitor className="w-5 h-5 text-purple-500 mr-2" />;
+//                     if (spec.label.toLowerCase().includes("noise")) icon = <Volume2 className="w-5 h-5 text-orange-500 mr-2" />;
+//                     if (spec.label.toLowerCase().includes("amplification") || spec.label.toLowerCase().includes("sound")) icon = <Zap className="w-5 h-5 text-yellow-500 mr-2" />;
+//                     if (spec.label.toLowerCase().includes("lead") || spec.label.toLowerCase().includes("ecg")) icon = <Activity className="w-5 h-5 text-red-500 mr-2" />;
+//                     if (spec.label.toLowerCase().includes("mobile")) icon = <Smartphone className="w-5 h-5" style={{ color: PRIMARY_BLUE, marginRight: 8 }} />;
+//                     if (spec.label.toLowerCase().includes("cloud")) icon = <Cloud className="w-5 h-5 text-cyan-500 mr-2" />;
+//                     if (spec.label.toLowerCase().includes("integration") || spec.label.toLowerCase().includes("emr") || spec.label.toLowerCase().includes("ehr")) icon = <ShieldCheck className="w-5 h-5 text-emerald-500 mr-2" />;
+//                     if (spec.label.toLowerCase().includes("export")) icon = <Globe className="w-5 h-5 text-blue-400 mr-2" />;
+//                     if (spec.label.toLowerCase().includes("frequency")) icon = <Leaf className="w-5 h-5 text-green-400 mr-2" />;
+//                     if (spec.label.toLowerCase().includes("sampling")) icon = <Monitor className="w-5 h-5 text-purple-400 mr-2" />;
+//                     return (
+//                       <div key={specIndex} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
+//                         <span className="flex items-center text-gray-700">{icon}{spec.label}</span>
+//                         <span className="text-gray-900 font-semibold">{spec.value}</span>
+//                       </div>
+//                     );
+//                   })}
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center md:text-left">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-[#F58639]/20 border border-[#F58639]/30 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
-            <Heart size={16} className="text-[#F58639] fill-[#F58639]" />
-            <span className="text-orange-100 text-xs font-bold uppercase tracking-wider">Our Commitment</span>
-          </div>
+// const AboutHero = () => {
+//   return (
+//     <section className="relative w-full h-[600px] md:h-[700px] bg-slate-900 overflow-hidden flex items-center justify-center">
+//       <div className="absolute inset-0 z-0">
+//         <Image
+//           src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+//           alt="Medical Team Working"
+//           className="w-full h-full object-cover"
+//           fill
+//         />
+//         <div className="absolute inset-0 bg-gradient-to-r from-[#0E1C3C]/90 via-[#0E1C3C]/70 to-transparent opacity-90"></div>
+//       </div>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
-            We Work to <br />
-            <span className="text-[#F58639]">Save Lives</span>
-          </h1>
-          <p className="text-xl text-blue-100 leading-relaxed max-w-2xl drop-shadow-md">
-            Driven by a passion for innovation and a dedication to patient care, we are redefining the boundaries of cardiac diagnostics.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
-            <button className="bg-[#F58639] hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg shadow-[#F58639]/30 transition-all transform hover:-translate-y-1 flex items-center gap-2">
-              Read Our Story <ArrowRight size={18} />
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-const MissionSection = () => {
-  return (
-    <section className="w-full py-24 px-6 md:px-12 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="relative">
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#F58639]/10 rounded-full blur-2xl"></div>
-            <h2 className="text-4xl font-bold" style={{ color: PRIMARY_BLUE }} >
-              Empowering Clinicians with Precision
-            </h2>
-            <p className="text-slate-500 text-lg leading-relaxed mb-6">
-              At HD Medical, we believe that every heartbeat tells a story. Our mission is to provide healthcare professionals with the clearest, most accurate cardiac data possible, enabling early detection and better patient outcomes.
-            </p>
-            <p className="text-slate-500 text-lg leading-relaxed">
-              Founded by a team of scientists and cardiologists, we have spent over a decade perfecting the art of digital auscultation and ECG integration.
-            </p>
-          </div>
+//       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center md:text-left">
+//         <div className="max-w-3xl">
+//           <div className="inline-flex items-center gap-2 bg-[#F58639]/20 border border-[#F58639]/30 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+//             <Heart size={16} className="text-[#F58639] fill-[#F58639]" />
+//             <span className="text-orange-100 text-xs font-bold uppercase tracking-wider">Our Commitment</span>
+//           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-blue-50 p-6 rounded-2xl text-center">
-              <Users size={32} className="text-[#0E1C3C] mx-auto mb-4" />
-              <h3 className="text-3xl font-bold" style={{ color: PRIMARY_ORANGE }} >100+</h3>
-              <p className="text-slate-600 font-medium text-sm">Team Members</p>
-            </div>
-            <div className="bg-orange-50 p-6 rounded-2xl text-center">
-              <Globe size={32} className="text-[#F58639] mx-auto mb-4" />
-              <h3 className="text-3xl font-bold text-[#0E1C3C] mb-1">20+</h3>
-              <p className="text-slate-600 font-medium text-sm">Countries</p>
-            </div>
-            <div className="bg-white border border-slate-100 shadow-lg p-6 rounded-2xl text-center col-span-2">
-              <Target size={32} className="text-[#0E1C3C] mx-auto mb-4" />
-              <h3 className="text-3xl font-bold text-[#0E1C3C] mb-1">200K+</h3>
-              <p className="text-slate-600 font-medium text-sm">Screenings Performed</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+//           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
+//             We Work to <br />
+//             <span className="text-[#F58639]">Save Lives</span>
+//           </h1>
+//           <p className="text-xl text-blue-100 leading-relaxed max-w-2xl drop-shadow-md">
+//             Driven by a passion for innovation and a dedication to patient care, we are redefining the boundaries of cardiac diagnostics.
+//           </p>
+//           <div className="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
+//             <button className="bg-[#F58639] hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg shadow-[#F58639]/30 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+//               Read Our Story <ArrowRight size={18} />
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// const MissionSection = () => {
+//   return (
+//     <section className="w-full py-24 px-6 md:px-12 bg-white">
+//       <div className="max-w-7xl mx-auto">
+//         <div className="grid md:grid-cols-2 gap-16 items-center">
+//           <div className="relative">
+//             <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#F58639]/10 rounded-full blur-2xl"></div>
+//             <h2 className="text-4xl font-bold" style={{ color: PRIMARY_BLUE }} >
+//               Empowering Clinicians with Precision
+//             </h2>
+//             <p className="text-slate-500 text-lg leading-relaxed mb-6">
+//               At <Image src="/images/logo.png" alt="HD Medical" width={120} height={36} className="inline-block mr-2 align-middle" />, we believe that every heartbeat tells a story. Our mission is to provide healthcare professionals with the clearest, most accurate cardiac data possible, enabling early detection and better patient outcomes.
+//             </p>
+//             <p className="text-slate-500 text-lg leading-relaxed">
+//               Founded by a team of scientists and cardiologists, we have spent over a decade perfecting the art of digital auscultation and ECG integration.
+//             </p>
+//           </div>
+
+//           <div className="grid grid-cols-2 gap-6">
+//             <div className="bg-blue-50 p-6 rounded-2xl text-center">
+//               <Users size={32} className="text-[#0E1C3C] mx-auto mb-4" />
+//               <h3 className="text-3xl font-bold" style={{ color: PRIMARY_ORANGE }} >100+</h3>
+//               <p className="text-slate-600 font-medium text-sm">Team Members</p>
+//             </div>
+//             <div className="bg-orange-50 p-6 rounded-2xl text-center">
+//               <Globe size={32} className="text-[#F58639] mx-auto mb-4" />
+//               <h3 className="text-3xl font-bold text-[#0E1C3C] mb-1">20+</h3>
+//               <p className="text-slate-600 font-medium text-sm">Countries</p>
+//             </div>
+//             <div className="bg-white border border-slate-100 shadow-lg p-6 rounded-2xl text-center col-span-2">
+//               <Target size={32} className="text-[#0E1C3C] mx-auto mb-4" />
+//               <h3 className="text-3xl font-bold text-[#0E1C3C] mb-1">200K+</h3>
+//               <p className="text-slate-600 font-medium text-sm">Screenings Performed</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
 export default function ProductHero() {
   const primaryBlue = PRIMARY_BLUE;
   const primaryOrange = PRIMARY_ORANGE;
@@ -422,7 +426,7 @@ export default function ProductHero() {
               style={{ color: PRIMARY_BLUE, lineHeight: 1.1 }}
             >
               <span className="text-5xl md:text-9xl lg:text-7xl font-extrabold">
-                HD Steth<span className="text-[0.5em] align-super">™</span>
+                <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={300} height={90} className="inline-block align-middle" />
               </span>
               <br />
               Instant Cardiac Insights. <br></br>
@@ -431,9 +435,9 @@ export default function ProductHero() {
               </span>
             </h1>
             <p className="text-slate-600 text-lg mb-8 max-w-xl leading-relaxed">
-              
+
             </p>
-        
+
           </div>
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden shadow-2xl">
             <Image src="/images/fda_section_image.jpg" alt="Doctor using HD Steth" fill className="object-cover" priority />
@@ -464,7 +468,9 @@ export default function ProductHero() {
       {/* Key Listening Modes & Signal Processing */}
       <section className="w-full py-8 bg-[#0E1C3C]">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-          HD Steth: Intelligent Solution for Cardiac Care
+          <span>
+            <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={200} height={90} className="inline-block align-middle" />
+          </span>  Intelligent Solution for Cardiac Care
         </h2>
         <div className="max-w-7xl mx-auto px-4 sm:px-0">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6">
@@ -581,14 +587,16 @@ export default function ProductHero() {
       {/* HD Steth - Intelligent Solution (Corrected Section) */}
       <section className="w-full py-16 bg-slate-50">
 
-         {/* SECTION 1 – Image + Text */}
+        {/* SECTION 1 – Image + Text */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 mb-12">
             <h3
-              className="text-3xl md:text-4xl font-bold text-center md:text-left flex-1"
+              className="text-3xl md:text-4xl font-bold text-center md:text-left flex-1 leading-tight"
               style={{ color: PRIMARY_ORANGE }}
             >
-              HD Steth is the third-generation solution from HD Medical –
+              <span>
+                <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={200} height={90} className="inline-block align-middle" />
+              </span>  is the third-generation solution from HD Medical –
               the first intelligent stethoscope with integrated triple electrode ECG.
             </h3>
 
@@ -669,7 +677,7 @@ export default function ProductHero() {
             })}
           </div>
         </div>
-        
+
       </section>
 
       {/* Additional product boxes (Battery, Ergonomic, App, Electrodes) */}
@@ -796,7 +804,9 @@ export default function ProductHero() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center gap-8">
             <h2 className="text-6xl md:text-6xl font-extrabold text-[#0E1C3C]">
-              HD Steth Bluetooth Enabled APP
+              <span>
+                <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={300} height={90} className="inline-block align-middle" />
+              </span>  Bluetooth Enabled APP
             </h2>
 
 
@@ -806,7 +816,7 @@ export default function ProductHero() {
               </h2>
               <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold mb-4">
                 <span style={{ color: PRIMARY_BLUE }}>SEE WHAT YOU </span>
-                <span style={{ color: '#F58639' }}>DID NOT HEAR</span>
+                <span style={{ color: '#F6821F' }}>DID NOT HEAR</span>
               </h2>
             </div>
 
@@ -941,7 +951,9 @@ export default function ProductHero() {
       <section className="w-full py-16 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <h3 className="text-5xl md:text-5xl font-bold text-center mb-8" style={{ color: PRIMARY_BLUE }}>
-            HD Steth App Features
+            <span>
+              <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={250} height={100} className="inline-block align-middle" />
+            </span>  App Features
           </h3>
           {/* FEATURES IMAGE */}
           <div className="w-full flex justify-center">
@@ -1084,7 +1096,9 @@ export default function ProductHero() {
 
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: PRIMARY_BLUE }}>
-            HD Steth System – Closed Loop of Cardiac Care
+            <span>
+              <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={250} height={90} className="inline-block align-middle" />
+            </span>  System – Closed Loop of Cardiac Care
           </h2>
 
           {/* Description */}
@@ -1127,8 +1141,10 @@ export default function ProductHero() {
       {/* SECTION 2: Ideal Solution */}
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: primaryBlue }}>
         <div className="max-w-7xl mx-auto flex flex-col items-center">
-          <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">HD Steth – The Ideal Solution for All Clinicians</h2>
-          <h3 className="text-[#F58639] text-5xl md:text-5xl font-semibold text-center mb-16 opacity-90">
+          <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4"><span>
+            <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={280} height={90} className="inline-block align-middle" />
+          </span>  – The Ideal Solution for All Clinicians</h2>
+          <h3 className="text-[#F6821F] text-5xl md:text-5xl font-bold text-center mb-16 opacity-90">
             Screen. Monitor. Help Diagnose.
           </h3>
 
