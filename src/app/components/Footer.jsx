@@ -46,9 +46,9 @@ export default function Footer() {
                 { label: 'Home', href: '/' },
                 { label: 'Products', href: '/product' },
                 { label: 'About Us', href: '/aboutus' },
-                { label: 'Contact', href: '/contactus' },
-                { label: 'Testimonials', href: '/testimonials' },
+                { label: 'References', href: '/references' },
                 { label: 'Resources', href: '/resource' },
+                { label: 'Contact', href: '/contactus' },
               ].map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="hover:text-[#FA6404] transition-colors block w-fit">
@@ -84,9 +84,9 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="w-full px-4 py-3 rounded bg-blue-900/40 border border-blue-800 text-white placeholder-blue-400 focus:outline-none focus:border-[#FA6404] transition-colors text-sm"
+                className="w-full px-4 py-3 rounded border border-white-600 text-white placeholder-blue-400 focus:outline-none focus:border-[#F5863B] transition-colors text-sm"
               />
-              <button className="w-full bg-[#FA6404] hover:bg-orange-600 text-white py-3 rounded font-bold text-sm transition-colors">
+              <button className="w-full bg-[#F5863B] hover:bg-orange-600 text-white py-3 rounded font-bold text-sm transition-colors">
                 Subscribe
               </button>
             </div>

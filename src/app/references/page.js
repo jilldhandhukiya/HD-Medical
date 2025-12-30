@@ -1,7 +1,6 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { Quote } from 'lucide-react';
 
 const PRIMARY_BLUE = '#0E1C3C';
 
@@ -206,84 +205,83 @@ const PremiumTestimonialCard = ({ testimonial }) => {
   );
 };
 
-const TestimonialCard = ({ testimonial, index }) => {
-  const [isVisible, setIsVisible] = useState(false);
+// const TestimonialCard = ({ testimonial, index }) => {
+//   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, index * 200);
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setIsVisible(true);
+//     }, index * 200);
 
-    return () => clearTimeout(timer);
-  }, [index]);
+//     return () => clearTimeout(timer);
+//   }, [index]);
 
-  return (
-    <div className={`relative transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-      }`}>
+//   return (
+//     <div className={`relative transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+//       }`}>
 
-      {/* Main Card */}
-      <div className="flex flex-col md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+//       {/* Main Card */}
+//       <div className="flex flex-col md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
 
-        {/* Left: Profile Image Section - Plain Background */}
-        <div className="md:w-2/5 bg-[#0E1C3C] p-12 flex flex-col items-center justify-center relative overflow-visible">
-          <div className="absolute top-6 left-6 z-0">
-            <Quote size={50} className="text-white opacity-40" />
-          </div>
+//         {/* Left: Profile Image Section - Plain Background */}
+//         <div className="md:w-2/5 bg-[#0E1C3C] p-12 flex flex-col items-center justify-center relative overflow-visible">
+//           <div className="absolute top-6 left-6 z-0">
+//             <Quote size={50} className="text-white opacity-40" />
+//           </div>
 
-          {/* 3D Profile Image Container */}
-          <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
-            {/* Main Image with 3D Effect */}
-            <div className="relative w-48 h-48 md:w-56 md:h-56">
-              {/* Shadow layers for 3D depth */}
-              <div className="absolute inset-0 rounded-full bg-[#0E1C3C] opacity-20 blur-xl transform translate-y-4"></div>
-              <div className="absolute inset-0 rounded-full bg-[#0E1C3C] opacity-30 blur-lg transform translate-y-2"></div>
+//           {/* 3D Profile Image Container */}
+//           <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
+//             {/* Main Image with 3D Effect */}
+//             <div className="relative w-48 h-48 md:w-56 md:h-56">
+//               {/* Shadow layers for 3D depth */}
+//               <div className="absolute inset-0 rounded-full bg-[#0E1C3C] opacity-20 blur-xl transform translate-y-4"></div>
+//               <div className="absolute inset-0 rounded-full bg-[#0E1C3C] opacity-30 blur-lg transform translate-y-2"></div>
 
-              {/* Main image */}
-              <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  fill
-                  className="object-cover"
-                  onError={(e) => {
-                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=${PRIMARY_BLUE.slice(1)}&color=fff&size=256`;
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+//               {/* Main image */}
+//               <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl">
+//                 <Image
+//                   src={testimonial.image}
+//                   alt={testimonial.name}
+//                   fill
+//                   className="object-cover"
+//                   onError={(e) => {
+//                     e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=${PRIMARY_BLUE.slice(1)}&color=fff&size=256`;
+//                   }}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
 
-        {/* Right: Testimonial Content - Plain Background */}
-        <div className="md:w-3/5 p-10 bg-white flex flex-col justify-center">
+//         {/* Right: Testimonial Content - Plain Background */}
+//         <div className="md:w-3/5 p-10 bg-white flex flex-col justify-center">
 
-          {/* Testimonial Quote */}
-          <div className="mb-8">
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed italic">
-              &ldquo;{testimonial.testimonial}&rdquo;
-            </p>
-          </div>
+//           {/* Testimonial Quote */}
+//           <div className="mb-8">
+//             <p className="text-gray-700 text-base md:text-lg leading-relaxed italic">
+//               &ldquo;{testimonial.testimonial}&rdquo;
+//             </p>
+//           </div>
 
-          {/* Doctor Info */}
-          <div className="pt-6 border-t border-gray-200">
-            <h4 className="font-bold text-gray-900 text-xl mb-2">
-              {testimonial.name}
-            </h4>
-            <p className="text-[#0E1C3C] font-semibold text-sm leading-snug">
-              {testimonial.position}
-            </p>
-            {testimonial.location && (
-              <p className="text-gray-400 text-xs uppercase tracking-wider font-medium mt-2">
-                {testimonial.location}
-              </p>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
+//           {/* Doctor Info */}
+//           <div className="pt-6 border-t border-gray-200">
+//             <h4 className="font-bold text-gray-900 text-xl mb-2">
+//               {testimonial.name}
+//             </h4>
+//             <p className="text-[#0E1C3C] font-semibold text-sm leading-snug">
+//               {testimonial.position}
+//             </p>
+//             {testimonial.location && (
+//               <p className="text-gray-400 text-xs uppercase tracking-wider font-medium mt-2">
+//                 {testimonial.location}
+//               </p>
+//             )}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const MediaCoverageSection = () => {
   return (
@@ -304,13 +302,14 @@ const MediaCoverageSection = () => {
           {mediaCoverage.map((item, index) => (
             <div
               key={index}
-              className="group relative bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 flex flex-col h-full"
+              className="group relative bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 flex flex-col h-full cursor-pointer"
+              onClick={() => window.open(item.url, '_blank')}
             >
               {/* Top Accent Bar */}
               <div className="absolute top-0 left-0 w-full h-1.5 bg-[#0E1C3C] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
               {/* Logo Container */}
-              <div className="h-24 flex items-center justify-center mb-6 cursor-pointer" onClick={() => window.open(item.url, '_blank')}>
+              <div className="h-24 flex items-center justify-center mb-6">
                 {item.logo ? (
                   <div className="relative w-48 h-16">
                     <Image
@@ -357,9 +356,9 @@ const PublicationsSection = () => {
             Publications & <span className="text-[#0E1C3C]">Research</span>
           </h2>
           <div className="w-24 h-1.5 bg-[#0E1C3C] mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our innovations are backed by rigorous research published in leading medical journals worldwide.
-          </p>
+          </p>  
         </div>
 
         {publications.map((publication, index) => (
@@ -455,16 +454,6 @@ export default function TestimonialsPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Trusted by Medical <span className="text-[#0E1C3C]">Professionals</span> Worldwide
             </h2>
-          </div>
-
-          <div className="grid grid-cols-1 gap-10">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={testimonial.id}
-                testimonial={testimonial}
-                index={index}
-              />
-            ))}
           </div>
 
           {/* Premium Testimonial Section */}

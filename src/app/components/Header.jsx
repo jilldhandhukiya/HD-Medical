@@ -1,5 +1,4 @@
 'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
@@ -36,9 +35,9 @@ export default function Header() {
     { title: 'Home', url: '/' },
     { title: 'Products', url: '/product' },
     { title: 'About Us', url: '/aboutus' },
-    { title: 'Testimonials', url: '/testimonials' },
+    { title: 'References', url: '/references' },
+    {title : "Resources", url: "/resource"},
     { title: 'Contact', url: '/contactus' },
-    {title : "Resources", url: "/resource"}
   ]
 
   return (
@@ -67,7 +66,7 @@ export default function Header() {
                 className={`font-bold text-lg transition-colors text-base ${
                   pathname === item.url
                     ? 'text-[#0E1C3C]'
-                    : 'text-slate-600 hover:text-[#0E1C3C]'
+                    : 'text-slate-600 hover:text-[#F58639]'
                 }`}
               >
                 {item.title}

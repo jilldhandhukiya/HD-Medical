@@ -8,7 +8,7 @@ import {
 import Image from "next/image";
 
 const PRIMARY_BLUE = '#0E1C3C'; // use this everywhere for blue accents
-const PRIMARY_ORANGE = '#FA6404';
+const PRIMARY_ORANGE = '#F58639';
 
 const advantages = [
   {
@@ -309,20 +309,20 @@ const AboutHero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center md:text-left">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-[#FA6404]/20 border border-[#FA6404]/30 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
-            <Heart size={16} className="text-[#FA6404] fill-[#FA6404]" />
+          <div className="inline-flex items-center gap-2 bg-[#F58639]/20 border border-[#F58639]/30 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+            <Heart size={16} className="text-[#F58639] fill-[#F58639]" />
             <span className="text-orange-100 text-xs font-bold uppercase tracking-wider">Our Commitment</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
             We Work to <br />
-            <span className="text-[#FA6404]">Save Lives</span>
+            <span className="text-[#F58639]">Save Lives</span>
           </h1>
           <p className="text-xl text-blue-100 leading-relaxed max-w-2xl drop-shadow-md">
             Driven by a passion for innovation and a dedication to patient care, we are redefining the boundaries of cardiac diagnostics.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
-            <button className="bg-[#FA6404] hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg shadow-[#FA6404]/30 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+            <button className="bg-[#F58639] hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg shadow-[#F58639]/30 transition-all transform hover:-translate-y-1 flex items-center gap-2">
               Read Our Story <ArrowRight size={18} />
             </button>
           </div>
@@ -337,7 +337,7 @@ const MissionSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#FA6404]/10 rounded-full blur-2xl"></div>
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#F58639]/10 rounded-full blur-2xl"></div>
             <h2 className="text-4xl font-bold" style={{ color: PRIMARY_BLUE }} >
               Empowering Clinicians with Precision
             </h2>
@@ -356,7 +356,7 @@ const MissionSection = () => {
               <p className="text-slate-600 font-medium text-sm">Team Members</p>
             </div>
             <div className="bg-orange-50 p-6 rounded-2xl text-center">
-              <Globe size={32} className="text-[#FA6404] mx-auto mb-4" />
+              <Globe size={32} className="text-[#F58639] mx-auto mb-4" />
               <h3 className="text-3xl font-bold text-[#0E1C3C] mb-1">20+</h3>
               <p className="text-slate-600 font-medium text-sm">Countries</p>
             </div>
@@ -426,7 +426,7 @@ export default function ProductHero() {
               </span>
               <br />
               Instant Cardiac Insights. <br></br>
-              <span className="text-[#FA6404] font-bold tracking-wider">
+              <span className="text-[#F58639] font-bold tracking-wider">
                 Anytime.
               </span>
             </h1>
@@ -471,7 +471,7 @@ export default function ProductHero() {
             {/* CARD 1 */}
             <div
               className="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all"
-              style={{ borderTop: "6px solid #FA6404" }}
+              style={{ borderTop: "6px solid #F58639" }}
             >
               <div className="flex flex-col items-center md:items-start gap-3 md:gap-4">
                 <div
@@ -497,7 +497,7 @@ export default function ProductHero() {
             {/* CARD 2 */}
             <div
               className="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all"
-              style={{ borderTop: "6px solid #FA6404" }}
+              style={{ borderTop: "6px solid #F58639" }}
             >
               <div className="flex flex-col items-center md:items-start gap-3 md:gap-4">
                 <div
@@ -524,7 +524,7 @@ export default function ProductHero() {
             {/* CARD 3 */}
             <div
               className="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all"
-              style={{ borderTop: "6px solid #FA6404" }}
+              style={{ borderTop: "6px solid #F58639" }}
             >
               <div className="flex flex-col items-center md:items-start gap-3 md:gap-4">
                 <div
@@ -551,7 +551,7 @@ export default function ProductHero() {
             {/* CARD 4 */}
             <div
               className="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all"
-              style={{ borderTop: "6px solid #FA6404" }}
+              style={{ borderTop: "6px solid #F58639" }}
             >
               <div className="flex flex-col items-center md:items-start gap-3 md:gap-4">
                 <div
@@ -616,7 +616,7 @@ export default function ProductHero() {
                     className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-200 
       hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     style={{
-                      borderTop: "6px solid #FA6404",
+                      borderTop: "6px solid #F58639",
                       borderRadius: "12px",
                     }}
                   >
@@ -649,7 +649,7 @@ export default function ProductHero() {
                   className="mx-4 md:mx-0 bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-200 
             hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   style={{
-                    borderTop: "6px solid #FA6404",
+                    borderTop: "6px solid #F58639",
                     borderRadius: "12px",
                   }}
                 >
@@ -682,10 +682,10 @@ export default function ProductHero() {
             <div
               className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
               style={{
-                borderTop: "6px solid #FA6404",
-                borderLeft: "2px solid #FA6404",
-                borderRight: "2px solid #FA6404",
-                borderBottom: "2px solid #FA6404"
+                borderTop: "6px solid #F58639",
+                borderLeft: "2px solid #F58639",
+                borderRight: "2px solid #F58639",
+                borderBottom: "2px solid #F58639"
               }}
             >
               <div className="flex items-start gap-4">
@@ -709,10 +709,10 @@ export default function ProductHero() {
             <div
               className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
               style={{
-                borderTop: "6px solid #FA6404",
-                borderLeft: "2px solid #FA6404",
-                borderRight: "2px solid #FA6404",
-                borderBottom: "2px solid #FA6404"
+                borderTop: "6px solid #F58639",
+                borderLeft: "2px solid #F58639",
+                borderRight: "2px solid #F58639",
+                borderBottom: "2px solid #F58639"
               }}
             >
               <div className="flex items-start gap-4">
@@ -736,10 +736,10 @@ export default function ProductHero() {
             <div
               className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
               style={{
-                borderTop: "6px solid #FA6404",
-                borderLeft: "2px solid #FA6404",
-                borderRight: "2px solid #FA6404",
-                borderBottom: "2px solid #FA6404"
+                borderTop: "6px solid #F58639",
+                borderLeft: "2px solid #F58639",
+                borderRight: "2px solid #F58639",
+                borderBottom: "2px solid #F58639"
               }}
             >
               <div className="flex items-start gap-4">
@@ -763,10 +763,10 @@ export default function ProductHero() {
             <div
               className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm"
               style={{
-                borderTop: "6px solid #FA6404",
-                borderLeft: "2px solid #FA6404",
-                borderRight: "2px solid #FA6404",
-                borderBottom: "2px solid #FA6404"
+                borderTop: "6px solid #F58639",
+                borderLeft: "2px solid #F58639",
+                borderRight: "2px solid #F58639",
+                borderBottom: "2px solid #F58639"
               }}
             >
               <div className="flex items-start gap-4">
@@ -806,7 +806,7 @@ export default function ProductHero() {
               </h2>
               <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold mb-4">
                 <span style={{ color: PRIMARY_BLUE }}>SEE WHAT YOU </span>
-                <span style={{ color: '#FA6404' }}>DID NOT HEAR</span>
+                <span style={{ color: '#F58639' }}>DID NOT HEAR</span>
               </h2>
             </div>
 
@@ -851,7 +851,7 @@ export default function ProductHero() {
                 <div
                   className="bg-white rounded-3xl p-6 flex flex-col items-center text-center"
                   style={{
-                    border: "2px solid #FA6404",
+                    border: "2px solid #F58639",
                   }}
                 >
                   <Image
@@ -876,7 +876,7 @@ export default function ProductHero() {
                 <div
                   className="bg-white rounded-3xl p-6 flex flex-col items-center text-center"
                   style={{
-                    border: "2px solid #FA6404",
+                    border: "2px solid #F58639",
                   }}
                 >
                   <Image
@@ -901,7 +901,7 @@ export default function ProductHero() {
                 <div
                   className="bg-white rounded-3xl p-6 flex flex-col items-center text-center"
                   style={{
-                    border: "2px solid #FA6404",
+                    border: "2px solid #F58639",
                   }}
                 >
                   <Image
@@ -1128,7 +1128,7 @@ export default function ProductHero() {
       <section className="py-20 px-6 md:px-12 lg:px-20 w-full" style={{ backgroundColor: primaryBlue }}>
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">HD Steth – The Ideal Solution for All Clinicians</h2>
-          <h3 className="text-[#FA6404] text-5xl md:text-5xl font-semibold text-center mb-16 opacity-90">
+          <h3 className="text-[#F58639] text-5xl md:text-5xl font-semibold text-center mb-16 opacity-90">
             Screen. Monitor. Help Diagnose.
           </h3>
 

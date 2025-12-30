@@ -5,7 +5,6 @@ import Link from 'next/link';
 import {
   ArrowRight,
   X,
-  Play,
 } from 'lucide-react';
 
 const MailingListPopup = () => {
@@ -15,7 +14,7 @@ const MailingListPopup = () => {
     // Show popup after 3 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 15000);
+    }, 18000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -25,7 +24,7 @@ const MailingListPopup = () => {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm transition-opacity duration-300">
       <div className="relative w-full max-w-[800px] bg-white shadow-2xl flex flex-col md:flex-row overflow-hidden rounded-lg">
-        
+
         <button
           onClick={() => setIsVisible(false)}
           className="absolute top-2 right-2 z-20 p-1 text-gray-400 hover:text-gray-600 transition-colors"
@@ -64,7 +63,7 @@ const MailingListPopup = () => {
             />
             <button
               type="submit"
-              className="w-full sm:w-auto bg-[#F58220] hover:bg-orange-600 text-white font-bold px-6 py-2.5 rounded-full transition-colors shadow-sm whitespace-nowrap text-sm"
+              className="w-full sm:w-auto bg-[#F58639] hover:bg-orange-600 text-white font-bold px-6 py-2.5 rounded-full transition-colors shadow-sm whitespace-nowrap text-sm"
             >
               Submit
             </button>
@@ -179,10 +178,10 @@ const IntelligentSolutionsSection = () => {
                 className={`group flex flex-col items-center lg:items-end text-center lg:text-right cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 lg:translate-x-2' : 'opacity-90 hover:opacity-100'}`}
               >
                 <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-4 mb-2">
-                  <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight order-2 lg:order-1 ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#0E1C3C]'}`}>
+                  <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight order-2 lg:order-1 ${hoveredIndex === feature.id ? 'text-[#F58639]' : 'text-[#0E1C3C]'}`}>
                     {feature.title}
                   </h3>
-                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 order-1 lg:order-2 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 order-1 lg:order-2 ${hoveredIndex === feature.id ? 'bg-[#F58639] scale-110' : 'bg-white border-2 border-slate-100'}`}>
                     <Image
                       src={`/icons/homepage/${feature.iconName}.png`}
                       alt={feature.title}
@@ -220,10 +219,10 @@ const IntelligentSolutionsSection = () => {
                 className={`group flex flex-col items-center lg:items-start text-center lg:text-left cursor-pointer transition-all duration-300 ${hoveredIndex === feature.id ? 'scale-105 lg:-translate-x-2' : 'opacity-90 hover:opacity-100'}`}
               >
                 <div className="flex flex-col-reverse lg:flex-row-reverse items-center gap-3 lg:gap-4 mb-2">
-                  <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight ${hoveredIndex === feature.id ? 'text-[#FA6404]' : 'text-[#0E1C3C]'}`}>
+                  <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight ${hoveredIndex === feature.id ? 'text-[#F58639]' : 'text-[#0E1C3C]'}`}>
                     {feature.title}
                   </h3>
-                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 ${hoveredIndex === feature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 ${hoveredIndex === feature.id ? 'bg-[#F58639] scale-110' : 'bg-white border-2 border-slate-100'}`}>
                     <Image
                       src={`/icons/homepage/${feature.iconName}.png`}
                       alt={feature.title}
@@ -248,7 +247,7 @@ const IntelligentSolutionsSection = () => {
             onMouseLeave={() => setHoveredIndex(null)}
             className={`group flex flex-col items-center text-center cursor-pointer transition-all duration-300 ${hoveredIndex === centerFeature.id ? 'scale-105 -translate-y-2' : 'opacity-90 hover:opacity-100'}`}
           >
-            <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 mb-3 ${hoveredIndex === centerFeature.id ? 'bg-[#FA6404] scale-110' : 'bg-white border-2 border-slate-100'}`}>
+            <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-md transition-all duration-300 shrink-0 mb-3 ${hoveredIndex === centerFeature.id ? 'bg-[#F58639] scale-110' : 'bg-white border-2 border-slate-100'}`}>
               <Image
                 src={`/icons/homepage/${centerFeature.iconName}.png`}
                 alt={centerFeature.title}
@@ -257,7 +256,7 @@ const IntelligentSolutionsSection = () => {
                 className={`w-8 h-8 sm:w-10 sm:h-10 object-contain transition-opacity duration-200 ${hoveredIndex === centerFeature.id ? 'brightness-0 invert' : ''}`}
               />
             </div>
-            <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight mb-1 ${hoveredIndex === centerFeature.id ? 'text-[#FA6404]' : 'text-[#0E1C3C]'}`}>
+            <h3 className={`font-bold text-lg sm:text-xl lg:text-2xl transition-colors leading-tight mb-1 ${hoveredIndex === centerFeature.id ? 'text-[#F58639]' : 'text-[#0E1C3C]'}`}>
               {centerFeature.title}
             </h3>
             <p className="text-sm sm:text-base text-slate-500 font-medium max-w-[260px] sm:max-w-[280px] leading-snug">
@@ -272,7 +271,7 @@ const IntelligentSolutionsSection = () => {
         <Link
           href="/product"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-bold shadow-lg transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2"
-          style={{ backgroundColor: '#fa6404' }}
+          style={{ backgroundColor: '#F58639' }}
           aria-label="Learn more about product"
         >
           Learn More
@@ -306,10 +305,10 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full pt-12 pb-16 md:pt-20 md:pb-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
-      
+
       {/* Text Content Column */}
       <div className="space-y-8 md:space-y-10 flex flex-col items-center lg:items-start order-1">
-        
+
         {/* Heading */}
         <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center text-[#0E1C3C] leading-[1.15] lg:leading-[1.1] lg:text-left">
           Transform Cardiac Care <br className="hidden sm:block" />with <span>HD Steth<span className="text-[0.5em] align-super">™</span></span>
@@ -320,7 +319,7 @@ const HeroSection = () => {
           <div className="flex flex-col gap-5 md:gap-6 pl-4 relative">
             {/* Vertical Line */}
             <div className="absolute left-0 top-2 bottom-2 w-1 bg-slate-100 rounded-full"></div>
-            
+
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -328,7 +327,7 @@ const HeroSection = () => {
                 onMouseEnter={() => setActiveFeature(index)}
               >
                 {activeFeature === index && (
-                  <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#FA6404] rounded-full transition-all duration-300 ease-out shadow-[0_0_10px_rgba(250,100,4,0.5)]"></div>
+                  <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#F58639] rounded-full transition-all duration-300 ease-out shadow-[0_0_10px_rgba(245,134,57,0.5)]"></div>
                 )}
                 <span className={`text-base sm:text-lg md:text-xl font-medium transition-colors duration-300 ${activeFeature === index ? 'text-[#0E1C3C] font-semibold' : 'text-slate-400 group-hover:text-slate-600'}`}>
                   {feature.text}
@@ -462,10 +461,10 @@ const HeroSection = () => {
 
 const VideoSection = () => {
   return (
-     <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-white">
+    <section id="videoSection" className="w-full py-20 px-6 md:px-12 relative bg-white">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-[#0E1C3C] mb-4">
-          Instant cardiac insights. <span className="text-[#FA6404]">Anytime.</span>
+          Instant cardiac insights. <span className="text-[#F58639]">Anytime.</span>
         </h2>
         <p className="text-slate-500 text-lg md:text-xl leading-relaxed">
           {/* Experience the future of cardiac diagnostics with real-time insights delivered at the point of care. */}
@@ -474,11 +473,11 @@ const VideoSection = () => {
 
       <div className="relative max-w-5xl mx-auto">
         <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl">
-          <iframe 
+          <iframe
             className="absolute inset-0 w-full h-full"
-            src="https://www.youtube.com/embed/a1i9AGoZdUY" 
-            title="HD Steth Demo" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            src="https://www.youtube.com/embed/a1i9AGoZdUY"
+            title="HD Steth Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
         </div>
@@ -685,7 +684,7 @@ const FDAClearanceSection = () => {
         <div className="space-y-10">
           {/* Header */}
           <h2 className="text-3xl md:text-3xl font-bold text-[#0E1C3C] text-center">
-            FDA cleared (Class II) for the three product classification codes in one device.
+            FDA cleared (Class II) for all three product classification codes in one device.
           </h2>
 
           {/* Classification Codes Grid */}
@@ -693,7 +692,7 @@ const FDAClearanceSection = () => {
 
             {/* Code 1: DQD */}
             <div className="flex flex-col items-center px-2 justify-center border-b-2 sm:border-b-0 sm:border-r-2 border-[#FA6404] pb-8 sm:pb-0">
-              <div className="bg-[#FA6404] text-white text-xl md:text-2xl font-bold py-1.5 px-6 rounded-full mb-4 shadow-sm">
+              <div className="bg-[#F58639] text-white text-xl md:text-2xl font-bold py-1.5 px-6 rounded-full mb-4 shadow-sm">
                 DQD
               </div>
               <p className="text-slate-900 font-bold text-sm md:text-lg text-center leading-tight">
@@ -703,7 +702,7 @@ const FDAClearanceSection = () => {
 
             {/* Code 2: DQC */}
             <div className="flex flex-col items-center px-2 justify-center border-b-2 sm:border-b-0 sm:border-r-2 border-[#FA6404] pb-8 sm:pb-0">
-              <div className="bg-[#FA6404] text-white text-xl md:text-2xl font-bold py-1.5 px-6 rounded-full mb-4 shadow-sm">
+              <div className="bg-[#F58639] text-white text-xl md:text-2xl font-bold py-1.5 px-6 rounded-full mb-4 shadow-sm">
                 DQC
               </div>
               <p className="text-slate-900 font-bold text-sm md:text-lg text-center leading-tight">
@@ -713,7 +712,7 @@ const FDAClearanceSection = () => {
 
             {/* Code 3: DPS */}
             <div className="flex flex-col items-center px-2 justify-center">
-              <div className="bg-[#FA6404] text-white text-xl md:text-2xl font-bold py-1.5 px-6 rounded-full mb-4 shadow-sm">
+              <div className="bg-[#F58639] text-white text-xl md:text-2xl font-bold py-1.5 px-6 rounded-full mb-4 shadow-sm">
                 DPS
               </div>
               <p className="text-slate-900 font-bold text-sm md:text-lg text-center leading-tight">
@@ -730,7 +729,7 @@ const FDAClearanceSection = () => {
 
 const HealthyUComingSoonSection = () => {
   return (
-    <section className="w-full py-20 px-6 md:px-12 bg-gradient-to-br from-[#f8faff] to-white relative overflow-hidden">
+    <section className="w-full py-20 px-6 md:px-12 bg-white  relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#FA6404]/5 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#0E1C3C]/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -743,11 +742,11 @@ const HealthyUComingSoonSection = () => {
               <div className="w-2 h-2 bg-[#FA6404] rounded-full animate-pulse"></div>
               <span className="text-[#FA6404] font-bold text-sm uppercase tracking-wider">Coming Soon</span>
             </div>
-            
+
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0E1C3C] leading-tight">
               HealthyU Platform
             </h2>
-            
+
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-lg">
               Experience the future of personalized health monitoring. HealthyU brings comprehensive wellness tracking, real-time health insights, and intelligent health recommendations directly to your fingertips.
             </p>
@@ -755,7 +754,7 @@ const HealthyUComingSoonSection = () => {
 
           <div className="space-y-4 pt-4">
             <div className="flex items-start gap-4">
-              <div className="w-6 h-6 rounded-full bg-[#FA6404] flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="w-6 h-6 rounded-full bg-[#F58639] flex items-center justify-center flex-shrink-0 mt-1">
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
@@ -767,7 +766,7 @@ const HealthyUComingSoonSection = () => {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-6 h-6 rounded-full bg-[#FA6404] flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="w-6 h-6 rounded-full bg-[#F58639] flex items-center justify-center flex-shrink-0 mt-1">
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
@@ -779,7 +778,7 @@ const HealthyUComingSoonSection = () => {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-6 h-6 rounded-full bg-[#FA6404] flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="w-6 h-6 rounded-full bg-[#F58639] flex items-center justify-center flex-shrink-0 mt-1">
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
@@ -797,7 +796,7 @@ const HealthyUComingSoonSection = () => {
           <div className="relative w-full max-w-md">
             {/* Glowing background effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#FA6404]/20 to-[#0E1C3C]/10 rounded-3xl blur-2xl transform -rotate-3"></div>
-            
+
             {/* Image container */}
             <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-100">
               <Image
@@ -810,7 +809,7 @@ const HealthyUComingSoonSection = () => {
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -bottom-4 -right-4 bg-[#FA6404] text-white rounded-full p-4 shadow-lg">
+            <div className="absolute -bottom-4 -right-4 bg-[#F58639] text-white rounded-full p-4 shadow-lg">
               <div className="text-center">
                 <div className="text-2xl font-bold">Q1</div>
                 <div className="text-xs font-semibold">2026</div>
@@ -851,6 +850,8 @@ const App = () => {
       <div className="relative z-10">
         <MailingListPopup />
         <HeroSection />
+        <HealthyUComingSoonSection />
+
         <VideoSection />
         {/* <TrustedBySection /> */}
         <IntelligentSolutionsSection />
@@ -858,7 +859,6 @@ const App = () => {
         {/* <ClinicalExcellenceSection /> */}
         <FDAClearanceSection />
         <CertificationsBar />
-        <HealthyUComingSoonSection />
         <div className="w-full h-2 bg-white"></div>
       </div>
     </div>

@@ -37,7 +37,7 @@ const ResourcesHero = () => {
                         {/* <div className="w-16 h-1 bg-[#FA6404] mb-2"></div> */}
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#0E1C3C] leading-tight">
                             HD Steth<span className="text-[0.6em] align-super">™</span> <br />
-                            <span className="text-[#FA6404]">Resources</span>
+                            <span className="text-[#F58639]">Resources</span>
                         </h1>
                     </div>
 
@@ -108,9 +108,9 @@ const EssentialResourcesSection = () => {
                     {resources.map((item, idx) => (
                         <div
                             key={idx}
-                            className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] bg-white rounded-2xl p-8 shadow-lg shadow-slate-100 border-3 border-[#FA6404] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
+                            className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] bg-white rounded-2xl p-8 shadow-lg shadow-slate-100 border-3 border-[#F58639] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
                        >
-                             <div className="w-16 h-16 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-200 group-hover:scale-110 transition-transform">
+                             <div className="w-16 h-16 rounded-full bg-[#F58639] text-white flex items-center justify-center mb-6 shadow-md shadow-orange-200 group-hover:scale-110 transition-transform">
                               {item.icon}
                             </div>
 
@@ -122,7 +122,7 @@ const EssentialResourcesSection = () => {
                                     <a
                                         href="/app/hdsteth.apk"
                                         download="hdsteth.apk"
-                                        className="text-[#FA6404] font-bold text-sm hover:text-[#0E1C3C] transition-colors flex items-center gap-2"
+                                        className="text-[#F58639] font-bold text-sm hover:text-[#0E1C3C] transition-colors flex items-center gap-2"
                                     >
                                         Download Android <Download size={14} />
                                     </a>
@@ -130,7 +130,7 @@ const EssentialResourcesSection = () => {
                                         href="https://apps.apple.com/in/app/hd-steth/id1565203803"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-[#FA6404] font-bold text-sm hover:text-[#0E1C3C] transition-colors flex items-center gap-2"
+                                        className="text-[#F58639] font-bold text-sm hover:text-[#0E1C3C] transition-colors flex items-center gap-2"
                                     >
                                         Download iOS <ExternalLink size={14} />
                                     </a>
@@ -141,7 +141,7 @@ const EssentialResourcesSection = () => {
                                     download={item.type === 'pdf'}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="mt-auto text-[#FA6404] font-bold text-sm hover:text-[#0E1C3C] transition-colors flex items-center gap-2 cursor-pointer"
+                                    className="mt-auto text-[#F58639] font-bold text-sm hover:text-[#0E1C3C] transition-colors flex items-center gap-2 cursor-pointer"
                                 >
                                     {item.action}
                                     {item.type === 'pdf' ? <Download size={14} /> : <ExternalLink size={14} />}
@@ -172,7 +172,7 @@ const CareMaintenanceSection = () => {
                     <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-100">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="p-2 bg-orange-50 rounded-lg">
-                                <ShieldCheck className="text-[#FA6404]" size={24} />
+                                <ShieldCheck className="text-[#F58639]" size={24} />
                             </div>
                             <h3 className="text-xl font-bold text-[#0E1C3C]">Daily Cleaning</h3>
                         </div>
@@ -258,8 +258,8 @@ const AccessoriesSection = () => {
                 {/* Accessories Grid */}
                 <div className="grid md:grid-cols-3 gap-8 mb-12">
                     {accessories.map((item, idx) => (
-                        <div key={idx} className="flex flex-col items-center text-center bg-[#0E1C3C] p-6 rounded-xl shadow-lg border-t-[6px] border-[#FA6404] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div className="w-20 h-20 rounded-full bg-[#FA6404] text-white flex items-center justify-center mb-4 shadow-lg shadow-[#FA6404]/20 group-hover:scale-110 transition-transform">
+                        <div key={idx} className="flex flex-col items-center text-center bg-[#0E1C3C] p-6 rounded-xl shadow-lg border-t-[6px] border-[#F58639] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div className="w-20 h-20 rounded-full bg-[#F58639] text-white flex items-center justify-center mb-4 shadow-lg shadow-[#F58639]/20 group-hover:scale-110 transition-transform">
                                 {item.icon}
                             </div>
                             <h4 className="text-white font-bold text-lg mb-1">{item.name}</h4>
