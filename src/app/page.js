@@ -623,6 +623,39 @@ const VideoSection = () => {
 //   );
 // }
 
+const RealWorldImpactSection = () => {
+  return (
+    <section className="w-full py-20 bg-[#0E1C3C] text-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">Real-World Impact:</h2>
+        <p className="text-lg md:text-xl text-gray-300 mb-16">A few interesting facts about HD Medical</p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="flex flex-col items-center">
+            <span className="text-5xl md:text-6xl font-bold mb-2">300000+</span>
+            <div className="w-16 h-1 bg-[#F58639] mb-4 rounded-full"></div>
+            <p className="text-lg text-gray-300">Total Screened</p>
+          </div>
+          
+          <div className="flex flex-col items-center">
+            <span className="text-5xl md:text-6xl font-bold mb-2">1500+</span>
+            <div className="w-16 h-1 bg-[#F58639] mb-4 rounded-full"></div>
+            <p className="text-lg text-gray-300">Detected Abnormalities</p>
+          </div>
+          
+          <div className="flex flex-col items-center">
+            <span className="text-5xl md:text-6xl font-bold mb-2">600+</span>
+            <div className="w-16 h-1 bg-[#F58639] mb-4 rounded-full"></div>
+            <p className="text-lg text-gray-300">Surgery Completed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+
 const CertificationsBar = () => {
   return (
     <section className="bg-[#0E1C3C] py-12 w-full">
@@ -872,9 +905,11 @@ const App = () => {
         <VideoSection />
         {/* <TrustedBySection /> */}
         <IntelligentSolutionsSection />
+        <RealWorldImpactSection />
         {/* <ProductDetailSection /> */}
         {/* <ClinicalExcellenceSection /> */}
         <FDAClearanceSection />
+        
         <CertificationsBar />
         <div className="w-full h-0.5 bg-gray-200"></div>
       </div>
