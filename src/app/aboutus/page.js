@@ -34,6 +34,18 @@ const leadership = [
     position: "Director - India operations",
     image: "/images/company/GaneshKumar.png",
     description: "Driving research and development initiatives to deliver innovative healthcare solutions."
+  },
+  {
+    name: "Dr. Guru Gurushankar",
+    position: "Strategic Advisor",
+    image: "/images/company/GuruShankar.png",
+    description: "Chief Business Officer Successful Healthcare Executive & Leader ex-Phillips, AWS,  Cardinal Health, JNJ, GEHC"
+  },
+  {
+    name: "Dr. Rakesh Shah, MD",
+    position: "Medical Director",
+    image: "/images/placeholder.png",
+    description: "Leading Interventional Cardiologist at Houston Texas Medical Center, HCA Clearlake, etc."
   }
 ];
 
@@ -51,16 +63,16 @@ const boardMembers = [
     description: "Co-Founder of HCL & Headstrong"
   },
   {
+    name: "Vidya Nagarajan",
+    position: "Board Member",
+    image: "/images/placeholder.png",
+    description: "Senior Google Product Executive & Angel Investor"
+  },
+  {
     name: "Riaz A. Karamali",
     position: "Legal Counsel",
     image: "/images/company/Riaz A Karamali.png",
     description: "Pillsbury Silicon Valley & San Francisco"
-  },
-   {
-    name: "Dr. Guru Gurushankar",
-    position: "Strategic Advisor",
-    image: "/images/company/GuruShankar.png",
-    description: "Chief Business Officer Successful Healthcare Executive & Leader ex-Phillips, AWS,  Cardinal Health, JNJ, GEHC"
   },
   {
     name: "Investor & Board Observer",
@@ -74,27 +86,32 @@ const medicalAdvisors = [
   {
     name: "Dr. Nelson Schiller",
     position: "MD, FACC, FRCP Professor of Medicine & Anesthesia",
-    image: "/images/company/Dr Nelson.png"
+    image: "/images/company/Dr Nelson.png",
+    affiliationLogo: "/images/ucsf.png"
   },
   {
     name: "Dr Douglas R Johnston",
     position: "MD Thoracic and Cardiovascular Surgery",
-    image: "/images/company/Dr Dougles.png"
+    image: "/images/company/Dr Dougles.png",
+    affiliationLogo: "/images/cleveland.png"
   },
   {
     name: "Dr. Thomas Krummel",
     position: "MD, FACS/FAPP Professor of Co-Director Stanford Byers Center for Bio-design",
-    image: "/images/company/Dr Thomas.png"
+    image: "/images/company/Dr Thomas.png",
+    affiliationLogo: "/images/stanford.png"
   },
   {
     name: "Dr. Wael Al Mahmeed",
     position: "MD Leading Cardiologist Owner of City Pharma, UAE",
-    image: "/images/company/Dr Wael.png"
+    image: "/images/company/Dr Wael.png",
+    affiliationLogo: "/images/cleveland_abu_dhabi.png"
   },
   {
     name: "Dr. Ethiraj G. Raj",
     position: "Leading Private Cardiologist Flint, Michigan Hurley Medical Center",
-    image: "/images/company/Dr Raj.png"
+    image: "/images/company/Dr Raj.png",
+    affiliationLogo: "/images/hurley.png"
   }
 ];
 
@@ -139,6 +156,20 @@ const TeamGroup = ({ title, members, gridCols = "lg:grid-cols-5" }) => (
               <p className="text-xs text-gray-800 leading-relaxed font-medium">
                 {member.description}
               </p>
+            </div>
+          )}
+
+          {/* Affiliation Logo Placeholder */}
+          {member.affiliationLogo && (
+            <div className="w-full flex items-center justify-center mt-2">
+              <div className="relative w-32 h-32 bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                <Image
+                  src={member.affiliationLogo}
+                  alt="Affiliation"
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
             </div>
           )}
         </div>
@@ -251,7 +282,7 @@ export default function AboutUs() {
 
       {/* Leadership Team */}
       <section className="py-20 bg-white w-full">
-        <TeamGroup title="Our Leadership" members={leadership} />
+        <TeamGroup title="Our Leadership" members={leadership} gridCols="lg:grid-cols-4" />
         <div className="w-full h-px bg-gray-100 my-16 max-w-4xl mx-auto"></div>
         <TeamGroup title="Board Members" members={boardMembers} />
         <div className="w-full h-px bg-gray-100 my-16 max-w-4xl mx-auto"></div>
