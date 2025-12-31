@@ -39,7 +39,7 @@ const ResourcesHero = () => {
                             <span>
                                 <Image src="/images/hd-steth-logo.png" alt="HD Steth" width={300} height={90} className="inline-block align-middle" />
                             </span>  <br />
-                            <span className="text-[#F58639]">Resources</span>
+                            <span className="text-[#0E1C3C]">Resources</span>
                         </h1>
                     </div>
 
